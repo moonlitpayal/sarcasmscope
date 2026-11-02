@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SarcasmScope</title>
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--ink:#14213d;--mute:#5c677d;--line:#e3e6ef;--accent:#3a56d4;--red:#d62839;--blue:#1d6fb8;--ok:#2a9d8f;--warn:#e9a100}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1420;--card:#171e2e;--ink:#e8ecf6;--mute:#9aa6bf;--line:#27314a;--accent:#7b93ff;--red:#ff6b7a;--blue:#6bb6ff;--ok:#48c7b8;--warn:#ffc233}}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans Devanagari","Noto Sans Telugu","Noto Sans Tamil","Noto Sans Bengali",sans-serif;background:var(--bg);color:var(--ink)}
+header{padding:20px 24px;border-bottom:1px solid var(--line);background:var(--card)}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;color:var(--mute);font-size:.9rem}
+main{max-width:1000px;margin:0 auto;padding:20px;display:grid;gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.banner{background:#fff4e0;color:#7a4b00;border:1px solid #f3c77a;border-radius:10px;padding:10px 14px;font-size:.9rem}
+@media (prefers-color-scheme:dark){.banner{background:#3a2c10;color:#ffd58a;border-color:#6b5120}}
+textarea{width:100%;min-height:96px;font:inherit;font-size:1.05rem;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);resize:vertical}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}
+button{font:inherit;border:0;border-radius:9px;padding:9px 16px;cursor:pointer;background:var(--accent);color:#fff}
+button.ghost{background:transparent;color:var(--accent);border:1px solid var(--line)}
+button:disabled{opacity:.5;cursor:wait}
+.chip{display:inline-block;padding:3px 10px;border-radius:99px;border:1px solid var(--line);font-size:.82rem;color:var(--mute);margin:2px 4px 2px 0}
+.verdict{font-size:1.35rem;font-weight:700}
+.bar{height:12px;border-radius:99px;background:var(--line);overflow:hidden;margin:8px 0}
+.bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--ok),var(--warn),var(--red))}
+.tok{display:inline-block;padding:2px 6px;margin:2px;border-radius:6px;font-size:1.05rem}
+table{width:100%;border-collapse:collapse;font-size:.92rem}th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.mute{color:var(--mute);font-size:.88rem}.flip{color:var(--red);font-weight:600}
+.err{color:var(--red)}
+</style>
+</head>
+<body>
+<header><h1>SarcasmScope</h1><p>Calibrated, explainable sarcasm detection for code-mixed Indian-language text. It says "uncertain" instead of guessing when it is not sure.</p></header>
+<main>
+  <div id="demo" class="banner" style="display:none"></div>
+  <section class="card">
+    <textarea id="text" placeholder="Type or paste text in any Indian language, Roman script or a mix (emoji welcome)"></textarea>
+    <div class="row">
+      <button id="go">Analyze</button>
+      <button class="ghost" data-ex="वाह, फिर से बारिश! 🙄">Hindi</button>
+      <button class="ghost" data-ex="వావ్, మళ్లీ వర్షం 🙄">Telugu</button>
+      <button class="ghost" data-ex="wah, traffic mein fas gaye 🙃">Hinglish</button>
+      <button class="ghost" data-ex="व्वा, पुन्हा पाऊस!">Marathi</button>
+      <button class="ghost" data-ex="great, another rainy Monday...">English</button>
+    </div>
+    <div id="err" class="err"></div>
+  </section>
+  <section class="card" id="result" style="display:none">
+    <div class="verdict" id="verdict"></div>
+    <div class="bar"><i id="barfill"></i></div>
+    <div class="mute" id="probline"></div>
+    <div id="abstain" class="banner" style="display:none;margin-top:10px"></div>
+    <div style="margin-top:10px" id="chips"></div>
+  </section>
+  <section class="card" id="explain" style="display:none">
+    <b>Why? (token influence)</b> <span class="mute">red pushes towards sarcasm, blue towards literal; stronger colour = stronger push</span>
+    <div id="tokens" style="margin-top:8px"></div>
+  </section>
+  <section class="card" id="robust" style="display:none">
+    <b>Robustness check</b> <span class="mute">does the answer survive noise?</span>
+    <table><thead><tr><th>perturbation</th><th>text after change</th><th>P(sarcastic)</th><th></th></tr></thead><tbody id="rob"></tbody></table>
+  </section>
+  <section class="card">
+    <b>Batch mode</b> <span class="mute">one text per line (max 200)</span>
+    <textarea id="batch" placeholder="line 1&#10;line 2"></textarea>
+    <div class="row"><button class="ghost" id="runbatch">Run batch</button></div>
+    <table id="btable" style="display:none"><thead><tr><th>text</th><th>label</th><th>P(sarcastic)</th><th>confident?</th></tr></thead><tbody id="brows"></tbody></table>
+  </section>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+async function post(path, body){
+  const r = await fetch(path,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+  if(!r.ok){let m=r.statusText;try{m=(await r.json()).detail||m}catch(e){}throw new Error(typeof m==="string"?m:JSON.stringify(m))}
+  return r.json();
+}
+function esc(s){const d=document.createElement("div");d.textContent=s;return d.innerHTML}
+fetch("/health").then(r=>r.json()).then(h=>{
+  if(h.demo_model){$("demo").style.display="block";$("demo").textContent="DEMO MODEL: trained on machine-written toy sentences. It is for trying the interface only. Do not use its output for research or decisions.";}
+});
+document.querySelectorAll("[data-ex]").forEach(b=>b.onclick=()=>{$("text").value=b.dataset.ex;$("go").click()});
+$("go").onclick=async()=>{
+  const text=$("text").value.trim(); $("err").textContent=""; if(!text)return;
+  $("go").disabled=true;
+  try{
+    const [p,e,r]=await Promise.all([post("/predict",{text}),post("/explain",{text}),post("/robustness",{text})]);
+    const sarc=p.p_sarcastic>=0.5;
+    $("result").style.display="block";
+    $("verdict").textContent=p.abstain?"Uncertain: not enough confidence to call it":(sarc?"Sarcastic":"Not sarcastic");
+    $("barfill").style.width=(p.p_sarcastic*100).toFixed(1)+"%";
+    $("probline").textContent="P(sarcastic) = "+p.p_sarcastic.toFixed(3)+"  |  confidence "+p.confidence.toFixed(3)+"  |  model: "+p.model;
+    const ab=$("abstain");
+    if(p.abstain){ab.style.display="block";ab.textContent="Confidence "+p.confidence.toFixed(2)+" is below the abstention threshold "+(p.threshold??0).toFixed(2)+". A human should check this one."}else ab.style.display="none";
+    const L=p.language;
+    $("chips").innerHTML=[
+      "script: "+L.script, "language guess: "+L.language+" ("+L.confidence+")", L.romanized?"romanized":"native script",
+      "script code-mix index: "+L.cmi, p.emoji.n_emoji?("emoji: "+p.emoji.emojis.join(" ")):"no emoji"
+    ].map(x=>'<span class="chip">'+esc(x)+'</span>').join("");
+    $("explain").style.display="block";
+    const mx=Math.max(0.001,...e.attributions.map(a=>Math.abs(a.delta)));
+    $("tokens").innerHTML=e.attributions.map(a=>{
+      const k=Math.min(1,Math.abs(a.delta)/mx), c=a.delta>=0?"214,40,57":"29,111,184";
+      return '<span class="tok" title="delta '+a.delta.toFixed(3)+'" style="background:rgba('+c+','+(0.08+0.5*k).toFixed(2)+')">'+esc(a.token)+'</span>';
+    }).join("");
+    $("robust").style.display="block";
+    $("rob").innerHTML=r.results.map(x=>"<tr><td>"+esc(x.perturbation)+"</td><td>"+esc(x.perturbed_text)+"</td><td>"+x.p_sarcastic.toFixed(3)+"</td><td class='"+(x.flipped?"flip":"")+"'>"+(x.flipped?"answer flips":"")+"</td></tr>").join("");
+  }catch(err){$("err").textContent=err.message}
+  $("go").disabled=false;
+};
+$("runbatch").onclick=async()=>{
+  const texts=$("batch").value.split("\n").map(s=>s.trim()).filter(Boolean); if(!texts.length)return;
+  try{
+    const r=await post("/predict_batch",{texts});
+    $("btable").style.display="table";
+    $("brows").innerHTML=r.results.map(x=>x.error?("<tr><td>"+esc(x.text)+"</td><td colspan=3>"+esc(x.error)+"</td></tr>"):
+      "<tr><td>"+esc(x.text)+"</td><td>"+esc(x.abstain?"uncertain":x.label)+"</td><td>"+x.p_sarcastic.toFixed(3)+"</td><td>"+(x.abstain?"no":"yes")+"</td></tr>").join("");
+  }catch(err){$("err").textContent=err.message}
+};
+</script>
+</body>
+</html>

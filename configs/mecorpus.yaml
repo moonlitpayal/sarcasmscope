@@ -1,0 +1,43 @@
+# SarcasmScope run configuration — Marathi-English human-labelled set (MeCorpus annotation)
+# After annotation is complete (annotation/report/final_labels.csv exists), run:
+#   sarcasmscope audit --config configs/mecorpus.yaml
+#   sarcasmscope run  --config configs/mecorpus.yaml
+#   sarcasmscope run  --config configs/mecorpus.yaml --final  (once, at the very end)
+run_name: mecorpus_v1
+output_dir: runs
+seeds: [42, 43, 44]
+
+data:
+  files:
+    - path: annotation/report/final_labels.csv
+      source: MeCorpus_human
+      mapping:
+        text: text
+        label: final_label        # values: sarcastic / not sarcastic
+      lang: mr-en                 # Marathi-English code-mixed
+      label_map:
+        sarcastic: 1
+        "not sarcastic": 0
+
+use_context: false
+
+preprocess:
+  lowercase: true
+  keep_emoji: true
+  hashtags: strip_symbol
+
+split:
+  ratios: [0.70, 0.15, 0.15]
+  near_dup_threshold: 0.7
+  group_col: null
+  dedup: drop
+
+models: [tfidf]           # add muril, xlmr, mbert once you have Colab GPU access
+# transformer: {epochs: 4, lr: 3.0e-5, batch_size: 16, max_len: 96}
+reference_model: tfidf
+
+shortcut_columns: []      # add annotator name column if you want to test for annotator shortcuts
+abstain:
+  target_selective_accuracy: 0.9
+robustness: true
+transfer: false           # only one language pair, nothing to transfer

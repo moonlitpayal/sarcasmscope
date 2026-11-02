@@ -1,0 +1,17 @@
+numpy
+pandas
+scikit-learn
+scipy
+joblib
+pyyaml
+openpyxl
+fastapi
+uvicorn
+
+[dev]
+pytest
+httpx
+
+[transformers]
+torch
+transformers

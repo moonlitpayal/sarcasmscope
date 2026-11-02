@@ -1,0 +1,41 @@
+# TEMPLATE for the real multilingual experiment. Replace every <PLACEHOLDER> after you have
+# downloaded and AUDITED the dataset (open the file, look at the column names, check the licence).
+run_name: indic_multilingual_v1
+output_dir: runs
+seeds: [42, 43, 44]            # use 5 seeds for the final numbers
+
+data:
+  files:
+    - path: data/raw/<DATASET_FILE>.csv
+      source: D1
+      mapping:
+        text: <TEXT_COLUMN>
+        label: <LABEL_COLUMN>
+        lang: <LANGUAGE_COLUMN>      # delete this line if the file has no language column
+        # context: <PREVIOUS_TURN_COLUMN>   # optional, for conversational data (e.g. MaSaC)
+        # group: <CONVERSATION_ID_COLUMN>   # optional: keeps a conversation inside one split
+      # lang: te                     # use this INSTEAD if the file is a single language
+      # label_map: {"Sarcastic": 1, "Non-Sarcastic": 0}   # only if labels use unusual words
+    # - path: data/raw/<SECOND_DATASET>.csv      # add more datasets for cross-dataset checks
+    #   source: D2
+    #   mapping: {text: <...>, label: <...>}
+    #   lang: hi
+
+use_context: false             # true = add the previous turn(s) (needs a `context` column mapped above): experiment E3/E4
+
+preprocess:
+  lowercase: true
+  keep_emoji: true               # run once with false to measure the emoji effect (experiment E2)
+  hashtags: strip_symbol         # label hashtags (#sarcasm ...) are always removed
+
+split:
+  ratios: [0.7, 0.15, 0.15]
+  near_dup_threshold: 0.7
+  group_col: null                # set to a column holding conversation/user ids if you have one
+
+models: [tfidf, muril, xlmr, mbert]    # transformers need a GPU: see docs/COLAB.md
+transformer: {epochs: 4, lr: 3.0e-5, batch_size: 16, max_len: 96}
+reference_model: tfidf
+abstain: {target_selective_accuracy: 0.9}
+robustness: true
+transfer: true

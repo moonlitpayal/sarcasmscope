@@ -1,0 +1,14 @@
+# Works out of the box with TOY data:   sarcasmscope demo-data --out data/toy_demo.csv
+run_name: toy_demo
+output_dir: runs
+seeds: [42, 43]
+data:
+  files:
+    - path: data/toy_demo.csv
+      source: TOY
+      mapping: {text: text, label: label, lang: lang}
+split:
+  ratios: [0.7, 0.15, 0.15]
+  near_dup_threshold: null      # toy sentences are templated, so near-duplicate merging is switched off
+models: [tfidf]
+reference_model: tfidf

@@ -1,0 +1,25 @@
+# MaSaC (Hindi-English, human-labelled sarcasm), prepared with:
+#   git clone https://github.com/LCS2-IIITD/MSH-COMICS ..\MSH-COMICS
+#   sarcasmscope prepare-masac --repo ..\MSH-COMICS --out data\raw\masac.csv
+run_name: masac_v1
+output_dir: runs
+seeds: [42, 43, 44]
+data:
+  files:
+    - path: data/raw/masac.csv
+      source: MaSaC
+      mapping: {text: text, label: sarcasm, lang: lang, group: dialogue, context: context, id: id}
+      keep: [speaker]
+shortcut_columns: [speaker]         # does the speaker's name alone predict sarcasm?
+use_context: false                  # run once with true for the context experiment (E3)
+preprocess: {lowercase: true, keep_emoji: true, hashtags: strip_symbol}
+split:
+  ratios: [0.7, 0.15, 0.15]
+  near_dup_threshold: null
+  group_col: group                  # whole dialogues stay in one split
+  dedup: keep                       # short lines like 'nahin!' repeat legitimately; sarcasm depends on context
+models: [tfidf]
+reference_model: tfidf
+abstain: {target_selective_accuracy: 0.9}
+robustness: true
+transfer: false

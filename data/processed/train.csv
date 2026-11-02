@@ -1,0 +1,14 @@
+text,context,label
+"Oh brilliant, another delay on Mumbai locals, just what my Monday needed!",Train canceled,1
+I absolutely love it when code fails directly in production on a Friday night.,Deployment crashed,1
+What a genius move leaving the umbrella at home during a monsoon downpour.,Soaked in rain,1
+"Great customer service, waiting 45 minutes on hold listening to elevator music.",Call dropped,1
+The train arrived exactly on time at Dadar station today.,Smooth travel,0
+"Our team solved the production issue within 10 minutes, outstanding effort.",Fast deployment,0
+"The technical documentation is clean, concise, and easy to follow.",Reading manual,0
+"Lai bhari bhau, 2 taas traffic madhe thevlya badal khup khup aabhar!",Stuck in 2 hr traffic,1
+"Wah re wah sarkar, rastyat khadde ahet ki khaddyat rasta kalatch nahi!",Potholes everywhere,1
+"Arre ekdam genius ahes tu, test run na kartach deploy kela!",Crashed server,1
+"खूप छान नियोजन आहे, अर्धा तास आधी येऊन पण लाईन मध्येच उभे आहोत!",Mismanaged line,1
+"Aaj cha presentation khup changla zala, congrats team!",Appreciation,0
+"Code review neat zala ahe, bug resolve zala.",Resolved bug,0

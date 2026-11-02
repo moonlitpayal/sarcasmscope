@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sarcasmscope"
+version = "0.1.0"
+description = "Reliability-first toolkit for code-mixed Indian-language sarcasm detection: data audit, leakage-safe splits, baselines, calibration, robustness, explanations and a web app"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy", "pandas", "scikit-learn", "scipy", "joblib", "pyyaml", "openpyxl",
+  "fastapi", "uvicorn",
+]
+
+[project.optional-dependencies]
+transformers = ["torch", "transformers"]
+dev = ["pytest", "httpx"]
+
+[project.scripts]
+sarcasmscope = "sarcasmscope.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+sarcasmscope = ["app/web/*.html"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
