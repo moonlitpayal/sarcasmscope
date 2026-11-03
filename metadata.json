@@ -1,0 +1,8 @@
+{
+  "name": "SARcasmScope",
+  "description": "Calibrated, explainable sarcasm detection for multilingual and code-mixed Indian-language text with linguistic incongruity analysis, token occlusion, and robustness evaluation.",
+  "version": "1.0.0",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
