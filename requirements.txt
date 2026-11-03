@@ -1,6 +1,12 @@
-streamlit 
-scikit-learn 
-scipy 
-numpy 
-pandas 
+streamlit
+numpy
+pandas
+scikit-learn
+scipy
 joblib
+pyyaml
+openpyxl
+fastapi
+uvicorn
+httpx
+pytest
