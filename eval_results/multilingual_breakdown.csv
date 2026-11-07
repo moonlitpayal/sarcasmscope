@@ -1,0 +1,6 @@
+Language,N,Accuracy,Precision,Recall,F1,MacroF1,BrierScore
+English,8,100,100,100,100,100,0.0082
+Hindi,6,83.3,75,100,85.7,82.9,0.1302
+Hinglish,6,100,100,100,100,100,0.0336
+Marathi,6,100,100,100,100,100,0.0153
+Telugu,4,100,100,100,100,100,0.0159

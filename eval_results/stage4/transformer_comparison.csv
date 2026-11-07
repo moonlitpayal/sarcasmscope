@@ -1,0 +1,4 @@
+Architecture,Backbone,Params,InferenceLatencyP95,MacroF1,Accuracy,Recall,Specificity,Platform
+"MuRIL_Transformer","google/muril-base-cased","237M","85.4 ms",56.86,56.9,58.19,55.79,"Google Colab T4 / Server"
+"XLM_RoBERTa","xlm-roberta-base","278M","92.1 ms",56.40,56.80,58.20,55.40,"Google Colab T4 / Server"
+"SARcasmScope_Hybrid","Linguistic+Subword+INT8","<10M","2.31 ms",56.57,56.63,57.23,56.13,"Client-Side / Offline"

@@ -1,0 +1,5 @@
+TestHypothesis,ComparisonCohorts,SampleCount,BaselineMetric,HybridMetric,McNemarChiSquare,PValue,OddsRatio,CohensG,StatisticalInference
+"H1: Sarcasm Recall Recovery","Baseline Linguistic vs Hybrid",519,"3.08% (16 TP)","57.23% (297 TP)",277.03,0.0001,282,0.496,"EXTREMELY SIGNIFICANT (p < 0.0001; 281 additional sarcastic cases rescued)"
+"H2: Overall Accuracy Displacement","Baseline Linguistic vs Hybrid",1123,"53.78% (604 correct)","56.63% (636 correct)",1.79,0.1806,1.13,0.03,"NOT SIGNIFICANT (p = 0.1806; accuracy parity due to specificity rebalancing 97.35% -> 56.13%)"
+"H3: Bootstrap Macro-F1 95% CI","Hybrid Monte Carlo B=1000",1123,"N/A","56.57% [53.6-59.41]","N/A","N/A","N/A","N/A","CONFIRMED STABLE (+18.98% above linguistic baseline CI [35.56-39.43])"
+"H4: Bootstrap Recall 95% CI","Hybrid Monte Carlo B=1000",519,"N/A","57.23% [53-61.05]","N/A","N/A","N/A","N/A","CONFIRMED STABLE (18-fold above linguistic baseline CI [1.65-4.73])"

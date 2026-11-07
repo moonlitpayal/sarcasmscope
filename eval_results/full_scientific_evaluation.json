@@ -1,0 +1,407 @@
+{
+  "metadata": {
+    "investigator": "Payal Mehta",
+    "date": "2026-11-07T18:39:11.909Z",
+    "corpusSize": 30,
+    "iterationsLatency": 1000
+  },
+  "overallMetrics": {
+    "tp": 15,
+    "fp": 1,
+    "tn": 14,
+    "fn": 0,
+    "accuracy": 0.9666666666666667,
+    "precision": 0.9375,
+    "recall": 1,
+    "f1": 0.967741935483871,
+    "macroF1": 0.9666295884315907
+  },
+  "bootstrap95CI": {
+    "lower": 0.8844672657252888,
+    "upper": 1
+  },
+  "calibration": {
+    "ece": 0.0973,
+    "brier": 0.0401,
+    "nll": 0.144
+  },
+  "multilingual": [
+    {
+      "Language": "English",
+      "N": 8,
+      "Accuracy": 100,
+      "Precision": 100,
+      "Recall": 100,
+      "F1": 100,
+      "MacroF1": 100,
+      "BrierScore": 0.0082
+    },
+    {
+      "Language": "Hindi",
+      "N": 6,
+      "Accuracy": 83.3,
+      "Precision": 75,
+      "Recall": 100,
+      "F1": 85.7,
+      "MacroF1": 82.9,
+      "BrierScore": 0.1302
+    },
+    {
+      "Language": "Hinglish",
+      "N": 6,
+      "Accuracy": 100,
+      "Precision": 100,
+      "Recall": 100,
+      "F1": 100,
+      "MacroF1": 100,
+      "BrierScore": 0.0336
+    },
+    {
+      "Language": "Marathi",
+      "N": 6,
+      "Accuracy": 100,
+      "Precision": 100,
+      "Recall": 100,
+      "F1": 100,
+      "MacroF1": 100,
+      "BrierScore": 0.0153
+    },
+    {
+      "Language": "Telugu",
+      "N": 4,
+      "Accuracy": 100,
+      "Precision": 100,
+      "Recall": 100,
+      "F1": 100,
+      "MacroF1": 100,
+      "BrierScore": 0.0159
+    }
+  ],
+  "ablation": [
+    {
+      "Configuration": "Full SARcasmScope (All Features)",
+      "Accuracy": 96.7,
+      "Precision": 100,
+      "Recall": 93.3,
+      "F1": 96.6,
+      "MacroF1": 96.7,
+      "DeltaMacroF1": 0
+    },
+    {
+      "Configuration": "Ablation: No Conversational Context Clash",
+      "Accuracy": 93.3,
+      "Precision": 100,
+      "Recall": 86.7,
+      "F1": 92.9,
+      "MacroF1": 93.3,
+      "DeltaMacroF1": -3.4
+    },
+    {
+      "Configuration": "Ablation: No Polarity Clash Feature",
+      "Accuracy": 93.3,
+      "Precision": 100,
+      "Recall": 86.7,
+      "F1": 92.9,
+      "MacroF1": 93.3,
+      "DeltaMacroF1": -3.4
+    },
+    {
+      "Configuration": "Ablation: No Hyperbolic Intensifiers",
+      "Accuracy": 96.7,
+      "Precision": 100,
+      "Recall": 93.3,
+      "F1": 96.6,
+      "MacroF1": 96.7,
+      "DeltaMacroF1": 0
+    },
+    {
+      "Configuration": "Ablation: No Irony Emoji Features",
+      "Accuracy": 96.7,
+      "Precision": 100,
+      "Recall": 93.3,
+      "F1": 96.6,
+      "MacroF1": 96.7,
+      "DeltaMacroF1": 0
+    }
+  ],
+  "baselines": [
+    {
+      "Baseline": "Majority Class (Always Sarcastic)",
+      "Accuracy": 50,
+      "MacroF1": 33.3
+    },
+    {
+      "Baseline": "Keyword Negativity Lookup Only",
+      "Accuracy": 80,
+      "MacroF1": 79.9
+    },
+    {
+      "Baseline": "Irony Emoji Shortcut Only",
+      "Accuracy": 60,
+      "MacroF1": 52.4
+    },
+    {
+      "Baseline": "SARcasmScope (Calibrated Feature-Fusion)",
+      "Accuracy": 96.7,
+      "MacroF1": 96.7
+    }
+  ],
+  "selectivePrediction": [
+    {
+      "Threshold_Tau": 0,
+      "Coverage": 100,
+      "SelectiveAccuracy": 96.7,
+      "SelectiveRisk": 3.3,
+      "AcceptedCount": "30/30"
+    },
+    {
+      "Threshold_Tau": 0.2,
+      "Coverage": 96.7,
+      "SelectiveAccuracy": 96.6,
+      "SelectiveRisk": 3.4,
+      "AcceptedCount": "29/30"
+    },
+    {
+      "Threshold_Tau": 0.4,
+      "Coverage": 93.3,
+      "SelectiveAccuracy": 96.4,
+      "SelectiveRisk": 3.6,
+      "AcceptedCount": "28/30"
+    },
+    {
+      "Threshold_Tau": 0.6,
+      "Coverage": 86.7,
+      "SelectiveAccuracy": 96.2,
+      "SelectiveRisk": 3.8,
+      "AcceptedCount": "26/30"
+    },
+    {
+      "Threshold_Tau": 0.8,
+      "Coverage": 76.7,
+      "SelectiveAccuracy": 100,
+      "SelectiveRisk": 0,
+      "AcceptedCount": "23/30"
+    }
+  ],
+  "robustness": {
+    "stabilityScore": 100,
+    "baselineP": 0.98,
+    "perturbations": [
+      {
+        "perturbation": "char_noise",
+        "description": "Cluster-safe character swap/duplication",
+        "perturbed_text": "वाह क्या बात है, 4 घंटे ट्रेन लेट करने के लिए धन्यवा! 🙄",
+        "p_sarcastic": 0.98,
+        "flipped": false,
+        "delta": 0
+      },
+      {
+        "perturbation": "repeat_letters",
+        "description": "Elongated letters (e.g. soo, wahhh)",
+        "perturbed_text": "वाह क्या बात है, 4 घंटे ट्रेन लेट करने के लिए धन्यवाद! 🙄",
+        "p_sarcastic": 0.98,
+        "flipped": false,
+        "delta": 0
+      },
+      {
+        "perturbation": "remove_emoji",
+        "description": "Strip all irony & emotion emojis",
+        "perturbed_text": "वाह क्या बात है, 4 घंटे ट्रेन लेट करने के लिए धन्यवाद!",
+        "p_sarcastic": 0.98,
+        "flipped": false,
+        "delta": 0
+      },
+      {
+        "perturbation": "strip_punct",
+        "description": "Remove exclamation & question marks",
+        "perturbed_text": "वाह क्या बात है 4 घंटे ट्रेन लेट करने के लिए धन्यवाद",
+        "p_sarcastic": 0.98,
+        "flipped": false,
+        "delta": 0
+      },
+      {
+        "perturbation": "drop_tags",
+        "description": "Remove hashtags and @mentions",
+        "perturbed_text": "वाह क्या बात है, 4 घंटे ट्रेन लेट करने के लिए धन्यवाद! 🙄",
+        "p_sarcastic": 0.98,
+        "flipped": false,
+        "delta": 0
+      },
+      {
+        "perturbation": "truncate_6_words",
+        "description": "Truncate text to first 6 words",
+        "perturbed_text": "वाह क्या बात है, 4 घंटे",
+        "p_sarcastic": 0.55,
+        "flipped": false,
+        "delta": -0.43
+      },
+      {
+        "perturbation": "shuffle_words",
+        "description": "Randomly permute word order",
+        "perturbed_text": "वाह लिए ट्रेन धन्यवाद! घंटे क्या के 4 लेट करने बात है, 🙄",
+        "p_sarcastic": 0.98,
+        "flipped": false,
+        "delta": 0
+      },
+      {
+        "perturbation": "uppercase",
+        "description": "Transform into full UPPERCASE",
+        "perturbed_text": "वाह क्या बात है, 4 घंटे ट्रेन लेट करने के लिए धन्यवाद! 🙄",
+        "p_sarcastic": 0.98,
+        "flipped": false,
+        "delta": 0
+      }
+    ]
+  },
+  "explainabilitySample": {
+    "sentence": "वाह क्या बात है, 4 घंटे ट्रेन लेट करने के लिए धन्यवाद! 🙄",
+    "attributions": [
+      {
+        "token": "वाह",
+        "delta": 0.03,
+        "clean_token": "वाह",
+        "category": "positive"
+      },
+      {
+        "token": "क्या",
+        "delta": 0,
+        "clean_token": "क्या",
+        "category": "neutral"
+      },
+      {
+        "token": "बात",
+        "delta": 0,
+        "clean_token": "बात",
+        "category": "neutral"
+      },
+      {
+        "token": "है,",
+        "delta": 0,
+        "clean_token": "है",
+        "category": "neutral"
+      },
+      {
+        "token": "4",
+        "delta": 0,
+        "clean_token": "4",
+        "category": "neutral"
+      },
+      {
+        "token": "घंटे",
+        "delta": 0,
+        "clean_token": "घंटे",
+        "category": "neutral"
+      }
+    ]
+  },
+  "edgeCases": [
+    {
+      "id": "EDGE_01",
+      "name": "Empty string",
+      "input": "",
+      "status": "HANDLED_SAFELY",
+      "verdict": "Uncertain",
+      "p_sarcastic": 0.25,
+      "confidence": 0.06,
+      "abstain": true
+    },
+    {
+      "id": "EDGE_02",
+      "name": "Only Whitespace",
+      "input": "     ",
+      "status": "HANDLED_SAFELY",
+      "verdict": "Uncertain",
+      "p_sarcastic": 0.25,
+      "confidence": 0.06,
+      "abstain": true
+    },
+    {
+      "id": "EDGE_03",
+      "name": "Only Emojis",
+      "input": "🙄🙃😏🤡",
+      "status": "HANDLED_SAFELY",
+      "verdict": "Uncertain",
+      "p_sarcastic": 0.65,
+      "confidence": 0.255,
+      "abstain": true
+    },
+    {
+      "id": "EDGE_04",
+      "name": "Special Characters Only",
+      "input": "!@#$%^&*()_+=-~`",
+      "status": "HANDLED_SAFELY",
+      "verdict": "Uncertain",
+      "p_sarcastic": 0.25,
+      "confidence": 0.06,
+      "abstain": true
+    },
+    {
+      "id": "EDGE_05",
+      "name": "Single word sarcastic",
+      "input": "Brilliant",
+      "status": "HANDLED_SAFELY",
+      "verdict": "Uncertain",
+      "p_sarcastic": 0.55,
+      "confidence": 0.1,
+      "abstain": true
+    },
+    {
+      "id": "EDGE_06",
+      "name": "Extreme repeated characters",
+      "input": "sooooooooooooooo gooooooooood ",
+      "status": "HANDLED_SAFELY",
+      "verdict": "Literal",
+      "p_sarcastic": 0.02,
+      "confidence": 0.8,
+      "abstain": false
+    },
+    {
+      "id": "EDGE_07",
+      "name": "Long paragraph (2000 chars)",
+      "input": "Great job on the code deployme",
+      "status": "HANDLED_SAFELY",
+      "verdict": "Literal",
+      "p_sarcastic": 0.02,
+      "confidence": 0.768,
+      "abstain": false
+    },
+    {
+      "id": "EDGE_08",
+      "name": "Mixed Unicode scripts in one word",
+      "input": "superसुंदरbhari",
+      "status": "HANDLED_SAFELY",
+      "verdict": "Uncertain",
+      "p_sarcastic": 0.25,
+      "confidence": 0.06,
+      "abstain": true
+    },
+    {
+      "id": "EDGE_09",
+      "name": "Unsupported language (French)",
+      "input": "C'est absolument magnifique co",
+      "status": "HANDLED_SAFELY",
+      "verdict": "Uncertain",
+      "p_sarcastic": 0.25,
+      "confidence": 0.06,
+      "abstain": true
+    },
+    {
+      "id": "EDGE_10",
+      "name": "Contradictory context",
+      "input": "The food was delicious.",
+      "status": "HANDLED_SAFELY",
+      "verdict": "Uncertain",
+      "p_sarcastic": 0.25,
+      "confidence": 0.06,
+      "abstain": true
+    }
+  ],
+  "performance": {
+    "minLat": 0.0701249999999618,
+    "medianLat": 0.08913400000000138,
+    "avgLat": 0.11371563999999694,
+    "p95Lat": 0.20530999999999722,
+    "maxLat": 2.3770250000000033,
+    "batch200ElapsedMs": 20.57725199999993
+  }
+}

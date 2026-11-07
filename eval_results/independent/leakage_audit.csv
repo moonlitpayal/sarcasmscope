@@ -1,0 +1,12 @@
+Metric,Value,Status,Description
+PRNG_Seed,42,VERIFIED,Fixed deterministic pseudo-random seed
+Raw_Ingested_Total,5712,VERIFIED,Total records fetched across 5 sources
+Unique_Records_Total,5600,VERIFIED,After exact normalized deduplication
+Duplicates_Removed,112,VERIFIED,Duplicates excluded to prevent cross-split leakage
+Text_Overlap_Train_Val,0,PASS,Exact text overlap between train and validation
+Text_Overlap_Train_Test,0,PASS,Exact text overlap between train and test
+Text_Overlap_Val_Test,0,PASS,Exact text overlap between validation and test
+Conversation_Overlap_Train_Val,0,PASS,Dialogue ID overlap between train and validation
+Conversation_Overlap_Train_Test,0,PASS,Dialogue ID overlap between train and test
+Conversation_Overlap_Val_Test,0,PASS,Dialogue ID overlap between validation and test
+MahaEmotions_Annotation_Compatibility,RESTRICTED,WARNING,Multi-class emotion schema restricted to Sarcasm vs Neutral

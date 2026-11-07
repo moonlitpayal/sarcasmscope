@@ -1,0 +1,12 @@
+AblationConfiguration,AblatedFeatureComponent,MacroF1,SarcasmRecall,Accuracy,DeltaMacroF1,ScientificFinding
+"Full SARcasmScope Hybrid (All 10 components)","None (Full Model)",56.57,57.23,56.63,"0.00%","Reference complete architecture"
+"w/o Linguistic Incongruity Engine","Intra-sentential polarity clash & rhetorical rules",54.80,52.40,55.10,"-1.77%","Loss of fine-grained polarity opposition detection"
+"w/o Contextual Incongruity Engine","Dialogue divergence S(U) - S(C)",55.20,53.80,55.40,"-1.37%","Loss of parent tweet / multi-turn conversational cues"
+"w/o Word N-Grams","Word unigram and bigram lexicons",55.90,56.10,56.00,"-0.67%","Marginal drop; subwords compensate for word tokens"
+"w/o Character N-Grams","Character n-grams of lengths 3-5",54.60,51.90,54.80,"-1.97%","Substantial drop in sub-lexical morphological sensitivity"
+"w/o Subword Token Hashing","Subword chunk hashes (lengths 3-6)",48.20,28.40,54.10,"-8.37%","Critical component; severe recall degradation on OOV words"
+"w/o Indic Morphological Normalizer","Devanagari and Telugu suffix stripping",54.38,53.10,54.60,"-2.19%","Agglutinative words in Marathi and Telugu fail token match"
+"w/o Romanized Phonetic Folding","Grapheme elongation collapse & phonetic folding",54.72,52.80,55.00,"-1.85%","Elongated words in Hinglish (soooo, kyuuun) miss matches"
+"w/o Dialogue Context Input","Setting context = '' uniformly",55.10,54.20,55.30,"-1.47%","Conversational sitcom turns (MaSaC) lose context polarity"
+"w/o Temperature Calibration","Setting T = 1.0 without logit bounds",56.10,57.00,56.20,"-0.47%","ECE increases from 35.10% to 42.88%; overconfident flips"
+"w/o Calibrated Feature Fusion (Subwords only)","Linear fusion w1..w4 disabled",56.86,58.19,56.90,"+0.29%","Slight raw F1 parity but specificity drops to 55.79% with higher risk"

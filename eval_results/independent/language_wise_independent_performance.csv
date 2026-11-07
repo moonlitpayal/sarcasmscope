@@ -1,0 +1,7 @@
+Language,EvaluatedDatasets,TotalSamples,TruePositives,FalsePositives,TrueNegatives,FalseNegatives,Specificity,Precision,Recall,F1_Sarcasm,Macro_F1
+"English (Conversational)","ACL 2020 Twitter",1800,33,38,862,867,95.78,46.48,3.67,6.80,36.19
+"English (Headlines)","Misra & Arora",2000,3,1,999,997,99.90,75.00,0.30,0.60,33.64
+"Hindi-English (Code-Mixed)","IIIT Delhi MaSaC",1000,0,0,500,500,100.00,0.00,0.00,0.00,33.33
+"Marathi (Devanagari)","L3Cube-MahaEmotions",370,0,0,185,185,100.00,0.00,0.00,0.00,33.33
+"Telugu","IIIT-H Telugu Sarcasm",542,0,0,500,42,100.00,0.00,0.00,0.00,47.98
+"ALL INDEPENDENT (Aggregate)","5 Benchmark Datasets",5712,36,39,3046,2591,98.74,48.00,1.37,2.66,36.90

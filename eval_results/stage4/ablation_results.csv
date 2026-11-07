@@ -1,0 +1,11 @@
+AblationConfiguration,Accuracy,Recall,MacroF1,Specificity,ECE,DeltaMacroF1
+"Full Hybrid Model (SARcasmScope)",56.63,57.23,56.57,56.13,42.88,0.00
+"w/o Linguistic Incongruity Features",57.08,59.15,57.05,55.3,42.08,0.48
+"w/o Contextual Incongruity Features",57.35,55.3,57.18,59.11,42.16,0.61
+"w/o Word N-Gram Features",58.33,55.68,58.13,60.6,41.23,1.56
+"w/o Character N-Gram Features",57.08,61.66,57.08,53.15,40.64,0.51
+"w/o Indic Morphological Normalization",57.08,60.12,57.07,54.47,41.81,0.50
+"w/o Romanized Phonetic Normalization",55.03,44.12,54.1,64.4,44.29,-2.47
+"w/o Lexical Coverage Density C(x)",56.63,57.23,56.57,56.13,42.86,0.00
+"w/o Temperature Calibration (T=1.0)",56.63,57.23,56.57,56.13,42.91,0.00
+"w/o Dialogue Context Turns",57.35,55.3,57.18,59.11,42.16,0.61

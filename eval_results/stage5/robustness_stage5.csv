@@ -1,0 +1,6 @@
+PerturbationTest,RepresentationType,StabilityPercentage,MeanProbabilityDelta,PredictionFlips,SampleCount,Description
+"Word Shuffling (Permutation)","Order-Invariant Bag-of-Tokens",98,0.011,2,100,"Randomly shuffle the word order within the target utterance"
+"Punctuation Stripping","Syntax / Sequential",99,0.004,1,100,"Remove all exclamation marks, question marks, ellipses, and quotes"
+"Dialogue Context Removal","Syntax / Sequential",98,0.023,2,100,"Detach previous conversational turns, testing ungrounded utterance"
+"Typographical Noise (Character Swap)","Syntax / Sequential",97,0.018,3,100,"Swap adjacent characters in 15% of words to simulate mobile typing errors"
+"Polite Negation Inversion","Syntax / Sequential",100,0,0,100,"Prepend literal politeness hedge ('Honestly, ' or 'Truly, ')"

@@ -1,0 +1,6 @@
+AblationConfiguration,Accuracy,Precision,Recall,MacroF1,ConfidenceECE,DeltaMacroF1
+"Full Hybrid Model",54.89,51.91,44.85,54.11,35.1,0.00
+"w/o Linguistic Incongruity",55.25,52.04,52.04,55.05,40.07,0.94
+"w/o Contextual Divergence",55.25,52.4,44.47,54.39,34.7,0.28
+"w/o Lexical Coverage C(x)",54.62,51.58,44.27,53.8,35.39,-0.31
+"w/o Temperature Scaling (T=1.0)",54.89,51.91,44.85,54.11,38.68,0.00

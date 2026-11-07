@@ -1,0 +1,7 @@
+PerturbationTest,RepresentationType,TestedSampleCount,EmpiricalStabilityPercentage,MeanProbabilityShift,PredictionFlips,ScientificRationale
+"Typographical Noise (Character Transposition)","Spelling / Morphology",100,100,0.005,0,"Subword n-grams (length 3-6) preserve partial matches, preventing total token breakdown"
+"Vowel / Grapheme Elongation (sooo / waaaah)","Phonetic / Orthographic",100,98,0.022,2,"Romanized phonetic normalizer folds repeated graphemes ([c]{3,} -> c), neutralizing elongation"
+"Emoji Stripping","Pragmatic Markers",100,100,0,0,"Textual incongruity and subwords maintain verdict even when irony emojis are removed"
+"Punctuation Stripping (!? ...)","Hyperbole / Syntax",100,100,0.005,0,"Lexical polarity clash and subword scores dominate punctuation hyperbole"
+"Dialogue Context Removal","Contextual Grounding",100,99,0.007,1,"Utterances relying strictly on dialogue clash revert to literal prior when context is detached"
+"Word Order Permutation (Shuffling)","Word Sequence (Bag-of-Tokens)",100,98,0.017,2,"Bag-of-subwords representation is permutation-invariant; minor shifts stem from sentence boundary regexes"

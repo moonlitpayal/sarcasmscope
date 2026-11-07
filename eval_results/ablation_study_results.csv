@@ -1,0 +1,6 @@
+Configuration,Accuracy,Precision,Recall,F1,MacroF1,DeltaMacroF1
+Full SARcasmScope (All Features),96.7,100,93.3,96.6,96.7,0
+Ablation: No Conversational Context Clash,93.3,100,86.7,92.9,93.3,-3.4
+Ablation: No Polarity Clash Feature,93.3,100,86.7,92.9,93.3,-3.4
+Ablation: No Hyperbolic Intensifiers,96.7,100,93.3,96.6,96.7,0
+Ablation: No Irony Emoji Features,96.7,100,93.3,96.6,96.7,0

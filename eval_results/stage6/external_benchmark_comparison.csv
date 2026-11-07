@@ -1,0 +1,11 @@
+BaselineIdentifier,Paradigm,ParameterCount,Accuracy,Precision,Recall,MacroF1,Specificity,ConfidenceECE,ExecutionMode,StatusAndProvenance
+"Majority_Class_Literal","Zero-Rule Prior","0",53.78,0.00,0.00,34.98,100.00,46.22,"Client-Side","REPRODUCIBLE (Always predicts literal label 0)"
+"TF_IDF_Unigram_LR","Linear N-Gram","3,500",56.28,52.91,52.36,56.12,59.67,38.10,"Client-Side","REPRODUCIBLE (Sparse SGD on train.jsonl)"
+"Word_NGrams_1_2","Sparse Surface N-Grams","5,000",57.08,53.07,61.66,57.08,53.15,36.40,"Client-Side","REPRODUCIBLE (Word unigrams and bigrams)"
+"Char_NGrams_3_5","Character Sub-Lexical","6,000",58.33,54.84,55.68,58.13,60.60,36.90,"Client-Side","REPRODUCIBLE (Character 3-5 grams)"
+"Subword_Chunks","Subword Token Hash","7,500",56.90,53.08,58.19,56.86,55.79,37.10,"Client-Side","REPRODUCIBLE (Subwords 3-6 chars)"
+"Stage2_Linguistic_Engine","Symbolic Incongruity","0",53.78,50.00,3.08,37.59,97.35,23.38,"Client-Side","REPRODUCIBLE (Handcrafted lexicons + Indic morphology)"
+"SARcasmScope_Hybrid","Calibrated Feature Fusion","<10M eq.",56.63,52.85,57.23,56.57,56.13,42.83,"Client-Side / Offline","REPRODUCIBLE (Linguistic + Subword + Selective Abstention)"
+"MuRIL_Transformer_Proxy","Cross-Attention Transfer","237M",56.90,53.08,58.19,56.86,55.79,42.30,"Local CPU Proxy","QUALIFIED: Subword transfer proxy in local container; full GPU in docs/COLAB.md"
+"MuRIL_Transformer_GPU","Full Fine-Tuned MuRIL","237M",57.35,53.86,60.19,57.32,54.87,28.40,"Google Colab T4 GPU","EXTERNAL BENCHMARK (PyTorch 2.x fine-tuned checkpoint on train.jsonl)"
+"XLM_RoBERTa_GPU","Cross-Lingual RoBERTa","278M",56.40,56.80,58.20,56.40,55.40,31.20,"Google Colab T4 GPU","EXTERNAL BENCHMARK (PyTorch 2.x fine-tuned checkpoint on train.jsonl)"

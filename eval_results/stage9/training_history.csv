@@ -1,0 +1,7 @@
+ModelName,Epoch,TrainLoss,TrainAccuracy,ValLoss,ValMacroF1,ValSarcasmRecall,EarlyStoppingStatus
+"google/muril-base-cased",1,0.6724,57.42,0.6512,56.84,58.45,"Training ongoing"
+"google/muril-base-cased",2,0.6381,61.18,0.6480,57.51,61.20,"Best validation checkpoint saved"
+"google/muril-base-cased",3,0.5912,65.40,0.6595,57.18,59.80,"Early stopping triggered at Epoch 3"
+"xlm-roberta-base",1,0.6810,55.80,0.6620,55.90,56.40,"Training ongoing"
+"xlm-roberta-base",2,0.6450,60.20,0.6540,56.70,58.80,"Best validation checkpoint saved"
+"xlm-roberta-base",3,0.6020,64.10,0.6680,56.20,57.50,"Early stopping triggered at Epoch 3"

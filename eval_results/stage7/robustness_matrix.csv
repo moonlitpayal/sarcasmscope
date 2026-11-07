@@ -1,0 +1,7 @@
+PerturbationTest,RepresentationType,TestedSampleCount,EmpiricalStabilityPercentage,MeanProbabilityShift,PredictionFlips,ScientificRationale
+"Typographical Noise (Character Transposition)","Spelling / Morphology",100,99,0.008,1,"Robust feature representation"
+"Vowel / Grapheme Elongation (sooo / waaaah)","Phonetic / Orthographic",100,98,0.022,2,"Romanized phonetic normalizer folds repeated characters ([c]{3,} -> c), neutralizing noise"
+"Emoji Stripping","Pragmatic Markers",100,100,0,0,"Emoji weight diminishes, but lexical and subword incongruity cues maintain verdict"
+"Punctuation Stripping (!? ...)","Hyperbole / Syntax",100,100,0.005,0,"Robust feature representation"
+"Dialogue Context Removal","Contextual Grounding",100,99,0.007,1,"Contextual incongruity signal lost; samples relying strictly on dialogue clash revert to literal prior"
+"Word Order Permutation (Shuffling)","Word Sequence (Bag-of-Tokens)",100,98,0.017,2,"Bag-of-subwords representation is permutation-invariant; minor flips stem from punctuation/boundary regex shifts"

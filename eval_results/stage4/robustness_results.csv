@@ -1,0 +1,10 @@
+Perturbation,Accuracy,MacroF1,StabilityScore,MeanConfidenceDelta
+"baseline",51.00,39.88,100.00,0.0000
+"char_noise",51.00,43.23,92.00,0.0698
+"char_elongation",51.00,38.56,94.00,0.0631
+"emoji_removal",51.00,39.88,100.00,0.0000
+"punct_removal",51.00,39.88,100.00,0.0000
+"drop_tags",52.00,43.90,95.00,0.0469
+"truncate_6_words",52.00,43.90,93.00,0.0677
+"word_shuffle",51.00,39.88,100.00,0.0000
+"uppercase",51.00,39.88,100.00,0.0000

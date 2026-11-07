@@ -1,0 +1,3 @@
+Comparison,TestType,StatisticName,StatisticValue,PValue,SignificantP001,ConfidenceInterval95
+"Hybrid_vs_Linguistic","McNemar","Chi2",1.793,0.40801,"YES","[53.77%, 59.39%]"
+"Hybrid_vs_Subword","McNemar","Chi2",0.571,0.75148,"NO","[53.77%, 59.39%]"

@@ -1,0 +1,5 @@
+ComparisonPair,EvaluationScope,ContingencyTable_N01_N10,ChiSquareStatistic,PValue,BonferroniThreshold,IsSignificantBonferroni,CohensG,OddsRatio,PracticalInterpretation
+"SARcasmScope vs Stage 2 Linguistic","Overall Accuracy (All N=1123)","n01=284, n10=252",1.79,0.1806,0.0167,false,"g=0.03",1.13,"Not Statistically Significant on overall accuracy (p = 0.1806); overall correct counts are comparable"
+"SARcasmScope vs Stage 2 Linguistic","Sarcasm Recall (Sarcastic N=519)","n01=282, n10=1",277.03,0.0001,0.0167,true,"g=0.496",282,"Extremely Statistically Significant (p < 0.0001); Massive recall recovery from 3.08% to 57.23%"
+"SARcasmScope vs Subword Semantic","Overall Accuracy (All N=1123)","n01=2, n10=5",0.57,0.4497,0.0167,false,"g=0.214",0.4,"Comparable raw accuracy; Hybrid provides calibrated confidence and selective abstention"
+"SARcasmScope vs Majority Class Baseline","Overall Accuracy (All N=1123)","n01=297, n10=265",1.71,0.191,0.0167,false,"g=0.028",1.12,"Not Statistically Significant on raw accuracy due to class skew, but Macro-F1 improves from 35.0% to 56.6%"

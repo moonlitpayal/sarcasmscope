@@ -1,0 +1,5072 @@
+{
+  "provenance": "Strictly mined from eval_results/independent/train.jsonl (Seed 42)",
+  "training_samples_analyzed": 3373,
+  "mined_sarcastic_cues": [
+    {
+      "term": "window",
+      "lang": "English",
+      "sarcCount": 7,
+      "litCount": 0,
+      "total": 7,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "fucking",
+      "lang": "English",
+      "sarcCount": 7,
+      "litCount": 0,
+      "total": 7,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "college",
+      "lang": "English",
+      "sarcCount": 7,
+      "litCount": 0,
+      "total": 7,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "sharma",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 7,
+      "litCount": 0,
+      "total": 7,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "plaiasai",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 7,
+      "litCount": 0,
+      "total": 7,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "program",
+      "lang": "English",
+      "sarcCount": 6,
+      "litCount": 0,
+      "total": 6,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "actual",
+      "lang": "English",
+      "sarcCount": 6,
+      "litCount": 0,
+      "total": 6,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "clear",
+      "lang": "English",
+      "sarcCount": 6,
+      "litCount": 0,
+      "total": 6,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "planet",
+      "lang": "English",
+      "sarcCount": 6,
+      "litCount": 0,
+      "total": 6,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "gulaab",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 6,
+      "litCount": 0,
+      "total": 6,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "जाओ",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 6,
+      "litCount": 0,
+      "total": 6,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "hypocrisy",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 0,
+      "total": 5,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "tho",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 0,
+      "total": 5,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "considering",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 0,
+      "total": 5,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "omg",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 0,
+      "total": 5,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "wouldn",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 0,
+      "total": 5,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "parking",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 0,
+      "total": 5,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "sarcasm",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 0,
+      "total": 5,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "large",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 0,
+      "total": 5,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "admits",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 0,
+      "total": 5,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "intelligence",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "evil",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "trolling",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "pair",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "wrote",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "driving",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "scene",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "liberal",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "obvious",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "double",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "building",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "opens",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "website",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "unless",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "dogs",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "died",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "knowledge",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "citizen",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "assures",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "jeans",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "heads",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "estate",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "mouth",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "extremely",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "sole",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "healthcare",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "runs",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "coworker",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "ford",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "boyfriend",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "audience",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "fat",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "jay",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "sources",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "bob",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "dole",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "aatma",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "baaboojee",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "sviming",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "dillee",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "मना",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "मुझसे",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "पिता",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "naee",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "बर्दाश्त",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "విమర్శించారు",
+      "lang": "Telugu",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "వాళ్లు",
+      "lang": "Telugu",
+      "sarcCount": 4,
+      "litCount": 0,
+      "total": 4,
+      "sarcPrecision": 1
+    },
+    {
+      "term": "nation",
+      "lang": "English",
+      "sarcCount": 24,
+      "litCount": 1,
+      "total": 25,
+      "sarcPrecision": 0.96
+    },
+    {
+      "term": "area",
+      "lang": "English",
+      "sarcCount": 22,
+      "litCount": 1,
+      "total": 23,
+      "sarcPrecision": 0.9565217391304348
+    },
+    {
+      "term": "front",
+      "lang": "English",
+      "sarcCount": 10,
+      "litCount": 1,
+      "total": 11,
+      "sarcPrecision": 0.9090909090909091
+    },
+    {
+      "term": "opinion",
+      "lang": "English",
+      "sarcCount": 9,
+      "litCount": 1,
+      "total": 10,
+      "sarcPrecision": 0.9
+    },
+    {
+      "term": "racist",
+      "lang": "English",
+      "sarcCount": 9,
+      "litCount": 1,
+      "total": 10,
+      "sarcPrecision": 0.9
+    },
+    {
+      "term": "joke",
+      "lang": "English",
+      "sarcCount": 8,
+      "litCount": 1,
+      "total": 9,
+      "sarcPrecision": 0.8888888888888888
+    },
+    {
+      "term": "jobs",
+      "lang": "English",
+      "sarcCount": 8,
+      "litCount": 1,
+      "total": 9,
+      "sarcPrecision": 0.8888888888888888
+    },
+    {
+      "term": "introduces",
+      "lang": "English",
+      "sarcCount": 8,
+      "litCount": 1,
+      "total": 9,
+      "sarcPrecision": 0.8888888888888888
+    },
+    {
+      "term": "unveils",
+      "lang": "English",
+      "sarcCount": 8,
+      "litCount": 1,
+      "total": 9,
+      "sarcPrecision": 0.8888888888888888
+    },
+    {
+      "term": "पानी",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 8,
+      "litCount": 1,
+      "total": 9,
+      "sarcPrecision": 0.8888888888888888
+    },
+    {
+      "term": "hand",
+      "lang": "English",
+      "sarcCount": 7,
+      "litCount": 1,
+      "total": 8,
+      "sarcPrecision": 0.875
+    },
+    {
+      "term": "majority",
+      "lang": "English",
+      "sarcCount": 7,
+      "litCount": 1,
+      "total": 8,
+      "sarcPrecision": 0.875
+    },
+    {
+      "term": "chinese",
+      "lang": "English",
+      "sarcCount": 7,
+      "litCount": 1,
+      "total": 8,
+      "sarcPrecision": 0.875
+    },
+    {
+      "term": "tab",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 7,
+      "litCount": 1,
+      "total": 8,
+      "sarcPrecision": 0.875
+    },
+    {
+      "term": "बिलकुल",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 7,
+      "litCount": 1,
+      "total": 8,
+      "sarcPrecision": 0.875
+    },
+    {
+      "term": "shit",
+      "lang": "English",
+      "sarcCount": 6,
+      "litCount": 1,
+      "total": 7,
+      "sarcPrecision": 0.8571428571428571
+    },
+    {
+      "term": "cause",
+      "lang": "English",
+      "sarcCount": 6,
+      "litCount": 1,
+      "total": 7,
+      "sarcPrecision": 0.8571428571428571
+    },
+    {
+      "term": "opening",
+      "lang": "English",
+      "sarcCount": 6,
+      "litCount": 1,
+      "total": 7,
+      "sarcPrecision": 0.8571428571428571
+    },
+    {
+      "term": "speech",
+      "lang": "English",
+      "sarcCount": 6,
+      "litCount": 1,
+      "total": 7,
+      "sarcPrecision": 0.8571428571428571
+    },
+    {
+      "term": "hair",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 6,
+      "litCount": 1,
+      "total": 7,
+      "sarcPrecision": 0.8571428571428571
+    },
+    {
+      "term": "ऐसे",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 6,
+      "litCount": 1,
+      "total": 7,
+      "sarcPrecision": 0.8571428571428571
+    },
+    {
+      "term": "मुझ्े",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 6,
+      "litCount": 1,
+      "total": 7,
+      "sarcPrecision": 0.8571428571428571
+    },
+    {
+      "term": "report",
+      "lang": "English",
+      "sarcCount": 31,
+      "litCount": 6,
+      "total": 37,
+      "sarcPrecision": 0.8378378378378378
+    },
+    {
+      "term": "study",
+      "lang": "English",
+      "sarcCount": 15,
+      "litCount": 3,
+      "total": 18,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "yea",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "sense",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "lower",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "hospital",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "otherwise",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "yourself",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "calling",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "deep",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "reports",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "bear",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "zero",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "tank",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "release",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "non",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "sound",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "missing",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "bar",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "bush",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "king",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "restaurant",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "officials",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "pope",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "yaad",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "rahe",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "thodee",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "होगी",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "मतलब",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 5,
+      "litCount": 1,
+      "total": 6,
+      "sarcPrecision": 0.8333333333333334
+    },
+    {
+      "term": "finds",
+      "lang": "English",
+      "sarcCount": 14,
+      "litCount": 3,
+      "total": 17,
+      "sarcPrecision": 0.8235294117647058
+    },
+    {
+      "term": "तरह",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 9,
+      "litCount": 2,
+      "total": 11,
+      "sarcPrecision": 0.8181818181818182
+    },
+    {
+      "term": "तुम्ही",
+      "lang": "Marathi",
+      "sarcCount": 9,
+      "litCount": 2,
+      "total": 11,
+      "sarcPrecision": 0.8181818181818182
+    },
+    {
+      "term": "job",
+      "lang": "English",
+      "sarcCount": 12,
+      "litCount": 3,
+      "total": 15,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "करना",
+      "lang": "Marathi",
+      "sarcCount": 12,
+      "litCount": 3,
+      "total": 15,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "millions",
+      "lang": "English",
+      "sarcCount": 8,
+      "litCount": 2,
+      "total": 10,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "set",
+      "lang": "English",
+      "sarcCount": 8,
+      "litCount": 2,
+      "total": 10,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "informed",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "charge",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "tickets",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "responsible",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "sun",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "racism",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "filled",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "shocking",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "evidence",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "telling",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "finding",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "games",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "song",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "crash",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "station",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "aware",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "model",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "west",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "shop",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "earth",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "marks",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "space",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "choice",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "drunk",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "spread",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "200",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "eating",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "delivery",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "nuclear",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "announces",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "moment",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "demands",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "forced",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "congress",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "वैसे",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "maan",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "समय",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "आने",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "तुम्हारी",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "इतनी",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "इसीलिए",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "सकते",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "हमेशा",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "vaala",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "करते",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "असे",
+      "lang": "Marathi",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "तुमच्या",
+      "lang": "Marathi",
+      "sarcCount": 4,
+      "litCount": 1,
+      "total": 5,
+      "sarcPrecision": 0.8
+    },
+    {
+      "term": "yep",
+      "lang": "English",
+      "sarcCount": 7,
+      "litCount": 2,
+      "total": 9,
+      "sarcPrecision": 0.7777777777777778
+    },
+    {
+      "term": "around",
+      "lang": "English",
+      "sarcCount": 7,
+      "litCount": 2,
+      "total": 9,
+      "sarcPrecision": 0.7777777777777778
+    },
+    {
+      "term": "defending",
+      "lang": "English",
+      "sarcCount": 7,
+      "litCount": 2,
+      "total": 9,
+      "sarcPrecision": 0.7777777777777778
+    },
+    {
+      "term": "finally",
+      "lang": "English",
+      "sarcCount": 7,
+      "litCount": 2,
+      "total": 9,
+      "sarcPrecision": 0.7777777777777778
+    },
+    {
+      "term": "jee",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 7,
+      "litCount": 2,
+      "total": 9,
+      "sarcPrecision": 0.7777777777777778
+    },
+    {
+      "term": "comes",
+      "lang": "English",
+      "sarcCount": 10,
+      "litCount": 3,
+      "total": 13,
+      "sarcPrecision": 0.7692307692307693
+    },
+    {
+      "term": "climate",
+      "lang": "English",
+      "sarcCount": 10,
+      "litCount": 3,
+      "total": 13,
+      "sarcPrecision": 0.7692307692307693
+    },
+    {
+      "term": "well",
+      "lang": "English",
+      "sarcCount": 36,
+      "litCount": 11,
+      "total": 47,
+      "sarcPrecision": 0.7659574468085106
+    },
+    {
+      "term": "wait",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 13,
+      "litCount": 4,
+      "total": 17,
+      "sarcPrecision": 0.7647058823529411
+    },
+    {
+      "term": "hoon",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 16,
+      "litCount": 5,
+      "total": 21,
+      "sarcPrecision": 0.7619047619047619
+    },
+    {
+      "term": "white",
+      "lang": "English",
+      "sarcCount": 21,
+      "litCount": 7,
+      "total": 28,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "उसके",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 9,
+      "litCount": 3,
+      "total": 12,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "taken",
+      "lang": "English",
+      "sarcCount": 6,
+      "litCount": 2,
+      "total": 8,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "voted",
+      "lang": "English",
+      "sarcCount": 6,
+      "litCount": 2,
+      "total": 8,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "ones",
+      "lang": "English",
+      "sarcCount": 6,
+      "litCount": 2,
+      "total": 8,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "candidate",
+      "lang": "English",
+      "sarcCount": 6,
+      "litCount": 2,
+      "total": 8,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "red",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 6,
+      "litCount": 2,
+      "total": 8,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "भाई",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 6,
+      "litCount": 2,
+      "total": 8,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "ओके",
+      "lang": "Marathi",
+      "sarcCount": 6,
+      "litCount": 2,
+      "total": 8,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "via",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "iraq",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "member",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "gov",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "kennedy",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "suppose",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "cars",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "options",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "proven",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "losing",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "original",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "therapist",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "learn",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "holding",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "exist",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "cnn",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "stupid",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "caused",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "brexit",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "worth",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "rather",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "struggle",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "supporting",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "simultaneously",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "masses",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "code",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "added",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "ground",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "piece",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "healthy",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "shut",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "fighting",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "concerns",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "article",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "spot",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "bullshit",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "blame",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "ppl",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "fuck",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "realise",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "keeps",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "basic",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "lots",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "turkey",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "drink",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "claim",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "letting",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "throw",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "box",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "mexican",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "safety",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "ocean",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "throws",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "finished",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "employees",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "scientists",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "short",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "asks",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "leading",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "ceo",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "sale",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "iowa",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "longtime",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "female",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "moon",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "poll",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "consumers",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "drug",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "pounds",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "confirms",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "मामी",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "huee",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "vaapas",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "उसने",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "bana",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "yoo",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "jaanatee",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "कहां",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "bata",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "kaun",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "रोसेश",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "फोटो",
+      "lang": "Marathi",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "वाह",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "देती",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "मामीजी",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "रोल",
+      "lang": "Marathi",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "जिस",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "छोटे",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "लीज",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "जेईई",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "रखा",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "मां",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "aisee",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "seedhe",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "तीन",
+      "lang": "Marathi",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "निकाल",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "vajah",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "beta",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "सामने",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "jaie",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "आले",
+      "lang": "Marathi",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "सरकार",
+      "lang": "Marathi",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "केलं",
+      "lang": "Marathi",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "చంద్రబాబు",
+      "lang": "Telugu",
+      "sarcCount": 3,
+      "litCount": 1,
+      "total": 4,
+      "sarcPrecision": 0.75
+    },
+    {
+      "term": "least",
+      "lang": "English",
+      "sarcCount": 11,
+      "litCount": 4,
+      "total": 15,
+      "sarcPrecision": 0.7333333333333333
+    },
+    {
+      "term": "clearly",
+      "lang": "English",
+      "sarcCount": 11,
+      "litCount": 4,
+      "total": 15,
+      "sarcPrecision": 0.7333333333333333
+    },
+    {
+      "term": "americans",
+      "lang": "English",
+      "sarcCount": 11,
+      "litCount": 4,
+      "total": 15,
+      "sarcPrecision": 0.7333333333333333
+    },
+    {
+      "term": "ऐसा",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 11,
+      "litCount": 4,
+      "total": 15,
+      "sarcPrecision": 0.7333333333333333
+    },
+    {
+      "term": "man",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 59,
+      "litCount": 22,
+      "total": 81,
+      "sarcPrecision": 0.7283950617283951
+    },
+    {
+      "term": "until",
+      "lang": "English",
+      "sarcCount": 8,
+      "litCount": 3,
+      "total": 11,
+      "sarcPrecision": 0.7272727272727273
+    },
+    {
+      "term": "sick",
+      "lang": "English",
+      "sarcCount": 8,
+      "litCount": 3,
+      "total": 11,
+      "sarcPrecision": 0.7272727272727273
+    },
+    {
+      "term": "000",
+      "lang": "English",
+      "sarcCount": 8,
+      "litCount": 3,
+      "total": 11,
+      "sarcPrecision": 0.7272727272727273
+    },
+    {
+      "term": "काय",
+      "lang": "Marathi",
+      "sarcCount": 21,
+      "litCount": 8,
+      "total": 29,
+      "sarcPrecision": 0.7241379310344828
+    },
+    {
+      "term": "maybe",
+      "lang": "English",
+      "sarcCount": 13,
+      "litCount": 5,
+      "total": 18,
+      "sarcPrecision": 0.7222222222222222
+    },
+    {
+      "term": "yeah",
+      "lang": "English",
+      "sarcCount": 20,
+      "litCount": 8,
+      "total": 28,
+      "sarcPrecision": 0.7142857142857143
+    },
+    {
+      "term": "comment",
+      "lang": "English",
+      "sarcCount": 10,
+      "litCount": 4,
+      "total": 14,
+      "sarcPrecision": 0.7142857142857143
+    },
+    {
+      "term": "together",
+      "lang": "English",
+      "sarcCount": 10,
+      "litCount": 4,
+      "total": 14,
+      "sarcPrecision": 0.7142857142857143
+    },
+    {
+      "term": "सकता",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 10,
+      "litCount": 4,
+      "total": 14,
+      "sarcPrecision": 0.7142857142857143
+    },
+    {
+      "term": "minutes",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 2,
+      "total": 7,
+      "sarcPrecision": 0.7142857142857143
+    },
+    {
+      "term": "network",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 2,
+      "total": 7,
+      "sarcPrecision": 0.7142857142857143
+    },
+    {
+      "term": "case",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 2,
+      "total": 7,
+      "sarcPrecision": 0.7142857142857143
+    },
+    {
+      "term": "asking",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 2,
+      "total": 7,
+      "sarcPrecision": 0.7142857142857143
+    },
+    {
+      "term": "supporters",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 2,
+      "total": 7,
+      "sarcPrecision": 0.7142857142857143
+    },
+    {
+      "term": "hot",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 2,
+      "total": 7,
+      "sarcPrecision": 0.7142857142857143
+    },
+    {
+      "term": "food",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 2,
+      "total": 7,
+      "sarcPrecision": 0.7142857142857143
+    },
+    {
+      "term": "pete",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 2,
+      "total": 7,
+      "sarcPrecision": 0.7142857142857143
+    },
+    {
+      "term": "gun",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 2,
+      "total": 7,
+      "sarcPrecision": 0.7142857142857143
+    },
+    {
+      "term": "ahead",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 2,
+      "total": 7,
+      "sarcPrecision": 0.7142857142857143
+    },
+    {
+      "term": "releases",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 2,
+      "total": 7,
+      "sarcPrecision": 0.7142857142857143
+    },
+    {
+      "term": "names",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 2,
+      "total": 7,
+      "sarcPrecision": 0.7142857142857143
+    },
+    {
+      "term": "चलो",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 5,
+      "litCount": 2,
+      "total": 7,
+      "sarcPrecision": 0.7142857142857143
+    },
+    {
+      "term": "woman",
+      "lang": "English",
+      "sarcCount": 22,
+      "litCount": 9,
+      "total": 31,
+      "sarcPrecision": 0.7096774193548387
+    },
+    {
+      "term": "side",
+      "lang": "English",
+      "sarcCount": 12,
+      "litCount": 5,
+      "total": 17,
+      "sarcPrecision": 0.7058823529411765
+    },
+    {
+      "term": "आहेत",
+      "lang": "Marathi",
+      "sarcCount": 12,
+      "litCount": 5,
+      "total": 17,
+      "sarcPrecision": 0.7058823529411765
+    },
+    {
+      "term": "education",
+      "lang": "English",
+      "sarcCount": 7,
+      "litCount": 3,
+      "total": 10,
+      "sarcPrecision": 0.7
+    },
+    {
+      "term": "try",
+      "lang": "English",
+      "sarcCount": 7,
+      "litCount": 3,
+      "total": 10,
+      "sarcPrecision": 0.7
+    },
+    {
+      "term": "else",
+      "lang": "English",
+      "sarcCount": 7,
+      "litCount": 3,
+      "total": 10,
+      "sarcPrecision": 0.7
+    },
+    {
+      "term": "तुम्हाला",
+      "lang": "Marathi",
+      "sarcCount": 7,
+      "litCount": 3,
+      "total": 10,
+      "sarcPrecision": 0.7
+    }
+  ],
+  "mined_literal_cues": [
+    {
+      "term": "100",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 10,
+      "total": 10,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "forward",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 9,
+      "total": 9,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "republicans",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 9,
+      "total": 9,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "chaineej",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 8,
+      "total": 8,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "సినిమా",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 8,
+      "total": 8,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "ezekiel",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 7,
+      "total": 7,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "took",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 7,
+      "total": 7,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "awesomelist",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 7,
+      "total": 7,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "karane",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 7,
+      "total": 7,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "usake",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 7,
+      "total": 7,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "mera",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 7,
+      "total": 7,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "తర్వాత",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 7,
+      "total": 7,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "judge",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 6,
+      "total": 6,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "album",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 6,
+      "total": 6,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "loving",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 6,
+      "total": 6,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "justice",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 6,
+      "total": 6,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "fall",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 6,
+      "total": 6,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "trial",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 6,
+      "total": 6,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "lessons",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 6,
+      "total": 6,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "muslim",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 6,
+      "total": 6,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "हाथ",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 6,
+      "total": 6,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "విడుదల",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 6,
+      "total": 6,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "చేసింది",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 6,
+      "total": 6,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "ప్రస్తుతం",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 6,
+      "total": 6,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "తెలిపారు",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 6,
+      "total": 6,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "ఉంది",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 6,
+      "total": 6,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "unique",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 5,
+      "total": 5,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "follow",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 5,
+      "total": 5,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "worst",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 5,
+      "total": 5,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "green",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 5,
+      "total": 5,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "christ",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 5,
+      "total": 5,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "changed",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 5,
+      "total": 5,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "guilty",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 5,
+      "total": 5,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "round",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 5,
+      "total": 5,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "awesomefriends",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 5,
+      "total": 5,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "ladies",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 5,
+      "total": 5,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "incredible",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 5,
+      "total": 5,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "kelly",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 5,
+      "total": 5,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "log",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 5,
+      "total": 5,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "kapade",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 5,
+      "total": 5,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "kharaab",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 5,
+      "total": 5,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "plaastik",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 5,
+      "total": 5,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "rol",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 5,
+      "total": 5,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "మంచి",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 5,
+      "total": 5,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "క్రికెట్‌",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 5,
+      "total": 5,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "x005f",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 5,
+      "total": 5,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "x007f",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 5,
+      "total": 5,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "అది",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 5,
+      "total": 5,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "lines",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "purpose",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "offered",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "rest",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "powerful",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "yrs",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "released",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "cry",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "awesomelift",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "posted",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "eternal",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "creating",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "january",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "including",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "nfl",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "300",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "partyoflincoln",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "mistakes",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "position",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "update",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "legislation",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "joy",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "legoland",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "jail",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "dtha",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "risk",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "key",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "drag",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "myanmar",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "slams",
+      "lang": "English",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "सोचा",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "घंटे",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "समझ",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "saaree",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "kaise",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "aaega",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "bachcha",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "दुष्यंत",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "दीवाली",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "oke",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "karana",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "teesara",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "poochha",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "chhote",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "bhagavaan",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "ग़लती",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "गलत",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "अख़बर",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "भाजप",
+      "lang": "Marathi",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "పరుగుల",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "ఉన్నాయి",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "దూరంగా",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "వ్యాప్తంగా",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "ఆస్ట్రేలియా",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "రికార్డు",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "జరిగిన",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "వరకు",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "మ్యాచ్‌లో",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "చేసి",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "వచ్చింది",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "అంత",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "ప్రత్యేక",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "అన్ని",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "చాలా",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "జరిగింది",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "జట్టు",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "నాలుగో",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "అధినేత",
+      "lang": "Telugu",
+      "sarcCount": 0,
+      "litCount": 4,
+      "total": 4,
+      "sarcPrecision": 0
+    },
+    {
+      "term": "thank",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 42,
+      "total": 43,
+      "sarcPrecision": 0.023255813953488372
+    },
+    {
+      "term": "donald",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 14,
+      "total": 15,
+      "sarcPrecision": 0.06666666666666667
+    },
+    {
+      "term": "ఆయన",
+      "lang": "Telugu",
+      "sarcCount": 1,
+      "litCount": 12,
+      "total": 13,
+      "sarcPrecision": 0.07692307692307693
+    },
+    {
+      "term": "news",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 10,
+      "total": 11,
+      "sarcPrecision": 0.09090909090909091
+    },
+    {
+      "term": "democrats",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 10,
+      "total": 11,
+      "sarcPrecision": 0.09090909090909091
+    },
+    {
+      "term": "heart",
+      "lang": "English",
+      "sarcCount": 2,
+      "litCount": 17,
+      "total": 19,
+      "sarcPrecision": 0.10526315789473684
+    },
+    {
+      "term": "morning",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 8,
+      "total": 9,
+      "sarcPrecision": 0.1111111111111111
+    },
+    {
+      "term": "city",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 8,
+      "total": 9,
+      "sarcPrecision": 0.1111111111111111
+    },
+    {
+      "term": "2016",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 8,
+      "total": 9,
+      "sarcPrecision": 0.1111111111111111
+    },
+    {
+      "term": "tumhen",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 8,
+      "total": 9,
+      "sarcPrecision": 0.1111111111111111
+    },
+    {
+      "term": "అన్నారు",
+      "lang": "Telugu",
+      "sarcCount": 1,
+      "litCount": 8,
+      "total": 9,
+      "sarcPrecision": 0.1111111111111111
+    },
+    {
+      "term": "ఉన్న",
+      "lang": "Telugu",
+      "sarcCount": 1,
+      "litCount": 8,
+      "total": 9,
+      "sarcPrecision": 0.1111111111111111
+    },
+    {
+      "term": "wish",
+      "lang": "English",
+      "sarcCount": 2,
+      "litCount": 15,
+      "total": 17,
+      "sarcPrecision": 0.11764705882352941
+    },
+    {
+      "term": "fight",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 7,
+      "total": 8,
+      "sarcPrecision": 0.125
+    },
+    {
+      "term": "appreciate",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 7,
+      "total": 8,
+      "sarcPrecision": 0.125
+    },
+    {
+      "term": "girls",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 7,
+      "total": 8,
+      "sarcPrecision": 0.125
+    },
+    {
+      "term": "special",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 7,
+      "total": 8,
+      "sarcPrecision": 0.125
+    },
+    {
+      "term": "aapako",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 7,
+      "total": 8,
+      "sarcPrecision": 0.125
+    },
+    {
+      "term": "kiya",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 7,
+      "total": 8,
+      "sarcPrecision": 0.125
+    },
+    {
+      "term": "soniyaa",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 7,
+      "total": 8,
+      "sarcPrecision": 0.125
+    },
+    {
+      "term": "లేదని",
+      "lang": "Telugu",
+      "sarcCount": 1,
+      "litCount": 7,
+      "total": 8,
+      "sarcPrecision": 0.125
+    },
+    {
+      "term": "maama",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 18,
+      "total": 21,
+      "sarcPrecision": 0.14285714285714285
+    },
+    {
+      "term": "words",
+      "lang": "English",
+      "sarcCount": 2,
+      "litCount": 12,
+      "total": 14,
+      "sarcPrecision": 0.14285714285714285
+    },
+    {
+      "term": "art",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 6,
+      "total": 7,
+      "sarcPrecision": 0.14285714285714285
+    },
+    {
+      "term": "hey",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 6,
+      "total": 7,
+      "sarcPrecision": 0.14285714285714285
+    },
+    {
+      "term": "chris",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 6,
+      "total": 7,
+      "sarcPrecision": 0.14285714285714285
+    },
+    {
+      "term": "beautiful",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 6,
+      "total": 7,
+      "sarcPrecision": 0.14285714285714285
+    },
+    {
+      "term": "common",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 6,
+      "total": 7,
+      "sarcPrecision": 0.14285714285714285
+    },
+    {
+      "term": "songs",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 6,
+      "total": 7,
+      "sarcPrecision": 0.14285714285714285
+    },
+    {
+      "term": "respect",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 6,
+      "total": 7,
+      "sarcPrecision": 0.14285714285714285
+    },
+    {
+      "term": "welcome",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 6,
+      "total": 7,
+      "sarcPrecision": 0.14285714285714285
+    },
+    {
+      "term": "aaj",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 6,
+      "total": 7,
+      "sarcPrecision": 0.14285714285714285
+    },
+    {
+      "term": "tumane",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 6,
+      "total": 7,
+      "sarcPrecision": 0.14285714285714285
+    },
+    {
+      "term": "fon",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 6,
+      "total": 7,
+      "sarcPrecision": 0.14285714285714285
+    },
+    {
+      "term": "usane",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 6,
+      "total": 7,
+      "sarcPrecision": 0.14285714285714285
+    },
+    {
+      "term": "कोइ",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 6,
+      "total": 7,
+      "sarcPrecision": 0.14285714285714285
+    },
+    {
+      "term": "అయితే",
+      "lang": "Telugu",
+      "sarcCount": 1,
+      "litCount": 6,
+      "total": 7,
+      "sarcPrecision": 0.14285714285714285
+    },
+    {
+      "term": "రెండో",
+      "lang": "Telugu",
+      "sarcCount": 1,
+      "litCount": 6,
+      "total": 7,
+      "sarcPrecision": 0.14285714285714285
+    },
+    {
+      "term": "आपको",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 2,
+      "litCount": 10,
+      "total": 12,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "జగన్",
+      "lang": "Telugu",
+      "sarcCount": 2,
+      "litCount": 10,
+      "total": 12,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "catch",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "faith",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "sounds",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "argument",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "however",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "started",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "statement",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "warns",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "celebrate",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "attack",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "father",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "schools",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "loved",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "effort",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "विचार",
+      "lang": "Marathi",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "शुरू",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "हिंदी",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "kyoon",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "bhaee",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "బ్యాటింగ్‌",
+      "lang": "Telugu",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "పరుగులు",
+      "lang": "Telugu",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "ఆమె",
+      "lang": "Telugu",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "చేసిన",
+      "lang": "Telugu",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "భారత్‌",
+      "lang": "Telugu",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "తెలుగుదేశం",
+      "lang": "Telugu",
+      "sarcCount": 1,
+      "litCount": 5,
+      "total": 6,
+      "sarcPrecision": 0.16666666666666666
+    },
+    {
+      "term": "sad",
+      "lang": "English",
+      "sarcCount": 2,
+      "litCount": 9,
+      "total": 11,
+      "sarcPrecision": 0.18181818181818182
+    },
+    {
+      "term": "pleej",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 2,
+      "litCount": 9,
+      "total": 11,
+      "sarcPrecision": 0.18181818181818182
+    },
+    {
+      "term": "పార్టీ",
+      "lang": "Telugu",
+      "sarcCount": 2,
+      "litCount": 9,
+      "total": 11,
+      "sarcPrecision": 0.18181818181818182
+    },
+    {
+      "term": "kisee",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 13,
+      "total": 16,
+      "sarcPrecision": 0.1875
+    },
+    {
+      "term": "bill",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 12,
+      "total": 15,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "meree",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 12,
+      "total": 15,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "stay",
+      "lang": "English",
+      "sarcCount": 2,
+      "litCount": 8,
+      "total": 10,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "message",
+      "lang": "English",
+      "sarcCount": 2,
+      "litCount": 8,
+      "total": 10,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "found",
+      "lang": "English",
+      "sarcCount": 2,
+      "litCount": 8,
+      "total": 10,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "ham",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 2,
+      "litCount": 8,
+      "total": 10,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "abhee",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 2,
+      "litCount": 8,
+      "total": 10,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "serious",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "loves",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "cities",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "near",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "biggest",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "dress",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "share",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "send",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "worked",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "forget",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "happen",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "imagine",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "break",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "peace",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "calls",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "movies",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "different",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "parks",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "stars",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "scotland",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "protest",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "charles",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "rally",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "awards",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "awful",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "nails",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "trailer",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "developed",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "rubio",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "beat",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "honored",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "weeks",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "benefits",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "asked",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "disney",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "road",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "gas",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "product",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "opponent",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "rude",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "mark",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "hit",
+      "lang": "English",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "jaane",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "यशवंत",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "philm",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "maya",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "करें",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "बच्चा",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "बोल",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "हमारी",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "अन्दर",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "kavita",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "गुलाब",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "okay",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "hamaare",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "चटाई",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "shesh",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "चले",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "शेष",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "raadhaabaee",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "साबित",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "minat",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "రెండు",
+      "lang": "Telugu",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "అవకాశం",
+      "lang": "Telugu",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "రోజు",
+      "lang": "Telugu",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "కోసం",
+      "lang": "Telugu",
+      "sarcCount": 1,
+      "litCount": 4,
+      "total": 5,
+      "sarcPrecision": 0.2
+    },
+    {
+      "term": "trump",
+      "lang": "English",
+      "sarcCount": 16,
+      "litCount": 63,
+      "total": 79,
+      "sarcPrecision": 0.20253164556962025
+    },
+    {
+      "term": "hope",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 15,
+      "total": 19,
+      "sarcPrecision": 0.21052631578947367
+    },
+    {
+      "term": "many",
+      "lang": "English",
+      "sarcCount": 7,
+      "litCount": 26,
+      "total": 33,
+      "sarcPrecision": 0.21212121212121213
+    },
+    {
+      "term": "health",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 11,
+      "total": 14,
+      "sarcPrecision": 0.21428571428571427
+    },
+    {
+      "term": "two",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 11,
+      "total": 14,
+      "sarcPrecision": 0.21428571428571427
+    },
+    {
+      "term": "रहे",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 11,
+      "total": 14,
+      "sarcPrecision": 0.21428571428571427
+    },
+    {
+      "term": "thee",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 3,
+      "litCount": 11,
+      "total": 14,
+      "sarcPrecision": 0.21428571428571427
+    },
+    {
+      "term": "live",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 14,
+      "total": 18,
+      "sarcPrecision": 0.2222222222222222
+    },
+    {
+      "term": "check",
+      "lang": "English",
+      "sarcCount": 2,
+      "litCount": 7,
+      "total": 9,
+      "sarcPrecision": 0.2222222222222222
+    },
+    {
+      "term": "china",
+      "lang": "English",
+      "sarcCount": 2,
+      "litCount": 7,
+      "total": 9,
+      "sarcPrecision": 0.2222222222222222
+    },
+    {
+      "term": "future",
+      "lang": "English",
+      "sarcCount": 2,
+      "litCount": 7,
+      "total": 9,
+      "sarcPrecision": 0.2222222222222222
+    },
+    {
+      "term": "haven",
+      "lang": "English",
+      "sarcCount": 2,
+      "litCount": 7,
+      "total": 9,
+      "sarcPrecision": 0.2222222222222222
+    },
+    {
+      "term": "etc",
+      "lang": "English",
+      "sarcCount": 2,
+      "litCount": 7,
+      "total": 9,
+      "sarcPrecision": 0.2222222222222222
+    },
+    {
+      "term": "mind",
+      "lang": "English",
+      "sarcCount": 2,
+      "litCount": 7,
+      "total": 9,
+      "sarcPrecision": 0.2222222222222222
+    },
+    {
+      "term": "lives",
+      "lang": "English",
+      "sarcCount": 2,
+      "litCount": 7,
+      "total": 9,
+      "sarcPrecision": 0.2222222222222222
+    },
+    {
+      "term": "gaya",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 2,
+      "litCount": 7,
+      "total": 9,
+      "sarcPrecision": 0.2222222222222222
+    },
+    {
+      "term": "proses",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 2,
+      "litCount": 7,
+      "total": 9,
+      "sarcPrecision": 0.2222222222222222
+    },
+    {
+      "term": "dushyant",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 2,
+      "litCount": 7,
+      "total": 9,
+      "sarcPrecision": 0.2222222222222222
+    },
+    {
+      "term": "అని",
+      "lang": "Telugu",
+      "sarcCount": 2,
+      "litCount": 7,
+      "total": 9,
+      "sarcPrecision": 0.2222222222222222
+    },
+    {
+      "term": "top",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 10,
+      "total": 13,
+      "sarcPrecision": 0.23076923076923078
+    },
+    {
+      "term": "coming",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 10,
+      "total": 13,
+      "sarcPrecision": 0.23076923076923078
+    },
+    {
+      "term": "amazing",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 10,
+      "total": 13,
+      "sarcPrecision": 0.23076923076923078
+    },
+    {
+      "term": "true",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 10,
+      "total": 13,
+      "sarcPrecision": 0.23076923076923078
+    },
+    {
+      "term": "love",
+      "lang": "English",
+      "sarcCount": 14,
+      "litCount": 46,
+      "total": 60,
+      "sarcPrecision": 0.23333333333333334
+    },
+    {
+      "term": "may",
+      "lang": "English",
+      "sarcCount": 7,
+      "litCount": 23,
+      "total": 30,
+      "sarcPrecision": 0.23333333333333334
+    },
+    {
+      "term": "women",
+      "lang": "English",
+      "sarcCount": 7,
+      "litCount": 22,
+      "total": 29,
+      "sarcPrecision": 0.2413793103448276
+    },
+    {
+      "term": "again",
+      "lang": "English",
+      "sarcCount": 5,
+      "litCount": 15,
+      "total": 20,
+      "sarcPrecision": 0.25
+    },
+    {
+      "term": "team",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 12,
+      "total": 16,
+      "sarcPrecision": 0.25
+    },
+    {
+      "term": "america",
+      "lang": "English",
+      "sarcCount": 4,
+      "litCount": 12,
+      "total": 16,
+      "sarcPrecision": 0.25
+    },
+    {
+      "term": "forever",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 9,
+      "total": 12,
+      "sarcPrecision": 0.25
+    },
+    {
+      "term": "huge",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 9,
+      "total": 12,
+      "sarcPrecision": 0.25
+    },
+    {
+      "term": "response",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 9,
+      "total": 12,
+      "sarcPrecision": 0.25
+    },
+    {
+      "term": "proud",
+      "lang": "English",
+      "sarcCount": 3,
+      "litCount": 9,
+      "total": 12,
+      "sarcPrecision": 0.25
+    },
+    {
+      "term": "bought",
+      "lang": "English",
+      "sarcCount": 2,
+      "litCount": 6,
+      "total": 8,
+      "sarcPrecision": 0.25
+    },
+    {
+      "term": "deal",
+      "lang": "English",
+      "sarcCount": 2,
+      "litCount": 6,
+      "total": 8,
+      "sarcPrecision": 0.25
+    },
+    {
+      "term": "hear",
+      "lang": "English",
+      "sarcCount": 2,
+      "litCount": 6,
+      "total": 8,
+      "sarcPrecision": 0.25
+    },
+    {
+      "term": "wanted",
+      "lang": "English",
+      "sarcCount": 2,
+      "litCount": 6,
+      "total": 8,
+      "sarcPrecision": 0.25
+    },
+    {
+      "term": "shows",
+      "lang": "English",
+      "sarcCount": 2,
+      "litCount": 6,
+      "total": 8,
+      "sarcPrecision": 0.25
+    },
+    {
+      "term": "realize",
+      "lang": "English",
+      "sarcCount": 2,
+      "litCount": 6,
+      "total": 8,
+      "sarcPrecision": 0.25
+    },
+    {
+      "term": "role",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 2,
+      "litCount": 6,
+      "total": 8,
+      "sarcPrecision": 0.25
+    },
+    {
+      "term": "far",
+      "lang": "English",
+      "sarcCount": 2,
+      "litCount": 6,
+      "total": 8,
+      "sarcPrecision": 0.25
+    },
+    {
+      "term": "watching",
+      "lang": "English",
+      "sarcCount": 2,
+      "litCount": 6,
+      "total": 8,
+      "sarcPrecision": 0.25
+    },
+    {
+      "term": "sex",
+      "lang": "English",
+      "sarcCount": 2,
+      "litCount": 6,
+      "total": 8,
+      "sarcPrecision": 0.25
+    },
+    {
+      "term": "सरिता",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 2,
+      "litCount": 6,
+      "total": 8,
+      "sarcPrecision": 0.25
+    },
+    {
+      "term": "kaam",
+      "lang": "Hindi-English (Hinglish)",
+      "sarcCount": 2,
+      "litCount": 6,
+      "total": 8,
+      "sarcPrecision": 0.25
+    },
+    {
+      "term": "వైసీపీ",
+      "lang": "Telugu",
+      "sarcCount": 2,
+      "litCount": 6,
+      "total": 8,
+      "sarcPrecision": 0.25
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+Dataset,Domain,SampleCount,Accuracy,Precision,Recall,MacroF1,Specificity,ErrorPattern
+"ACL_2020_Twitter_Sarcasm","Social Media (Twitter)",343,49.85,48.43,85.28,44.45,17.78,"Hashtags and short ironic assertions"
+"Misra_Arora_News_Headlines","Journalistic Headlines",399,55.14,56.85,41.71,54.3,68.5,"Deadpan juxtaposition without emotional markers"
+"IIITD_MaSaC_CodeMixed","Multi-Party TV Dialogue",181,48.62,75,9.09,39.58,96.34,"Discourse context divergence & punchline timing"
+"L3Cube_MahaEmotions","Social Media (Marathi)",73,49.32,0,0,33.03,100,"Inflected verbal endings & informal Marathi morphology"
+"IIIT_Hyderabad_Telugu_Sarcasm","Social Media (Telugu)",108,84.26,0,0,45.73,100,"Class imbalance & low surface sentiment contrast"

@@ -1,0 +1,1124 @@
+id,dataset,language,true_label,p_ling,p_sem,p_hybrid,verdict,confidence,abstain
+"TWITTER_twitter_1199","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_730","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1243","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_221","ACL_2020_Twitter_Sarcasm","English",0,0.55,3.059022269256247e-7,0,"Literal",0.805,false
+"TWITTER_twitter_620","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.000032267483587049136,0,"Uncertain",0.15,true
+"TWITTER_twitter_1161","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1312","ACL_2020_Twitter_Sarcasm","English",0,0.31,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1017","ACL_2020_Twitter_Sarcasm","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TWITTER_twitter_1646","ACL_2020_Twitter_Sarcasm","English",0,0.55,0.999999694097773,1,"Sarcastic",0.891,false
+"TWITTER_twitter_676","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.885,false
+"TWITTER_twitter_288","ACL_2020_Twitter_Sarcasm","English",0,0.31,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_806","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.89,false
+"TWITTER_twitter_53","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_446","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_174","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.885,false
+"TWITTER_twitter_1669","ACL_2020_Twitter_Sarcasm","English",0,0.55,0.999999694097773,1,"Sarcastic",0.884,false
+"TWITTER_twitter_1006","ACL_2020_Twitter_Sarcasm","English",0,0.31,0.999999694097773,1,"Sarcastic",0.884,false
+"TWITTER_twitter_1524","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1590","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1589","ACL_2020_Twitter_Sarcasm","English",0,0.31,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_460","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.891,false
+"TWITTER_twitter_1515","ACL_2020_Twitter_Sarcasm","English",0,0.31,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_467","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.897,false
+"TWITTER_twitter_328","ACL_2020_Twitter_Sarcasm","English",0,0.31,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_843","ACL_2020_Twitter_Sarcasm","English",0,0.08,0.9999509706899036,1,"Sarcastic",0.889,false
+"TWITTER_twitter_780","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_874","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.888,false
+"TWITTER_twitter_705","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.886,false
+"TWITTER_twitter_476","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1328","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1619","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.889,false
+"TWITTER_twitter_592","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.891,false
+"TWITTER_twitter_1013","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_615","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.892,false
+"TWITTER_twitter_1598","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.7999728789838106,0.632,"Uncertain",0.232,true
+"TWITTER_twitter_590","ACL_2020_Twitter_Sarcasm","English",0,0.31,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_425","ACL_2020_Twitter_Sarcasm","English",0,0.31,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_817","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1596","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_245","ACL_2020_Twitter_Sarcasm","English",0,0.31,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1502","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.883,false
+"TWITTER_twitter_833","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.888,false
+"TWITTER_twitter_1518","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_319","ACL_2020_Twitter_Sarcasm","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TWITTER_twitter_40","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_492","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_400","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_428","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.886,false
+"TWITTER_twitter_1069","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.883,false
+"TWITTER_twitter_1068","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_63","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.891,false
+"TWITTER_twitter_1694","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_726","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_899","ACL_2020_Twitter_Sarcasm","English",0,0.55,0.999999694097773,1,"Sarcastic",0.9,false
+"TWITTER_twitter_305","ACL_2020_Twitter_Sarcasm","English",0,0.6,0.999999694097773,1,"Sarcastic",0.887,false
+"TWITTER_twitter_1401","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.893,false
+"TWITTER_twitter_1342","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_973","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.889,false
+"TWITTER_twitter_1138","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_13","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.892,false
+"TWITTER_twitter_563","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1336","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.885,false
+"TWITTER_twitter_205","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_604","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1236","ACL_2020_Twitter_Sarcasm","English",0,0.31,0.999999694097773,1,"Sarcastic",0.892,false
+"TWITTER_twitter_491","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1378","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.887,false
+"TWITTER_twitter_976","ACL_2020_Twitter_Sarcasm","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TWITTER_twitter_308","ACL_2020_Twitter_Sarcasm","English",0,0.58,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_511","ACL_2020_Twitter_Sarcasm","English",0,0.58,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1015","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_254","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_637","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_332","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.887,false
+"TWITTER_twitter_1097","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1118","ACL_2020_Twitter_Sarcasm","English",0,0.2,0.9346051611338511,0.91,"Sarcastic",0.725,false
+"TWITTER_twitter_272","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1561","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.904,false
+"TWITTER_twitter_206","ACL_2020_Twitter_Sarcasm","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TWITTER_twitter_1298","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.888,false
+"TWITTER_twitter_731","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.886,false
+"TWITTER_twitter_139","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1446","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1247","ACL_2020_Twitter_Sarcasm","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TWITTER_twitter_486","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1106","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.889,false
+"TWITTER_twitter_151","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.889,false
+"TWITTER_twitter_463","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.885,false
+"TWITTER_twitter_846","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_672","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1434","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1623","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1119","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1352","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_699","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_466","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1181","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_509","ACL_2020_Twitter_Sarcasm","English",0,0.61,0.9998317946887045,1,"Sarcastic",0.892,false
+"TWITTER_twitter_959","ACL_2020_Twitter_Sarcasm","English",0,0.02,3.059022269256247e-7,0,"Literal",0.815,false
+"TWITTER_twitter_1737","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_926","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.886,false
+"TWITTER_twitter_681","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1505","ACL_2020_Twitter_Sarcasm","English",0,0.55,0.999999694097773,1,"Sarcastic",0.894,false
+"TWITTER_twitter_892","ACL_2020_Twitter_Sarcasm","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TWITTER_twitter_1651","ACL_2020_Twitter_Sarcasm","English",0,0.31,0.999999694097773,1,"Sarcastic",0.889,false
+"TWITTER_twitter_195","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.9989961513443635,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1341","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_824","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.889,false
+"TWITTER_twitter_283","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1155","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.885,false
+"TWITTER_twitter_448","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1562","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.883,false
+"TWITTER_twitter_1185","ACL_2020_Twitter_Sarcasm","English",0,0.02,3.059022269256247e-7,0,"Literal",0.809,false
+"TWITTER_twitter_117","ACL_2020_Twitter_Sarcasm","English",0,0.7,0.999999694097773,1,"Sarcastic",0.89,false
+"TWITTER_twitter_1501","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1005","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.888,false
+"TWITTER_twitter_1799","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.9125402866590523,0.889,"Sarcastic",0.685,false
+"TWITTER_twitter_596","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.884,false
+"TWITTER_twitter_23","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_178","ACL_2020_Twitter_Sarcasm","English",0,0.02,3.059022269256247e-7,0,"Literal",0.808,false
+"TWITTER_twitter_230","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1602","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_695","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1607","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.889,false
+"TWITTER_twitter_138","ACL_2020_Twitter_Sarcasm","English",0,0.31,0.999999694097773,1,"Sarcastic",0.883,false
+"TWITTER_twitter_1780","ACL_2020_Twitter_Sarcasm","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TWITTER_twitter_1157","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1141","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1105","ACL_2020_Twitter_Sarcasm","English",0,0.31,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TWITTER_twitter_116","ACL_2020_Twitter_Sarcasm","English",0,0.55,0.999999694097773,1,"Sarcastic",0.885,false
+"TWITTER_twitter_482","ACL_2020_Twitter_Sarcasm","English",0,0.31,0.999999694097773,1,"Sarcastic",0.884,false
+"TWITTER_twitter_473","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1775","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_828","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.883,false
+"TWITTER_twitter_1465","ACL_2020_Twitter_Sarcasm","English",0,0.26,0.999999694097773,1,"Sarcastic",0.896,false
+"TWITTER_twitter_1249","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_501","ACL_2020_Twitter_Sarcasm","English",0,0.98,0.999999694097773,1,"Sarcastic",0.886,false
+"TWITTER_twitter_334","ACL_2020_Twitter_Sarcasm","English",0,0.31,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1094","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_398","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.883,false
+"TWITTER_twitter_1008","ACL_2020_Twitter_Sarcasm","English",0,0.2,0.999999694097773,1,"Sarcastic",0.886,false
+"TWITTER_twitter_933","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.886,false
+"TWITTER_twitter_79","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.887,false
+"TWITTER_twitter_57","ACL_2020_Twitter_Sarcasm","English",0,0.55,0.999999694097773,1,"Sarcastic",0.884,false
+"TWITTER_twitter_752","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.885,false
+"TWITTER_twitter_533","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1394","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_810","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.887,false
+"TWITTER_twitter_1460","ACL_2020_Twitter_Sarcasm","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TWITTER_twitter_286","ACL_2020_Twitter_Sarcasm","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TWITTER_twitter_42","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.9985092993912887,1,"Sarcastic",0.887,false
+"TWITTER_twitter_887","ACL_2020_Twitter_Sarcasm","English",0,0.2,0.999999694097773,1,"Sarcastic",0.883,false
+"TWITTER_twitter_1347","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_307","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.886,false
+"TWITTER_twitter_99","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.885,false
+"TWITTER_twitter_452","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.884,false
+"TWITTER_twitter_47","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.889,false
+"TWITTER_twitter_1021","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_81","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1467","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_788","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_7","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1055","ACL_2020_Twitter_Sarcasm","English",0,0.58,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1200","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.898,false
+"TWITTER_twitter_849","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.883,false
+"TWITTER_twitter_325","ACL_2020_Twitter_Sarcasm","English",0,0.31,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TWITTER_twitter_529","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1309","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1583","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_426","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.889,false
+"TWITTER_twitter_802","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.892,false
+"TWITTER_twitter_1555","ACL_2020_Twitter_Sarcasm","English",0,0.02,0.999999694097773,1,"Sarcastic",0.888,false
+"TWITTER_twitter_1098","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_475","ACL_2020_Twitter_Sarcasm","English",0,0.02,3.059022269256247e-7,0,"Literal",0.817,false
+"TWITTER_twitter_919","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_298","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1192","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1536","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_772","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1063","ACL_2020_Twitter_Sarcasm","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1380","ACL_2020_Twitter_Sarcasm","English",1,0.58,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1782","ACL_2020_Twitter_Sarcasm","English",1,0.7,0.999999694097773,1,"Sarcastic",0.889,false
+"TWITTER_twitter_391","ACL_2020_Twitter_Sarcasm","English",1,0.02,0.999999694097773,1,"Sarcastic",0.884,false
+"TWITTER_twitter_890","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_719","ACL_2020_Twitter_Sarcasm","English",1,0.61,0.999999694097773,1,"Sarcastic",0.884,false
+"TWITTER_twitter_93","ACL_2020_Twitter_Sarcasm","English",1,0.2,0.999999694097773,1,"Sarcastic",0.906,false
+"TWITTER_twitter_275","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1761","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1211","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1520","ACL_2020_Twitter_Sarcasm","English",1,0.02,3.059022269256247e-7,0,"Literal",0.811,false
+"TWITTER_twitter_1308","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1225","ACL_2020_Twitter_Sarcasm","English",1,0.02,0.999999694097773,1,"Sarcastic",0.898,false
+"TWITTER_twitter_1756","ACL_2020_Twitter_Sarcasm","English",1,0.02,0.9997268514172615,1,"Sarcastic",0.891,false
+"TWITTER_twitter_1550","ACL_2020_Twitter_Sarcasm","English",1,0.02,0.999999694097773,1,"Sarcastic",0.885,false
+"TWITTER_twitter_1048","ACL_2020_Twitter_Sarcasm","English",1,0.02,0.999999694097773,1,"Sarcastic",0.885,false
+"TWITTER_twitter_1042","ACL_2020_Twitter_Sarcasm","English",1,0.2,0.999999694097773,1,"Sarcastic",0.887,false
+"TWITTER_twitter_903","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_411","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1610","ACL_2020_Twitter_Sarcasm","English",1,0.02,0.999999694097773,1,"Sarcastic",0.885,false
+"TWITTER_twitter_664","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1749","ACL_2020_Twitter_Sarcasm","English",1,0.2,0.999999694097773,1,"Sarcastic",0.884,false
+"TWITTER_twitter_349","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_396","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_122","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_771","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1132","ACL_2020_Twitter_Sarcasm","English",1,0.02,0.999999694097773,1,"Sarcastic",0.883,false
+"TWITTER_twitter_1203","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_3","ACL_2020_Twitter_Sarcasm","English",1,0.31,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_238","ACL_2020_Twitter_Sarcasm","English",1,0.58,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1448","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1231","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_790","ACL_2020_Twitter_Sarcasm","English",1,0.2,0.999999694097773,1,"Sarcastic",0.883,false
+"TWITTER_twitter_840","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_914","ACL_2020_Twitter_Sarcasm","English",1,0.55,0.999999694097773,1,"Sarcastic",0.888,false
+"TWITTER_twitter_1634","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1535","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1164","ACL_2020_Twitter_Sarcasm","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TWITTER_twitter_106","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_742","ACL_2020_Twitter_Sarcasm","English",1,0.02,0.999999694097773,1,"Sarcastic",0.897,false
+"TWITTER_twitter_50","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1657","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1113","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1795","ACL_2020_Twitter_Sarcasm","English",1,0.55,0.999999694097773,1,"Sarcastic",0.892,false
+"TWITTER_twitter_153","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1315","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_250","ACL_2020_Twitter_Sarcasm","English",1,0.02,0.810695569842641,0.056,"Literal",0.733,false
+"TWITTER_twitter_495","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_198","ACL_2020_Twitter_Sarcasm","English",1,0.31,0.999999694097773,1,"Sarcastic",0.885,false
+"TWITTER_twitter_931","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1222","ACL_2020_Twitter_Sarcasm","English",1,0.02,0.999999694097773,1,"Sarcastic",0.884,false
+"TWITTER_twitter_1785","ACL_2020_Twitter_Sarcasm","English",1,0.55,0.999999694097773,1,"Sarcastic",0.885,false
+"TWITTER_twitter_336","ACL_2020_Twitter_Sarcasm","English",1,0.02,0.999999694097773,1,"Sarcastic",0.885,false
+"TWITTER_twitter_984","ACL_2020_Twitter_Sarcasm","English",1,0.95,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_743","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_728","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_747","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.884,false
+"TWITTER_twitter_525","ACL_2020_Twitter_Sarcasm","English",1,0.31,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_907","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_713","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_893","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.885,false
+"TWITTER_twitter_265","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1144","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.887,false
+"TWITTER_twitter_577","ACL_2020_Twitter_Sarcasm","English",1,0.02,0.999999694097773,1,"Sarcastic",0.885,false
+"TWITTER_twitter_977","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1581","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1393","ACL_2020_Twitter_Sarcasm","English",1,0.02,0.999999694097773,1,"Sarcastic",0.893,false
+"TWITTER_twitter_351","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_327","ACL_2020_Twitter_Sarcasm","English",1,0.31,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_465","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_387","ACL_2020_Twitter_Sarcasm","English",1,0.31,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1019","ACL_2020_Twitter_Sarcasm","English",1,0.55,0.999999694097773,1,"Sarcastic",0.888,false
+"TWITTER_twitter_1564","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1649","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_442","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1387","ACL_2020_Twitter_Sarcasm","English",1,0.31,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_137","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_310","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_847","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_902","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1519","ACL_2020_Twitter_Sarcasm","English",1,0.02,0.999999694097773,1,"Sarcastic",0.889,false
+"TWITTER_twitter_1530","ACL_2020_Twitter_Sarcasm","English",1,0.55,0.999999694097773,1,"Sarcastic",0.906,false
+"TWITTER_twitter_449","ACL_2020_Twitter_Sarcasm","English",1,0.31,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_77","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_864","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_566","ACL_2020_Twitter_Sarcasm","English",1,0.02,3.059022269256247e-7,0,"Literal",0.829,false
+"TWITTER_twitter_639","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.9999705993625924,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1389","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_906","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_612","ACL_2020_Twitter_Sarcasm","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TWITTER_twitter_1615","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_187","ACL_2020_Twitter_Sarcasm","English",1,0.2,0.999999694097773,1,"Sarcastic",0.885,false
+"TWITTER_twitter_389","ACL_2020_Twitter_Sarcasm","English",1,0.98,0.999999694097773,1,"Sarcastic",0.889,false
+"TWITTER_twitter_1360","ACL_2020_Twitter_Sarcasm","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TWITTER_twitter_1136","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1417","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_141","ACL_2020_Twitter_Sarcasm","English",1,0.26,0.999999694097773,1,"Sarcastic",0.908,false
+"TWITTER_twitter_1334","ACL_2020_Twitter_Sarcasm","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TWITTER_twitter_1553","ACL_2020_Twitter_Sarcasm","English",1,0.02,0.999999694097773,1,"Sarcastic",0.887,false
+"TWITTER_twitter_1729","ACL_2020_Twitter_Sarcasm","English",1,0.02,0.999999694097773,1,"Sarcastic",0.888,false
+"TWITTER_twitter_1483","ACL_2020_Twitter_Sarcasm","English",1,0.2,0.999999694097773,1,"Sarcastic",0.884,false
+"TWITTER_twitter_842","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1007","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1010","ACL_2020_Twitter_Sarcasm","English",1,0.02,0.999999694097773,1,"Sarcastic",0.883,false
+"TWITTER_twitter_1306","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1464","ACL_2020_Twitter_Sarcasm","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TWITTER_twitter_443","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1029","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_996","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_414","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1690","ACL_2020_Twitter_Sarcasm","English",1,0.55,0.999999694097773,1,"Sarcastic",0.89,false
+"TWITTER_twitter_1472","ACL_2020_Twitter_Sarcasm","English",1,0.55,0.999999694097773,1,"Sarcastic",0.89,false
+"TWITTER_twitter_1232","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1174","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.893,false
+"TWITTER_twitter_101","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_418","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_583","ACL_2020_Twitter_Sarcasm","English",1,0.2,0.999999694097773,1,"Sarcastic",0.895,false
+"TWITTER_twitter_1382","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_433","ACL_2020_Twitter_Sarcasm","English",1,0.31,0.999999694097773,1,"Sarcastic",0.884,false
+"TWITTER_twitter_1363","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1438","ACL_2020_Twitter_Sarcasm","English",1,0.31,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1180","ACL_2020_Twitter_Sarcasm","English",1,0.31,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_815","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1635","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_626","ACL_2020_Twitter_Sarcasm","English",1,0.31,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TWITTER_twitter_290","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_401","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_282","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1221","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_208","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_35","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1012","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_105","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_421","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1456","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.889,false
+"TWITTER_twitter_644","ACL_2020_Twitter_Sarcasm","English",1,0.95,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_879","ACL_2020_Twitter_Sarcasm","English",1,0.02,0.999999694097773,1,"Sarcastic",0.884,false
+"TWITTER_twitter_998","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1546","ACL_2020_Twitter_Sarcasm","English",1,0.02,0.999999694097773,1,"Sarcastic",0.891,false
+"TWITTER_twitter_1485","ACL_2020_Twitter_Sarcasm","English",1,0.31,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1720","ACL_2020_Twitter_Sarcasm","English",1,0.31,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_952","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1374","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1085","ACL_2020_Twitter_Sarcasm","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TWITTER_twitter_329","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_585","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1158","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_498","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_714","ACL_2020_Twitter_Sarcasm","English",1,0.55,0.999999694097773,1,"Sarcastic",0.888,false
+"TWITTER_twitter_715","ACL_2020_Twitter_Sarcasm","English",1,0.02,0.999999694097773,1,"Sarcastic",0.885,false
+"TWITTER_twitter_510","ACL_2020_Twitter_Sarcasm","English",1,0.02,0.999999694097773,1,"Sarcastic",0.884,false
+"TWITTER_twitter_1731","ACL_2020_Twitter_Sarcasm","English",1,0.02,0.999999694097773,1,"Sarcastic",0.891,false
+"TWITTER_twitter_1028","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_621","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_850","ACL_2020_Twitter_Sarcasm","English",1,0.02,0.999999694097773,1,"Sarcastic",0.89,false
+"TWITTER_twitter_1143","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1295","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.891,false
+"TWITTER_twitter_1522","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1381","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_516","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1027","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_1111","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_568","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_809","ACL_2020_Twitter_Sarcasm","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"TWITTER_twitter_957","ACL_2020_Twitter_Sarcasm","English",1,0.31,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1515","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_928","Misra_Arora_News_Headlines","English",1,0.25,0.9988318848363884,1,"Sarcastic",0.88,false
+"HEADLINE_1495","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_262","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_55","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1830","Misra_Arora_News_Headlines","English",1,0.02,3.059022269256247e-7,0,"Literal",0.825,false
+"HEADLINE_1742","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1253","Misra_Arora_News_Headlines","English",1,0.02,0.000006862536085423242,0,"Literal",0.818,false
+"HEADLINE_958","Misra_Arora_News_Headlines","English",1,0.25,0.9981849538240465,1,"Sarcastic",0.88,false
+"HEADLINE_869","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1794","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1732","Misra_Arora_News_Headlines","English",1,0.25,0.0024958168370508493,0,"Uncertain",0.15,true
+"HEADLINE_1826","Misra_Arora_News_Headlines","English",1,0.02,0.999999694097773,1,"Sarcastic",0.92,false
+"HEADLINE_477","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_575","Misra_Arora_News_Headlines","English",1,0.2,0.999952240164974,1,"Sarcastic",0.94,false
+"HEADLINE_1967","Misra_Arora_News_Headlines","English",1,0.25,0.9997290063269856,1,"Sarcastic",0.88,false
+"HEADLINE_1193","Misra_Arora_News_Headlines","English",1,0.02,0.00003929099475899573,0,"Literal",0.814,false
+"HEADLINE_736","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1388","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1527","Misra_Arora_News_Headlines","English",1,0.25,0.99928809314287,1,"Sarcastic",0.88,false
+"HEADLINE_347","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_994","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1320","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1760","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1671","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_884","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_851","Misra_Arora_News_Headlines","English",1,0.02,0.999999694097773,1,"Sarcastic",0.889,false
+"HEADLINE_1238","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_8","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_997","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_198","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1991","Misra_Arora_News_Headlines","English",1,0.25,0.7322375008247509,0.482,"Uncertain",0.005,true
+"HEADLINE_189","Misra_Arora_News_Headlines","English",1,0.25,0.10273257656927491,0.006,"Uncertain",0.148,true
+"HEADLINE_2060","Misra_Arora_News_Headlines","English",1,0.02,0.999999694097773,1,"Sarcastic",0.893,false
+"HEADLINE_1772","Misra_Arora_News_Headlines","English",1,0.25,0.3889815798166458,0.082,"Uncertain",0.125,true
+"HEADLINE_103","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1843","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1335","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_757","Misra_Arora_News_Headlines","English",1,0.25,0.7561175010264566,0.533,"Uncertain",0.058,true
+"HEADLINE_461","Misra_Arora_News_Headlines","English",1,0.25,0.0000023602422081356206,0,"Uncertain",0.15,true
+"HEADLINE_33","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1003","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1839","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1107","Misra_Arora_News_Headlines","English",1,0.25,0.9998416470808456,1,"Sarcastic",0.88,false
+"HEADLINE_413","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1027","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1698","Misra_Arora_News_Headlines","English",1,0.02,0.2000879681873704,0.001,"Literal",0.823,false
+"HEADLINE_1666","Misra_Arora_News_Headlines","English",1,0.25,0.0005401434828311798,0,"Uncertain",0.15,true
+"HEADLINE_1181","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_63","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1394","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_502","Misra_Arora_News_Headlines","English",1,0.02,0.999999694097773,1,"Sarcastic",0.9,false
+"HEADLINE_251","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1832","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1897","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1676","Misra_Arora_News_Headlines","English",1,0.25,0.001761199112271619,0,"Uncertain",0.15,true
+"HEADLINE_245","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_601","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1243","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_53","Misra_Arora_News_Headlines","English",1,0.25,0.0013908701299627194,0,"Uncertain",0.15,true
+"HEADLINE_1946","Misra_Arora_News_Headlines","English",1,0.02,0.0000027042907371874084,0,"Literal",0.817,false
+"HEADLINE_1090","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_174","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_880","Misra_Arora_News_Headlines","English",1,0.02,3.059022269256247e-7,0,"Literal",0.818,false
+"HEADLINE_311","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_310","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_836","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1035","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_923","Misra_Arora_News_Headlines","English",1,0.25,0.9999976519678239,1,"Sarcastic",0.88,false
+"HEADLINE_1615","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1521","Misra_Arora_News_Headlines","English",1,0.25,0.9319603855573428,0.926,"Sarcastic",0.75,false
+"HEADLINE_356","Misra_Arora_News_Headlines","English",1,0.02,3.059022269256247e-7,0,"Literal",0.82,false
+"HEADLINE_1118","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1545","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_399","Misra_Arora_News_Headlines","English",1,0.25,3.077642524442668e-7,0,"Uncertain",0.15,true
+"HEADLINE_878","Misra_Arora_News_Headlines","English",1,0.25,0.9996460140217616,1,"Sarcastic",0.88,false
+"HEADLINE_1274","Misra_Arora_News_Headlines","English",1,0.25,0.69883285883504,0.417,"Uncertain",0.025,true
+"HEADLINE_270","Misra_Arora_News_Headlines","English",1,0.25,0.0362390438655869,0.001,"Uncertain",0.15,true
+"HEADLINE_926","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1806","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_169","Misra_Arora_News_Headlines","English",1,0.02,0.999999694097773,1,"Sarcastic",0.9,false
+"HEADLINE_452","Misra_Arora_News_Headlines","English",1,0.7,3.059022269256247e-7,0,"Uncertain",0.328,true
+"HEADLINE_551","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_676","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1813","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_449","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1689","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1691","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1828","Misra_Arora_News_Headlines","English",1,0.25,0.0008704917735386399,0,"Uncertain",0.15,true
+"HEADLINE_1301","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_2014","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1222","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_68","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1693","Misra_Arora_News_Headlines","English",1,0.25,0.9699855131234332,0.98,"Sarcastic",0.845,false
+"HEADLINE_854","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1211","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1293","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1580","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_881","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_357","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1846","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_602","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1445","Misra_Arora_News_Headlines","English",1,0.25,0.9999880697204149,1,"Sarcastic",0.88,false
+"HEADLINE_418","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_368","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_369","Misra_Arora_News_Headlines","English",1,0.25,0.00004934617083154039,0,"Uncertain",0.15,true
+"HEADLINE_750","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1738","Misra_Arora_News_Headlines","English",1,0.25,0.998157412837044,1,"Sarcastic",0.88,false
+"HEADLINE_548","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_690","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_456","Misra_Arora_News_Headlines","English",1,0.25,0.9999970661404696,1,"Sarcastic",0.88,false
+"HEADLINE_2061","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1383","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1096","Misra_Arora_News_Headlines","English",1,0.02,0.999999694097773,1,"Sarcastic",0.895,false
+"HEADLINE_595","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_591","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_267","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_224","Misra_Arora_News_Headlines","English",1,0.02,0.999999694097773,1,"Sarcastic",0.893,false
+"HEADLINE_469","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1597","Misra_Arora_News_Headlines","English",1,0.25,0.000014761470673648288,0,"Uncertain",0.15,true
+"HEADLINE_289","Misra_Arora_News_Headlines","English",1,0.25,0.00006354177828477532,0,"Uncertain",0.15,true
+"HEADLINE_989","Misra_Arora_News_Headlines","English",1,0.25,0.05415831976590013,0.002,"Uncertain",0.149,true
+"HEADLINE_747","Misra_Arora_News_Headlines","English",1,0.02,0.9999178816628016,1,"Sarcastic",0.895,false
+"HEADLINE_743","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1870","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1277","Misra_Arora_News_Headlines","English",1,0.25,0.9999983301000605,1,"Sarcastic",0.88,false
+"HEADLINE_1417","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_521","Misra_Arora_News_Headlines","English",1,0.25,0.9953314675626117,0.999,"Sarcastic",0.878,false
+"HEADLINE_274","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_312","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1315","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_118","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1154","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1977","Misra_Arora_News_Headlines","English",1,0.25,0.630091038487196,0.303,"Uncertain",0.059,true
+"HEADLINE_701","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1889","Misra_Arora_News_Headlines","English",1,0.25,0.06577733165617217,0.003,"Uncertain",0.149,true
+"HEADLINE_253","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_915","Misra_Arora_News_Headlines","English",1,0.25,0.00808831178680477,0,"Uncertain",0.15,true
+"HEADLINE_404","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_131","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_295","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_930","Misra_Arora_News_Headlines","English",1,0.25,0.8309462178032383,0.705,"Uncertain",0.361,true
+"HEADLINE_818","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1345","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_578","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1030","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1347","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1005","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_719","Misra_Arora_News_Headlines","English",1,0.02,0.999999694097773,1,"Sarcastic",0.89,false
+"HEADLINE_1004","Misra_Arora_News_Headlines","English",1,0.25,0.9999986788319339,1,"Sarcastic",0.88,false
+"HEADLINE_421","Misra_Arora_News_Headlines","English",1,0.02,0.05479205278925832,0,"Literal",0.817,false
+"HEADLINE_1694","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1866","Misra_Arora_News_Headlines","English",1,0.25,0.9999735912602227,1,"Sarcastic",0.88,false
+"HEADLINE_1859","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_249","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1754","Misra_Arora_News_Headlines","English",1,0.02,0.40621524412306054,0.003,"Literal",0.828,false
+"HEADLINE_1704","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_975","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1414","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1359","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_853","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1812","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_242","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_496","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_378","Misra_Arora_News_Headlines","English",1,0.2,0.999999694097773,1,"Sarcastic",0.889,false
+"HEADLINE_699","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_271","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_451","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_218","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1147","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1153","Misra_Arora_News_Headlines","English",1,0.02,0.999999694097773,1,"Sarcastic",0.89,false
+"HEADLINE_1286","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1082","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1411","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1382","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1692","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1534","Misra_Arora_News_Headlines","English",1,0.25,0.6721729534270927,0.369,"Uncertain",0.039,true
+"HEADLINE_370","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_893","Misra_Arora_News_Headlines","English",1,0.25,0.000021242933844340873,0,"Uncertain",0.15,true
+"HEADLINE_571","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1138","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_683","Misra_Arora_News_Headlines","English",1,0.25,0.00005618608654897633,0,"Uncertain",0.15,true
+"HEADLINE_1168","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1174","Misra_Arora_News_Headlines","English",1,0.25,0.9999950663447276,1,"Sarcastic",0.88,false
+"HEADLINE_160","Misra_Arora_News_Headlines","English",1,0.25,0.9999956507130399,1,"Sarcastic",0.895,false
+"HEADLINE_1643","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_408","Misra_Arora_News_Headlines","English",1,0.25,0.9958690698049361,0.999,"Sarcastic",0.878,false
+"HEADLINE_1410","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1942","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1797","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_845","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1927","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1820","Misra_Arora_News_Headlines","English",1,0.25,0.9997163752378935,1,"Sarcastic",0.88,false
+"HEADLINE_1553","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_2028","Misra_Arora_News_Headlines","English",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_49","Misra_Arora_News_Headlines","English",1,0.25,0.0000015546571331807055,0,"Uncertain",0.15,true
+"HEADLINE_119","Misra_Arora_News_Headlines","English",1,0.02,0.999999694097773,1,"Sarcastic",0.904,false
+"HEADLINE_560","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1790","Misra_Arora_News_Headlines","English",1,0.02,3.059022269256247e-7,0,"Literal",0.813,false
+"HEADLINE_1982","Misra_Arora_News_Headlines","English",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_455","Misra_Arora_News_Headlines","English",1,0.02,3.059022269256247e-7,0,"Literal",0.822,false
+"HEADLINE_612","Misra_Arora_News_Headlines","English",0,0.25,0.8475496567528561,0.745,"Uncertain",0.431,true
+"HEADLINE_1607","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1718","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1565","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_943","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1500","Misra_Arora_News_Headlines","English",0,0.25,8.173588360590353e-7,0,"Uncertain",0.15,true
+"HEADLINE_1144","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1913","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_621","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1292","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1419","Misra_Arora_News_Headlines","English",0,0.25,0.999999061725312,1,"Sarcastic",0.88,false
+"HEADLINE_844","Misra_Arora_News_Headlines","English",0,0.25,0.9999928517062706,1,"Sarcastic",0.88,false
+"HEADLINE_1265","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_395","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1925","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_907","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_900","Misra_Arora_News_Headlines","English",0,0.02,3.059022269256247e-7,0,"Literal",0.829,false
+"HEADLINE_784","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_711","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1171","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_181","Misra_Arora_News_Headlines","English",0,0.25,0.9300881649059192,0.922,"Sarcastic",0.743,false
+"HEADLINE_1475","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1241","Misra_Arora_News_Headlines","English",0,0.25,0.9994060048574046,1,"Sarcastic",0.88,false
+"HEADLINE_480","Misra_Arora_News_Headlines","English",0,0.25,0.000001230504954359462,0,"Uncertain",0.15,true
+"HEADLINE_524","Misra_Arora_News_Headlines","English",0,0.25,0.04481618422397801,0.001,"Uncertain",0.15,true
+"HEADLINE_1606","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_467","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1753","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_710","Misra_Arora_News_Headlines","English",0,0.25,0.0022735556859047566,0,"Uncertain",0.15,true
+"HEADLINE_1869","Misra_Arora_News_Headlines","English",0,0.25,0.09901034344839955,0.005,"Uncertain",0.149,true
+"HEADLINE_647","Misra_Arora_News_Headlines","English",0,0.25,0.000023640790865150587,0,"Uncertain",0.15,true
+"HEADLINE_366","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_196","Misra_Arora_News_Headlines","English",0,0.02,0.9999927522169111,1,"Sarcastic",0.892,false
+"HEADLINE_1447","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1273","Misra_Arora_News_Headlines","English",0,0.02,3.059022269256247e-7,0,"Literal",0.818,false
+"HEADLINE_401","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_637","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1481","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1841","Misra_Arora_News_Headlines","English",0,0.25,0.996720054259946,0.999,"Sarcastic",0.878,false
+"HEADLINE_1011","Misra_Arora_News_Headlines","English",0,0.25,0.07901808925501708,0.004,"Uncertain",0.149,true
+"HEADLINE_327","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_336","Misra_Arora_News_Headlines","English",0,0.02,0.001012015917117958,0,"Literal",0.82,false
+"HEADLINE_558","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_894","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_905","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_946","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_150","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_572","Misra_Arora_News_Headlines","English",0,0.25,0.9999914700246386,1,"Sarcastic",0.88,false
+"HEADLINE_609","Misra_Arora_News_Headlines","English",0,0.25,0.00034404026177345474,0,"Uncertain",0.15,true
+"HEADLINE_1778","Misra_Arora_News_Headlines","English",0,0.58,0.9999108180827924,1,"Sarcastic",0.897,false
+"HEADLINE_1092","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1551","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1135","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_419","Misra_Arora_News_Headlines","English",0,0.02,0.999999694097773,1,"Sarcastic",0.889,false
+"HEADLINE_1227","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_99","Misra_Arora_News_Headlines","English",0,0.25,0.9965853392144114,0.999,"Sarcastic",0.878,false
+"HEADLINE_748","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1593","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1190","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1799","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1505","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1803","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1890","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1389","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1483","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1002","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_444","Misra_Arora_News_Headlines","English",0,0.7,3.059022269256247e-7,0,"Uncertain",0.257,true
+"HEADLINE_72","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1146","Misra_Arora_News_Headlines","English",0,0.25,0.999343496530095,1,"Sarcastic",0.88,false
+"HEADLINE_1637","Misra_Arora_News_Headlines","English",0,0.25,0.04095958637874616,0.001,"Uncertain",0.15,true
+"HEADLINE_533","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1598","Misra_Arora_News_Headlines","English",0,0.25,0.9998689063763528,1,"Sarcastic",0.88,false
+"HEADLINE_917","Misra_Arora_News_Headlines","English",0,0.25,0.000011240498613483795,0,"Uncertain",0.15,true
+"HEADLINE_1809","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1453","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_752","Misra_Arora_News_Headlines","English",0,0.25,0.9954410241617502,0.999,"Sarcastic",0.878,false
+"HEADLINE_1385","Misra_Arora_News_Headlines","English",0,0.25,0.922272458444682,0.908,"Sarcastic",0.718,false
+"HEADLINE_1420","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1561","Misra_Arora_News_Headlines","English",0,0.25,0.8239841375952396,0.689,"Uncertain",0.333,true
+"HEADLINE_834","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1588","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1516","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1888","Misra_Arora_News_Headlines","English",0,0.25,0.9945039587035241,0.999,"Sarcastic",0.878,false
+"HEADLINE_222","Misra_Arora_News_Headlines","English",0,0.25,0.9937619927412958,0.998,"Sarcastic",0.876,false
+"HEADLINE_1624","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1316","Misra_Arora_News_Headlines","English",0,0.25,0.000002040408644998527,0,"Uncertain",0.15,true
+"HEADLINE_1229","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_62","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_102","Misra_Arora_News_Headlines","English",0,0.25,0.002526087334644188,0,"Uncertain",0.15,true
+"HEADLINE_293","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_639","Misra_Arora_News_Headlines","English",0,0.25,0.000003826928595048913,0,"Uncertain",0.15,true
+"HEADLINE_744","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_308","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1056","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_286","Misra_Arora_News_Headlines","English",0,0.25,0.9654232314485454,0.975,"Sarcastic",0.836,false
+"HEADLINE_35","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1340","Misra_Arora_News_Headlines","English",0,0.02,0.865852983752439,0.102,"Literal",0.653,false
+"HEADLINE_500","Misra_Arora_News_Headlines","English",0,0.25,0.9921872667525209,0.998,"Sarcastic",0.876,false
+"HEADLINE_300","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1297","Misra_Arora_News_Headlines","English",0,0.25,0.9995918752923243,1,"Sarcastic",0.88,false
+"HEADLINE_506","Misra_Arora_News_Headlines","English",0,0.25,7.061048748581097e-7,0,"Uncertain",0.15,true
+"HEADLINE_1721","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_681","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_800","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_755","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1129","Misra_Arora_News_Headlines","English",0,0.25,0.9044112521093577,0.873,"Sarcastic",0.656,false
+"HEADLINE_283","Misra_Arora_News_Headlines","English",0,0.02,3.059022269256247e-7,0,"Literal",0.825,false
+"HEADLINE_1751","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_407","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1572","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_746","Misra_Arora_News_Headlines","English",0,0.25,0.9999964565765217,1,"Sarcastic",0.88,false
+"HEADLINE_1164","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_870","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1088","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_20","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1396","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1424","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_643","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_510","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_82","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1668","Misra_Arora_News_Headlines","English",0,0.25,0.000031545955922405574,0,"Uncertain",0.15,true
+"HEADLINE_1478","Misra_Arora_News_Headlines","English",0,0.02,3.059022269256247e-7,0,"Literal",0.825,false
+"HEADLINE_811","Misra_Arora_News_Headlines","English",0,0.02,3.059022269256247e-7,0,"Literal",0.818,false
+"HEADLINE_775","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_490","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_532","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1021","Misra_Arora_News_Headlines","English",0,0.25,0.9999986453988821,1,"Sarcastic",0.88,false
+"HEADLINE_414","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1156","Misra_Arora_News_Headlines","English",0,0.02,3.059022269256247e-7,0,"Literal",0.825,false
+"HEADLINE_1517","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1108","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1680","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1199","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1504","Misra_Arora_News_Headlines","English",0,0.25,0.000029460285483658268,0,"Uncertain",0.15,true
+"HEADLINE_596","Misra_Arora_News_Headlines","English",0,0.02,0.009995739308265323,0,"Literal",0.829,false
+"HEADLINE_1362","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.893,false
+"HEADLINE_9","Misra_Arora_News_Headlines","English",0,0.25,0.9999972582196731,1,"Sarcastic",0.88,false
+"HEADLINE_1233","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_801","Misra_Arora_News_Headlines","English",0,0.02,3.059022269256247e-7,0,"Literal",0.818,false
+"HEADLINE_895","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1713","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_246","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_193","Misra_Arora_News_Headlines","English",0,0.25,0.9999986040015648,1,"Sarcastic",0.88,false
+"HEADLINE_709","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_725","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_319","Misra_Arora_News_Headlines","English",0,0.02,4.2977457203429883e-7,0,"Literal",0.82,false
+"HEADLINE_651","Misra_Arora_News_Headlines","English",0,0.25,0.03133272560231043,0.001,"Uncertain",0.15,true
+"HEADLINE_654","Misra_Arora_News_Headlines","English",0,0.02,0.999999694097773,1,"Sarcastic",0.893,false
+"HEADLINE_588","Misra_Arora_News_Headlines","English",0,0.25,0.025629451638251047,0.001,"Uncertain",0.15,true
+"HEADLINE_1307","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_686","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1104","Misra_Arora_News_Headlines","English",0,0.25,0.9994859619701026,1,"Sarcastic",0.88,false
+"HEADLINE_1075","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1460","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_453","Misra_Arora_News_Headlines","English",0,0.25,0.00010354639281560344,0,"Uncertain",0.15,true
+"HEADLINE_665","Misra_Arora_News_Headlines","English",0,0.25,0.9998871395424598,1,"Sarcastic",0.88,false
+"HEADLINE_792","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1140","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1444","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1012","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1393","Misra_Arora_News_Headlines","English",0,0.25,0.9992907774119906,1,"Sarcastic",0.88,false
+"HEADLINE_1379","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_849","Misra_Arora_News_Headlines","English",0,0.02,3.059022269256247e-7,0,"Literal",0.825,false
+"HEADLINE_1871","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1458","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_440","Misra_Arora_News_Headlines","English",0,0.25,0.9999840108051768,1,"Sarcastic",0.88,false
+"HEADLINE_877","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1225","Misra_Arora_News_Headlines","English",0,0.02,0.0000019992907148391594,0,"Literal",0.9,false
+"HEADLINE_1343","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1875","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1457","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1487","Misra_Arora_News_Headlines","English",0,0.02,3.059022269256247e-7,0,"Literal",0.825,false
+"HEADLINE_1739","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_615","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_585","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1123","Misra_Arora_News_Headlines","English",0,0.25,0.00008927849320517925,0,"Uncertain",0.15,true
+"HEADLINE_1568","Misra_Arora_News_Headlines","English",0,0.25,0.24858487653240677,0.03,"Uncertain",0.141,true
+"HEADLINE_904","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_940","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_115","Misra_Arora_News_Headlines","English",0,0.25,0.9999990172210214,1,"Sarcastic",0.88,false
+"HEADLINE_648","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_536","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_141","Misra_Arora_News_Headlines","English",0,0.02,0.9999735896170494,1,"Sarcastic",0.895,false
+"HEADLINE_1130","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_43","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1627","Misra_Arora_News_Headlines","English",0,0.25,0.9897049856027,0.997,"Sarcastic",0.875,false
+"HEADLINE_1804","Misra_Arora_News_Headlines","English",0,0.25,0.7455169226456511,0.51,"Uncertain",0.018,true
+"HEADLINE_653","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1395","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_934","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_129","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_226","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_228","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1757","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1134","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_1540","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"HEADLINE_847","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_826","Misra_Arora_News_Headlines","English",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"HEADLINE_1729","Misra_Arora_News_Headlines","English",0,0.25,0.9999991454985447,1,"Sarcastic",0.88,false
+"HEADLINE_1175","Misra_Arora_News_Headlines","English",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_2319","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_2327","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_2328","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_2329","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.000004912042995209503,0,"Uncertain",0.15,true
+"MASAC_604","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.000014242736265071514,0,"Uncertain",0.15,true
+"MASAC_600","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,0.00011601004497280361,0,"Uncertain",0.15,true
+"MASAC_602","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.02,3.059022269256247e-7,0,"Literal",0.82,false
+"MASAC_603","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_605","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_606","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_607","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_608","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_609","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_2276","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_1894","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.4942766078086613e-7,0,"Uncertain",0.15,true
+"MASAC_1895","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_1250","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.0004118067281671817,0,"Uncertain",0.15,true
+"MASAC_43","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"MASAC_44","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.02,0.999999694097773,1,"Sarcastic",0.891,false
+"MASAC_45","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_1771","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_2489","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.000008456446585097385,0,"Uncertain",0.15,true
+"MASAC_2492","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.0003115178465681952,0,"Uncertain",0.15,true
+"MASAC_1924","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_135","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.000020216878215451107,0,"Uncertain",0.15,true
+"MASAC_139","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_141","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.8060268050188196,0.646,"Uncertain",0.257,true
+"MASAC_143","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.02,3.059022269256247e-7,0,"Literal",0.867,false
+"MASAC_134","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_136","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_137","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,0.4916906559434855,0.149,"Uncertain",0.105,true
+"MASAC_138","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_140","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_142","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,0.0000019396511258919976,0,"Uncertain",0.15,true
+"MASAC_1341","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"MASAC_1345","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_1704","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_1706","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_1707","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_1708","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"MASAC_1709","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"MASAC_1727","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.0007488347959207784,0,"Uncertain",0.15,true
+"MASAC_1730","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"MASAC_1731","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_1733","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_2607","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"MASAC_183","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.02,0.999999694097773,1,"Sarcastic",0.893,false
+"MASAC_189","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"MASAC_181","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_182","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_184","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.1,0.000013230346694949274,0,"Literal",0.625,false
+"MASAC_185","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.02,0.999999694097773,1,"Sarcastic",0.884,false
+"MASAC_186","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.02,3.059022269256247e-7,0,"Literal",0.819,false
+"MASAC_187","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_188","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_190","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_1082","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_1085","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"MASAC_1086","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.00016982121089338597,0,"Uncertain",0.15,true
+"MASAC_1088","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_2637","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.2,0.9974322804696572,1,"Sarcastic",0.898,false
+"MASAC_833","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_1211","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.0000016170576235906037,0,"Uncertain",0.15,true
+"MASAC_1213","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_1214","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_1218","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_1391","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.9997380167381297,1,"Sarcastic",0.88,false
+"MASAC_1395","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_467","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_469","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.02,3.059022269256247e-7,0,"Literal",0.829,false
+"MASAC_463","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_464","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.2,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_465","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_466","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.2,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_468","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_470","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_878","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.000002515721605726812,0,"Uncertain",0.15,true
+"MASAC_835","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.09957085375881952,0.005,"Uncertain",0.149,true
+"MASAC_838","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_842","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_869","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_871","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_874","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.9979999920283051,1,"Sarcastic",0.887,false
+"MASAC_2440","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_2442","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_682","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.02,0.00004316769351681118,0,"Literal",0.814,false
+"MASAC_326","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_327","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_328","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,6.598512508358236e-7,0,"Uncertain",0.15,true
+"MASAC_334","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_329","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,0.000007113925856008492,0,"Uncertain",0.15,true
+"MASAC_330","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,0.9731635258219667,0.983,"Sarcastic",0.85,false
+"MASAC_331","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_332","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_333","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_335","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_2362","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_2366","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.02,3.059022269256247e-7,0,"Literal",0.811,false
+"MASAC_1380","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.02039672482853547,0,"Uncertain",0.15,true
+"MASAC_1385","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.02,3.059022269256247e-7,0,"Literal",0.829,false
+"MASAC_2419","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_2420","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"MASAC_2422","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_2426","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"MASAC_1172","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_1181","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_1185","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_1142","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_432","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_612","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_430","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.8570600865592395e-7,0,"Uncertain",0.15,true
+"MASAC_431","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_610","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_611","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_880","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_887","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.0000785840200242103,0,"Uncertain",0.15,true
+"MASAC_1624","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_384","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.9999766013140665,1,"Sarcastic",0.88,false
+"MASAC_386","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_394","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_385","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,0.999999694097773,1,"Sarcastic",0.886,false
+"MASAC_387","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.619955554756709e-7,0,"Uncertain",0.15,true
+"MASAC_388","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_389","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,0.999999694097773,1,"Sarcastic",0.887,false
+"MASAC_390","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_391","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_392","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_393","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_369","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.2,true
+"MASAC_370","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_372","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.999999694097773,1,"Sarcastic",0.883,false
+"MASAC_363","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_364","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_365","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_366","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_367","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,9.883693333270089e-7,0,"Uncertain",0.15,true
+"MASAC_368","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,0.999999694097773,1,"Sarcastic",0.884,false
+"MASAC_371","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_679","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"MASAC_1440","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_1441","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.2,3.059022269256247e-7,0,"Literal",0.625,false
+"MASAC_397","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_398","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_404","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.2,3.059022269256247e-7,0,"Uncertain",0.2,true
+"MASAC_395","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_396","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_399","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_400","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.02,0.6026080771967893,0.011,"Literal",0.831,false
+"MASAC_401","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_402","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_403","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_2070","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_2493","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"MASAC_288","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.999999694097773,1,"Sarcastic",0.885,false
+"MASAC_291","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_289","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_290","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_292","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,0.9992717212982065,1,"Sarcastic",0.88,false
+"MASAC_1054","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.36256024596935,0.069,"Uncertain",0.129,true
+"MASAC_1400","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.639771615179403e-7,0,"Uncertain",0.15,true
+"MASAC_1402","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_1794","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_1796","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.9999918651970101,1,"Sarcastic",0.88,false
+"MASAC_1797","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",1,0.25,0.00000633588059278047,0,"Uncertain",0.15,true
+"MASAC_433","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_434","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.02,3.059022269256247e-7,0,"Literal",0.807,false
+"MASAC_435","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_436","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_437","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,0.0010274539336130126,0,"Uncertain",0.15,true
+"MASAC_438","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_439","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_440","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_613","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_614","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_615","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_616","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_617","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_618","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_619","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_620","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.02,3.059022269256247e-7,0,"Literal",0.822,false
+"MASAC_493","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,0.9999726989935371,1,"Sarcastic",0.88,false
+"MASAC_494","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.2,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_495","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_496","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_497","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MASAC_19","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,0.9860230447512214,0.994,"Sarcastic",0.869,false
+"MASAC_20","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.2,0.0000022694945378394927,0,"Literal",0.625,false
+"MASAC_21","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"MASAC_23","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,0.999999694097773,1,"Sarcastic",0.88,false
+"MASAC_25","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.2,3.059022269256247e-7,0,"Uncertain",0.257,true
+"MASAC_26","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.02,0.999999694097773,1,"Sarcastic",0.907,false
+"MASAC_460","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,0.9990095868479248,1,"Sarcastic",0.88,false
+"MASAC_461","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,0.0658414735161793,0.003,"Uncertain",0.149,true
+"MASAC_462","IIITD_MaSaC_CodeMixed","Hindi-English (Hinglish)",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_12905","L3Cube_MahaEmotions","Marathi",1,0.31,0.0000011681113582227214,0,"Uncertain",0.15,true
+"MAHA_MR_4741","L3Cube_MahaEmotions","Marathi",1,0.31,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_1389","L3Cube_MahaEmotions","Marathi",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_4009","L3Cube_MahaEmotions","Marathi",1,0.25,0.000001762189320140984,0,"Uncertain",0.15,true
+"MAHA_MR_1338","L3Cube_MahaEmotions","Marathi",1,0.02,3.059022269256247e-7,0,"Literal",0.82,false
+"MAHA_MR_3684","L3Cube_MahaEmotions","Marathi",1,0.31,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_3964","L3Cube_MahaEmotions","Marathi",1,0.25,3.059022269256247e-7,0,"Uncertain",0.2,true
+"MAHA_MR_3624","L3Cube_MahaEmotions","Marathi",1,0.25,0.403712127818868,0.09,"Uncertain",0.123,true
+"MAHA_MR_1240","L3Cube_MahaEmotions","Marathi",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_1457","L3Cube_MahaEmotions","Marathi",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_6268","L3Cube_MahaEmotions","Marathi",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_6304","L3Cube_MahaEmotions","Marathi",1,0.31,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_1443","L3Cube_MahaEmotions","Marathi",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_4841","L3Cube_MahaEmotions","Marathi",1,0.31,3.059022269256247e-7,0,"Uncertain",0.2,true
+"MAHA_MR_1280","L3Cube_MahaEmotions","Marathi",1,0.31,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_7625","L3Cube_MahaEmotions","Marathi",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_1210","L3Cube_MahaEmotions","Marathi",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_1302","L3Cube_MahaEmotions","Marathi",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_5290","L3Cube_MahaEmotions","Marathi",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_1301","L3Cube_MahaEmotions","Marathi",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_7537","L3Cube_MahaEmotions","Marathi",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_1235","L3Cube_MahaEmotions","Marathi",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_3640","L3Cube_MahaEmotions","Marathi",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_4950","L3Cube_MahaEmotions","Marathi",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_3651","L3Cube_MahaEmotions","Marathi",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_3617","L3Cube_MahaEmotions","Marathi",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_7009","L3Cube_MahaEmotions","Marathi",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_1406","L3Cube_MahaEmotions","Marathi",1,0.25,0.000005380056154741841,0,"Uncertain",0.15,true
+"MAHA_MR_3866","L3Cube_MahaEmotions","Marathi",1,0.31,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_12848","L3Cube_MahaEmotions","Marathi",1,0.31,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_5960","L3Cube_MahaEmotions","Marathi",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_7641","L3Cube_MahaEmotions","Marathi",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_4932","L3Cube_MahaEmotions","Marathi",1,0.25,6.55133134103713e-7,0,"Uncertain",0.15,true
+"MAHA_MR_1388","L3Cube_MahaEmotions","Marathi",1,0.25,4.5041359192354927e-7,0,"Uncertain",0.15,true
+"MAHA_MR_12125","L3Cube_MahaEmotions","Marathi",1,0.25,0.006756187870863304,0,"Uncertain",0.15,true
+"MAHA_MR_1370","L3Cube_MahaEmotions","Marathi",1,0.31,0.999999694097773,1,"Sarcastic",0.897,false
+"MAHA_MR_1205","L3Cube_MahaEmotions","Marathi",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_533","L3Cube_MahaEmotions","Marathi",0,0.31,0.060445309562420516,0.003,"Uncertain",0.149,true
+"MAHA_MR_191","L3Cube_MahaEmotions","Marathi",0,0.31,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_947","L3Cube_MahaEmotions","Marathi",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_1104","L3Cube_MahaEmotions","Marathi",0,0.25,3.059022269256247e-7,0,"Uncertain",0.18,true
+"MAHA_MR_518","L3Cube_MahaEmotions","Marathi",0,0.25,0.09576799234985793,0.005,"Uncertain",0.149,true
+"MAHA_MR_786","L3Cube_MahaEmotions","Marathi",0,0.31,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_1041","L3Cube_MahaEmotions","Marathi",0,0.31,0.0004279190158507649,0,"Uncertain",0.15,true
+"MAHA_MR_723","L3Cube_MahaEmotions","Marathi",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_1122","L3Cube_MahaEmotions","Marathi",0,0.25,0.0007273675898640897,0,"Uncertain",0.15,true
+"MAHA_MR_981","L3Cube_MahaEmotions","Marathi",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_253","L3Cube_MahaEmotions","Marathi",0,0.25,0.29401577945514357,0.043,"Uncertain",0.137,true
+"MAHA_MR_690","L3Cube_MahaEmotions","Marathi",0,0.25,3.160905381921242e-7,0,"Uncertain",0.15,true
+"MAHA_MR_1275","L3Cube_MahaEmotions","Marathi",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_910","L3Cube_MahaEmotions","Marathi",0,0.25,0.00017557009206844667,0,"Uncertain",0.15,true
+"MAHA_MR_279","L3Cube_MahaEmotions","Marathi",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_227","L3Cube_MahaEmotions","Marathi",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_316","L3Cube_MahaEmotions","Marathi",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_1189","L3Cube_MahaEmotions","Marathi",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_126","L3Cube_MahaEmotions","Marathi",0,0.25,0.7588512768973568,0.583,"Uncertain",0.15,true
+"MAHA_MR_27","L3Cube_MahaEmotions","Marathi",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_1245","L3Cube_MahaEmotions","Marathi",0,0.25,4.6534237582425697e-7,0,"Uncertain",0.15,true
+"MAHA_MR_187","L3Cube_MahaEmotions","Marathi",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_348","L3Cube_MahaEmotions","Marathi",0,0.25,0.0019251274654961724,0,"Uncertain",0.15,true
+"MAHA_MR_558","L3Cube_MahaEmotions","Marathi",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_804","L3Cube_MahaEmotions","Marathi",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_687","L3Cube_MahaEmotions","Marathi",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_1061","L3Cube_MahaEmotions","Marathi",0,0.31,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_1016","L3Cube_MahaEmotions","Marathi",0,0.25,0.998264877073301,1,"Sarcastic",0.88,false
+"MAHA_MR_663","L3Cube_MahaEmotions","Marathi",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_540","L3Cube_MahaEmotions","Marathi",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_1057","L3Cube_MahaEmotions","Marathi",0,0.25,0.999999694097773,1,"Sarcastic",0.895,false
+"MAHA_MR_156","L3Cube_MahaEmotions","Marathi",0,0.25,3.059022269256247e-7,0,"Uncertain",0.2,true
+"MAHA_MR_13","L3Cube_MahaEmotions","Marathi",0,0.31,0.999999694097773,1,"Sarcastic",0.9,false
+"MAHA_MR_1146","L3Cube_MahaEmotions","Marathi",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_373","L3Cube_MahaEmotions","Marathi",0,0.25,0.0003499649963568728,0,"Uncertain",0.15,true
+"MAHA_MR_748","L3Cube_MahaEmotions","Marathi",0,0.25,3.059022269256247e-7,0,"Uncertain",0.301,true
+"MAHA_MR_1091","L3Cube_MahaEmotions","Marathi",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"MAHA_MR_937","L3Cube_MahaEmotions","Marathi",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_280","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",1,0.25,0.9575973158923085,0.965,"Sarcastic",0.818,false
+"TELUGU_3821","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_2816","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",1,0.25,0.0011201475134982293,0,"Uncertain",0.15,true
+"TELUGU_5401","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",1,0.25,0.9921364230188763,0.998,"Sarcastic",0.876,false
+"TELUGU_2949","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_704","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",1,0.02,3.059022269256247e-7,0,"Literal",0.82,false
+"TELUGU_1353","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_5484","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_2365","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_432","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_5339","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_3344","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_4740","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_5250","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_6133","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_6614","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_6338","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",1,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_9","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_171","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_10","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_110","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_434","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_228","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_90","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_181","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.2,3.059022269256247e-7,0,"Uncertain",0.2,true
+"TELUGU_197","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_322","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_348","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_216","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.02,3.059022269256247e-7,0,"Literal",0.815,false
+"TELUGU_309","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_202","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_39","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_200","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_412","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_388","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_63","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_59","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_344","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_307","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_5","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_61","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_112","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.02,3.059022269256247e-7,0,"Literal",0.817,false
+"TELUGU_461","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_212","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_343","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_213","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_194","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_444","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_114","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_138","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_3","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_337","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_419","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_24","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_291","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_439","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_366","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_108","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_420","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_332","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.2,3.059022269256247e-7,0,"Uncertain",0.164,true
+"TELUGU_429","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.02,3.059022269256247e-7,0,"Literal",0.814,false
+"TELUGU_377","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_164","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_262","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_459","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,0.9140261875882192,0.892,"Sarcastic",0.69,false
+"TELUGU_317","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_87","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_88","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_363","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_405","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_403","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_303","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_257","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_201","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_188","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_199","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_123","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_238","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_453","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_103","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_89","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_207","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_155","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_436","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,0.000009297728562752548,0,"Uncertain",0.15,true
+"TELUGU_407","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_411","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_367","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_69","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_165","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_311","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_187","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_71","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,0.02490437906715564,0.001,"Uncertain",0.15,true
+"TELUGU_173","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_297","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_387","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_408","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_421","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_30","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_336","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_58","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_328","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_53","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_399","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_254","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_433","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_132","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_119","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_426","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true
+"TELUGU_335","IIIT_Hyderabad_Telugu_Sarcasm","Telugu",0,0.25,3.059022269256247e-7,0,"Uncertain",0.15,true

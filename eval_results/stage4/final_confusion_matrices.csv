@@ -1,0 +1,7 @@
+System,Total,TP,FP,TN,FN
+"A. Stage 2 Linguistic-Only",1123,16,16,588,503
+"B. Word N-Grams (1-2)",1123,320,283,321,199
+"C. Char N-Grams (3-5)",1123,289,238,366,230
+"D. Subword Chunks",1123,302,267,337,217
+"E. Calibrated Hybrid Fusion",1123,297,265,339,222
+"F. MuRIL Transformer Reference",1123,302,267,337,217

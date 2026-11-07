@@ -1,0 +1,5 @@
+Representation,Accuracy,Precision,Recall,F1,MacroF1,Specificity,BrierScore,TP,FP,TN,FN
+"Stage 2 Linguistic Engine",53.26,47.37,1.75,3.37,36.27,98.30,0.3126,9,10,579,506
+"Word N-Grams (1-2 gram)",59.33,55.61,63.50,59.29,59.33,55.69,0.3954,327,261,328,188
+"Character N-Grams (3-5 char)",59.42,56.12,59.61,57.82,59.36,59.25,0.4038,307,240,349,208
+"Subword Chunks (3-4 subwords)",58.88,55.66,58.25,56.93,58.79,59.42,0.4073,300,239,350,215

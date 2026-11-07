@@ -1,0 +1,6 @@
+ModelArchitecture,Representation,Accuracy,Precision,Recall,MacroF1,Specificity,ConfidenceECE,ClassECE,BrierScore,NLL
+"Linguistic_Only","Handcrafted Lexicon + Morphology",53.26,47.37,1.75,36.27,98.3,24.44,24.52,0.3126,0.9213
+"Word_NGrams","Sparse Word N-Grams (1-2)",55.8,52.73,50.68,55.47,60.27,35.76,35.88,0.376,1.1643
+"Char_NGrams","Character N-Grams (3-5)",56.16,52.93,54.37,56.03,57.72,36.33,36.33,0.3772,1.1728
+"Subword_Chunks","Subword Chunks (3-6 chars)",55.25,52.04,52.04,55.05,58.06,36.99,37.07,0.3832,1.1888
+"Calibrated_Hybrid_Fusion","SARcasmScope Multi-Signal Fusion",54.89,51.91,44.85,54.11,63.67,35.1,35.1,0.3786,1.4609

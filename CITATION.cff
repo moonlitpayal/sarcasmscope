@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use SARcasmScope in your research, please cite it as below."
+title: "SARcasmScope: A Calibrated Feature-Fusion Framework for Context-Aware Sarcasm Detection in Multilingual and Code-Mixed Text"
+version: 1.0.0
+date-released: 2026-11-07
+authors:
+  - family-names: "Mehta"
+    given-names: "Payal"
+    email: "payal.12620246@vit.edu"
+    affiliation: "Vellore Institute of Technology"
+keywords:
+  - "sarcasm-detection"
+  - "computational-linguistics"
+  - "multilingual-nlp"
+  - "indic-languages"
+  - "hinglish"
+  - "marathi"
+  - "telugu"
+  - "code-mixing"
+  - "calibrated-feature-fusion"
+  - "selective-prediction"
+  - "affective-computing"
+license: "MIT"
+repository-code: "https://github.com/moonlitpayal/sarcasmscope"
+abstract: >-
+  SARcasmScope is an anti-fragile, calibrated feature-fusion framework that synergizes
+  client-side linguistic incongruity analysis, Indic morphological normalization,
+  Romanized phonetic folding, and regularized subword semantic representations.
+  Evaluated across 5,600 independently partitioned records from 5 established public
+  corpora, SARcasmScope improves independent sarcasm recall from 1.37% to 55.93%
+  (56.57% Macro-F1) on a frozen held-out test split (N = 1,123), with an inference latency
+  under 0.26 ms on standard CPU hardware.

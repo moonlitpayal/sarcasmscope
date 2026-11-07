@@ -1,0 +1,5 @@
+{
+  "summary":  "Comprehensive independent scientific generalization audit and large-scale empirical evaluation of SARcasmScope across 5,712 real-world samples from 5 peer-reviewed public datasets (ACL 2020 Twitter, Misra News Headlines, IIIT Delhi MaSaC, L3Cube-MahaEmotions Marathi, IIIT Hyderabad Telugu). Analyzes dataset independence, data leakage, domain transfer failure modes, specificity vs. recall, and research paper publication guidance.",
+  "updatedAt":  "2026-11-07T05:11:10.158519237Z",
+  "userFacing":  true
+}

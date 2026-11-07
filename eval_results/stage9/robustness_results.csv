@@ -1,0 +1,10 @@
+PerturbationTest,RepresentationType,TestedSampleCount,EmpiricalStabilityPercentage,MeanProbabilityShift,PredictionFlips,ScientificRationale
+"1. Typographical Character Transposition","Spelling / Morphology",100,100,0.005,0,"Subword n-grams (lengths 3-6) preserve partial matches, preventing total token breakdown"
+"2. Repeated Characters / Vowel Elongation","Phonetic / Orthographic",100,98,0.022,2,"Romanized phonetic normalizer folds repeated graphemes ([c]{3,} -> c), neutralizing elongation"
+"3. Emoji Removal","Pragmatic Markers",100,100,0,0,"Textual incongruity and subwords maintain verdict even when irony emojis are removed"
+"4. Punctuation Removal","Hyperbole / Syntax",100,100,0.005,0,"Lexical polarity clash and subword scores dominate punctuation hyperbole"
+"5. Romanized Spelling Variation","Dialect / Transliteration",100,100,0,0,"Phonetic folding maps common transliteration variants to uniform phonetic keys"
+"6. Code-Mixing Alternation","Language Switching",100,100,0.001,0,"Multilingual subwords and bilingual sentiment dictionaries handle code-switched terms"
+"7. Dialogue Context Removal","Contextual Grounding",100,99,0.007,1,"Utterances relying strictly on dialogue clash revert to literal prior when context is detached"
+"8. Unseen Vocabulary Insertion","Open Vocabulary",100,100,0,0,"Subword hashing absorbs unseen terms gracefully without causing runtime exceptions"
+"9. Dialectal Marathi / Telugu Morphological Variation","Agglutinative Shift",100,100,0,0,"Indic suffix stripper matches canonical case families, neutralizing dialectal variation"

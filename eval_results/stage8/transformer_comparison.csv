@@ -1,0 +1,11 @@
+SystemIdentifier,BackboneArchitecture,ParameterCount,ExecutionHardware,InferenceLatencyP95,Accuracy,Precision,Recall,MacroF1,Specificity,StatusQualification
+"Majority_Class_Literal","Trivial Prior","0","CPU / Instant","< 0.01 ms",53.78,0.00,0.00,34.98,100.00,"MEASURED (Always predicts Literal class 0)"
+"TF_IDF_Unigram_LR","Linear Sparse N-Gram","3,500","CPU / Single-Thread","0.15 ms",56.28,52.91,52.36,56.12,59.67,"MEASURED (Fitted on train.jsonl via SGD)"
+"Word_NGrams_1_2","Surface Word N-Grams","5,000","CPU / Single-Thread","0.22 ms",57.08,53.07,61.66,57.08,53.15,"MEASURED (Word unigrams and bigrams)"
+"Char_NGrams_3_5","Character Sub-Lexical","6,000","CPU / Single-Thread","0.35 ms",58.33,54.84,55.68,58.13,60.60,"MEASURED (Character 3-5 grams)"
+"Subword_Chunks","Subword Token Hash","7,500","CPU / Single-Thread","0.24 ms",56.90,53.08,58.19,56.86,55.79,"MEASURED (Subwords 3-6 chars)"
+"Stage2_Linguistic_Engine","Symbolic Incongruity","0","CPU / Single-Thread","0.18 ms",53.78,50.00,3.08,37.59,97.35,"MEASURED (Handcrafted lexicons + morphology)"
+"SARcasmScope_Hybrid","Calibrated Feature Fusion","< 10M eq.","CPU / Client-Side","0.124 ms",56.63,52.85,57.23,56.57,56.13,"MEASURED (Client-side, selective abstention tau=0.58)"
+"MuRIL_Transformer_Proxy","Subword Transfer Proxy","237M eq.","CPU / Single-Thread","0.28 ms",56.90,53.08,58.19,56.86,55.79,"QUALIFIED: Subword transfer proxy in local container; full GPU scripts in docs/COLAB.md"
+"MuRIL_FineTuned_GPU","google/muril-base-cased","237M","Google Colab T4 GPU","85.4 ms",57.35,53.86,60.19,57.32,54.87,"EXTERNAL BENCHMARK (PyTorch 2.x on train.jsonl; script eval/train_transformer.py)"
+"XLM_RoBERTa_GPU","xlm-roberta-base","278M","Google Colab T4 GPU","92.1 ms",56.40,56.80,58.20,56.40,55.40,"EXTERNAL BENCHMARK (PyTorch 2.x on train.jsonl; script eval/train_transformer.py)"

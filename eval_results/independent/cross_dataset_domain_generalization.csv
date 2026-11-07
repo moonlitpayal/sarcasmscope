@@ -1,0 +1,6 @@
+SourceDomain,TargetDomain,SampleCount,MacroF1,Accuracy,Recall,Precision,KeyFailureMode
+"Demonstration Templates","Conversational Dialogue (Twitter)",1800,36.19,49.72,3.67,46.48,"Slang, implicit world knowledge, hashtag irony"
+"Demonstration Templates","News Headlines (The Onion)",2000,33.64,50.10,0.30,75.00,"Absurdity/satire without explicit polarity contrast"
+"Demonstration Templates","TV Code-Mixed Dialogue (MaSaC)",1000,33.33,50.00,0.00,0.00,"Acoustic/prosodic sarcasm, conversational turn-taking"
+"Demonstration Templates","Marathi Social Media (MahaEmotions)",370,33.33,50.00,0.00,0.00,"Complex inflectional morphology, political satire"
+"Demonstration Templates","Telugu Social Media (Marreddy)",1000,47.98,92.25,0.00,0.00,"Agglutinative suffixes, sandhi, domain lexicon coverage"

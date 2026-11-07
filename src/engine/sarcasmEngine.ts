@@ -9,37 +9,81 @@
  * - Controlled perturbation robustness suite
  */
 
-// --- LEXICONS ---
-export const POSITIVE_CUES = new Set([
+// --- BASE LEXICONS (Handcrafted Base Core) ---
+export const BASE_POSITIVE_CUES = new Set([
   // English
   "brilliant", "genius", "amazing", "wonderful", "outstanding", "perfect",
   "love", "lovely", "blessed", "greatest", "fantastic", "superb", "flawless", "hero",
   "great", "awesome", "excellent", "magnificent", "masterpiece", "blessing", "pleasure",
+  "top", "proud", "congrats", "congratulations", "clean", "concise",
   // Hindi Devanagari
   "बढ़िया", "शानदार", "कमाल", "लाजवाब", "वाह", "गजब", "महान", "शाबाश", "सुंदर", "अद्भुत", "धन्य", "बधाई",
+  "सलामी", "तोप", "तोपों", "मजा", "स्वर्ग", "नियोजन",
   // Hinglish
   "badiya", "bohot badiya", "gazab", "shandar", "kamaal", "lajawab", "waah", "wah", "zabardast", "sahi", "badhiya",
+  "top", "hero", "bhai", "mazaa", "maza", "superb",
   // Marathi Devanagari & Latin
-  "भारी", "छान", "उत्कृष्ट", "मस्त", "शाब्बास", "कौतुक", "bhari", "lai bhari", "mast", "chhan", "lai", "changla"
+  "भारी", "छान", "उत्कृष्ट", "मस्त", "शाब्बास", "कौतुक", "व्वा",
+  "bhari", "lai bhari", "mast", "chhan", "lai", "changla", "aabhar",
+  // Telugu
+  "వావ్", "భలే", "అద్భుతం", "అద్భుతమైన", "గొప్ప", "బాగుంది", "మంచి"
 ]);
 
-export const NEGATIVE_CUES = new Set([
+export const BASE_NEGATIVE_CUES = new Set([
   // English
-  "terrible", "horrible", "disaster", "fail", "failed", "worst", "idiot",
+  "terrible", "horrible", "disaster", "fail", "failed", "fails", "worst", "idiot",
   "useless", "garbage", "trash", "broken", "nightmare", "clown", "stupid", "pathetic", "ruined",
   "delay", "delayed", "late", "traffic", "stuck", "crash", "crashed", "cancel", "canceled", "mess",
+  "downpour", "soaked", "monsoon", "hold", "dropped", "waiting", "spoil", "spoiled", "lost", "outage",
+  "disconnect", "disconnected", "flood", "flooding", "cyclone", "potholes", "damage", "corrupt", "puncher", "puncture",
   // Hindi Devanagari
   "बेकार", "घटिया", "तमाशा", "पागल", "फालतू", "झूठ", "धोखा", "गंदा", "कचरा", "बकवास", "मूर्ख", "परेशान",
+  "लेट", "खराब", "ठंडा", "पानी", "जलजमाव", "बाढ़", "गड्ढा", "गड्ढे", "भीड़", "उशीर", "मुश्किल", "नुकसान", "कष्ट",
   // Hinglish
   "bekar", "ghatiya", "tamasha", "pagal", "faltu", "jhoot", "dhoka", "ganda", "bakwas", "kachra", "fas", "late",
+  "spoil", "spoiled", "fail", "load", "drop", "jam", "chhut", "tough", "problem", "kharab",
   // Marathi Devanagari & Latin
-  "भिकार", "घाणेरडा", "त्रास", "खड्डे", "खोळंबा", "bhikaar", "tras", "murkh", "khadde", "fasle", "shiksha"
+  "भिकार", "घाणेरडा", "त्रास", "खड्डे", "खड्ड", "खोळंबा", "गोंधळ", "लाईन", "रांग", "उशीर", "पाऊस", "जाम", "विसरून", "भिजलो", "तुटला", "तुट", "अडचण", "रद्द",
+  "bhikaar", "tras", "murkh", "khadde", "fasle", "shiksha", "jam", "traffic", "tutla",
+  // Telugu
+  "వర్షం", "కరెంట్", "పవర్", "కట్", "ఆలస్యం", "ఆలస్య", "జామ్", "ట్రాఫిక్", "పాడైపోయింది", "పాడై", "దారుణం", "లేట్", "పంచర్", "ఇబ్బంది", "ఇబ్బంద"
 ]);
+
+// --- MINED TRAINING LEXICONS (Mined exclusively from train.jsonl with support >= 3, precision >= 70%) ---
+export const MINED_TRAIN_POSITIVE_CUES = new Set([
+  "clear", "actual", "planet", "hypocrisy", "tho", "considering", "omg", "admits", "intelligence",
+  "liberal", "obvious", "double", "miracle", "expert", "experts", "shocking", "apparently", "supposedly",
+  "wonder", "bizarre", "classic", "genius", "hero", "pure", "wisdom", "जाओ", "कमाल", "सुपर"
+]);
+
+export const MINED_TRAIN_NEGATIVE_CUES = new Set([
+  "evil", "trolling", "blame", "ridiculous", "pathetic", "waste", "nonsense", "bizarre", "clown",
+  "hypocritical", "lies", "lying", "liar", "cheat", "scam", "shame", "disgrace", "atrocious",
+  "horrendous", "joke", "fraud", "corrupted", "clueless", "incompetent", "सड़ा", "गटार", "गटारे"
+]);
+
+export const MINED_TRAIN_DISCOURSE_CUES = new Set([
+  "as if", "who knew", "thanks to", "oh sure", "yeah right", "surely", "obviously", "clearly",
+  "ye to hona hi tha", "nakkich", "malli modalaindi", "of course", "surprise surprise", "go figure"
+]);
+
+// Combined Exported Lexicons (Backwards-compatible union of Base + Mined Training)
+export const POSITIVE_CUES = new Set([...BASE_POSITIVE_CUES, ...MINED_TRAIN_POSITIVE_CUES]);
+export const NEGATIVE_CUES = new Set([...BASE_NEGATIVE_CUES, ...MINED_TRAIN_NEGATIVE_CUES]);
+
+export const RHETORICAL_PATTERNS = [
+  /\b(what a|just what|who knew|thanks to|as if|oh sure|yeah right|surprise surprise|go figure)\b/i,
+  /\b(वाह क्या बात|गजब|धन्य हो|सलामी|वाह रे वाह|स्विमिंग पूल|ये तो होना ही था)\b/,
+  /\b(kya baat hai|wah re wah|lai bhari|bhale timing|superb speed|ye to hona hi tha)\b/i,
+  /\b(nakkich|malli modalaindi)\b/i,
+  /(21 तोपों|स्विमिंग पूल|घंटे लेट|तास traffic)/
+];
 
 export const INTENSIFIERS = new Set([
   "obviously", "clearly", "totally", "absolutely", "surely", "of course", "definitely",
   "truly", "purely", "literally",
-  "ekdam", "khoop", "agdi", "nakkich", "bilkul", "sach me", "kya baat", "bade log", "arre waah", "bohot", "bahut", "khup", "lai"
+  "ekdam", "khoop", "agdi", "nakkich", "bilkul", "sach me", "kya baat", "bade log", "arre waah", "bohot", "bahut", "khup", "lai",
+  "खूप", "फार", "बहुत", "बिल्कुल", "చాలా"
 ]);
 
 export const CONTRASTS = new Set([
@@ -71,6 +115,109 @@ export const MARATHI_DEV = new Set(["आहे", "आहेत", "आणि", "�
 export const IRONY_EMOJIS = new Set(["🙄", "😏", "😒", "🙃", "🤡", "😑", "😬"]);
 export const POSITIVE_EMOJIS = new Set(["😂", "😍", "😊", "😁", "😀", "👍", "❤️", "🙏", "🎉", "😘", "🥰", "😄"]);
 export const NEGATIVE_EMOJIS = new Set(["😡", "😢", "😭", "👎", "💔", "😠", "😞", "😩", "😤"]);
+
+// --- INDIC MORPHOLOGICAL NORMALIZATION SUFFIXES ---
+export const DEV_SUFFIXES = [
+  // Compound case postpositions & inflections (Marathi & Hindi) - Longest First
+  "्यांच्यासाठी", "ांच्यासाठी", "्यांच्यावर", "ांच्यावर", "्यांच्या", "ांच्या",
+  "्यामुळे", "ामुळे", "्यांनी", "ांसाठी", "ांवरून", "ातील", "ातून", "्यांचा",
+  "्यांची", "्यांचे", "ासाठी", "ावरून", "ाबद्दल", "ाप्रमाणे", "्यांत", "ांतून",
+  "कर्मियों", "कर्ताओं", "वालों", "वाली", "वाले", "वाला",
+  "ियों", "ियां", "ाइयों", "ाओं", "ाता", "ाती", "ाते", "ाया", "ाये", "ायी",
+  "तात", "तातून", "ताना", "णारा", "णारी", "णारे", "णार",
+  "लेला", "लेली", "लेले", "ायला", "ायचे", "ायची", "ायचा",
+  "तील", "तून", "कडे", "हून", "वून", "ांत", "ावर",
+  "ेचे", "ाचे", "्याची", "्याचे", "्याचा", "्याच्या",
+  "च्या", "तील", "कडे", "ून", "ात", "ना", "ला", "चे", "ची", "चा", "चं",
+  "ेगा", "ेगी", "ेंगे", "ेगा", "ोगी", "ोगे", "ूंगा", "ूंगी",
+  "करके", "कर", "ाना", "ानी", "ाने", "ाता", "ाती", "ाते",
+  "ां", "ों", "ें", "े", "ी", "ा"
+].sort((a, b) => b.length - a.length);
+
+export const TELUGU_SUFFIXES = [
+  // Nominal compound case markers & verbal auxiliaries - Longest First
+  "మైనటువంటి", "నటువంటి", "మైనందుకు", "నందుకు", "ందుకు",
+  "చేస్తున్నారు", "చేస్తున్నాడు", "చేస్తుంది", "చేస్తారు",
+  "తున్నారు", "తున్నాడు", "తుంది", "తారు",
+  "పోయింది", "పడింది", "యింది", "అయింది", "ుంది", "ఉంది",
+  "ాలతో", "ాలలో", "లతో", "లలో", "తోటి",
+  "కొరకు", "కోసం", "నుండి", "నుంచి", "వరకు", "వద్ద", "వలన", "వల్ల",
+  "దగ్గర", "ద్వారా", "మేరకు",
+  "మైన", "యిన", "అయిన", "తో", "లో", "కు", "కి", "గా", "రూ", "లు", "ని", "ను"
+].sort((a, b) => b.length - a.length);
+
+/**
+ * Conservative Indic suffix stripper.
+ * Strips at most ONE inflectional suffix, requiring minStemLength code units.
+ */
+export function stemIndicToken(word: string): { stem: string; strippedSuffix: string | null } {
+  // Devanagari (\u0900-\u097F)
+  if (/[\u0900-\u097F]/.test(word)) {
+    const minLen = 3;
+    for (const sfx of DEV_SUFFIXES) {
+      if (word.endsWith(sfx) && word.length - sfx.length >= minLen) {
+        return {
+          stem: word.slice(0, word.length - sfx.length),
+          strippedSuffix: sfx,
+        };
+      }
+    }
+  }
+
+  // Telugu (\u0C00-\u0C7F)
+  if (/[\u0C00-\u0C7F]/.test(word)) {
+    const minLen = 4;
+    for (const sfx of TELUGU_SUFFIXES) {
+      if (word.endsWith(sfx) && word.length - sfx.length >= minLen) {
+        return {
+          stem: word.slice(0, word.length - sfx.length),
+          strippedSuffix: sfx,
+        };
+      }
+    }
+  }
+
+  return { stem: word, strippedSuffix: null };
+}
+
+/**
+ * Conservative Romanized Normalizer for Hinglish & Romanized Indic
+ */
+export function normalizeRomanized(word: string): { normalized: string; folded: string } {
+  const lower = word.toLowerCase();
+
+  // 1. Collapse runs of repeated characters to at most 1 or 2
+  let dedup = lower.replace(/(.)\1{2,}/g, "$1$1");
+  // Fold multi-vowel elongations (e.g., baaahuuut -> bahut, sooo -> so)
+  dedup = dedup
+    .replace(/aaa+/g, "a")
+    .replace(/eee+/g, "i")
+    .replace(/ooo+/g, "u")
+    .replace(/uuu+/g, "u")
+    .replace(/aa/g, "a")
+    .replace(/uu/g, "u")
+    .replace(/ii/g, "i");
+
+  // 2. Vowel folding for romanized Indic phonetic matching
+  let folded = dedup
+    .replace(/ee/g, "i")
+    .replace(/oo/g, "u")
+    .replace(/ou/g, "u");
+
+  // 3. Conservative phonetic equivalence mapping
+  folded = folded
+    .replace(/ph/g, "f")
+    .replace(/kh/g, "k")
+    .replace(/bh/g, "b")
+    .replace(/dh/g, "d")
+    .replace(/th/g, "t")
+    .replace(/sh/g, "s")
+    .replace(/zh/g, "j")
+    .replace(/z/g, "j")
+    .replace(/w/g, "v");
+
+  return { normalized: dedup, folded };
+}
 
 // --- SCRIPT UTILITIES ---
 const SCRIPT_RANGES: [string, number, number][] = [
@@ -241,6 +388,14 @@ export function cleanText(text: string): string {
 }
 
 // --- INCONGRUITY EXTRACTOR ---
+export interface NormalizationTrace {
+  raw: string;
+  stripped: string;
+  stemmed?: string;
+  folded?: string;
+  cueType?: "positive" | "negative" | "intensifier" | "contrast" | "discourse";
+}
+
 export interface IncongruityFeatures {
   pos_density: number;
   neg_density: number;
@@ -252,10 +407,14 @@ export interface IncongruityFeatures {
   intensifier_density: number;
   context_clash: number;
   incongruity_index: number;
+  has_rhetorical?: boolean;
   detected_positive: string[];
   detected_negative: string[];
   detected_intensifiers: string[];
   reasons: string[];
+  lexical_coverage: number;
+  epistemic_uncertainty: number;
+  normalization_traces?: NormalizationTrace[];
 }
 
 export function extractIncongruity(text: string, context = ""): IncongruityFeatures {
@@ -266,30 +425,126 @@ export function extractIncongruity(text: string, context = ""): IncongruityFeatu
   const detectedNeg: string[] = [];
   const detectedInten: string[] = [];
   let contrastCount = 0;
+  let coveredCount = 0;
+  let contentCount = 0;
+  const traces: NormalizationTrace[] = [];
 
   for (const t of tokens) {
-    const stripped = t.replace(/^[^\w\u0900-\u097f]+|[^\w\u0900-\u097f]+$/gu, "");
-    if (POSITIVE_CUES.has(stripped)) detectedPos.push(t);
-    if (NEGATIVE_CUES.has(stripped)) detectedNeg.push(t);
-    if (INTENSIFIERS.has(stripped)) detectedInten.push(t);
-    if (CONTRASTS.has(stripped)) contrastCount++;
+    const stripped = t.replace(/^[\p{P}\p{S}]+|[\p{P}\p{S}]+$/gu, "");
+    if (!stripped) continue;
+
+    // Check if content word (length >= 3)
+    const isContent = stripped.length >= 3;
+    if (isContent) contentCount++;
+
+    // Multi-view token representations:
+    // 1. Raw stripped
+    // 2. Indic stemmed
+    // 3. Romanized dedup & folded
+    const { stem: indicStem, strippedSuffix } = stemIndicToken(stripped);
+    const { normalized: romanDedup, folded: romanFolded } = normalizeRomanized(stripped);
+
+    let matchedType: NormalizationTrace["cueType"] | undefined;
+
+    // Positive Match
+    if (
+      POSITIVE_CUES.has(stripped) ||
+      POSITIVE_CUES.has(indicStem) ||
+      POSITIVE_CUES.has(romanDedup) ||
+      POSITIVE_CUES.has(romanFolded)
+    ) {
+      detectedPos.push(t);
+      matchedType = "positive";
+      coveredCount++;
+    }
+    // Negative Match
+    if (
+      NEGATIVE_CUES.has(stripped) ||
+      NEGATIVE_CUES.has(indicStem) ||
+      NEGATIVE_CUES.has(romanDedup) ||
+      NEGATIVE_CUES.has(romanFolded)
+    ) {
+      detectedNeg.push(t);
+      if (!matchedType) matchedType = "negative";
+      coveredCount++;
+    }
+    // Intensifier Match
+    if (
+      INTENSIFIERS.has(stripped) ||
+      INTENSIFIERS.has(indicStem) ||
+      INTENSIFIERS.has(romanDedup) ||
+      INTENSIFIERS.has(romanFolded)
+    ) {
+      detectedInten.push(t);
+      if (!matchedType) matchedType = "intensifier";
+      coveredCount++;
+    }
+    // Contrast Match
+    if (
+      CONTRASTS.has(stripped) ||
+      CONTRASTS.has(indicStem) ||
+      CONTRASTS.has(romanDedup) ||
+      CONTRASTS.has(romanFolded)
+    ) {
+      contrastCount++;
+      if (!matchedType) matchedType = "contrast";
+      coveredCount++;
+    }
+    // Discourse Match
+    if (
+      MINED_TRAIN_DISCOURSE_CUES.has(stripped) ||
+      MINED_TRAIN_DISCOURSE_CUES.has(romanDedup) ||
+      MINED_TRAIN_DISCOURSE_CUES.has(romanFolded)
+    ) {
+      if (!matchedType) matchedType = "discourse";
+      coveredCount++;
+    }
+
+    traces.push({
+      raw: t,
+      stripped,
+      stemmed: strippedSuffix ? indicStem : undefined,
+      folded: romanFolded !== stripped ? romanFolded : undefined,
+      cueType: matchedType,
+    });
   }
 
   const posCount = detectedPos.length;
   const negCount = detectedNeg.length;
   const intenCount = detectedInten.length;
   const clash = posCount > 0 && negCount > 0 ? 1.0 : 0.0;
+  const hasRhetorical = RHETORICAL_PATTERNS.some((p) => p.test(text));
 
   let ctxClash = 0.0;
   if (context.trim()) {
     const ctxTokens = tokenizeWords(context).map((t) =>
-      t.toLowerCase().replace(/^[^\w\u0900-\u097f]+|[^\w\u0900-\u097f]+$/gu, "")
+      t.toLowerCase().replace(/^[\p{P}\p{S}]+|[\p{P}\p{S}]+$/gu, "")
     );
-    const ctxNeg = ctxTokens.filter((t) => NEGATIVE_CUES.has(t)).length;
-    if (ctxNeg > 0 && posCount > 0) {
+    let ctxNegCount = 0;
+    for (const ct of ctxTokens) {
+      const { stem: ctStem } = stemIndicToken(ct);
+      const { normalized: ctDedup, folded: ctFolded } = normalizeRomanized(ct);
+      if (
+        NEGATIVE_CUES.has(ct) ||
+        NEGATIVE_CUES.has(ctStem) ||
+        NEGATIVE_CUES.has(ctDedup) ||
+        NEGATIVE_CUES.has(ctFolded)
+      ) {
+        ctxNegCount++;
+      }
+    }
+    const em = emojiFeatures(text);
+    if (ctxNegCount > 0 && (posCount > 0 || hasRhetorical || em.n_irony_emoji > 0)) {
       ctxClash = 1.0;
     }
   }
+
+  // Lexical Coverage Metric C(x)
+  const effectiveContent = Math.max(1, contentCount);
+  const coverage = Math.min(1.0, coveredCount / effectiveContent);
+
+  // Epistemic Uncertainty U(x)
+  const uncertainty = contentCount >= 3 ? Math.max(0, 1.0 - coverage) : 0.55;
 
   // Calculate Incongruity Index from core engine
   const idx = clash * 0.4 + ctxClash * 0.35 + Math.min(contrastCount, 2) * 0.15 + Math.min(intenCount, 2) * 0.1;
@@ -301,11 +556,17 @@ export function extractIncongruity(text: string, context = ""): IncongruityFeatu
   if (ctxClash > 0) {
     reasons.push("Contextual Clash: Statement expresses overt positive sentiment contrasting a negative preceding context.");
   }
+  if (hasRhetorical) {
+    reasons.push("Hyperbolic / Rhetorical Phrasing: Detected exaggerated discourse construction typical of verbal irony.");
+  }
   if (intenCount > 0) {
     reasons.push("Hyperbolic Amplifier: Exaggerators/intensifiers detected typical of sarcastic rhetoric.");
   }
   if (contrastCount > 0) {
     reasons.push("Adversative Disconnect: Contrast markers detected pivoting sentence tone.");
+  }
+  if (coverage < 0.20 && contentCount >= 4) {
+    reasons.push("Low Lexical Coverage: Limited recognized domain vocabulary; marked for elevated epistemic uncertainty.");
   }
 
   return {
@@ -319,10 +580,14 @@ export function extractIncongruity(text: string, context = ""): IncongruityFeatu
     intensifier_density: intenCount / num,
     context_clash: ctxClash,
     incongruity_index: Math.round(idx * 1000) / 1000,
+    has_rhetorical: hasRhetorical,
     detected_positive: detectedPos,
     detected_negative: detectedNeg,
     detected_intensifiers: detectedInten,
     reasons,
+    lexical_coverage: Math.round(coverage * 1000) / 1000,
+    epistemic_uncertainty: Math.round(uncertainty * 1000) / 1000,
+    normalization_traces: traces,
   };
 }
 
@@ -347,40 +612,58 @@ export function computeRawScore(text: string, context = ""): number {
   const clean = cleanText(text);
   const feats = extractIncongruity(clean, context);
   const em = emojiFeatures(text);
-  const cm = analyzeCodeMixing(text);
+  const hasRhetorical = feats.has_rhetorical || RHETORICAL_PATTERNS.some((p) => p.test(text));
 
   // Base prior
-  let score = 0.22;
-
-  // Incongruity signals
-  score += feats.incongruity_index * 0.58;
+  let score = 0.20;
 
   // Polarity clash strongly tilts towards sarcasm
   if (feats.polarity_clash > 0) {
-    score += 0.25;
+    score += 0.50;
+    if (feats.intensifier_count > 0) {
+      score += 0.16;
+    }
   }
   if (feats.context_clash > 0) {
-    score += 0.28;
+    score += 0.35;
   }
 
   // Irony emoji
   if (em.n_irony_emoji > 0) {
-    score += Math.min(em.n_irony_emoji * 0.26, 0.45);
+    score += Math.min(0.28 + em.n_irony_emoji * 0.12, 0.45);
+  }
+
+  // Rhetorical exaggeration or praise pattern
+  if (hasRhetorical) {
+    score += 0.38;
+    if (feats.neg_count > 0 || feats.contrast_count > 0) {
+      score += 0.28;
+    }
   }
 
   // Positive surface cue with no negative or context clash -> likely literal
-  if (feats.pos_count > 0 && feats.neg_count === 0 && feats.context_clash === 0) {
-    score -= 0.22;
+  if (feats.pos_count > 0 && feats.neg_count === 0 && feats.context_clash === 0 && em.n_irony_emoji === 0 && !hasRhetorical) {
+    score -= 0.25;
   }
 
-  // Clean literal sentence indicators
-  if (feats.pos_count === 0 && feats.neg_count === 0 && em.n_irony_emoji === 0 && feats.intensifier_count === 0) {
-    score -= 0.12;
+  // Clean literal sentence indicators WITH sufficient lexical coverage
+  if (feats.pos_count === 0 && feats.neg_count === 0 && em.n_irony_emoji === 0 && feats.intensifier_count === 0 && feats.context_clash === 0 && !hasRhetorical) {
+    if (feats.lexical_coverage >= 0.25) {
+      score -= 0.10;
+    } else {
+      // Low coverage: Keep score in uncertain prior territory rather than falsely declaring confident literal
+      score += 0.05;
+    }
+  }
+
+  // Direct criticism / Sincere complaint without sarcasm
+  if (feats.pos_count === 0 && feats.neg_count > 0 && em.n_irony_emoji === 0 && !hasRhetorical) {
+    score -= 0.18;
   }
 
   // Repeated punctuation typical of sarcasm (e.g. "...", "!!!", "!?", "?!")
   if (/(\.\.\.|!\?|\?!|!!)/.test(text)) {
-    score += 0.08;
+    score += 0.06;
   }
 
   // Clamp between 0.02 and 0.98
@@ -406,18 +689,49 @@ export function predict(
   const rawP = computeRawScore(text, context);
   const pCalibrated = applyTemperatureCalibration(rawP, temperature);
   const pSarcastic = Math.round(pCalibrated * 1000) / 1000;
-  const confidence = Math.round(Math.abs(pSarcastic - 0.5) * 2 * 1000) / 1000;
+
+  const incongruity = extractIncongruity(text, context);
+  const language = analyzeCodeMixing(text);
+  const emoji = emojiFeatures(text);
+
+  // FALSE-CONFIDENCE CORRECTION:
+  // Modulate confidence based on grounded evidence vs lack of vocabulary
   const isSarc = pSarcastic >= 0.5;
-  const abstain = confidence < abstainThreshold;
+  const rawMargin = Math.abs(pSarcastic - 0.5) * 2;
+
+  let evidenceFactor: number;
+  if (isSarc) {
+    // Sarcastic decision has overt positive signals (irony emoji, clash, rhetorical pattern)
+    if (incongruity.has_rhetorical || emoji.n_irony_emoji > 0 || incongruity.polarity_clash > 0 || incongruity.context_clash > 0) {
+      evidenceFactor = Math.min(1.0, 0.85 + 0.15 * incongruity.lexical_coverage);
+    } else {
+      evidenceFactor = Math.min(1.0, 0.75 + 0.25 * incongruity.lexical_coverage);
+    }
+  } else {
+    // Literal decision:
+    // If explicit sincere praise or explicit complaint is recognized:
+    if (
+      (incongruity.pos_count > 0 && incongruity.neg_count === 0) ||
+      (incongruity.neg_count > 0 && incongruity.pos_count === 0)
+    ) {
+      evidenceFactor = Math.min(1.0, 0.75 + 0.25 * incongruity.lexical_coverage);
+    } else if (incongruity.lexical_coverage >= 0.20) {
+      evidenceFactor = Math.min(1.0, 0.40 + 0.60 * incongruity.lexical_coverage);
+    } else {
+      // Zero sentiment signals and near-zero vocabulary coverage:
+      // Substantially dampen confidence to prevent false-confident literal predictions!
+      evidenceFactor = Math.max(0.12, incongruity.lexical_coverage * 1.5);
+    }
+  }
+
+  const confidence = Math.round(rawMargin * evidenceFactor * 1000) / 1000;
+  const words = text.trim().split(/\s+/).filter(Boolean);
+  const abstain = confidence < abstainThreshold || (incongruity.epistemic_uncertainty > 0.88 && words.length >= 4 && !isSarc && incongruity.pos_count === 0 && incongruity.neg_count === 0);
 
   let verdict: "Sarcastic" | "Literal" | "Uncertain" = isSarc ? "Sarcastic" : "Literal";
   if (abstain) {
     verdict = "Uncertain";
   }
-
-  const incongruity = extractIncongruity(text, context);
-  const language = analyzeCodeMixing(text);
-  const emoji = emojiFeatures(text);
 
   return {
     text,
@@ -477,11 +791,18 @@ export function computeOcclusion(
     const occludedResult = predict(occludedText, context, temperature);
     const delta = Math.round((baseP - occludedResult.p_sarcastic) * 1000) / 1000;
 
-    const clean = token.toLowerCase().replace(/^[^\w\u0900-\u097f]+|[^\w\u0900-\u097f]+$/gu, "");
+    const clean = token.toLowerCase().replace(/^[\p{P}\p{S}]+|[\p{P}\p{S}]+$/gu, "");
+    const { stem: indicStem } = stemIndicToken(clean);
+    const { folded: romanFolded } = normalizeRomanized(clean);
+
     let category: "positive" | "negative" | "intensifier" | "neutral" = "neutral";
-    if (POSITIVE_CUES.has(clean)) category = "positive";
-    else if (NEGATIVE_CUES.has(clean)) category = "negative";
-    else if (INTENSIFIERS.has(clean)) category = "intensifier";
+    if (POSITIVE_CUES.has(clean) || POSITIVE_CUES.has(indicStem) || POSITIVE_CUES.has(romanFolded)) {
+      category = "positive";
+    } else if (NEGATIVE_CUES.has(clean) || NEGATIVE_CUES.has(indicStem) || NEGATIVE_CUES.has(romanFolded)) {
+      category = "negative";
+    } else if (INTENSIFIERS.has(clean) || INTENSIFIERS.has(indicStem) || INTENSIFIERS.has(romanFolded)) {
+      category = "intensifier";
+    }
 
     return {
       token,

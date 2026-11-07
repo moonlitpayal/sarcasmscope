@@ -1,0 +1,5 @@
+ModelIdentifier,HuggingFaceBackbone,ParameterCount,ExecutionPlatform,RuntimeRequirement,CurrentBenchmarkStatus,VerificationProof
+"MuRIL_Transformer","google/muril-base-cased","237M","Google Colab T4 GPU","16 GB VRAM, PyTorch 2.x","REPRODUCIBLE GPU SCRIPT PROVIDED","docs/COLAB.md & eval/train_transformer.py"
+"XLM_RoBERTa","xlm-roberta-base","278M","Google Colab T4 GPU","16 GB VRAM, PyTorch 2.x","REPRODUCIBLE GPU SCRIPT PROVIDED","docs/COLAB.md & eval/train_transformer.py"
+"SARcasmScope_Local_Proxy","Subword-Linguistic Transfer","< 10M eq.","Client-Side CPU","Zero GPU (Node.js runtime)","VERIFIED LOCAL CLIENT-SIDE BENCHMARK","eval/run_stage4_full_evaluation.ts"
+"ONNX_Quantized_MuRIL","INT8 Dynamic Quantization","~60 MB","Edge / WebAssembly","ONNX Runtime Web","PIPELINE PROVIDED","eval/export_onnx.py"

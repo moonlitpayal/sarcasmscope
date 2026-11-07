@@ -1,0 +1,6 @@
+Threshold_Tau,Coverage,SelectiveAccuracy,SelectiveRisk,AcceptedCount
+0,100,96.7,3.3,30/30
+0.2,96.7,96.6,3.4,29/30
+0.4,93.3,96.4,3.6,28/30
+0.6,86.7,96.2,3.8,26/30
+0.8,76.7,100,0,23/30

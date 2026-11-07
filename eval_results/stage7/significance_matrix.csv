@@ -1,0 +1,5 @@
+BaselinePair,ComparisonTarget,SampleCount,ChiSquare,PValue,BonferroniAlpha,SignificanceStatus,EffectSizeCohensG,OddsRatio,PracticalMeaning
+"Hybrid vs Stage 2 Linguistic","Overall Accuracy",1123,1.79,0.1806,0.0167,false,"g=0.03",1.13,"Comparable overall accuracy; specificity-recall trade-off"
+"Hybrid vs Stage 2 Linguistic","Sarcasm Recall",519,277.03,0.0001,0.0167,true,"g=0.496",282,"Extremely Statistically Significant (p < 0.0001); Recall recovered from 3.08% to 57.23%"
+"Hybrid vs Subword Model","Overall Accuracy",1123,0.57,0.4497,0.0167,false,"g=0.214",0.4,"Statistically comparable raw accuracy; Hybrid adds calibrated confidence and selective abstention"
+"Hybrid vs Majority Class","Overall Accuracy",1123,1.71,0.191,0.0167,false,"g=0.028",1.12,"Not significant on raw accuracy due to class skew, but Macro-F1 improves from 35.0% to 56.6%"
