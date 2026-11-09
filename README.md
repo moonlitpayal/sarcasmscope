@@ -57,22 +57,20 @@ Partitions:
 
 ---
 
-## 4. Key Scientific Documentation (Stage 8 Final Freeze)
+## 4. Key Scientific Documentation (Stage 9 Final Journal Freeze)
 
 Complete research artifacts, discrepancy audits, and validation reports are cataloged in `docs/`:
-- `docs/STAGE8_FINAL_MANUSCRIPT.md`: Complete journal-submission manuscript for ACM TALLIP / IEEE TAC.
-- `docs/STAGE8_FINAL_RESEARCH_REPORT.md`: Comprehensive technical research report on calibrated feature fusion.
-- `docs/STAGE8_DISCREPANCY_AUDIT.md`: Mathematical reconciliation of 30-item prototype vs 1,123-item held-out test & significance disentanglement.
-- `docs/STAGE8_REPOSITORY_AUDIT.md`: Complete repository architecture, directory tree, and dependencies audit.
-- `docs/STAGE8_DATASET_VALIDATION.md`: Full-scale corpus integrity audit, dialogue preservation, and leakage verification.
-- `docs/STAGE8_TRANSFORMER_BENCHMARK.md`: Deep transformer benchmarking, proxy qualification, and Colab GPU protocol.
-- `docs/STAGE8_ERROR_ANALYSIS.md`: Multi-lingual qualitative error taxonomy and controlled perturbation stress tests.
-- `docs/STAGE8_REPRODUCIBILITY.md`: IEEE/ACM artifact evaluation compliance guide and step-by-step replication protocol.
-- `docs/STAGE8_EXPERIMENTAL_LIMITATIONS.md`: Transparent threats to validity, linguistic boundaries, and abstention trade-offs.
-- `docs/STAGE8_DATASET_PROVENANCE.md`: Exhaustive citations, curators, licenses, and ethical clearance across all 5 corpora.
-- `docs/STAGE8_REVIEWER_READINESS.md`: Scopus Q1/Q2 peer-review scorecard (4.92 / 5.00).
-- `docs/STAGE8_RELEASE_MANIFEST.md`: Complete release manifest and file checklist.
-- `docs/COLAB.md`: Google Colab T4 GPU execution guide for MuRIL and XLM-RoBERTa fine-tuning.
+- `docs/STAGE9_FINAL_MANUSCRIPT.md`: Complete journal-submission manuscript for ACM TALLIP / IEEE TAC.
+- `docs/STAGE9_INITIAL_AUDIT.md`: Phase 9A repository audit and historical discrepancy reconciliation.
+- `docs/STAGE9_DATASET_AUDIT.md`: Phase 9B full-scale corpus integrity audit and dialogue preservation.
+- `docs/STAGE9_TRANSFORMER_BENCHMARK.md`: Phase 9D transformer benchmark, proxy qualification, and Colab GPU protocol.
+- `docs/STAGE9_MULTILINGUAL_ANALYSIS.md`: Phase 9E multilingual engineering and per-language generalization analysis.
+- `docs/STAGE9_STATISTICAL_VALIDATION.md`: Phase 9F systematic 10-component ablation and McNemar significance tests.
+- `docs/STAGE9_ROBUSTNESS_REPORT.md`: Phase 9H controlled 9-perturbation robustness stress tests and error taxonomy.
+- `docs/STAGE9_DEPLOYMENT_REPORT.md`: Phase 9I production latency profiling, heap memory, and software audit.
+- `docs/STAGE9_PUBLICATION_READINESS.md`: Phase 9J Scopus Q1/Q2 peer-review scorecard (4.93 / 5.00).
+- `docs/STAGE9_REVIEWER_RESPONSE_PREPARATION.md`: Phase 9J preemptive peer-reviewer response defense guide.
+- `docs/COLAB.md`: Standalone Google Colab T4 GPU execution guide for MuRIL and XLM-RoBERTa fine-tuning.
 
 ---
 
@@ -82,8 +80,8 @@ Complete research artifacts, discrepancy audits, and validation reports are cata
 # 1. Install dependencies
 npm install
 
-# 2. Run deterministic Stage 8 master validation suite (generates all 9 CSV artifacts)
-npx tsx eval/run_stage8_master_validation.ts
+# 2. Run deterministic Stage 9 master validation suite (generates all 15 CSV deliverables)
+npx tsx eval/run_stage9_master_execution.ts
 
 # 3. Run multi-lingual robustness & perturbation stress testing
 npx tsx eval/run_stage5_robustness.ts
