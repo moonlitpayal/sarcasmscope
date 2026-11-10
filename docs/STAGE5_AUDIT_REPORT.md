@@ -1,3 +1,5 @@
+> **HISTORICAL DEVELOPMENT ARCHIVE (SUPERSEDED BY STAGE 9 CANONICAL FREEZE):** This intermediate Stage 3–8 document reflects pre-refactor diagnostics retained only for audit traceability. For verified, single-pass frozen `test.jsonl` results ($N=1,123$), see `docs/STAGE9_FINAL_MANUSCRIPT.md`, `docs/ACCURACY_AND_FEATURE_FUSION_INVESTIGATION.md`, and `eval_results/stage9/master_summary.json`: **SARcasmScope 3-Stage Calibrated Hybrid achieves `68.03%` Acc, `67.56%` Macro-F1, `67.09%` Prec, `60.50%` Rec, `1.36%` Conf-ECE ($T^*=0.845, \tau^*=0.35$, `80.31%` selective acc @ `45.68%` coverage, `2.856 ms` P95 latency)**. Deep GPU transformers (`MuRIL`, `XLM-R`) are **`NOT_EXECUTED_LOCALLY`**, `RESULTS_STATUS_AND_AUDIT.md` is absent in the workspace, and exhaustive 3-shingle Jaccard $\ge 0.80$ scanning reports `13` near-duplicate pairs corpus-wide (`8` cross-split, `5` train-test, all inside `IIITD_MaSaC_CodeMixed`).
+
 # SARcasmScope — Stage 5 Scientific Audit Report
 **Principal Investigator:** Payal Mehta (`payal.12620246@vit.edu`)  
 **Project:** SARcasmScope: A Calibrated Feature-Fusion Framework for Context-Aware Sarcasm Detection in Multilingual and Code-Mixed Text  
@@ -72,13 +74,11 @@ All identified issues are resolved and documented below.
 ---
 
 ### Concern E: Grounded Confidence vs Posterior Probability
-* **Observation:** In `hybridFusion.ts`, `confidence` is calculated as $\text{rawMargin} \times \text{evidenceFactor}$, whereas standard classifiers report $P(Y=1|x)$ as confidence.
+* **Observation:** In pre-Stage-9 code and inside the Stage 2 standalone symbolic baseline (`src/engine/sarcasmEngine.ts:predict`), `confidence` was computed as $\text{rawMargin} \times \text{evidenceFactor}$. In the deployed Stage 9 hybrid engine (`src/engine/hybridFusion.ts:predictHybrid`), confidence strictly matches the UI formula box: $\text{Conf}(x) = 2 \cdot |P_{\text{fused}}(x) - 0.5|$.
 * **Investigation & Root Cause:** 
-  In high-stakes and safety-critical NLP applications, posterior probability $P(Y=1|x)$ reflects aleatoric classification uncertainty, but does not capture epistemic uncertainty arising from out-of-vocabulary tokens or ungrounded predictions. SARcasmScope adopts the selective prediction framework of Geifman & El-Yaniv (2017), where an abstention mechanism requires both:
-  - Margin confidence: $|P_{\text{fused}} - 0.5| \times 2.0$
-  - Epistemic grounding: Lexical coverage density $C(x)$ and presence of verifiable linguistic incongruity cues.
+  In high-stakes and safety-critical NLP applications, raw decision margin alone reflects class-conditional uncertainty, while lexical coverage $C(x)$ captures epistemic sparsity. Stage 9 disentangles these two signals cleanly in `hybridFusion.ts`: $C(x)$ enters directly inside the Level-2 meta-learner logit $z$ as feature $w_5 C(x)$, while post-hoc calibration applies $P_{\text{fused}} = \sigma(z / T^*)$ and gates abstention purely via decision margin $\text{Conf}(x) = 2|P_{\text{fused}} - 0.5| < \tau^*$. Meanwhile, `sarcasmEngine.ts` retains `evidenceFactor` solely for legacy Stage 2 symbolic baseline regression tests.
 * **Remediation & Recommendation:** 
-  Retain this dual formulation, as it represents a key theoretical strength of SARcasmScope. Clearly document the mathematical distinction in the methodology section of the manuscript.
+  Keep Stage 9's disentangled formulation in `hybridFusion.ts` (matching the UI formula box) and clearly label the `evidenceFactor` gate as Stage 2 symbolic baseline behavior.
 
 ---
 

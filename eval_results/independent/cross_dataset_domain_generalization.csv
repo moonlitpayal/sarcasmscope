@@ -1,6 +1,6 @@
-SourceDomain,TargetDomain,SampleCount,MacroF1,Accuracy,Recall,Precision,KeyFailureMode
-"Demonstration Templates","Conversational Dialogue (Twitter)",1800,36.19,49.72,3.67,46.48,"Slang, implicit world knowledge, hashtag irony"
-"Demonstration Templates","News Headlines (The Onion)",2000,33.64,50.10,0.30,75.00,"Absurdity/satire without explicit polarity contrast"
-"Demonstration Templates","TV Code-Mixed Dialogue (MaSaC)",1000,33.33,50.00,0.00,0.00,"Acoustic/prosodic sarcasm, conversational turn-taking"
-"Demonstration Templates","Marathi Social Media (MahaEmotions)",370,33.33,50.00,0.00,0.00,"Complex inflectional morphology, political satire"
-"Demonstration Templates","Telugu Social Media (Marreddy)",1000,47.98,92.25,0.00,0.00,"Agglutinative suffixes, sandhi, domain lexicon coverage"
+SourceTrainingSplit,TargetTestDataset,HeldOutTestSamples,MacroF1,Accuracy,Recall,Precision,DomainValidityQualification
+"train.jsonl (N=3,373, Val T*=0.845)","Conversational Social Media Dialogue (Twitter)",344,68.17,68.60,59.76,70.00,"Implicit world knowledge, hashtag irony, pragmatic ellipsis"
+"train.jsonl (N=3,373, Val T*=0.845)","Editorial News Satire vs Journalism (No Dialogue Context)",401,74.06,74.06,75.12,73.66,"Genre difference: editorial satire without multi-turn dialogue"
+"train.jsonl (N=3,373, Val T*=0.845)","Isolated Sitcom Utterances (No Dialogue Text / No A/V Prosody)",194,47.33,47.42,42.00,48.84,"Isolated text turns (context='', conv_id split-grouped only); missing audio/facial prosody; 5 train-test 3-shingle near-dups"
+"train.jsonl (N=3,373, Val T*=0.845)","Restricted Emotion-Proxy Twitter Subset (Sarcasm vs Neutral Only)",75,62.66,62.67,62.16,62.16,"Restricted label proxy (Sarcasm vs Neutral excludes non-neutral emotional literal tweets)"
+"train.jsonl (N=3,373, Val T*=0.845)","Native Telugu Social Media (15.60% Natural Sarcasm Skew)",109,45.77,84.40,0.00,0.00,"0% Hybrid recall at global 0.50 threshold under minority prior despite 0.7455 ROC-AUC"

@@ -1,9 +1,9 @@
 Perturbation,Description,Perturbed_Text,P_Sarcastic,Delta,Flipped
-"char_noise","Cluster-safe character swap/duplication","वाह क्या बात है, 4 घंटे ट्रेन लेट करने के लिए धन्यवा! 🙄",0.98,0,0
-"repeat_letters","Elongated letters (e.g. soo, wahhh)","वाह क्या बात है, 4 घंटे ट्रेन लेट करने के लिए धन्यवाद! 🙄",0.98,0,0
+"char_noise","Cluster-safe character swap/duplication","वाह क्या बात है, 4 घंटे ट्रेन लेट करने के लिए धन्यवावाद! 🙄",0.98,0,0
+"repeat_letters","Elongated letters (e.g. soo, wahhh)","वाह क्या बात है, 4 घंटे ट्रेन लेट करने के लिए धन्यवाद!!!! 🙄",0.98,0,0
 "remove_emoji","Strip all irony & emotion emojis","वाह क्या बात है, 4 घंटे ट्रेन लेट करने के लिए धन्यवाद!",0.98,0,0
 "strip_punct","Remove exclamation & question marks","वाह क्या बात है 4 घंटे ट्रेन लेट करने के लिए धन्यवाद",0.98,0,0
 "drop_tags","Remove hashtags and @mentions","वाह क्या बात है, 4 घंटे ट्रेन लेट करने के लिए धन्यवाद! 🙄",0.98,0,0
 "truncate_6_words","Truncate text to first 6 words","वाह क्या बात है, 4 घंटे",0.55,-0.43,0
-"shuffle_words","Randomly permute word order","वाह लिए ट्रेन धन्यवाद! घंटे क्या के 4 लेट करने बात है, 🙄",0.98,0,0
+"shuffle_words","Deterministically permute word order","के वाह धन्यवाद! क्या बात 4 🙄 ट्रेन घंटे लिए है, लेट करने",0.98,0,0
 "uppercase","Transform into full UPPERCASE","वाह क्या बात है, 4 घंटे ट्रेन लेट करने के लिए धन्यवाद! 🙄",0.98,0,0

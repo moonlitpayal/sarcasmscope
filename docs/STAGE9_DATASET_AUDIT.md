@@ -1,82 +1,43 @@
-# SARcasmScope — Stage 9 Full-Scale Dataset Audit & Corpus Integrity Verification
+# SARcasmScope — Stage 9 Full-Scale Dataset Audit & Integrity Verification
 
 **Principal Investigator:** Payal Mehta (`payal.12620246@vit.edu`)  
-**Institution:** School of Computer Science and Engineering, Vellore Institute of Technology, India  
-**Target Repository:** `https://github.com/moonlitpayal/sarcasmscope`  
-**Evaluation Standard:** Independent Scientific Reproducibility & Legal Data Governance  
-**Audit Date:** November 9, 2026  
-**Audit Phase:** 9B — Dataset Validation & Cross-Split Leakage Audit  
+**Audit Phase:** 9B — Dataset Validation, Licensing & Exhaustive Near-Duplicate Scan (`eval_results/stage9/dataset_integrity.csv`)
 
 ---
 
-## 1. Executive Summary & Audit Scope
+## 1. Multi-Corpus Inventory & Stratified Partitioning (`5,600` Records, Seed `42`)
 
-Phase 9B conducts a rigorous verification of the unified multilingual evaluation corpus of **5,600 unique, deduplicated records** compiled from five established peer-reviewed datasets. 
-
-This audit validates:
-1. Exact available sample counts and partition sizes.
-2. Label distributions and language representation.
-3. Deduplication protocols and dialogue-level leakage prevention.
-4. Legal licensing and usage permissions for scientific publication.
-5. In-depth analysis of the IIITD MaSaC code-mixed conversational corpus.
-
----
-
-## 2. Multi-Corpus Inventory & Stratified Partitioning
-
-The unified corpus consists of 5,600 unique records partitioned with deterministic Mersenne Twister seed `42`:
-
-| Dataset Identifier | Language / Script | Total Unique | Train Split (`train.jsonl`) | Val Split (`val.jsonl`) | Test Split (`test.jsonl`) | Primary Domain | Licensing & Terms |
-|:---|:---|:---:|:---:|:---:|:---:|:---|:---|
-| **ACL 2020 Twitter Sarcasm** | English | 1,716 | 1,029 | 343 | 344 | Twitter Microblogs + Context | CC BY 4.0 |
-| **Misra-Arora Headlines** | English | 1,999 | 1,199 | 399 | 401 | Satirical News (*The Onion* vs *HuffPost*) | MIT License |
-| **IIITD MaSaC** | Hinglish (Code-Mixed) | 974 | 599 | 181 | 194 | Multi-Party Sitcom Dialogue (*Sarabhai*) | Academic Research |
-| **L3Cube MahaEmotions** | Marathi (Devanagari) | 369 | 221 | 73 | 75 | Social Media Posts | CC BY-NC-SA 4.0 |
-| **IIIT Hyderabad Telugu** | Telugu (Telugu script) | 542 | 325 | 108 | 109 | Twitter Discussions | Research Use Only |
-| **Total Unified Corpus** | **Multilingual** | **5,600** | **3,373 (60.2%)** | **1,104 (19.7%)** | **1,123 (20.1%)** | **Multimodal Social Communication** | **Open Academic Cleared** |
+| Dataset Identifier | Language / Script | Total Unique | Train (`train.jsonl`) | Val (`val.jsonl`) | Test (`test.jsonl`) | Citation | License | Total Near-Dups ($\ge 0.80$) | Train-Test Near-Dups |
+|:---|:---|:---:|:---:|:---:|:---:|:---|:---|:---:|:---:|
+| `ACL_2020_Twitter_Sarcasm` | English | 1,716 | 1,029 | 343 | 344 | Ghosh et al. (2020), *FigLang / ACL* | Research-Only (Twitter Terms) | 0 | 0 |
+| `Misra_Arora_News_Headlines` | English | 1,999 | 1,199 | 399 | 401 | Misra & Arora (2023), *AI Open* | Public Domain / CC0 | 0 | 0 |
+| `IIITD_MaSaC_CodeMixed` | Hinglish + Devanagari Hindi | 974 | 599 | 181 | 194 | Bedi et al. (2023/2021), *IEEE TAFFC* | Research Purpose Only | **13** | **5** |
+| `L3Cube_MahaEmotions` | Marathi (Devanagari) | 369 | 221 | 73 | 75 | Kowtal & Joshi (2025), *PACLIC 39*; MahaSent base: Kulkarni et al. (2021) | CC-BY-4.0 | 0 | 0 |
+| `IIIT_Hyderabad_Telugu_Sarcasm` | Telugu (Telugu script) | 542 | 325 | 108 | 109 | Marreddy et al. (2023), *ACM TALLIP* | Research Only | 0 | 0 |
+| **Total Unified Corpus** | **Multilingual** | **5,600** | **3,373 (60.23%)** | **1,104 (19.71%)** | **1,123 (20.06%)** | **5 Established Public Corpora** | **Per-Corpus Terms** | **13** | **5** |
 
 ---
 
-## 3. Detailed Dataset Audits & Licensing Verification
+## 2. Corpus Integrity & Exhaustive Near-Duplicate Findings
 
-### 3.1 ACL 2020 Twitter Sarcasm Dataset
-- **Primary Reference:** Ghosh, D., Vajpayee, A., & Muresan, S. (2020). *A Report on the 2020 Sarcasm Detection Shared Task.* Proceedings of the 5th Workshop on Figurative Language Processing (FLP 2020), ACL, pp. 1-11.
-- **Characteristics:** Microblog utterances accompanied by the preceding conversational thread (parent tweets).
-- **Annotation:** Majority vote consensus with Fleiss' $\kappa \ge 0.72$.
-- **License:** Creative Commons Attribution 4.0 International (CC BY 4.0). Fully cleared for open scientific redistribution.
-
-### 3.2 Misra & Arora News Headlines Dataset
-- **Primary Reference:** Misra, R., & Arora, P. (2019/2023). *Sarcasm Detection using News Headlines Dataset.* AI Open / Kaggle Research.
-- **Characteristics:** High-quality pairs of satirical headlines (*The Onion*) and earnest journalistic headlines (*The Huffington Post*).
-- **Annotation:** Ground truth established directly from publication source editorial classification (zero human labeling error).
-- **License:** MIT Open Source License.
-
-### 3.3 IIITD MaSaC: Hindi-English Code-Mixed Dialogue Dataset
-- **Primary Reference:** Bedi, M., Kumar, S., & Akhtar, M. S. (2021). *Multi-modal Sarcasm Detection in Code-mixed Hindi-English Conversation.* EMNLP 2021.
-- **Characteristics:** Conversational code-mixed banter from Indian television sitcoms (*Sarabhai vs Sarabhai*). Rich in cultural idioms, rhetorical tropes, and inter-character tension.
-- **Investigation of Full Corpus Usage:** The full MaSaC dataset contains multimodal cues (audio, video, text). For SARcasmScope's textual NLP task, the complete text dialogue subset was curated. Crucially, all turns sharing a single `dialogue_id` were constrained to reside atomically within the same split to prevent dialogue narrative leakage across train and test.
-- **License:** Academic Research License.
-
-### 3.4 L3Cube MahaEmotions (Marathi Sarcasm Subset)
-- **Primary Reference:** Kulkarni, A., Mandhane, M., & Joshi, R. (2021). *L3Cube-MahaCorpus and MahaEmotions: Marathi Emotion and Sentiment Datasets.* LREC 2022.
-- **Characteristics:** Social media posts written natively in Devanagari script representing the Marathi language.
-- **Annotation:** Native Marathi speaker consensus. Sarcastic samples were paired with neutral baseline posts.
-- **License:** Creative Commons Attribution-NonCommercial-ShareAlike 4.0 (CC BY-NC-SA 4.0).
-
-### 3.5 IIIT Hyderabad Telugu Sarcasm Dataset
-- **Primary Reference:** Sreeja, K., & Reddy, P. (2020). *Sarcasm Detection in Telugu Twitter Data.* LREC Workshop on Sentiment Analysis for Indian Languages (2020).
-- **Characteristics:** Twitter discussions in the Telugu script.
-- **Natural Class Imbalance:** Preserves natural real-world social media class distribution: **$15.7\%$ Sarcastic (Class 1) and $84.3\%$ Literal (Class 0)**. Models evaluated on this split must demonstrate high precision to avoid false sarcasm alarms.
-- **License:** Research Use Only.
+Running `eval/run_stage9_master_execution.ts` over all $\binom{5600}{2}$ pairs in `train.jsonl`, `val.jsonl`, and `test.jsonl`:
+- **Exact Normalized Text Overlap (`train-val`, `train-test`, `val-test`):** **`0`** pairs (`0.00%`).
+- **`conversation_id` Overlap Across Splits (`IIITD_MaSaC` atomic grouping):** **`0`** shared conversation IDs (`0.00%`).
+- **Word 3-Shingle Near-Duplicate Pairs ($\text{Jaccard} \ge 0.80$):**
+  - **Total pairs corpus-wide:** **`13`** (all occurring in `IIITD_MaSaC_CodeMixed`).
+  - **Cross-split near-duplicate pairs:** **`8`** (`train-test = 5`, `train-val = 1`, `val-test = 2`).
+  - **Label-conflicting near-duplicate pairs:** **`8`** (short colloquial turns recurring across episodes with context-dependent opposite labels).
+- **Telugu Class Balance:** `IIIT_Hyderabad_Telugu_Sarcasm` preserves natural real-world skew (`15.7%` sarcastic corpus-wide; `17/109 = 15.60%` sarcastic in `test.jsonl`).
+- **Context Population Audit:** Only `ACL_2020_Twitter_Sarcasm` populates `r.context` (`1,716/1,716` records = `100%`). All other four corpora have `r.context === ""` (`0%`).
 
 ---
 
-## 4. Automated Leakage & Integrity Audit
+## 3. Domain, Label-Mapping & Annotation Validity Boundaries
 
-Automated deterministic verification checks confirm complete isolation between partitions:
-- **Exact Text Overlap (Train vs Test):** $0$ samples ($0.00\%$).
-- **Exact Text Overlap (Train vs Val):** $0$ samples ($0.00\%$).
-- **Exact Text Overlap (Val vs Test):** $0$ samples ($0.00\%$).
-- **Dialogue ID Overlap (MaSaC across splits):** $0$ shared dialogue IDs ($0.00\%$).
-- **Near-Duplicate Pairs ($Jaccard > 0.85$):** $0$ pairs ($0.00\%$).
-- **Deterministic Reproducibility:** Exact dataset partitions reproduce identically using `eval/partition_independent_datasets.ts` with Seed `42`.
+1. **`L3Cube_MahaEmotions` Label Justification & CoTR Provenance Limitation:**
+   - **Why strictly `Sarcasm` ($n=185$) vs `Neutral` ($n=184$):** `Sarcasm` is a native annotated tag inside MahaEmotions' 11-class schema; we deliberately **excluded** non-neutral literal emotions (`Anger/Disgust`, `Sadness`, `Fear`, etc.) rather than merging negative emotions with non-sarcasm, preventing label contamination where sarcastic frustration resembles anger.
+   - **Dual Limitations Disclosed:** First, omitting emotional non-sarcastic tweets narrows the literal control class strictly to neutral posts. Second, in Kowtal & Joshi (*PACLIC 39*, 2025), L3Cube-MahaEmotions `train.csv` used GPT-4/Llama3 CoTR synthetic annotations while `test.csv` used human annotations; because our ingestion read `[...train, ...test]` and stopped `Neutral` collection below 250 rows in `train.csv`, **100% of `Neutral` controls and ~93% of `Sarcasm` rows stem from L3Cube's CoTR-annotated training split** (with only `12` manual-split `Sarcasm` items). Marathi is therefore framed strictly as an exploratory subset requiring full human-gold binary sarcasm evaluation.
+2. **`Misra_Arora_News_Headlines` Genre Distinction:** Ground-truth (`1`/`0`) derives from publisher provenance (*The Onion* vs *HuffPost*, $N=1,999$, $401$ in `test`, `context=""`). Evaluates **editorial journalistic satire**, distinct from conversational social-media sarcasm.
+3. **`IIITD_MaSaC_CodeMixed` Isolated-Turn & Modality Constraint:** Although `Episodewise_dialoguelabels.txt` provides episode `conversation_id` to guarantee zero dialogue-group leakage across splits, **`split_independent_datasets.ts` sets `context=""` on all 974 MaSaC utterances** (`HasContext = false`), and omits audio prosody/visual facial cues from the original sitcom video (*Sarabhai vs Sarabhai*). Evaluating isolated hinglish lines without surrounding turns or A/V cues explains `47.33%` Macro-F1 and `15.57%` Conf-ECE.
+4. **`ACL_2020_Twitter_Sarcasm` & `IIIT-H Telugu` Boundaries:** ACL Twitter (`SARCASM`/`NOT_SARCASM`, $n=344$ test) provides preceding parent tweet `context` (`100%` populated) yet omits broader thread/world knowledge; IIIT-H Telugu (`yes`/`no`, $n=109$ test) retains `15.60%` natural minority prevalence causing `0%` Hybrid recall at `0.50` despite `0.7455` ROC-AUC.
+5. **Source Transformations & Compliance:** Normalized `@USER` handles, UTF-8 NFKC normalization, `112` exact normalized duplicate removals (`5,712` -> `5,600`), and strict adherence to Research-Only / Twitter Terms / CC0 / CC-BY-4.0 dataset licenses.

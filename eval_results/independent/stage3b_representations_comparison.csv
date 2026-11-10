@@ -1,5 +1,6 @@
-Representation,Accuracy,Precision,Recall,F1,MacroF1,Specificity,BrierScore,TP,FP,TN,FN
-"Stage 2 Linguistic Engine",53.26,47.37,1.75,3.37,36.27,98.30,0.3126,9,10,579,506
-"Word N-Grams (1-2 gram)",59.33,55.61,63.50,59.29,59.33,55.69,0.3954,327,261,328,188
-"Character N-Grams (3-5 char)",59.42,56.12,59.61,57.82,59.36,59.25,0.4038,307,240,349,208
-"Subword Chunks (3-4 subwords)",58.88,55.66,58.25,56.93,58.79,59.42,0.4073,300,239,350,215
+Representation,VocabSize,Accuracy,Precision,Recall,MacroF1,Specificity,ECE,BrierScore,NLL
+"WordLex_1_2_Morph_Phonetic_Context",8000,68.48,69.11,58.64,67.87,77.08,2.18,0.2027,0.5907
+"CharSub_3_5_Sublexical",8000,66.12,65.49,57.86,65.62,73.34,1.83,0.2085,0.6035
+"Dual_WordLex_CharSub_Stack",16000,69.29,70.47,58.83,68.64,78.44,3.78,0.1986,0.5819
+"Stage2_Symbolic_Linguistic",0,53.26,47.37,1.75,36.27,98.3,24.44,0.3126,0.9213
+"Calibrated_3Stage_Feature_Fusion",16000,68.3,68.62,59.03,67.73,76.4,3.88,0.1971,0.5777

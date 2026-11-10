@@ -74,7 +74,7 @@ export function ProtocolView({
                   Temperature Scaling (T)
                 </h4>
                 <p className="text-xs text-slate-400 mt-0.5">
-                  Controls post-hoc calibration of probability logits via Platt / temperature scaling.
+                  Scales pre-softmax fusion logits to produce calibrated class probabilities P_fused (Guo et al., ICML 2017).
                 </p>
               </div>
               <span className="text-lg font-bold font-mono text-indigo-300 px-3 py-1 rounded-lg bg-indigo-950/60 border border-indigo-800/40">
@@ -99,10 +99,10 @@ export function ProtocolView({
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-slate-950/60 border border-slate-800/80 text-xs text-slate-300 space-y-2 font-mono">
-              <div className="text-indigo-400 font-bold">Calibration Formula:</div>
-              <div>z = logit(p) / T = ln(p / (1 - p)) / T</div>
-              <div>P_calibrated = σ(z) = 1 / (1 + exp(-z))</div>
+            <div className="p-4 rounded-xl bg-slate-950/60 border border-slate-800/80 text-xs text-slate-300 space-y-1.5 font-mono">
+              <div className="text-indigo-400 font-bold">3-Stage Calibrated Feature-Fusion Formula:</div>
+              <div>z = w₀ + w₁·logit(P_word) + w₂·logit(P_char) + w₃·logit(P_ling) + w₄·Idx_inc + w₅·C(x)</div>
+              <div>P_fused = σ(z / T) = 1 / (1 + exp(-z / T))  [Val NLL-Optimal T* = 0.845]</div>
             </div>
           </div>
 
@@ -134,16 +134,18 @@ export function ProtocolView({
                 className="w-full accent-amber-500 cursor-pointer"
               />
               <div className="flex justify-between text-[11px] text-slate-500 font-mono">
-                <span>0.0 (Always decide, never abstain)</span>
-                <span>0.6 (Default target 90% selective accuracy)</span>
-                <span>0.95 (High precision / High abstention)</span>
+                <span>0.0 (100% cov, 68.0% Test Acc)</span>
+                <span>0.35 (Val τ*: 81.0% Val / 80.3% Test)</span>
+                <span>0.95 (Ultra-strict)</span>
               </div>
             </div>
 
             <div className="p-4 rounded-xl bg-slate-950/60 border border-slate-800/80 text-xs text-slate-300 space-y-2 font-mono">
-              <div className="text-amber-400 font-bold">Selective Decision Rule:</div>
-              <div>Confidence = 2 × |P_calibrated - 0.5|</div>
-              <div>Decision: if Confidence &lt; τ ➔ "Uncertain", else argmax label</div>
+              <div className="text-amber-400 font-bold">Four Distinct Uncertainty Constructs:</div>
+              <div>1. Calibrated Class Prob: P_fused = σ(z / T*) ∈ (0, 1)</div>
+              <div>2. Decision Margin Conf:  Conf = 2 × |P_fused − 0.5| ∈ [0, 1]</div>
+              <div>3. Abstention Rule (τ):   If Conf &lt; τ ➔ "Uncertain", else argmax</div>
+              <div>4. Selective Utility:     τ*=0.35 → 80.31% Sel-Acc @ 45.68% Test Cov</div>
             </div>
           </div>
         </div>

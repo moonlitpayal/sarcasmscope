@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { perturbAll, RobustnessResult, PRESET_SAMPLES } from "../engine/sarcasmEngine";
-import { ShieldCheck, AlertOctagon, RefreshCw, Sparkles, Check, ArrowRight } from "lucide-react";
+import { RobustnessResult, PRESET_SAMPLES } from "../engine/sarcasmEngine";
+import { perturbHybridAll } from "../engine/hybridFusion";
+import { ShieldCheck, AlertOctagon, RefreshCw, Check, ArrowRight } from "lucide-react";
 
 interface RobustnessViewProps {
   initialText?: string;
@@ -18,12 +19,12 @@ export function RobustnessView({
   const [text, setText] = useState(initialText);
   const [context, setContext] = useState(initialContext);
   const [data, setData] = useState<RobustnessResult>(() =>
-    perturbAll(initialText, initialContext, temperature)
+    perturbHybridAll(initialText, initialContext, temperature)
   );
 
   const handleRun = () => {
     if (!text.trim()) return;
-    setData(perturbAll(text, context, temperature));
+    setData(perturbHybridAll(text, context, temperature));
   };
 
   const flippedCount = data.results.filter((r) => r.flipped).length;
@@ -108,7 +109,7 @@ export function RobustnessView({
               onClick={() => {
                 setText(p.statement);
                 setContext(p.context);
-                setData(perturbAll(p.statement, p.context, temperature));
+                setData(perturbHybridAll(p.statement, p.context, temperature));
               }}
               className="px-2.5 py-1 rounded-md bg-slate-800/60 hover:bg-slate-700/80 border border-slate-800 text-slate-300 cursor-pointer"
             >

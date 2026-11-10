@@ -1,5 +1,7 @@
-ComparisonPair,EvaluationScope,ContingencyTable_N01_N10,ChiSquareStatistic,PValue,BonferroniThreshold,IsSignificantBonferroni,CohensG,OddsRatio,PracticalInterpretation
-"SARcasmScope vs Stage 2 Linguistic","Overall Accuracy (All N=1123)","n01=284, n10=252",1.79,0.1806,0.0167,false,"g=0.03",1.13,"Not Statistically Significant on overall accuracy (p = 0.1806); overall correct counts are comparable"
-"SARcasmScope vs Stage 2 Linguistic","Sarcasm Recall (Sarcastic N=519)","n01=282, n10=1",277.03,0.0001,0.0167,true,"g=0.496",282,"Extremely Statistically Significant (p < 0.0001); Massive recall recovery from 3.08% to 57.23%"
-"SARcasmScope vs Subword Semantic","Overall Accuracy (All N=1123)","n01=2, n10=5",0.57,0.4497,0.0167,false,"g=0.214",0.4,"Comparable raw accuracy; Hybrid provides calibrated confidence and selective abstention"
-"SARcasmScope vs Majority Class Baseline","Overall Accuracy (All N=1123)","n01=297, n10=265",1.71,0.191,0.0167,false,"g=0.028",1.12,"Not Statistically Significant on raw accuracy due to class skew, but Macro-F1 improves from 35.0% to 56.6%"
+TestHypothesis,ComparisonCohorts,SampleCount,BaselineMetric,HybridMetric,McNemarChiSquare,PValue,OddsRatio,CohensG,StatisticalInference
+"H1: Overall Accuracy vs v2 Linguistic","v2 Linguistic vs Calibrated Hybrid",1123,"53.78%","68.03%",55.2,<0.0001,2.07,0.175,"Paired n01=309, n10=149"
+"H2: Sarcasm Recall vs v2 Linguistic","v2 Linguistic vs Calibrated Hybrid (Sarcastic)",519,"3.08%","60.5%",290.16,<0.0001,100.33,0.49,"Paired n01=301, n10=3"
+"H3: Overall Accuracy vs v1 Prev","v1 Prev vs Calibrated Hybrid",1123,"53.52%","68.03%",56.44,<0.0001,2.08,0.175,"Paired n01=314, n10=151"
+"H4: Overall Accuracy vs Majority Class","Majority Literal vs Calibrated Hybrid",1123,"53.78%","68.03%",54.02,<0.0001,2.04,0.171,"Paired n01=314, n10=154"
+"H5: Overall Accuracy vs Statistical OOF","Statistical OOF vs Calibrated Hybrid",1123,"69.55%","68.03%",3.94,0.0472,0.59,0.131,"Paired n01=24, n10=41"
+"H6: Bootstrap 95% CI (Accuracy & MacroF1)","Hybrid B=1000 Seed=42",1123,"v2 MF1 [35.73-39.66]","Acc [65.36-70.79]; MF1 [64.79-70.29]",NA,NA,NA,NA,"95% CI completely separates Hybrid from Majority/Symbolic"

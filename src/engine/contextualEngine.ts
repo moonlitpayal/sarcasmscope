@@ -1,24 +1,30 @@
 /**
- * SARcasmScope — Stage 3E: Hybrid Contextual Engine Adapter
- * 
+ * SARcasmScope — Hybrid Contextual Engine Adapter
+ *
  * Supports two operational deployment modes:
  * Mode A: Standalone Client-Side
- *   - Runs Stage 2 linguistic incongruity + subword hash representations directly in-browser
- *   - Zero server dependency, latency < 10ms, zero marginal cloud cost
- * 
+ *   - Runs Stage 2 linguistic incongruity + OOF-trained WordLex/CharSub fusion directly in-browser
+ *   - Zero server dependency, latency < 1ms, zero marginal cloud cost
+ *
  * Mode B: Hybrid API Inference
- *   - Calls `/api/predict-contextual` for server-side transformer inference (MuRIL / XLM-R)
- *   - Fuses deep transformer probabilities with client-side linguistic features
- *   - Graceful timeout fallback: If API fails, times out, or is offline,
- *     it automatically reverts to Mode A with zero UI disruption
+ *   - Calls `/api/predict-contextual` for external transformer inference (MuRIL / XLM-R)
+ *   - Fuses transformer probability with client-side linguistic & statistical features
+ *   - Graceful timeout fallback to Mode A on offline or timeout errors
  */
 
-import { predictHybrid, HybridPredictionResult, SemanticFeatures } from "./hybridFusion";
+import {
+  predictHybrid,
+  HybridPredictionResult,
+  SemanticFeatures,
+  DEFAULT_FUSION_WEIGHTS,
+  DEFAULT_ABSTAIN_THRESHOLD,
+} from "./hybridFusion";
 
 export interface ContextualPredictionOptions {
   mode?: "standalone" | "hybrid";
   apiUrl?: string;
   timeoutMs?: number;
+  temperature?: number;
   abstainThreshold?: number;
 }
 
@@ -30,7 +36,7 @@ export interface ApiTransformerResponse {
 }
 
 /**
- * Predicts sarcasm using either standalone hybrid fusion or remote contextual API
+ * Predicts sarcasm using either standalone calibrated hybrid fusion or remote contextual API.
  */
 export async function predictContextual(
   text: string,
@@ -40,14 +46,16 @@ export async function predictContextual(
   const mode = options.mode ?? "standalone";
   const apiUrl = options.apiUrl ?? "/api/predict-contextual";
   const timeoutMs = options.timeoutMs ?? 1500;
-  const abstainThreshold = options.abstainThreshold ?? 0.58;
+  const abstainThreshold = options.abstainThreshold ?? DEFAULT_ABSTAIN_THRESHOLD;
+  const weights =
+    options.temperature !== undefined
+      ? { ...DEFAULT_FUSION_WEIGHTS, temperature: options.temperature }
+      : DEFAULT_FUSION_WEIGHTS;
 
-  // Mode A: Immediate standalone inference
   if (mode === "standalone" || typeof window === "undefined") {
-    return predictHybrid(text, context, undefined, undefined, abstainThreshold);
+    return predictHybrid(text, context, undefined, weights, abstainThreshold);
   }
 
-  // Mode B: Hybrid API inference with graceful timeout fallback
   try {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), timeoutMs);
@@ -67,12 +75,11 @@ export async function predictContextual(
         p_transformer: data.p_sarcastic,
         embedding_source: "transformer_muril",
       };
-      return predictHybrid(text, context, externalSemantic, undefined, abstainThreshold);
+      return predictHybrid(text, context, externalSemantic, weights, abstainThreshold);
     }
-  } catch (err) {
-    // Timeout or network error -> Gracefully fall back to standalone client mode
-    // (Anti-fragile design: zero crash, zero disruption)
+  } catch {
+    // Graceful timeout fallback to Mode A
   }
 
-  return predictHybrid(text, context, undefined, undefined, abstainThreshold);
+  return predictHybrid(text, context, undefined, weights, abstainThreshold);
 }

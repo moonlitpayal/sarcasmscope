@@ -91,26 +91,67 @@ export const CONTRASTS = new Set([
   "pan", "pun", "par", "lekin", "magar", "kintu", "पण", "परंतु", "लेकिन", "पर", "मगर"
 ]);
 
+// Strict unambiguous Romanized Indic lexicons (zero English homograph collisions)
 export const HINDI_WORDS = new Set([
-  "hai", "hain", "tha", "thi", "the", "kya", "kyu", "kaise", "bhai", "yaar",
-  "mera", "meri", "hum", "aap", "tum", "bohot", "bahut", "accha", "achha", "kar", "raha", "rahi", "sahi", "nahi", "nahin", "aaj"
+  "hai", "hain", "tha", "thi", "thhe", "kya", "kyaa", "kyu", "kyun", "kaise", "kaisa", "kaisi",
+  "bhai", "yaar", "mera", "meri", "mere", "aap", "tum", "tumhara", "bohot", "bahut", "bohut",
+  "accha", "achha", "badiya", "badhiya", "shandar", "shaandaar", "kamaal", "kamal", "lajawab",
+  "waah", "wah", "gazab", "zabardast", "bekar", "ghatiya", "tamasha", "pagal", "faltu", "jhoot",
+  "dhoka", "ganda", "bakwas", "kachra", "raha", "rahi", "rahe", "sahi", "nahi", "nahin", "nhi",
+  "aaj", "kal", "pehle", "baad", "dekh", "dekho", "karega", "karegi", "karo", "karna", "karne",
+  "kar", "diya", "diye", "gaya", "gayi", "gaye", "aaya", "aayi", "aaye", "rakha", "khade",
+  "ghante", "ghanta", "pura", "poora", "aur", "saare", "chhut", "safar", "bilkul", "thanda",
+  "swaad", "khoob", "maza", "mazaa", "toh", "bhi", "lekin", "magar", "wala", "wali", "wale",
+  "abhi", "yahan", "wahan", "kabhi", "khana", "khaana", "paani", "pani", "ghar", "kaam",
+  "paisa", "paise", "baat", "dost", "raat", "padhai", "tayaari", "chal", "hone", "khulne",
+  "aadha", "haan", "bas", "timepass"
 ]);
 
 export const MARATHI_WORDS = new Set([
-  "ahe", "aahe", "hota", "hoti", "zala", "zali", "kasa", "kashi", "bhau",
-  "dada", "lai", "khup", "chhan", "bagh", "sang", "fukat", "kuthe", "ata", "ani", "pan"
+  "ahe", "aahe", "ahet", "aahet", "hota", "hoti", "hote", "zala", "zali", "zale",
+  "kasa", "kashi", "kase", "kasla", "kasli", "bhau", "lai", "khup", "khoop", "chhan",
+  "bhari", "bhikaar", "bagh", "bagha", "fukat", "kuthe", "ata", "aata", "ani", "aani",
+  "madhe", "mhanje", "mhanun", "taas", "thevlya", "badal", "baddal", "aabhar",
+  "changla", "changli", "changle", "navin", "naveen", "pahilyach", "divshi", "divas",
+  "tutla", "tutli", "tutle", "khadde", "khadda", "nakkich", "nako", "hoy", "amhi", "aamhi",
+  "tumhi", "amhala", "tumhala", "mala", "tula", "kela", "keli", "kele", "milala", "milali",
+  "rasta", "rastyat"
+]);
+
+// Context-gated Romanized particles/homographs counted ONLY when unambiguous Indic evidence exists
+const AMBIGUOUS_HINDI_PARTICLES = new Set([
+  "hum", "ka", "ke", "ki", "ko", "se", "ne", "pe", "me", "mein", "ek", "hi", "par", "re", "mile", "lag", "sab"
+]);
+const AMBIGUOUS_MARATHI_PARTICLES = new Set([
+  "pan", "pun", "cha", "chi", "che", "la", "na", "re", "don", "dada", "sang", "wah", "waah", "aaj", "nahi", "nhi"
 ]);
 
 export const ROMAN_SETS: Record<string, Set<string>> = {
   hi: HINDI_WORDS,
   mr: MARATHI_WORDS,
-  te: new Set(["ledu", "undi", "unnaru", "enti", "ela", "chala", "bagundi", "baagundi", "nenu", "meeru", "avunu", "ayyo", "sare", "malli"]),
-  ta: new Set(["illa", "enna", "romba", "nalla", "naan", "nee", "vanakkam", "epdi", "iruku", "irukku", "machan", "seri", "paaru"]),
+  te: new Set(["ledu", "undi", "unnaru", "enti", "ela", "chala", "bagundi", "baagundi", "nenu", "meeru", "avunu", "ayyo", "sare", "malli", "inka", "kuda", "asalu", "nijam"]),
+  ta: new Set(["illa", "enna", "romba", "nalla", "naan", "vanakkam", "epdi", "iruku", "irukku", "machan", "seri", "paaru", "aama", "thala"]),
   bn: new Set(["ami", "tumi", "achi", "kemon", "bhalo", "korcho", "hobe", "ekdom", "darun", "abar"])
 };
 
-export const HINDI_DEV = new Set(["है", "हैं", "और", "नहीं", "क्या", "मैं", "मुझे", "बहुत", "फिर", "वाह", "यह", "था", "थी", "आप", "हम"]);
-export const MARATHI_DEV = new Set(["आहे", "आहेत", "आणि", "नाही", "काय", "मी", "मला", "खूप", "पुन्हा", "व्वा", "छान", "आम्ही", "तुम्ही", "होता"]);
+const AMBIGUOUS_ROMAN_SETS: Record<string, Set<string>> = {
+  hi: AMBIGUOUS_HINDI_PARTICLES,
+  mr: AMBIGUOUS_MARATHI_PARTICLES,
+};
+
+export const HINDI_DEV = new Set([
+  "है", "हैं", "और", "नहीं", "क्या", "मैं", "मुझे", "बहुत", "फिर", "यह", "था", "थी", "थे",
+  "आप", "हम", "मेरा", "मेरी", "क्यों", "कैसे", "लिए", "करने", "दिया", "गया", "गई", "गए",
+  "रही", "रहा", "रहे", "हुई", "हुआ", "घंटे", "बढ़िया", "धन्यवाद"
+]);
+export const MARATHI_DEV = new Set([
+  "आहे", "आहेत", "आणि", "नाही", "नाहीत", "काय", "मी", "मला", "खूप", "पुन्हा", "व्वा", "छान",
+  "आम्ही", "आम्हाला", "तुम्ही", "तुम्हाला", "होता", "होती", "होते", "झाला", "झाली", "झाले",
+  "त्यामुळे", "आजची", "वेळेवर", "रस्ते", "रस्त्यात", "खड्डा", "खड्डे", "खड्ड्यात", "खड्ड्यांत",
+  "कळतच", "आलो", "आमच्या", "नियोजन", "उशीर", "राहावे", "लागले", "पावसात", "मिळतो", "माझे",
+  "तुझे", "पण", "पाठीचे", "तुटले", "आहोत", "अर्धा", "तास", "आधी", "येऊन", "उभे", "मस्त"
+]);
+
 
 export const IRONY_EMOJIS = new Set(["🙄", "😏", "😒", "🙃", "🤡", "😑", "😬"]);
 export const POSITIVE_EMOJIS = new Set(["😂", "😍", "😊", "😁", "😀", "👍", "❤️", "🙏", "🎉", "😘", "🥰", "😄"]);
@@ -256,9 +297,79 @@ export function tokenizeWords(text: string): string[] {
     .filter((w) => w.length > 0);
 }
 
+const SCRIPT_TO_LANG: Record<string, string> = {
+  Bengali: "bn",
+  Gurmukhi: "pa",
+  Gujarati: "gu",
+  Odia: "or",
+  Tamil: "ta",
+  Telugu: "te",
+  Kannada: "kn",
+  Malayalam: "ml",
+  Arabic: "ar",
+};
+
+const SCRIPT_DISPLAY_NAME: Record<string, string> = {
+  hi: "Hindi",
+  mr: "Marathi",
+  te: "Telugu",
+  ta: "Tamil",
+  bn: "Bengali",
+  pa: "Punjabi",
+  gu: "Gujarati",
+  or: "Odia",
+  kn: "Kannada",
+  ml: "Malayalam",
+  ar: "Arabic",
+};
+
+function splitTokenByScript(token: string): { segment: string; script: string }[] {
+  const segs: { segment: string; script: string }[] = [];
+  let curSeg = "";
+  let curScript: string | null = null;
+
+  for (const ch of token) {
+    const s = scriptOf(ch);
+    if (!s) continue;
+    if (curScript === null || s === curScript) {
+      curSeg += ch;
+      curScript = s;
+    } else {
+      segs.push({ segment: curSeg, script: curScript });
+      curSeg = ch;
+      curScript = s;
+    }
+  }
+  if (curSeg && curScript) {
+    segs.push({ segment: curSeg, script: curScript });
+  }
+  return segs;
+}
+
+function isLanguageIndependentToken(word: string): boolean {
+  // Pure numbers, currency figures, or tokens lacking alphabetic characters across scripts
+  for (const ch of word) {
+    if (scriptOf(ch) !== null) return false;
+  }
+  return true;
+}
+
+function hasRomanizedMatch(tokenLower: string, wordSet: Set<string>): boolean {
+  if (wordSet.has(tokenLower)) return true;
+  if (tokenLower.length >= 4 && /(.)\1{2,}/.test(tokenLower)) {
+    const { normalized } = normalizeRomanized(tokenLower);
+    if (wordSet.has(normalized)) return true;
+  }
+  return false;
+}
+
+/**
+ * Computes script identification, Romanized Indic detection, and exact
+ * Gambäck & Das (2014/2016) Code-Mixing Index:
+ *   CMI(x) = 100 * (1 - max_l w_l / (n - u))  if >= 2 languages and n > u, else 0.
+ */
 export function analyzeCodeMixing(text: string) {
   const words = tokenizeWords(text);
-  const total = Math.max(words.length, 1);
   const scriptCounts: Record<string, number> = {};
 
   for (const w of words) {
@@ -273,65 +384,135 @@ export function analyzeCodeMixing(text: string) {
   const scriptsPresent = Object.keys(scriptCounts).sort((a, b) => scriptCounts[b] - scriptCounts[a]);
   const dominant = scriptsPresent[0] || "Latin";
 
-  const lowerWords = words.map((w) => w.toLowerCase());
-  const devCount = lowerWords.filter((w) => /[\u0900-\u097F]/.test(w)).length;
-  const hiCount = lowerWords.filter((w) => HINDI_WORDS.has(w)).length;
-  const mrCount = lowerWords.filter((w) => MARATHI_WORDS.has(w)).length;
-  const latinCount = lowerWords.filter((w) => /[a-zA-Z]/.test(w)).length;
+  // Split words into script-coherent segments while excluding numeric/symbol-only u-tokens
+  const segments: { segment: string; lower: string; script: string }[] = [];
+  for (const w of words) {
+    if (isLanguageIndependentToken(w)) continue;
+    const parts = splitTokenByScript(w);
+    for (const p of parts) {
+      segments.push({ segment: p.segment, lower: p.segment.toLowerCase(), script: p.script });
+    }
+  }
+
+  const latinSegs = segments.filter((s) => s.script === "Latin");
+  const devSegs = segments.filter((s) => s.script === "Devanagari");
+  const otherIndicScripts = scriptsPresent.filter((s) => s !== "Latin" && s !== "Devanagari");
+
+  // Detect unambiguous Romanized Indic evidence on Latin tokens
+  const romanUnambiguousHits: Record<string, number> = {};
+  for (const [lang, wordSet] of Object.entries(ROMAN_SETS)) {
+    romanUnambiguousHits[lang] = latinSegs.filter((s) => hasRomanizedMatch(s.lower, wordSet)).length;
+  }
+
+  // Disambiguate Hindi vs Marathi inside Devanagari + Romanized context
+  let devLang: "hi" | "mr" = "hi";
+  if (devSegs.length > 0) {
+    const hiDevCount = devSegs.filter((s) => HINDI_DEV.has(s.segment)).length;
+    const mrDevCount =
+      devSegs.filter((s) => MARATHI_DEV.has(s.segment)).length +
+      (/[\u0933\u0972\u090D\u0911]/.test(text) ? 2 : 0); // ळ, ऍ, ऑ strong Marathi orthographic markers
+    const mrRomCount = romanUnambiguousHits.mr || 0;
+    const hiRomCount = romanUnambiguousHits.hi || 0;
+    devLang =
+      mrDevCount > hiDevCount || (mrDevCount === hiDevCount && mrRomCount > hiRomCount)
+        ? "mr"
+        : "hi";
+  }
+
+  // Determine strongest Romanized Indic candidate (only if unambiguous hits > 0)
+  let bestRomanLang: string | null = null;
+  let bestRomanHits = 0;
+  for (const [lang, cnt] of Object.entries(romanUnambiguousHits)) {
+    if (cnt > bestRomanHits) {
+      bestRomanHits = cnt;
+      bestRomanLang = lang;
+    } else if (cnt > 0 && cnt === bestRomanHits) {
+      // Break ties toward Devanagari language if present
+      if (devSegs.length > 0 && lang === devLang) {
+        bestRomanLang = lang;
+      }
+    }
+  }
+
+  // Assign each non-(n-u) token segment to its language bucket w_l
+  const langTokenCounts: Record<string, number> = {};
+  const romanAnchorLang = bestRomanLang ?? (devSegs.length > 0 ? devLang : null);
+
+  for (const seg of segments) {
+    let langTag = "en";
+    if (seg.script === "Devanagari") {
+      langTag = devLang;
+    } else if (seg.script !== "Latin") {
+      langTag = SCRIPT_TO_LANG[seg.script] || seg.script.toLowerCase().slice(0, 2);
+    } else {
+      // Check winning / anchor Romanized Indic language + its gated particles first
+      let matchedLang: string | null = null;
+      if (romanAnchorLang && hasRomanizedMatch(seg.lower, ROMAN_SETS[romanAnchorLang])) {
+        matchedLang = romanAnchorLang;
+      } else if (
+        romanAnchorLang &&
+        AMBIGUOUS_ROMAN_SETS[romanAnchorLang] &&
+        hasRomanizedMatch(seg.lower, AMBIGUOUS_ROMAN_SETS[romanAnchorLang])
+      ) {
+        matchedLang = romanAnchorLang;
+      } else {
+        for (const [lang, wordSet] of Object.entries(ROMAN_SETS)) {
+          if (hasRomanizedMatch(seg.lower, wordSet)) {
+            matchedLang = lang;
+            break;
+          }
+        }
+      }
+      langTag = matchedLang ?? "en";
+    }
+    langTokenCounts[langTag] = (langTokenCounts[langTag] || 0) + 1;
+  }
+
+  // Gambäck & Das (2014/2016) CMI calculation
+  const effectiveN = segments.length; // (n - u)
+  const activeLangs = Object.keys(langTokenCounts).filter((l) => langTokenCounts[l] > 0);
+  const maxLangTokens = activeLangs.reduce((mx, l) => Math.max(mx, langTokenCounts[l]), 0);
+  const isMixed = effectiveN > 0 && activeLangs.length >= 2;
+  const cmi = isMixed
+    ? Math.round((1.0 - maxLangTokens / effectiveN) * 1000) / 10
+    : 0.0;
 
   let primaryScript = dominant;
-  let isMixed = false;
-  let cmi = 0.0;
   let langGuess = "en";
   let romanized = false;
   let confidence: "low" | "medium" | "high" = "low";
 
-  if (devCount > 0) {
-    const hiDev = lowerWords.filter((w) => HINDI_DEV.has(w)).length;
-    const mrDev = lowerWords.filter((w) => MARATHI_DEV.has(w)).length;
-    primaryScript = mrDev > hiDev || mrCount > hiCount ? "Devanagari (Marathi)" : "Devanagari (Hindi)";
-    langGuess = mrDev > hiDev || mrCount > hiCount ? "mr" : "hi";
-    confidence = (hiDev >= 2 || mrDev >= 2) ? "medium" : "low";
-    if (latinCount > 0) {
-      isMixed = true;
-      cmi = Math.round((latinCount / total) * 1000) / 10;
-    }
-  } else if (dominant === "Latin") {
-    const hits: Record<string, number> = {};
-    for (const [lang, wordSet] of Object.entries(ROMAN_SETS)) {
-      hits[lang] = lowerWords.filter((w) => wordSet.has(w)).length;
-    }
-    const bestLang = Object.keys(hits).reduce((a, b) => (hits[a] > hits[b] ? a : b), "hi");
-    if (hits[bestLang] > 0) {
-      romanized = true;
-      langGuess = bestLang;
-      confidence = hits[bestLang] >= 2 ? "medium" : "low";
-      if (bestLang === "hi") {
-        primaryScript = "Hinglish (Hindi-English)";
-        cmi = Math.round((hits.hi / total) * 1000) / 10;
-        isMixed = true;
-      } else if (bestLang === "mr") {
-        primaryScript = "Marathi-English Code-Mixed";
-        cmi = Math.round((hits.mr / total) * 1000) / 10;
-        isMixed = true;
-      } else {
-        primaryScript = `${bestLang.toUpperCase()}-English Mixed`;
-        cmi = Math.round((hits[bestLang] / total) * 1000) / 10;
-        isMixed = true;
-      }
+  if (devSegs.length > 0) {
+    primaryScript = devLang === "mr" ? "Devanagari (Marathi)" : "Devanagari (Hindi)";
+    langGuess = devLang;
+    romanized = bestRomanHits > 0;
+    const scriptHits = devSegs.filter((s) =>
+      devLang === "mr" ? MARATHI_DEV.has(s.segment) : HINDI_DEV.has(s.segment)
+    ).length;
+    confidence = scriptHits >= 2 || devSegs.length >= 4 ? "high" : "medium";
+  } else if (otherIndicScripts.length > 0) {
+    const topIndic = otherIndicScripts[0];
+    langGuess = SCRIPT_TO_LANG[topIndic] || topIndic.toLowerCase().slice(0, 2);
+    primaryScript = isMixed && latinSegs.length > 0 ? `${topIndic}-English Code-Mixed` : topIndic;
+    romanized = bestRomanHits > 0;
+    confidence = segments.length >= 3 ? "high" : "medium";
+  } else if (bestRomanLang && bestRomanHits > 0) {
+    romanized = true;
+    langGuess = bestRomanLang;
+    confidence = bestRomanHits >= 2 ? "high" : "medium";
+    if (bestRomanLang === "hi") {
+      primaryScript = "Hinglish (Hindi-English)";
+    } else if (bestRomanLang === "mr") {
+      primaryScript = "Marathi-English Code-Mixed";
     } else {
-      primaryScript = "English";
-      langGuess = "en";
-      confidence = "high";
-      cmi = 0.0;
-      isMixed = false;
+      const disp = SCRIPT_DISPLAY_NAME[bestRomanLang] || bestRomanLang.toUpperCase();
+      primaryScript = `${disp}-English Mixed`;
     }
   } else {
-    primaryScript = dominant;
-    langGuess = dominant.toLowerCase().slice(0, 2);
-    confidence = "medium";
-    cmi = scriptsPresent.length > 1 ? 25.0 : 0.0;
-    isMixed = scriptsPresent.length > 1;
+    primaryScript = "English";
+    langGuess = "en";
+    confidence = effectiveN > 0 ? "high" : "low";
+    romanized = false;
   }
 
   return {
@@ -417,7 +598,13 @@ export interface IncongruityFeatures {
   normalization_traces?: NormalizationTrace[];
 }
 
-export function extractIncongruity(text: string, context = ""): IncongruityFeatures {
+export function extractIncongruity(
+  text: string,
+  context = "",
+  options: { useMorph?: boolean; usePhonetic?: boolean } = {}
+): IncongruityFeatures {
+  const useMorph = options.useMorph ?? true;
+  const usePhonetic = options.usePhonetic ?? true;
   const tokens = tokenizeWords(text).map((t) => t.toLowerCase());
   const num = Math.max(tokens.length, 1);
 
@@ -441,8 +628,17 @@ export function extractIncongruity(text: string, context = ""): IncongruityFeatu
     // 1. Raw stripped
     // 2. Indic stemmed
     // 3. Romanized dedup & folded
-    const { stem: indicStem, strippedSuffix } = stemIndicToken(stripped);
-    const { normalized: romanDedup, folded: romanFolded } = normalizeRomanized(stripped);
+    const { stem: rawStem, strippedSuffix: rawSuffix } = useMorph
+      ? stemIndicToken(stripped)
+      : { stem: stripped, strippedSuffix: null };
+    const indicStem = useMorph ? rawStem : stripped;
+    const strippedSuffix = useMorph ? rawSuffix : null;
+
+    const { normalized: rawDedup, folded: rawFolded } = usePhonetic
+      ? normalizeRomanized(stripped)
+      : { normalized: stripped, folded: stripped };
+    const romanDedup = usePhonetic ? rawDedup : stripped;
+    const romanFolded = usePhonetic ? rawFolded : stripped;
 
     let matchedType: NormalizationTrace["cueType"] | undefined;
 
@@ -522,8 +718,10 @@ export function extractIncongruity(text: string, context = ""): IncongruityFeatu
     );
     let ctxNegCount = 0;
     for (const ct of ctxTokens) {
-      const { stem: ctStem } = stemIndicToken(ct);
-      const { normalized: ctDedup, folded: ctFolded } = normalizeRomanized(ct);
+      const { stem: ctStem } = useMorph ? stemIndicToken(ct) : { stem: ct };
+      const { normalized: ctDedup, folded: ctFolded } = usePhonetic
+        ? normalizeRomanized(ct)
+        : { normalized: ct, folded: ct };
       if (
         NEGATIVE_CUES.has(ct) ||
         NEGATIVE_CUES.has(ctStem) ||
@@ -608,9 +806,13 @@ export interface PredictionResult {
   temperature: number;
 }
 
-export function computeRawScore(text: string, context = ""): number {
+export function computeUnclampedRawScore(
+  text: string,
+  context = "",
+  options: { useMorph?: boolean; usePhonetic?: boolean } = {}
+): number {
   const clean = cleanText(text);
-  const feats = extractIncongruity(clean, context);
+  const feats = extractIncongruity(clean, context, options);
   const em = emojiFeatures(text);
   const hasRhetorical = feats.has_rhetorical || RHETORICAL_PATTERNS.some((p) => p.test(text));
 
@@ -666,6 +868,15 @@ export function computeRawScore(text: string, context = ""): number {
     score += 0.06;
   }
 
+  return score;
+}
+
+export function computeRawScore(
+  text: string,
+  context = "",
+  options: { useMorph?: boolean; usePhonetic?: boolean } = {}
+): number {
+  const score = computeUnclampedRawScore(text, context, options);
   // Clamp between 0.02 and 0.98
   return Math.max(0.02, Math.min(0.98, score));
 }
@@ -684,13 +895,14 @@ export function predict(
   text: string,
   context = "",
   temperature = 1.0,
-  abstainThreshold = 0.6
+  abstainThreshold = 0.6,
+  options: { useMorph?: boolean; usePhonetic?: boolean } = {}
 ): PredictionResult {
-  const rawP = computeRawScore(text, context);
+  const rawP = computeRawScore(text, context, options);
   const pCalibrated = applyTemperatureCalibration(rawP, temperature);
   const pSarcastic = Math.round(pCalibrated * 1000) / 1000;
 
-  const incongruity = extractIncongruity(text, context);
+  const incongruity = extractIncongruity(text, context, options);
   const language = analyzeCodeMixing(text);
   const emoji = emojiFeatures(text);
 
@@ -784,12 +996,14 @@ export function computeOcclusion(
     };
   }
 
-  const attributions: TokenAttribution[] = tokens.map((token, i) => {
+  const baseUnclamped = computeUnclampedRawScore(text, context);
+  const perTokenData = tokens.map((token, i) => {
     const left = tokens.slice(0, i);
     const right = tokens.slice(i + 1);
     const occludedText = [...left, ...right].join(" ");
     const occludedResult = predict(occludedText, context, temperature);
-    const delta = Math.round((baseP - occludedResult.p_sarcastic) * 1000) / 1000;
+    const occUnclamped = computeUnclampedRawScore(occludedText, context);
+    const clampedDelta = Math.round((baseP - occludedResult.p_sarcastic) * 1000) / 1000;
 
     const clean = token.toLowerCase().replace(/^[\p{P}\p{S}]+|[\p{P}\p{S}]+$/gu, "");
     const { stem: indicStem } = stemIndicToken(clean);
@@ -806,9 +1020,32 @@ export function computeOcclusion(
 
     return {
       token,
-      delta,
       clean_token: clean,
       category,
+      clampedDelta,
+      occUnclamped,
+    };
+  });
+
+  // When base score is pinned at the [0.02, 0.98] probability clamp and every occluded variant
+  // also collapses at the clamp (all clamped deltas === 0), evaluate continuous temperature-scaled
+  // sensitivity over the unclamped internal score uniformly across all tokens so salient cues emerge.
+  const allClampedZero = perTokenData.every((d) => d.clampedDelta === 0);
+  const atClamp = baseUnclamped >= 0.98 || baseUnclamped <= 0.02;
+  const toContinuousProb = (raw: number) =>
+    applyTemperatureCalibration(1 / (1 + Math.exp(-(raw - 0.5) * 2.0)), temperature);
+  const baseContP = toContinuousProb(baseUnclamped);
+
+  const attributions: TokenAttribution[] = perTokenData.map((d) => {
+    let delta = d.clampedDelta;
+    if (allClampedZero && atClamp && Math.abs(baseUnclamped - d.occUnclamped) > 1e-6) {
+      delta = Math.round((baseContP - toContinuousProb(d.occUnclamped)) * 1000) / 1000;
+    }
+    return {
+      token: d.token,
+      delta,
+      clean_token: d.clean_token,
+      category: d.category,
     };
   });
 
@@ -851,10 +1088,30 @@ function graphemeClusters(word: string): string[] {
   return Array.from(word);
 }
 
+function seedFromText(str: string): number {
+  let h = 2166136261;
+  for (let i = 0; i < str.length; i++) {
+    h ^= str.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+}
+
+function createMulberry32(seed: number): () => number {
+  let a = seed >>> 0;
+  return () => {
+    let t = (a += 0x6d2b79f5);
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
 export function perturbAll(text: string, context = "", temperature = 1.0): RobustnessResult {
   const baseResult = predict(text, context, temperature);
   const baseP = baseResult.p_sarcastic;
   const baseIsSarc = baseP >= 0.5;
+  const rng = createMulberry32(seedFromText(text));
 
   const words = text.split(/\s+/).filter(Boolean);
 
@@ -862,8 +1119,8 @@ export function perturbAll(text: string, context = "", temperature = 1.0): Robus
   const charNoisyWords = words.map((w) => {
     const cl = graphemeClusters(w);
     if (cl.length >= 4) {
-      const k = Math.floor(1 + Math.random() * (cl.length - 2));
-      const op = Math.random();
+      const k = Math.floor(1 + rng() * (cl.length - 2));
+      const op = rng();
       if (op < 0.33) {
         // swap
         const tmp = cl[k];
@@ -885,7 +1142,7 @@ export function perturbAll(text: string, context = "", temperature = 1.0): Robus
   // 2. Repeat letters
   const repeatWords = words.map((w) => {
     const cl = graphemeClusters(w);
-    if (cl.length >= 3 && Math.random() < 0.6) {
+    if (cl.length >= 3 && rng() < 0.6) {
       return w + cl[cl.length - 1].repeat(3);
     }
     return w;
@@ -904,8 +1161,13 @@ export function perturbAll(text: string, context = "", temperature = 1.0): Robus
   // 6. Truncate first 6 words
   const textTruncate = words.slice(0, Math.min(6, words.length)).join(" ");
 
-  // 7. Shuffle words
-  const textShuffle = [...words].sort(() => Math.random() - 0.5).join(" ");
+  // 7. Shuffle words (Fisher-Yates deterministic)
+  const shuffled = [...words];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  const textShuffle = shuffled.join(" ");
 
   // 8. Uppercase
   const textUppercase = text.toUpperCase();
@@ -917,7 +1179,7 @@ export function perturbAll(text: string, context = "", temperature = 1.0): Robus
     { name: "strip_punct", desc: "Remove exclamation & question marks", text: textNoPunct || text },
     { name: "drop_tags", desc: "Remove hashtags and @mentions", text: textDropTags || text },
     { name: "truncate_6_words", desc: "Truncate text to first 6 words", text: textTruncate || text },
-    { name: "shuffle_words", desc: "Randomly permute word order", text: textShuffle || text },
+    { name: "shuffle_words", desc: "Deterministically permute word order", text: textShuffle || text },
     { name: "uppercase", desc: "Transform into full UPPERCASE", text: textUppercase || text },
   ];
 

@@ -1,4 +1,8 @@
-import { predict } from "../src/engine/sarcasmEngine";
+import { predict as predictLinguistic } from "../src/engine/sarcasmEngine";
+import {
+  predictHybrid,
+  DEFAULT_ABSTAIN_THRESHOLD,
+} from "../src/engine/hybridFusion";
 
 export const UNSEEN_TEST_CASES = [
   // --- Unseen Sarcastic (5 items across languages) ---
@@ -128,30 +132,62 @@ export const UNSEEN_TEST_CASES = [
   },
 ];
 
-console.log("=== UNSEEN GENERALIZATION EVALUATION ===");
-let correct = 0;
-let tp = 0, fp = 0, tn = 0, fn = 0;
+export function evaluateUnseenSuite() {
+  let lingTP = 0, lingFP = 0, lingTN = 0, lingFN = 0;
+  let hybTP = 0, hybFP = 0, hybTN = 0, hybFN = 0;
+  let hybAbstain = 0;
 
-for (const tc of UNSEEN_TEST_CASES) {
-  const p = predict(tc.text, tc.context);
-  const isSarc = p.p_sarcastic >= 0.5 ? 1 : 0;
-  const match = isSarc === tc.expected;
-  if (match) correct++;
-  if (tc.expected === 1 && isSarc === 1) tp++;
-  else if (tc.expected === 0 && isSarc === 1) fp++;
-  else if (tc.expected === 0 && isSarc === 0) tn++;
-  else if (tc.expected === 1 && isSarc === 0) fn++;
+  console.log("=== UNSEEN GENERALIZATION EVALUATION (N=15) ===");
+  for (const tc of UNSEEN_TEST_CASES) {
+    const ling = predictLinguistic(tc.text, tc.context);
+    const hyb = predictHybrid(tc.text, tc.context);
 
-  console.log(`[${match ? "PASS" : "FAIL"}] Expected: ${tc.expected} | Got: ${isSarc} (P=${p.p_sarcastic.toFixed(3)}) | ID: ${tc.id} (${tc.lang})`);
+    const lingPred = ling.p_sarcastic >= 0.5 ? 1 : 0;
+    const hybPred = hyb.p_fused >= 0.5 ? 1 : 0;
+    if (hyb.abstain) hybAbstain++;
+
+    if (tc.expected === 1 && lingPred === 1) lingTP++;
+    else if (tc.expected === 0 && lingPred === 1) lingFP++;
+    else if (tc.expected === 0 && lingPred === 0) lingTN++;
+    else lingFN++;
+
+    if (tc.expected === 1 && hybPred === 1) hybTP++;
+    else if (tc.expected === 0 && hybPred === 1) hybFP++;
+    else if (tc.expected === 0 && hybPred === 0) hybTN++;
+    else hybFN++;
+
+    console.log(
+      `[Expected:${tc.expected}] Ling=${lingPred}(${ling.p_sarcastic.toFixed(3)}) | Hybrid=${hybPred}(${hyb.p_fused.toFixed(3)}, conf=${hyb.confidence.toFixed(2)}, ${hyb.verdict}) | ${tc.id} (${tc.lang})`
+    );
+  }
+
+  const calc = (tp: number, fp: number, tn: number, fn: number) => {
+    const n = tp + fp + tn + fn;
+    const acc = ((tp + tn) / n) * 100;
+    const p1 = tp + fp > 0 ? (tp / (tp + fp)) * 100 : 0;
+    const r1 = tp + fn > 0 ? (tp / (tp + fn)) * 100 : 0;
+    const f1 = p1 + r1 > 0 ? (2 * p1 * r1) / (p1 + r1) : 0;
+    const p0 = tn + fn > 0 ? (tn / (tn + fn)) * 100 : 0;
+    const r0 = tn + fp > 0 ? (tn / (tn + fp)) * 100 : 0;
+    const f0 = p0 + r0 > 0 ? (2 * p0 * r0) / (p0 + r0) : 0;
+    const mf1 = (f1 + f0) / 2;
+    return { acc, p1, r1, f1, mf1, tp, fp, tn, fn };
+  };
+
+  const mLing = calc(lingTP, lingFP, lingTN, lingFN);
+  const mHyb = calc(hybTP, hybFP, hybTN, hybFN);
+
+  console.log(`\nStage 2 Linguistic: Acc=${mLing.acc.toFixed(1)}% Prec=${mLing.p1.toFixed(1)}% Rec=${mLing.r1.toFixed(1)}% MF1=${mLing.mf1.toFixed(1)}% (TP=${mLing.tp}, FP=${mLing.fp}, TN=${mLing.tn}, FN=${mLing.fn})`);
+  console.log(`Calibrated Hybrid:  Acc=${mHyb.acc.toFixed(1)}% Prec=${mHyb.p1.toFixed(1)}% Rec=${mHyb.r1.toFixed(1)}% MF1=${mHyb.mf1.toFixed(1)}% (TP=${mHyb.tp}, FP=${mHyb.fp}, TN=${mHyb.tn}, FN=${mHyb.fn}, Abstained @ tau=${DEFAULT_ABSTAIN_THRESHOLD}: ${hybAbstain}/${UNSEEN_TEST_CASES.length})`);
+
+  return { mLing, mHyb, hybAbstain };
 }
 
-const acc = (correct / UNSEEN_TEST_CASES.length) * 100;
-const prec = tp + fp > 0 ? (tp / (tp + fp)) * 100 : 0;
-const rec = tp + fn > 0 ? (tp / (tp + fn)) * 100 : 0;
-const f1 = prec + rec > 0 ? (2 * prec * rec) / (prec + rec) : 0;
+const isMain =
+  typeof process !== "undefined" &&
+  process.argv[1] &&
+  (process.argv[1].endsWith("test_unseen.ts") || process.argv[1].endsWith("test_unseen.js"));
 
-console.log(`\nUnseen Test Accuracy:  ${correct}/${UNSEEN_TEST_CASES.length} (${acc.toFixed(1)}%)`);
-console.log(`Unseen Sarcasm Precision: ${prec.toFixed(1)}%`);
-console.log(`Unseen Sarcasm Recall:    ${rec.toFixed(1)}%`);
-console.log(`Unseen F1 Score:          ${f1.toFixed(1)}%`);
-console.log(`Unseen Confusion Matrix:  TP=${tp}, FP=${fp}, TN=${tn}, FN=${fn}`);
+if (isMain) {
+  evaluateUnseenSuite();
+}

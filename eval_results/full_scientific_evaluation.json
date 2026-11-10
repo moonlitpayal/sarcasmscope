@@ -1,7 +1,7 @@
 {
   "metadata": {
     "investigator": "Payal Mehta",
-    "date": "2026-11-07T18:39:11.909Z",
+    "date": "2026-11-10T17:06:00.871Z",
     "corpusSize": 30,
     "iterationsLatency": 1000
   },
@@ -17,7 +17,7 @@
     "macroF1": 0.9666295884315907
   },
   "bootstrap95CI": {
-    "lower": 0.8844672657252888,
+    "lower": 0.8942420681551116,
     "upper": 1
   },
   "calibration": {
@@ -190,7 +190,7 @@
       {
         "perturbation": "char_noise",
         "description": "Cluster-safe character swap/duplication",
-        "perturbed_text": "वाह क्या बात है, 4 घंटे ट्रेन लेट करने के लिए धन्यवा! 🙄",
+        "perturbed_text": "वाह क्या बात है, 4 घंटे ट्रेन लेट करने के लिए धन्यवावाद! 🙄",
         "p_sarcastic": 0.98,
         "flipped": false,
         "delta": 0
@@ -198,7 +198,7 @@
       {
         "perturbation": "repeat_letters",
         "description": "Elongated letters (e.g. soo, wahhh)",
-        "perturbed_text": "वाह क्या बात है, 4 घंटे ट्रेन लेट करने के लिए धन्यवाद! 🙄",
+        "perturbed_text": "वाह क्या बात है, 4 घंटे ट्रेन लेट करने के लिए धन्यवाद!!!! 🙄",
         "p_sarcastic": 0.98,
         "flipped": false,
         "delta": 0
@@ -237,8 +237,8 @@
       },
       {
         "perturbation": "shuffle_words",
-        "description": "Randomly permute word order",
-        "perturbed_text": "वाह लिए ट्रेन धन्यवाद! घंटे क्या के 4 लेट करने बात है, 🙄",
+        "description": "Deterministically permute word order",
+        "perturbed_text": "के वाह धन्यवाद! क्या बात 4 🙄 ट्रेन घंटे लिए है, लेट करने",
         "p_sarcastic": 0.98,
         "flipped": false,
         "delta": 0
@@ -294,6 +294,48 @@
       }
     ]
   },
+  "cmiAnalysis": [
+    {
+      "text": "The train arrived on time.",
+      "detectedScript": "English",
+      "cmi": 0,
+      "isMixed": false,
+      "languageGuess": "en",
+      "confidence": "high"
+    },
+    {
+      "text": "आजची बैठक वेळेवर झाली.",
+      "detectedScript": "Devanagari (Marathi)",
+      "cmi": 0,
+      "isMixed": false,
+      "languageGuess": "mr",
+      "confidence": "high"
+    },
+    {
+      "text": "वाह क्या बात है, 4 घंटे train late!",
+      "detectedScript": "Devanagari (Hindi)",
+      "cmi": 28.6,
+      "isMixed": true,
+      "languageGuess": "hi",
+      "confidence": "high"
+    },
+    {
+      "text": "Bohot badiya bhai, exam top karega",
+      "detectedScript": "Hinglish (Hindi-English)",
+      "cmi": 33.3,
+      "isMixed": true,
+      "languageGuess": "hi",
+      "confidence": "high"
+    },
+    {
+      "text": "Lai bhari bhau traffic madhe",
+      "detectedScript": "Marathi-English Code-Mixed",
+      "cmi": 20,
+      "isMixed": true,
+      "languageGuess": "mr",
+      "confidence": "high"
+    }
+  ],
   "edgeCases": [
     {
       "id": "EDGE_01",
@@ -397,11 +439,11 @@
     }
   ],
   "performance": {
-    "minLat": 0.0701249999999618,
-    "medianLat": 0.08913400000000138,
-    "avgLat": 0.11371563999999694,
-    "p95Lat": 0.20530999999999722,
-    "maxLat": 2.3770250000000033,
-    "batch200ElapsedMs": 20.57725199999993
+    "minLat": 0.14779699999996865,
+    "medianLat": 0.21341199999994842,
+    "avgLat": 0.30254502499999947,
+    "p95Lat": 0.6470429999999396,
+    "maxLat": 5.087814999999978,
+    "batch200ElapsedMs": 64.14501499999994
   }
 }

@@ -1,38 +1,26 @@
 # SARcasmScope — Stage 9 Robustness Stress Testing & Error Taxonomy
 
 **Principal Investigator:** Payal Mehta (`payal.12620246@vit.edu`)  
-**Institution:** School of Computer Science and Engineering, Vellore Institute of Technology, India  
-**Target Repository:** `https://github.com/moonlitpayal/sarcasmscope`  
-**Evaluation Standard:** Adversarial Robustness & Pragmatic Error Analysis  
-**Audit Date:** November 9, 2026  
-**Audit Phase:** 9H — Controlled Perturbation Stress Testing  
+**Audit Phase:** 9H — Controlled 9-Perturbation Stress Tests (`eval_results/stage9/robustness_results.csv`)
 
 ---
 
-## 1. Controlled 9-Perturbation Robustness Benchmark
+## 1. Controlled 9-Perturbation Stress Benchmark (`testRecords`, $N = 100$, Seed `42`)
 
-To verify that SARcasmScope is resilient against real-world digital noise, 100 randomly sampled test instances were subjected to nine controlled perturbations (`eval_results/stage9/robustness_results.csv`):
-
-| Perturbation Test | Representation Level Targeted | Sample Count | Stability (%) | Mean $|\Delta p|$ | Prediction Flips | Scientific Explanation |
+| Perturbation Test | Targeted Level | Tested $N$ | Empirical Stability (%) | Mean $|\Delta p|$ | Prediction Flips | Honest Diagnostic Observation |
 |:---|:---|:---:|:---:|:---:|:---:|:---|
-| **1. Character Transposition** | Spelling / Morphology | 100 | **100.0%** | 0.005 | 0 / 100 | Subword character $n$-grams (lengths 3-6) preserve partial matches, preventing total token breakdown. |
-| **2. Repeated Vowel Elongation** | Phonetic / Orthographic | 100 | **98.0%** | 0.022 | 2 / 100 | Romanized phonetic folder collapses repeated graphemes ($[c]{3,} \to c$), neutralizing elongation. |
-| **3. Emoji Removal** | Pragmatic Markers | 100 | **100.0%** | 0.000 | 0 / 100 | Core sentiment clash and subword scores maintain prediction even without visual markers. |
-| **4. Punctuation Removal** | Hyperbole / Syntax | 100 | **100.0%** | 0.005 | 0 / 100 | Lexical polarity clash and subword scores dominate punctuation hyperbole. |
-| **5. Romanized Spelling Variation**| Dialect / Transliteration | 100 | **99.0%** | 0.008 | 1 / 100 | Phonetic folding maps common transliteration variants to uniform phonetic keys. |
-| **6. Code-Mixing Alternation** | Language Switching | 100 | **98.0%** | 0.015 | 2 / 100 | Multilingual subwords and bilingual sentiment dictionaries handle code-switched terms. |
-| **7. Context Removal** | Contextual Grounding | 100 | **99.0%** | 0.007 | 1 / 100 | Utterances relying strictly on dialogue clash revert to literal prior when context is detached. |
-| **8. Unseen Vocabulary Insertion** | Open Vocabulary | 100 | **99.0%** | 0.006 | 1 / 100 | Subword hashing absorbs unseen terms gracefully without causing runtime exceptions. |
-| **9. Dialectal Morphological Shift** | Agglutinative Shift | 100 | **98.0%** | 0.012 | 2 / 100 | Indic suffix stripper matches canonical case families, neutralizing dialectal variation. |
+| **1. Character Transposition** | Spelling / Subword | 100 | **95.0%** | 0.022 | 5 / 100 | `CharSub_3_5` partially retains surrounding shingles under adjacent swaps. |
+| **2. Repeated Vowel Elongation** | Phonetic / Orthographic | 100 | **75.0%** | 0.086 | 25 / 100 | Heavy trailing triple-letter inflation (`w + c.repeat(3)`) alters subword 3–5 grams more than `ph:` lookup recovers. |
+| **3. Emoji Removal** | Pragmatic Markers | 100 | **99.0%** | 0.001 | 1 / 100 | Statistical & lexical signals maintain verdict stability when emojis are dropped. |
+| **4. Punctuation Removal** | Hyperbole / Syntax | 100 | **98.0%** | 0.016 | 2 / 100 | Word and subword weights outweigh surface `!`/`?` cues. |
+| **5. Romanized Spelling Variation** | Dialect / Transliteration | 100 | **100.0%** | 0.000 | 0 / 100 | `ph:` phonetic keys align `bahut/bohot`, `accha/achha`, `bohot/bahut`, etc. |
+| **6. Code-Mixing Alternation** | Language Switching | 100 | **98.0%** | 0.001 | 2 / 100 | Mixed English–Hinglish training vocab absorbs lexical code-switches. |
+| **7. Dialogue Context Removal** | Contextual Grounding | 100 | **70.0%** | 0.154 | 30 / 100 | **Genuine Context Dependence:** Removing parent context shifts 30% of sampled verdicts (`mean |dp|=0.154`), consistent with the `-4.23%` MF1 context ablation. |
+| **8. Unseen Vocabulary Insertion** | Open Vocabulary | 100 | **97.0%** | 0.010 | 3 / 100 | Out-of-vocabulary tokens safely abstain from sparse lookup without runtime errors. |
+| **9. Dialectal Morphological Shift** | Agglutinative Shift | 100 | **100.0%** | 0.000 | 0 / 100 | Devanagari/Telugu suffix normalization matches shared root stems (`st:`). |
 
 ---
 
-## 2. Multi-Lingual Qualitative Error Taxonomy
+## 2. Calibration Reliability & Selective Abstention (`calibration_results.csv`, `risk_coverage.csv`)
 
-Qualitative failure analysis on held-out errors revealed three persistent boundary conditions:
-1. **Deadpan Satire:** News headlines lacking explicit sentiment markers (*The Onion*) require external human commonsense reasoning.
-2. **Context-Dependent Sitcom Banter:** Hinglish dialogue irony often hinges on multi-speaker interpersonal dynamics rather than surface text.
-3. **Dravidian Class Imbalance:** Low-resource Dravidian datasets (Telugu) exhibiting natural $84.3\%$ literal skew heavily penalize false alarms, depressing sarcastic recall.
-
-### Epistemic Uncertainty Selective Abstention
-When encountering boundary cases ($p \approx 0.50$), the calibrated uncertainty gate ($\tau = 0.58$) correctly marks the sample as **Uncertain**, achieving **$61.48\%$ selective accuracy** across **$68.66\%$ coverage**.
+On frozen `test.jsonl` ($N = 1,123$), **Conf-ECE = `1.36%`** across 5 monotonic confidence bins (`|diff| <= 0.026` everywhere: `[0.5-0.6]` 0.556 vs 0.549, `[0.6-0.7]` 0.624 vs 0.647, `[0.7-0.8]` 0.760 vs 0.747, `[0.8-0.9]` 0.852 vs 0.847, `[0.9-1.0]` 0.956 vs 0.930). At default selective gate $\tau^* = 0.35$, accepted accuracy rises from `68.03%` to **`80.31%`** (`78.92%` Macro-F1; risk drops `31.97% -> 19.69%`) over **`45.68%` coverage** (`513/1,123` accepted; `610` marked `"Uncertain"`).

@@ -1,20 +1,16 @@
-# Where each paper section gets its content
+# SARcasmScope — Paper-to-Artifact Traceability Map
 
-Structure follows the IEEE-style paper you shared (Abstract, Introduction, Related Work with comparison table,
-Requirements, Architecture, Methodology, Implementation, Testing, Results, Limitations, Future Work, References).
+All empirical claims, equations, and dataset disclosures map directly to executable source files and reproducible outputs:
 
-| Paper section | Source in this repository | Note |
-|---|---|---|
-| Abstract | `runs/<final>/report.md` main table + audit flags | Write last; numbers copied from `tables/` only |
-| Introduction | Research protocol Section 1-2 | Motivation + gap, stated within the claim boundary |
-| Related Work + comparison table | `Sarcasm_Research_Workbook.xlsx` (Literature_Matrix) | Only papers you actually read |
-| Problem definition and requirements | `docs/REQUIREMENTS.md` (FR1-FR21, NFR1-NFR5) | Tables can be reused almost directly |
-| System architecture | `docs/ARCHITECTURE.md` (mermaid diagram) | Redraw as a figure |
-| Methodology | Normalisation, cluster-based splitting, calibration, robustness suite, shortcut baselines, transfer, occlusion | One subsection each |
-| Datasets | `runs/<final>/audit.md`, `tables/per_language.csv` | Include the audit flags honestly |
-| Implementation | README, `pyproject.toml`, config file | Library versions from `pip freeze` |
-| Testing | `docs/REQUIREMENTS.md` test-case table (TC01-TC38) + pytest output | Mirrors the black-box test table in the reference paper |
-| Results | `tables/main_results.csv`, `significance.csv`, `reliability.csv`, `robustness.csv`, `transfer_*.csv`, `shortcuts.csv` | Report mean +- std over seeds and CIs |
-| Error analysis | `predictions/` + 30 hand-checked mistakes per language group | Needs native-speaker review |
-| Limitations | README "Known limitations" + protocol Section 8 | Be specific |
-| Reproducibility statement | Seeds, split files in `splits/`, `FINAL_LOCK.json` | Archive the run folder |
+| Paper Section | Canonical Workspace Source | Notes |
+|:---|:---|:---|
+| Abstract & Headline Tables | `eval_results/stage9/master_summary.json`, `eval_results/stage9/model_comparison.csv` | Frozen `test.jsonl` ($N=1,123$) + diagnostic suites ($N=30, 15$). |
+| Nov 7 Reconciliation | `docs/ACCURACY_AND_FEATURE_FUSION_INVESTIGATION.md`, `eval_results/independent/version_comparison_report.json` | 4-way reproduction via `eval/verify_comparison.ts`; notes `RESULTS_STATUS_AND_AUDIT.md` absent. |
+| 3-Stage Architecture & Equations | `docs/ARCHITECTURE.md`, `src/engine/hybridFusion.ts`, `src/engine/sarcasmEngine.ts`, `src/engine/statisticalModel.ts`, `src/engine/textFeatures.ts` | $16,006$ params, $T^*=0.845, \tau^*=0.35$, OOF MAP Ridge stacking. |
+| Datasets, Licenses & Leakage | `docs/DATASET_PROVENANCE_AND_LICENSES.md`, `eval_results/stage9/dataset_integrity.csv` | 5,600 records; `0` exact / conv overlaps; `13` near-dup pairs (`8` cross-split, `5` train-test). |
+| Per-Language & Error Analysis | `docs/STAGE9_MULTILINGUAL_ANALYSIS.md`, `eval_results/stage9/multilingual_improvements.csv` | Includes Telugu `0.00%` recall @ 0.50 cutoff vs `0.7455` ROC-AUC analysis. |
+| Ablations, McNemar & CIs | `docs/STAGE9_STATISTICAL_VALIDATION.md`, `eval_results/stage9/{ablation_results,statistical_analysis}.csv` | 11-configuration ablations, $B=1,000$ bootstrap CIs, 6 McNemar comparisons. |
+| Calibration & Risk-Coverage | `eval_results/stage9/{calibration_results,risk_coverage}.csv`, `eval_results/independent/training_calibration_summary.json` | 5 monotonic bins (`1.36%` Conf-ECE), `80.31%` selective acc @ $\tau^*=0.35$. |
+| Robustness & Explainability | `docs/STAGE9_ROBUSTNESS_REPORT.md`, `eval_results/stage9/{robustness_results,explainability_results}.csv` | 9 perturbations ($N=100$, seed 42) + 5 LOTO attribution case studies. |
+| GPU Transformer Protocol | `docs/COLAB.md`, `eval/train_transformer.py`, `eval/evaluate_transformers.py`, `eval/export_onnx.py` | Syntax & `--dry_run` verified locally; GPU benchmarks marked `NOT_EXECUTED_LOCALLY`. |
+| Deployment & UI | `docs/STAGE9_DEPLOYMENT_REPORT.md`, `eval_results/stage9/software_audit.csv`, `src/components/*` | `StudioView`, `BatchView`, `RobustnessView`, `ProtocolView`, `QuantumOrb`. |

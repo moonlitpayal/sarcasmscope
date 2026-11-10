@@ -1,34 +1,27 @@
-# SARcasmScope — Stage 9 Scopus Q1/Q2 Journal Publication Readiness Assessment
+# SARcasmScope — Stage 9 Publication Readiness Assessment
 
-**Principal Investigator:** Payal Mehta (`payal.12620246@vit.edu`)  
+**Codebase & Audit Lead:** Payal Mehta (`payal.12620246@vit.edu`)  
 **Institution:** School of Computer Science and Engineering, Vellore Institute of Technology, India  
-**Target Repository:** `https://github.com/moonlitpayal/sarcasmscope`  
-**Primary Venue:** ACM Transactions on Asian and Low-Resource Language Information Processing (TALLIP)  
-**Secondary Venues:** IEEE Transactions on Affective Computing (TAC), Language Resources and Evaluation (LREC)  
-**Evaluation Standard:** Independent Journal Reviewer Standards  
-**Audit Date:** November 9, 2026  
+**Submission Gate Status:** **TECHNICAL VERIFICATION COMPLETE — NOT READY FOR JOURNAL UPLOAD UNTIL CO-AUTHOR SIGN-OFF (5 AUTHORS), AUTHORSHIP ORDER / CORRESPONDING AUTHOR RESOLUTION, AND OPTIONAL COLAB GPU BASELINE POLICY ARE FINALIZED**  
+**Target Venues:** ACM Transactions on Asian and Low-Resource Language Information Processing (TALLIP), IEEE Transactions on Affective Computing (TAC), Language Resources and Evaluation (LREV)
 
 ---
 
-## 1. Overall Evaluation Scorecard: 4.93 / 5.00 (Exemplary Readiness)
+## 1. Evidence & Artifact Verification Summary
 
-| Evaluation Dimension | Weight | Score (/5.0) | Weighted Contribution | Reviewer Assessment |
-|:---|:---:|:---:|:---:|:---|
-| **1. Theoretical Novelty & Problem Framing** | 20% | 4.90 | 0.980 | **Exemplary:** Bridges transformer overhead and symbolic brittleness |
-| **2. Empirical Rigor & Dataset Depth** | 25% | 5.00 | 1.250 | **Flawless:** 5,600 deduplicated records across 5 corpora, 0% leakage |
-| **3. Statistical Validation & Disentanglement** | 15% | 5.00 | 0.750 | **Flawless:** Disentangled McNemar test ($\chi^2 = 277.03$) and bootstrap CIs |
-| **4. Reproducibility & Open Science** | 15% | 5.00 | 0.750 | **Flawless:** Deterministic seeds, 15/15 regression tests, complete Colab scripts |
-| **5. Multilingual & Low-Resource Coverage** | 15% | 4.80 | 0.720 | **Exemplary:** Hindi, Hinglish, Marathi, and Telugu explicitly addressed |
-| **6. Ethical Compliance & Bibliographic Authenticity** | 10% | 4.90 | 0.490 | **Exemplary:** Verified citations, open licensing, anonymized text |
-| **Composite Score** | **100%** | — | **4.940 / 5.00** | **Ready for Submission** |
+| Readiness Criterion | Evidence Status | Verified Details |
+|:---|:---|:---|
+| **Nov 7 vs Stage 9 Reconciliation** | **VERIFIED** | `eval/verify_comparison.ts` reproduces Nov 7 `v1` on $N=30$ (`66.67%` Acc, `33.33%` Rec, `TP=5,FP=0,TN=15,FN=10`) alongside `v2` (`96.67%`), `StatOOF` (`56.67%`), and `Hybrid` (`86.67%`), contrasted strictly with frozen `test.jsonl` ($N=1,123$). `RESULTS_STATUS_AND_AUDIT.md` does not exist in workspace. |
+| **Deployed vs Trained Integration** | **VERIFIED** | `src/engine/hybridFusion.ts` directly loads `src/engine/trainedModelData.ts` (`v2.0.0-oof-calibrated`, `405.36 KB`) and `src/engine/statisticalModel.ts` (`"statistical_oof_stack"`), replacing earlier unlinked fallback weights and fixed `1.15` temperature. |
+| **Non-Circular 3-Stage Calibration** | **VERIFIED** | Level-1 `WordLex_1_2` ($V=8,000$) + `CharSub_3_5` ($V=8,000$) fitted on `train.jsonl` ($3,373$); Level-2 MAP Ridge fitted on 5-fold group OOF; Level-3 $T^*=0.845, \tau^*=0.35$ fitted by NLL minimization & risk-coverage strictly on `val.jsonl` ($1,104$). |
+| **Frozen Held-Out Performance & CSV Sync** | **VERIFIED** | `68.03%` Acc, `67.56%` MF1, `67.09%` Prec, `60.50%` Rec, `0.7535` ROC-AUC, **`1.36%` Conf-ECE**, `0.5826` NLL (`80.31%` selective acc @ `45.68%` coverage). `eval/verify_independent_recomputation.ts` confirms `1123/1123` CSV row parity (`max|Δp|=0`) and independently recomputes all metrics across `eval_results/stage9/` and `eval_results/independent/` (`344+401+194+75+109`). |
+| **Uncertainty & Calibration Qualification** | **VERIFIED (SCOPED)** | Exports both `val.jsonl` (`NLL 0.5798->0.5777`, `SelAcc 81.06% @ 49.73% cov`) and sealed `test.jsonl` (`NLL 0.5856->0.5826`, `Conf-ECE 2.28%->1.36%`, `Class-ECE 4.40%->2.80%`, Bin 5 `68` items / `0.026` error); distinguishes $P_{\text{fused}}$, Margin Confidence, $\tau^*$, and Selective Acc; notes Hinglish `15.57%` Conf-ECE & Telugu `0%` Rec @ `0.50`. |
+| **Dataset Validity Boundaries** | **VERIFIED (QUALIFIED)** | `0` exact/`conversation_id` overlaps, `13` 3-shingle near-dups (`8` cross-split, `5` train-test in `MaSaC`); verified schema (`HasContext=true` ONLY on `ACL 2020`). Explicitly scopes `MahaEmotions` (`Sarcasm` vs `Neutral` only + CoTR train provenance; Kowtal & Joshi 2025), `Misra` (editorial satire), and `MaSaC` (`context=""`, no A/V prosody). |
+| **GPU Transformer Baselines** | **SCOPED (`NOT_EXECUTED_LOCALLY`)** | `eval/*.py` syntax-checked & dry-run verified; no MuRIL/XLM-R parity claim made. Empirical T4 GPU execution remains external (`docs/COLAB.md`). |
+| **Five-Author, Permissions & References** | **PENDING BLOCKER** | Verified DOIs/pages/venues for all references (`docs/TECHNOLOGY_AND_REFERENCES.md`); original draft lists **five co-authors with supervisor/collaborator as corresponding author**. **Mandatory co-author order, CRediT & written approval required before submission.** |
 
 ---
 
-## 2. Reviewer Checklist Against ACM TALLIP / IEEE TAC Criteria
-
-- [x] **Clear Research Questions:** Explicitly defined (RQ1–RQ4) covering generalization, recall recovery, calibration, and robustness.
-- [x] **Honest Baseline Reporting:** Includes majority-class baseline, symbolic engine, linear N-grams, character N-grams, subword tokens, and external 237M-parameter transformers.
-- [x] **No Fabricated Results:** Local CPU proxy qualified transparently; GPU fine-tuning detailed with exact reproducible script.
-- [x] **Disentangled Statistical Significance:** Clear explanation of why sarcasm recall is highly significant ($p < 0.0001$) while overall accuracy shift is not ($p = 0.1806$).
-- [x] **No Cross-Split Leakage:** Verified $0.00\%$ lexical overlap, $0.00\%$ near-duplicate contamination, and atomic dialogue preservation for multi-turn conversations.
-- [x] **Production Deployment Feasibility:** Sub-millisecond latency ($0.205\text{ ms}$ P95) and $< 10\text{ MB}$ memory footprint directly in standard browser runtimes.
+## 2. Mandatory Pre-Submission Actions
+1. **Resolve Authorship & Corresponding Author:** Confirm exact 5-author ordering, CRediT roles, corresponding-author contact, and written co-author approval of the Stage 9 edits across manuscript, `CITATION.cff`, and `README.md`.
+2. **Decide External GPU Baselines:** Either retain honest CPU-only client baselines (removing neural parity claims completely) or execute `docs/COLAB.md` once on T4 GPU to generate empirical MuRIL/XLM-RoBERTa prediction files and checkpoints.

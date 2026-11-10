@@ -1,66 +1,49 @@
-# SARcasmScope — Stage 9 Complete Repository & Scientific Discrepancy Audit
+# SARcasmScope — Stage 9 Complete Repository & Discrepancy Audit
 
 **Principal Investigator:** Payal Mehta (`payal.12620246@vit.edu`)  
 **Institution:** School of Computer Science and Engineering, Vellore Institute of Technology, India  
-**Target Repository:** `https://github.com/moonlitpayal/sarcasmscope`  
-**Primary Target Venue:** ACM Transactions on Asian and Low-Resource Language Information Processing (TALLIP)  
-**Secondary Target Venues:** IEEE Transactions on Affective Computing (TAC), Language Resources and Evaluation (LREC)  
-**Evaluation Standard:** Independent Scientific Reproducibility & Publication Qualification  
-**Audit Date:** November 9, 2026  
+**Repository:** `https://github.com/moonlitpayal/sarcasmscope`  
+**Audit Phase:** 9A — Code Version Reconciliation & Scientific Verification (`eval_results/stage9/initial_audit.csv`)
 
 ---
 
-## 1. Executive Summary & Audit Mandate
+## 1. Executive Summary
 
-This Stage 9 audit conducts an uncompromising, line-by-line inspection of the entire SARcasmScope repository. SARcasmScope is an anti-fragile, calibrated feature-fusion framework for context-aware sarcasm detection in multilingual (English, Marathi, Telugu) and code-mixed (Hinglish) text.
-
-The primary objective of Phase 9A is to audit all historical artifacts, reconcile divergent numbers between Stages 1 through 8, inspect source code, verify dataset partitions, and document genuine empirical facts versus documented proposals.
+This Stage 9 audit reconciles every code version, historical claim, and file in SARcasmScope against live deterministic execution over `BENCHMARK_CORPUS` ($N=30$), `UNSEEN_TEST_CASES` ($N=15$), and frozen `eval_results/independent/test.jsonl` ($N=1,123$). Notably, `RESULTS_STATUS_AND_AUDIT.md` is not present in this workspace; all previously unverified registers (`56.63%`, `56.57%`) are replaced by reproducible computations from immutable splits.
 
 ---
 
-## 2. Exhaustive Historical Discrepancy Reconciliation
+## 2. Historical Discrepancy Reconciliation
 
-### 2.1 The 30-Sample Prototype Benchmark vs The 1,123-Sample Held-Out Benchmark
-- **The Historical Paradox:** Early research reports documented $100\%$ sarcasm recall and $96.67\%$ accuracy on a 30-sample corpus (`BENCHMARK_CORPUS` in `eval/run_scientific_evaluation.ts`), whereas evaluation on the independent held-out split (`eval_results/independent/test.jsonl`, $N = 1,123$) achieved $56.63\%$ accuracy, $57.23\%$ sarcasm recall, and $56.57\%$ Macro-F1.
-- **Root Cause Verified in Source Code:** The prototype benchmark consisted of 30 hand-tailored sentences (6 English, 6 Hindi, 6 Hinglish, 6 Marathi, 6 Telugu). The symbolic rule engine's lexicons were initially populated using words directly observed in those 30 items. This constituted a **closed-loop test bed**.
-- **Audited Resolution:** The 30-item suite is permanently categorized as an **Internal Architectural Regression Test Suite** (`eval/test_unseen.ts`), while all scientific publication claims are strictly anchored on the **1,123-sample independent held-out partition**.
+### 2.1 Nov 7 `prevPredict` vs `v2` vs `Statistical_OOF` vs `Calibrated Hybrid` (`eval/verify_comparison.ts`)
+- **`BENCHMARK_CORPUS` ($N=30$ closed-loop diagnostic):**
+  - `v1` (`prevPredict`, Nov 7): **`66.67%` Acc, `100.00%` Prec, `33.33%` Rec, `62.50%` MF1** (`TP=5, FP=0, TN=15, FN=10`). Exact reproduction of the Nov 7 headline numbers.
+  - `v2` (`predict`): **`96.67%` Acc, `93.75%` Prec, `100.00%` Rec, `96.66%` MF1** (`15/1/14/0`). Rule additions resolved all 10 missed synthetic examples.
+  - `Statistical_OOF_Ensemble`: `56.67%` Acc, `56.23%` MF1 (`7/5/10/8`).
+  - `Calibrated Hybrid` (`predictHybrid`): `86.67%` Acc, `86.43%` MF1, `100.00%` Rec (`15/4/11/0`).
+- **Frozen `test.jsonl` ($N=1,123$ independent held-out):**
+  - `v1`: `53.52%` Acc, **`0.39%` Rec**, `35.21%` MF1 (`2/5/599/517`).
+  - `v2`: `53.78%` Acc, **`3.08%` Rec**, `37.59%` MF1 (`16/16/588/503`). Confirms $N=30$ gains reflected closed-loop pattern coverage, not open-world generalization.
+  - `Statistical_OOF_Ensemble`: **`69.55%` Acc**, **`69.06%` MF1**, `61.66%` Rec, `4.99%` Conf-ECE (`320/143/461/199`).
+  - **`SARcasmScope_Calibrated_Hybrid`**: **`68.03%` Acc**, **`67.56%` MF1**, `67.09%` Prec, **`60.50%` Rec**, **`1.36%` Conf-ECE**, `0.5826` NLL, `0.7535` ROC-AUC (`314/154/450/205`).
 
-### 2.2 Baseline Rule-Engine Recall Collapse: 1.37% vs 3.08%
-- **Audit Findings:** 
-  - The Stage 1 generalization audit evaluated the entire unpartitioned corpus of 5,712 samples (2,698 sarcastic samples), finding that the rule-based engine detected only 37 sarcastic cases ($37 / 2,698 = 1.37\%$).
-  - The Stage 4-8 held-out evaluation was conducted on the frozen 1,123-sample test partition (519 sarcastic samples), where the baseline engine correctly detected 16 sarcastic cases ($16 / 519 = 3.08\%$).
-- **Audited Resolution:** Both figures are mathematically verified for their respective evaluation cohorts. Both unequivocally demonstrate that purely symbolic rule systems suffer catastrophic out-of-vocabulary collapse on natural, uncurated social media text.
+### 2.2 Non-Circular 3-Stage Stacking & Validation Calibration
+- **Level-1 Base Experts (`train.jsonl`, $N=3,373$ only):** `WordLex_1_2` ($V=8,000$) + `CharSub_3_5` ($V=8,000$) + deterministic `LinguisticEngine`.
+- **Level-2 Meta-Learner (`train.jsonl` 5-fold group-stratified OOF):** MAP Ridge logistic weights (`w0=0.3483, w1_word=0.54817, w2_char=0.54648, w3_linguistic=0.26486, w4_incongruity=0.19418, w5_coverage=0.20441`).
+- **Level-3 Post-Hoc Calibration (`val.jsonl`, $N=1,104$ only):** $T^* = 0.845$, $\tau^* = 0.35$. Reduces test Conf-ECE $3.67\times$ (`4.99% -> 1.36%`) and boosts selective accuracy to **`80.31%`** (`45.68%` coverage).
 
-### 2.3 Real Transformer Status & Qualification (MuRIL & XLM-RoBERTa)
-- **Container Environment:** The local runtime is an x86_64 CPU environment without local NVIDIA CUDA hardware (`python3 -c "import torch"` yields `ModuleNotFoundError: No module named 'torch'`).
-- **Audited Implementation:** Complete, standalone PyTorch 2.x training pipelines are provided in `eval/train_transformer.py` and `eval/evaluate_transformers.py` with reproducible seed `42`.
-- **Audited Resolution:** Client-side evaluation employs a regularized statistical subword token hash proxy ($56.86\%$ Macro-F1). Full 237M-parameter MuRIL fine-tuning ($57.32\%$ Macro-F1) and 278M-parameter XLM-RoBERTa ($56.40\%$ Macro-F1) were evaluated via Google Colab T4 GPU execution. All manuscript tables clearly distinguish measured client-side proxy results from external GPU transformer benchmarks.
-
-### 2.4 Statistical Significance Disentanglement
-- **Sarcasm Recall on Sarcastic Samples ($N = 519$):**  
-  Paired McNemar test with continuity correction yields $\chi^2 = 277.03, p = 3.7 \times 10^{-62} \ll 0.0001$, Odds Ratio = $282.0$, Cohen's $g = 0.496$. The recovery of 281 additional sarcastic cases over the rule-based baseline is **exceptionally statistically significant**.
-- **Overall Accuracy on All Samples ($N = 1,123$):**  
-  $\chi^2 = 1.79, p = 0.1806$. The overall accuracy shift ($53.78\% \to 56.63\%$) is **not statistically significant** because the symbolic baseline achieved $53.78\%$ accuracy purely through trivial literal bias ($97.35\%$ specificity, $588/604$ TN). SARcasmScope intentionally rebalanced the decision boundary to rescue genuine sarcasm.
-
-### 2.5 Calibration Discrepancy (42.88% uncalibrated vs 35.10% scaled)
-- Early evaluations reported $42.88\%$ class-probability ECE due to unbounded subword logits saturating sigmoid outputs.
-- In `src/engine/hybridFusion.ts`, logits were strictly bounded to $[-3.0, +3.0]$, and post-hoc temperature scaling ($T^* = 1.35$) was optimized on validation data, reducing confidence ECE to $35.10\%$ on validation and enabling reliable selective epistemic abstention ($\tau = 0.58$).
+### 2.3 GPU Transformers & Near-Duplicate Disclosures
+- **Transformers (`google/muril-base-cased`, `xlm-roberta-base`):** Workspace has no PyTorch/CUDA GPU (`ModuleNotFoundError: No module named 'torch'`). All historical `57.32%` / `pytorch_model.bin` references are removed; Python scripts pass `py_compile` + `--dry_run` and GPU baselines are marked **`NOT_EXECUTED_LOCALLY`**.
+- **Exhaustive Near-Duplicate Audit:** Exact text overlap = `0`, `conversation_id` overlap = `0`. Word 3-shingle Jaccard $\ge 0.80$ scan finds **13 near-duplicate pairs corpus-wide** (`8` cross-split, `5` train-test, all inside `IIITD_MaSaC_CodeMixed`).
 
 ---
 
-## 3. Repository Architecture & File Inventory
+## 3. Verified Repository Source File Inventory
 
-The repository is structured into modular layers:
-- `src/engine/sarcasmEngine.ts`: Core linguistic incongruity analyzer (polarity clash, rhetorical markers, irony emojis).
-- `src/engine/indicNormalizer.ts`: Morphological suffix stripper for Devanagari and Telugu scripts.
-- `src/engine/romanizedNormalizer.ts`: Romanized Hinglish phonetic folder and vowel collapse.
-- `src/engine/subwordModel.ts`: Statistical subword token hashing and bounded logit extraction.
-- `src/engine/hybridFusion.ts`: Calibrated feature fusion, temperature scaling, and selective abstention.
-- `eval_results/independent/`: Frozen data partitions (`train.jsonl`, `val.jsonl`, `test.jsonl`, $N = 5,600$).
-- `eval_results/stage9/`: 15 comprehensive CSV deliverables generated deterministically by `eval/run_stage9_master_execution.ts`.
-
----
-
-## 4. Phase 9A Audit Conclusion
-
-All historical contradictions are fully reconciled and certified in `eval_results/stage9/initial_audit.csv`. The repository is verified, reproducible, and ready for publication qualification.
+- `src/engine/sarcasmEngine.ts`: Stage 2 linguistic rules, `stemIndicToken`, `normalizeRomanized`, `analyzeCodeMixing`, `prevPredict`, `predict`.
+- `src/engine/textFeatures.ts`: Bit-identical feature extractors (`extractWordFeatures`, `extractCharFeatures`), `boundedLogit`, `stableSigmoid`.
+- `src/engine/trainedModelData.ts`: Serialized `v2.0.0-oof-calibrated` weights (`405.36 KB`, $16,006$ params).
+- `src/engine/statisticalModel.ts`: Runtime `WordLex_1_2` and `CharSub_3_5` scorer.
+- `src/engine/hybridFusion.ts`: 3-stage calibrated fusion engine, LOTO occlusion, perturbation suite, `calculateECE`.
+- `src/engine/contextualEngine.ts`: Mode A offline + Mode B `/api/predict-contextual` fallback adapter.
+- `src/components/{StudioView,BatchView,RobustnessView,ProtocolView,QuantumOrb}.tsx`: Production React 19 UI.

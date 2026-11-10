@@ -1,89 +1,46 @@
-# SARcasmScope: Independent Generalization Audit & Large-Scale Empirical Evaluation
+# SARcasmScope: Independent Generalization Audit & Version Reconciliation
 
 **Research Paper:** "SARcasmScope: A Calibrated Feature-Fusion Framework for Context-Aware Sarcasm Detection in Multilingual and Code-Mixed Text"  
-**Lead Author / Developer:** Payal Mehta (`payal.12620246@vit.edu`)  
-**Evaluation Role:** Independent NLP Research Evaluator & Experimental Software Analyst  
-**Audit Scope:** Data Leakage Audit, Dataset Provenance, Large-Scale Cross-Dataset Benchmarking ($N = 5,712$ Samples across 5 Published Datasets)
+**Lead Investigator:** Payal Mehta (`payal.12620246@vit.edu`)  
+**Source of Truth:** `eval_results/stage9/master_summary.json` & `eval_results/independent/version_comparison_report.json`
 
 ---
 
-## 1. Executive Summary & Verdict
+## 1. Executive Reconciliation Across Code Versions
 
-| Dimension | Curated Internal Benchmark ($N=30$) | Curated Unseen Test ($N=15$) | Independent External Benchmarks ($N=5,712$) |
-| :--- | :---: | :---: | :---: |
-| **Accuracy** | **100.0%** | **100.0%** | **53.96%** (95% CI: [52.6%, 55.2%]) |
-| **Sarcasm Precision** | **100.0%** | **100.0%** | **48.00%** |
-| **Sarcasm Recall** | **100.0%** | **100.0%** | **1.37%** (36/2,627 true sarcastic items) |
-| **Specificity (TN Rate)** | **100.0%** | **100.0%** | **98.74%** (3,046/3,085 true literal items) |
-| **Macro F1** | **100.0%** | **100.0%** | **36.90%** |
-| **Inference Latency** | **0.052 ms** | **0.049 ms** | **0.128 ms** (pure client-side execution) |
+Re-executing every model version identically via `eval/verify_comparison.ts` and `eval/run_stage9_master_execution.ts` (note: `RESULTS_STATUS_AND_AUDIT.md` is absent in the workspace):
 
-### Core Scientific Takeaways:
-1. **The 100% Result is an In-Sample Calibration Artifact:**
-   The initial 100% accuracy on the 30-sample benchmark and 15-sample unseen test is the result of **closed-loop template alignment**: the sentences were hand-crafted to exercise the exact keywords, polarity contrasts, and emojis implemented in `sarcasmEngine.ts`.
-2. **True Generalization Behavior on Real-World Data:**
-   When tested on **5,712 real-world sentences from 5 peer-reviewed public datasets**, the engine exhibits **extreme specificity (98.74% True Negative rate)** but **very low recall (1.37%)**. It almost never hallucinates sarcasm on sincere text, but misses subtle, deadpan, world-knowledge, or slang-based sarcasm.
-3. **Publication Guidance:**
-   The paper should present SARcasmScope as a **high-precision, sub-millisecond client-side first-stage filter / overt irony detector**, designed to operate in a cascade ahead of deep contextual models like MuRIL or XLM-RoBERTa.
+| Model Version | Closed-Loop `BENCHMARK_CORPUS` ($N=30$) | Regression `UNSEEN_TEST_CASES` ($N=15$) | Frozen Held-Out `test.jsonl` ($N=1,123$) | Conf-ECE (`test`) |
+|:---|:---|:---|:---|:---:|
+| **`v1` Prev Symbolic (Nov 7 `prevPredict`)** | `66.67%` Acc / `62.50%` MF1 / `33.33%` Rec (`TP=5,FP=0,TN=15,FN=10`) | `73.33%` Acc / `58.33%` MF1 / `20.00%` Rec (`1/0/10/4`) | `53.52%` Acc / `35.21%` MF1 / **`0.39%` Rec** (`2/5/599/517`) | `34.98%` |
+| **`v2` Symbolic Linguistic (`predict`)** | `96.67%` Acc / `96.66%` MF1 / `100.00%` Rec (`15/1/14/0`) | `100.00%` Acc / `100.00%` MF1 (`5/0/10/0`) | `53.78%` Acc / `37.59%` MF1 / **`3.08%` Rec** (`16/16/588/503`) | `23.36%` |
+| **`Statistical_OOF_Ensemble` (`WordLex+CharSub`)** | `56.67%` Acc / `56.23%` MF1 / `46.67%` Rec (`7/5/10/8`) | `66.67%` Acc / `60.32%` MF1 / `40.00%` Rec (`2/2/8/3`) | **`69.55%` Acc / `69.06%` MF1 / `61.66%` Rec** (`320/143/461/199`) | `4.99%` |
+| **`SARcasmScope_Calibrated_Hybrid` (3-Stage OOF)** | `86.67%` Acc / `86.43%` MF1 / `100.00%` Rec (`15/4/11/0`) | `93.33%` Acc / `92.82%` MF1 / `100.00%` Rec (`5/1/9/0`) | **`68.03%` Acc / `67.56%` MF1 / `60.50%` Rec** (`314/154/450/205`) | **`1.36%`** |
+
+### Key Conclusions
+1. **Why Nov 7 (`v1`) showed `66.7%` ($N=30$):** Small closed-loop suites measure synthetic pattern matches; both `v1` (`0.39%`) and `v2` (`3.08%`) collapse on natural independent corpora (`test.jsonl`).
+2. **True Generalization Improvement:** The 3-Stage Calibrated Hybrid rescues independent sarcasm recall from `3.08% -> 60.50%` (`+57.42%`, McNemar $\chi^2 = 290.16, p < 0.0001$) and lifts Macro-F1 from `37.59% -> 67.56%` (`+29.97%`, $\chi^2 = 55.20, p < 0.0001$), while cutting Conf-ECE `3.67x` vs the uncalibrated `Statistical_OOF_Ensemble` (`4.99% -> 1.36%`).
 
 ---
 
-## 2. Phase 1: Dataset Provenance & Data Leakage Audit
+## 2. Corpus Provenance, Splits & Leakage Audit (`5,600` Records)
 
-| Dataset | Sample Size | Corpus Type | Provenance & Peer Review | Ground-Truth Origin | Leakage Assessment |
-| :--- | :---: | :--- | :--- | :--- | :--- |
-| **Internal Benchmark** | 30 | Synthetic / Hand-crafted | Authored during initial MVP development | Single developer intuition | **CRITICAL: In-Sample Tuning** |
-| **Internal Unseen Test** | 15 | Synthetic / Hand-crafted | Authored to test recall improvements | Single developer intuition | **HIGH: Syntactic Template Overlap** |
-| **ACL 2020 Twitter Sarcasm** | 1,800 | Real Social Media | ACL 2020 Sarcasm Shared Task (Ghosh et al., 2020) | Multi-annotator consensus | **NONE: 100% Independent** |
-| **Misra News Headlines** | 2,000 | News Satire | Misra & Arora (2019), *The Onion* vs. *HuffPost* | Editorial origin (Satire vs. Serious) | **NONE: 100% Independent** |
-| **MaSaC Code-Mixed Corpus** | 1,000 | Spoken TV Dialogue | LCS2-IIITD, IEEE TAFFC 2021 (Bedi et al., 2021) | Tri-annotator Cohen's $\kappa = 0.81$ | **NONE: 100% Independent** |
-| **L3Cube-MahaEmotions** | 370 | Real Marathi Tweets | L3Cube-Pune, ACL Anthology 2023 (Kulkarni et al.) | Gold manual emotion annotation | **NONE: 100% Independent** |
-| **IIIT-H Telugu Sarcasm** | 542 | Real Telugu Posts | IIIT Hyderabad, Marreddy et al. (2022) | Native speaker linguistic annotation | **NONE: 100% Independent** |
+| Dataset Identifier | Language | Train / Val / Test ($N$) | Citation & License | Near-Dups ($\ge 0.80$) |
+|:---|:---|:---:|:---|:---:|
+| `ACL_2020_Twitter_Sarcasm` | English | `1,029 / 343 / 344` (`1,716`) | Ghosh et al. (2020, FigLang/ACL); Research-Only (Twitter Terms) | `0` total / `0` Tr-Te |
+| `Misra_Arora_News_Headlines` | English | `1,199 / 399 / 401` (`1,999`) | Misra & Arora (2019/2023, *AI Open*); Public Domain / CC0 | `0` total / `0` Tr-Te |
+| `IIITD_MaSaC_CodeMixed` | Hinglish + Devanagari Hindi | `599 / 181 / 194` (`974`) | Bedi et al. (2021, *IEEE TAFFC*); Research Purpose Only | **`13` total / `5` Tr-Te** |
+| `L3Cube_MahaEmotions` | Marathi | `221 / 73 / 75` (`369`) | Kulkarni et al. (2023); Kowtal & Joshi (2025); CC-BY-4.0 | `0` total / `0` Tr-Te |
+| `IIIT_Hyderabad_Telugu_Sarcasm` | Telugu (`15.7%` pos) | `325 / 108 / 109` (`542`) | Marreddy et al. (2022, LREC/TALLIP); Research Only | `0` total / `0` Tr-Te |
 
----
-
-## 3. Phase 2 & 3: Large-Scale Independent Benchmark Evaluation
-
-The frozen TypeScript engine was executed on all 5 external datasets without modifying any rules or lexicons.
-
-### Empirical Evaluation Table ($N = 5,712$)
-
-```
-+------------------------------+------------+--------+------+----+----+-----+-----+----------+-----------+--------+------------+----------+
-| Dataset                      | Language   | Ctx?   | N    | TP | FP | TN  | FN  | Accuracy | Precision | Recall | Sarcasm F1 | Macro F1 |
-+------------------------------+------------+--------+------+----+----+-----+-----+----------+-----------+--------+------------+----------+
-| ACL 2020 Twitter Sarcasm     | English    | Yes    | 1800 | 33 | 38 | 862 | 867 |  49.72%  |   46.48%  |  3.67% |    6.80%   |  36.19%  |
-| Misra News Headlines         | English    | No     | 2000 |  3 |  1 | 999 | 997 |  50.10%  |   75.00%  |  0.30% |    0.60%   |  33.64%  |
-| MaSaC (Sarabhai Sitcom)      | Hinglish   | No     | 1000 |  0 |  0 | 500 | 500 |  50.00%  |    0.00%  |  0.00% |    0.00%   |  33.33%  |
-| L3Cube-MahaEmotions Marathi  | Marathi    | No     |  370 |  0 |  0 | 185 | 185 |  50.00%  |    0.00%  |  0.00% |    0.00%   |  33.33%  |
-| IIIT-H Telugu Sarcasm        | Telugu     | No     |  542 |  0 |  0 | 500 |  42 |  92.25%  |    0.00%  |  0.00% |    0.00%   |  47.98%  |
-+------------------------------+------------+--------+------+----+----+-----+-----+----------+-----------+--------+------------+----------+
-| OVERALL INDEPENDENT TOTAL    | Multi      | Mixed  | 5712 | 36 | 39 |3046 |2591 |  53.96%  |   48.00%  |  1.37% |    2.66%   |  36.90%  |
-+------------------------------+------------+--------+------+----+----+-----+-----+----------+-----------+--------+------------+----------+
-```
+Exact cross-split overlap $= 0$; `conversation_id` overlap $= 0$; exhaustive 3-shingle Jaccard $\ge 0.80$ detects `13` near-duplicate pairs (`8` cross-split, `5` train-test, all inside `IIITD_MaSaC_CodeMixed`).
 
 ---
 
-## 4. Phase 4: Cross-Dataset Domain Generalization & Error Analysis
+## 3. Per-Language Held-Out Test Performance (`test.jsonl`, $N = 1,123$)
 
-### Why Does Generalization Drop on Wild Text?
-
-1. **Satirical News (*The Onion*):**
-   Satire uses zero overt irony markers. Headlines like *"Area man unsure if he is having heart attack or just really full"* mimic real journalism completely. Irony stems from real-world absurdity, requiring semantic commonsense reasoning.
-2. **TV Dialogue (*Sarabhai vs Sarabhai*):**
-   Conversational sitcom sarcasm is delivered through character voice, subtext, and vocal inflection (e.g. Maya criticizing Monisha's "middle class" habits). Explicit polarity clash is rare.
-3. **Twitter & Social Media:**
-   Wild tweets use hashtag sarcasm (`#sarcasm`), slang, phonetic contractions, and external referents not covered by static keyword lists.
-4. **Morphological Agglutination (Marathi & Telugu):**
-   Indic languages inflect verbs and nouns heavily (e.g., adding suffixes for tense, case, and gender). Exact token matching misses inflected forms unless morphological stemming is performed.
-
----
-
-## 5. Phase 5: Reproducible Evaluation CSV Files
-
-The evaluation pipeline generated five permanent CSV files in `/eval_results/independent/`:
-1. `independent_evaluation_metrics.csv` — Full quantitative metrics and 95% Wilson confidence intervals.
-2. `dataset_provenance_audit.csv` — Provenance, sample sizes, and data leakage audit across all corpora.
-3. `language_wise_independent_performance.csv` — Language-wise breakdown across English, Hinglish, Marathi, and Telugu.
-4. `cross_dataset_domain_generalization.csv` — Cross-domain error analysis and failure taxonomy.
-5. `independent_sample_predictions.csv` — Real-world prediction log of first 1,000 items with prediction probabilities.
+- **English ($745$):** `71.54%` Acc, `71.48%` MF1, `68.22%` Rec, `0.7826` ROC-AUC (`+34.15%` MF1 vs `v2`).
+- **Marathi ($75$):** `62.67%` Acc, `62.66%` MF1, `62.16%` Rec, `1.29%` Conf-ECE (`+29.03%` MF1 vs `v2`).
+- **Hinglish ($194$):** `47.42%` Acc, `47.33%` MF1, `42.00%` Rec (`+14.69%` MF1 vs `v2`).
+- **Telugu ($109$):** `84.40%` Acc, `45.77%` MF1, `0.00%` Rec at `0.50` cutoff (`0.7455` ROC-AUC, `0.1148` Brier under `15.60%` positive prior).
+- **GPU Transformers:** `eval/train_transformer.py`, `eval/evaluate_transformers.py`, `eval/export_onnx.py` verified via syntax + `--dry_run`; GPU metrics marked `NOT_EXECUTED_LOCALLY`.

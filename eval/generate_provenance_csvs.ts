@@ -3,29 +3,44 @@ import * as path from "path";
 
 const INDEP_DIR = path.resolve("./eval_results/independent");
 
-// CSV: Dataset Provenance & Audit
-const auditHeader = "DatasetID,DatasetName,SourceCorpus,Language,CreationMethod,GroundTruthOrigin,LeakageRisk,OverlapWithEngineLexicon\n";
-const auditRows = [
-  `"DEV_BENCHMARK_30","Original 30-Item Benchmark","Synthetic / Manual","En/Hi/Hing/Mr/Te","Authored by project developer","Assigned by author during development","CRITICAL (Closed-Loop)","100% lexical match with engine keywords"`,
-  `"DEV_UNSEEN_15","Unseen 15-Item Test","Synthetic / Manual","En/Hi/Hing/Mr/Te","Authored by project developer","Assigned by author during development","HIGH (Template Homology)","Same syntactic templates as benchmark"`,
-  `"ACL_2020_TWITTER","ACL 2020 Sarcasm Shared Task","Twitter (FIGMENT)","English","Multi-annotator crowd & author verification (Ghosh et al. 2020)","Gold consensus labels (SARCASM / NOT_SARCASM)","NONE (Zero Leakage)","Unconstrained real-world vocabulary"`,
-  `"MISRA_HEADLINES","News Headlines Sarcasm Dataset","The Onion vs HuffPost","English","Editorial provenance (Satirical vs Serious journalism, Misra & Arora 2019)","Source publication gold standard","NONE (Zero Leakage)","Unconstrained real-world vocabulary"`,
-  `"MASAC_SARABHAI","MaSaC Dialogue Corpus","TV Series (Sarabhai vs Sarabhai)","Hindi-English Code-Mixed","LCS2-IIITD multimodal utterance annotation (Bedi et al. 2021)","Tri-annotator consensus (Kappa = 0.81)","NONE (Zero Leakage)","Natural spoken conversational Hinglish"`,
-  `"L3CUBE_MAHA","L3Cube-MahaEmotions","Marathi Twitter","Marathi","L3Cube Pune NLP Lab multi-emotion annotation (Kulkarni et al. 2023)","Manual linguistic audit (Sarcasm label)","NONE (Zero Leakage)","Native Marathi dialectal Twitter text"`,
-  `"TELUGU_SARCASM","Telugu Sarcasm Corpus","Telugu Social Media","Telugu","IIIT Hyderabad Speech & NLP Lab (Marreddy et al. 2022)","Manual native speaker annotation","NONE (Zero Leakage)","Native Telugu social media text"`,
-];
-fs.writeFileSync(path.join(INDEP_DIR, "dataset_provenance_audit.csv"), auditHeader + auditRows.join("\n"));
+function loadJsonl(filepath: string): any[] {
+  return fs
+    .readFileSync(filepath, "utf8")
+    .trim()
+    .split("\n")
+    .map((l) => JSON.parse(l));
+}
 
-// CSV: Language-wise Independent Performance Summary
-const langHeader = "Language,EvaluatedDatasets,TotalSamples,TruePositives,FalsePositives,TrueNegatives,FalseNegatives,Specificity,Precision,Recall,F1_Sarcasm,Macro_F1\n";
-const langRows = [
-  `"English (Conversational)","ACL 2020 Twitter",1800,33,38,862,867,95.78,46.48,3.67,6.80,36.19`,
-  `"English (Headlines)","Misra & Arora",2000,3,1,999,997,99.90,75.00,0.30,0.60,33.64`,
-  `"Hindi-English (Code-Mixed)","IIIT Delhi MaSaC",1000,0,0,500,500,100.00,0.00,0.00,0.00,33.33`,
-  `"Marathi (Devanagari)","L3Cube-MahaEmotions",370,0,0,185,185,100.00,0.00,0.00,0.00,33.33`,
-  `"Telugu","IIIT-H Telugu Sarcasm",542,0,0,500,42,100.00,0.00,0.00,0.00,47.98`,
-  `"ALL INDEPENDENT (Aggregate)","5 Benchmark Datasets",5712,36,39,3046,2591,98.74,48.00,1.37,2.66,36.90`,
-];
-fs.writeFileSync(path.join(INDEP_DIR, "language_wise_independent_performance.csv"), langHeader + langRows.join("\n"));
+export function generateProvenanceCsvs() {
+  const train = loadJsonl(path.join(INDEP_DIR, "train.jsonl"));
+  const val = loadJsonl(path.join(INDEP_DIR, "val.jsonl"));
+  const test = loadJsonl(path.join(INDEP_DIR, "test.jsonl"));
+  const all = [...train, ...val, ...test];
 
-console.log("Provenance and language-wise CSVs written successfully.");
+  const countDs = (arr: any[], ds: string) => arr.filter((r) => r.dataset === ds).length;
+
+  // CSV: Dataset Provenance & Audit (Exact Citations, Exact Licenses, Exact Split Counts)
+  const auditHeader =
+    "DatasetID,DatasetName,SourceCorpus,Language,TotalUnique,Train,Val,Test,CreationMethod,GroundTruthOrigin,License,LeakageRisk\n";
+  const auditRows = [
+    `"DEV_BENCHMARK_30","Internal Diagnostic Benchmark (30 items)","Synthetic / Manual","En/Hi/Hing/Mr/Te",30,0,0,0,"Authored by project developer","Assigned by author during development","Internal Diagnostic","CRITICAL (Closed-Loop Diagnostic Only)"`,
+    `"DEV_UNSEEN_15","Internal Unseen Suite (15 items)","Synthetic / Manual","En/Hi/Hing/Mr/Te",15,0,0,0,"Authored by project developer","Assigned by author during development","Internal Diagnostic","HIGH (Template Homology - Regression Only)"`,
+    `"ACL_2020_TWITTER","ACL 2020 Sarcasm Shared Task","Twitter (FigLang 2020)","English",${countDs(all, "ACL_2020_Twitter_Sarcasm")},${countDs(train, "ACL_2020_Twitter_Sarcasm")},${countDs(val, "ACL_2020_Twitter_Sarcasm")},${countDs(test, "ACL_2020_Twitter_Sarcasm")},"Multi-annotator & author verification (Ghosh et al. 2020)","Gold labels (SARCASM / NOT_SARCASM)","Research-Only (Twitter Terms)","Independent Split (0% exact leakage; cross-split near-dup audit logged)"`,
+    `"MISRA_HEADLINES","News Headlines Sarcasm Dataset","The Onion vs HuffPost","English",${countDs(all, "Misra_Arora_News_Headlines")},${countDs(train, "Misra_Arora_News_Headlines")},${countDs(val, "Misra_Arora_News_Headlines")},${countDs(test, "Misra_Arora_News_Headlines")},"Editorial provenance (Misra & Arora 2019/2023)","Source publication gold standard","Public Domain / CC0","Independent Split (0% exact leakage; cross-split near-dup audit logged)"`,
+    `"MASAC_SARABHAI","IIIT-D MaSaC Dialogue Corpus","TV Series (Sarabhai vs Sarabhai)","Hindi-English Code-Mixed / Devanagari Hindi",${countDs(all, "IIITD_MaSaC_CodeMixed")},${countDs(train, "IIITD_MaSaC_CodeMixed")},${countDs(val, "IIITD_MaSaC_CodeMixed")},${countDs(test, "IIITD_MaSaC_CodeMixed")},"LCS2-IIITD utterance annotation (Bedi et al., IEEE TAFFC 2021)","Tri-annotator consensus (Kappa = 0.81)","Research Purpose Only","Conversation-Grouped Split (0% conversation_id leakage)"`,
+    `"L3CUBE_MAHA","L3Cube-MahaEmotions","Marathi Twitter","Marathi",${countDs(all, "L3Cube_MahaEmotions")},${countDs(train, "L3Cube_MahaEmotions")},${countDs(val, "L3Cube_MahaEmotions")},${countDs(test, "L3Cube_MahaEmotions")},"L3Cube Pune multi-emotion annotation (Kulkarni et al. 2023; Kowtal & Joshi 2025)","Manual audit (Sarcasm vs Neutral filter)","CC-BY-4.0","Independent Split (0% exact leakage)"`,
+    `"TELUGU_SARCASM","IIIT-H Telugu Sarcasm Corpus","Telugu Social Media","Telugu",${countDs(all, "IIIT_Hyderabad_Telugu_Sarcasm")},${countDs(train, "IIIT_Hyderabad_Telugu_Sarcasm")},${countDs(val, "IIIT_Hyderabad_Telugu_Sarcasm")},${countDs(test, "IIIT_Hyderabad_Telugu_Sarcasm")},"IIIT Hyderabad LREC/TALLIP (Marreddy et al. 2022)","Native Telugu speaker binary annotation","Research Only","Independent Split (15.7% natural sarcasm skew documented)"`,
+  ];
+  fs.writeFileSync(path.join(INDEP_DIR, "dataset_provenance_audit.csv"), auditHeader + auditRows.join("\n") + "\n");
+  console.log("Generated corrected eval_results/independent/dataset_provenance_audit.csv");
+}
+
+const isMain =
+  typeof process !== "undefined" &&
+  process.argv[1] &&
+  (process.argv[1].endsWith("generate_provenance_csvs.ts") ||
+    process.argv[1].endsWith("generate_provenance_csvs.js"));
+
+if (isMain) {
+  generateProvenanceCsvs();
+}

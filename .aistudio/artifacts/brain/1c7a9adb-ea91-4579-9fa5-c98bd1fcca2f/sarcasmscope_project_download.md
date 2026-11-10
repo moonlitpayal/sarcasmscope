@@ -1,22 +1,24 @@
-# SARcasmScope — Complete React Project Archive
+# SARcasmScope — Verified Project Structure & Artifacts
 
-The complete source code folder for **SARcasmScope** has been bundled into a self-contained ZIP archive.
+All source code, trained artifacts, evaluation scripts, documentation, and CSV outputs are synchronized across the repository:
 
-### What's Inside:
-- **`src/`**:
-  - `src/App.tsx` (Main shell, tab router, ambient 3D visualizer header)
-  - `src/components/StudioView.tsx` (Interactive statement & context analysis, calibrated probability bar, verdict card, linguistic explanation, token occlusion inspector)
-  - `src/components/RobustnessView.tsx` (Controlled perturbation noise suite testing 8 social-media text perturbations)
-  - `src/components/BatchView.tsx` (Batch multi-sentence evaluator with CSV export)
-  - `src/components/ProtocolView.tsx` (Calibration temperature slider, selective abstention threshold slider, multilingual lexicons browser, annotation protocol)
-  - `src/components/QuantumOrb.tsx` (Interactive Three.js 3D ambient orbital quantum rings)
-  - `src/engine/sarcasmEngine.ts` (Core NLP engine with Indic script detection, CMI calculation, incongruity extraction, calibrated scoring, occlusion, and perturbations)
-  - `src/main.tsx` & `src/index.css`
-- **`configs/`**: Model and audit configurations
-- **`data/`**: Processed and demo corpora
-- **`docs/`**: Annotation guidelines, architecture, and research protocol
-- **`package.json`**, **`tsconfig.json`**, **`vite.config.ts`**, **`index.html`**, **`.gitignore`**, **`README.md`**
+### Core Architecture & Engine (`src/`)
+- `src/App.tsx`: Main React 19 shell, navigation tabs, and live $T^*=0.845 / \tau^*=0.35$ calibration controls.
+- `src/components/StudioView.tsx`: Interactive utterance + dialogue context analyzer, calibrated probability meter, verdict card, and leave-one-token-out (LOTO) occlusion breakdown.
+- `src/components/RobustnessView.tsx`: Controlled 8-perturbation stress suite (`perturbHybridAll`).
+- `src/components/BatchView.tsx`: Multi-line batch evaluation and CSV export.
+- `src/components/ProtocolView.tsx`: Live calibration temperature ($T$) and selective abstention ($\tau$) sliders + lexicon reference.
+- `src/components/QuantumOrb.tsx`: Interactive Three.js 3D ambient orbital canvas.
+- `src/engine/sarcasmEngine.ts`: Stage 2 symbolic linguistic analyzer (`stemIndicToken`, `normalizeRomanized`, `analyzeCodeMixing`, `extractIncongruity`, `predict`, `prevPredict`).
+- `src/engine/textFeatures.ts`: Bit-identical feature extraction shared between training and runtime (`extractWordFeatures`, `extractCharFeatures`, `boundedLogit`, `stableSigmoid`, Mulberry32 PRNG).
+- `src/engine/statisticalModel.ts`: Runtime Level-1 sparse experts (`WordLex_1_2` & `CharSub_3_5`).
+- `src/engine/trainedModelData.ts`: Serialized `v2.0.0-oof-calibrated` weights (`405.36 KB`, `16,006` effective params, $T^*=0.845, \tau^*=0.35$).
+- `src/engine/hybridFusion.ts`: 3-Stage OOF MAP Ridge calibrated feature fusion engine, LOTO attribution, and ECE calculator.
+- `src/engine/contextualEngine.ts`: Mode A offline client inference + Mode B `/api/predict-contextual` fallback adapter.
 
-### Direct Download:
-- Download filename: **`sarcasmscope_react.zip`**
-- You can also click the green **"📦 Download ZIP"** button directly in the running application header.
+### Reproducible Evaluation & Training (`eval/` & `eval_results/`)
+- `eval/train_and_calibrate.ts`: Non-circular 3-stage training & validation calibration pipeline (`train.jsonl` OOF + `val.jsonl`).
+- `eval/verify_comparison.ts`: 4-way comparison across `N=30`, `N=15`, and frozen `test.jsonl` (`N=1,123`).
+- `eval/run_stage9_master_execution.ts`: Master suite emitting `eval_results/stage9/master_summary.json` and all 15 Stage 9 CSVs.
+- `eval/{train_transformer,evaluate_transformers,export_onnx}.py`: Google Colab T4 GPU scripts (syntax-checked & `--dry_run` verified locally; GPU metrics `NOT_EXECUTED_LOCALLY`).
+- `docs/`: Stage 9 manuscript, architecture, model card, dataset licenses/provenance, and investigation reports.

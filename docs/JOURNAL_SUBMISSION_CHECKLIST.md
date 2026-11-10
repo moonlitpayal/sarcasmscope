@@ -1,58 +1,28 @@
 # SARcasmScope — Journal Submission Checklist & Reviewer Dossier
-**Principal Investigator:** Payal Mehta (`payal.12620246@vit.edu`)  
-**Institutional Affiliation:** Vellore Institute of Technology  
+**Repository Maintainer / Audit Lead:** Payal Mehta (`payal.12620246@vit.edu`)  
+**Institution:** Vellore Institute of Technology, Vellore, India  
 **Article Title:** SARcasmScope: A Calibrated Feature-Fusion Framework for Context-Aware Sarcasm Detection in Multilingual and Code-Mixed Text  
-**Target Venues:** ACM Transactions on Asian and Low-Resource Language Information Processing (TALLIP) / IEEE Transactions on Affective Computing (TAC)  
-**Status:** READY FOR SUBMISSION  
+**Submission Gate:** **NOT READY FOR SUBMISSION UNTIL CHECKBOXES BELOW (INCLUDING 5-AUTHOR SIGN-OFF) ARE COMPLETED**
 
 ---
 
-## 1. Pre-Submission Package Checklist
+## 1. Pre-Submission Checklist
 
-### Metadata & Authorship
-- [x] **Primary Investigator:** Payal Mehta (`payal.12620246@vit.edu`)
-- [x] **Affiliation Verified:** Vellore Institute of Technology
-- [x] **Title Accuracy:** Verified consistent across all documentation and source code
-- [x] **Abstract:** Structured 250-word abstract covering Problem, Architecture, Multilingual Scope, Empirical Results ($1.37\% \to 55.93\%$ recall recovery), and Latency ($0.26\text{ ms}$)
-- [x] **Keywords:** Sarcasm Detection; Multilingual NLP; Indic Languages; Hinglish Code-Mixing; Calibrated Feature Fusion; Selective Prediction
-
-### Mandatory Journal Declarations
-- [x] **Conflict of Interest:** The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
-- [x] **Data Availability Statement:** All data used in this study originate from publicly accessible, peer-reviewed corpora (ACL 2020 Twitter, Misra-Arora Headlines, IIITD MaSaC, L3Cube MahaEmotions, IIIT Hyderabad Telugu). Partitioned splits (`train.jsonl`, `val.jsonl`, `test.jsonl`) and partition generation scripts (`eval/split_independent_datasets.ts`) are provided in the accompanying repository.
-- [x] **Code Availability Statement:** The complete SARcasmScope source code, linguistic lexicons, feature fusion engine, and evaluation scripts are open-sourced under the MIT License at `https://github.com/payal-mehta/SARcasmScope`.
-- [x] **Ethics & Human Subjects:** No unconsented private communications or personally identifiable information (PII) were harvested. Twitter handles are anonymized or normalized.
-
-### Scientific & Statistical Rigor Checklist
-- [x] **Exact Partitioning Verified:** Zero train/val/test data leakage (0 exact matches, 0 near duplicates, 0 conversation overlaps).
-- [x] **Held-Out Test Integrity:** Held-out test set ($N = 1,123$) strictly frozen and unpeeked during feature selection and parameter fitting.
-- [x] **Statistical Significance Disentanglement:**
-  - Sarcasm Recall recovery ($3.08\% \to 57.23\%$): $\chi^2 = 277.03, p < 0.0001$ (**Extremely Significant**, Odds Ratio = 282).
-  - Overall Accuracy ($53.78\% \to 56.63\%$): $\chi^2 = 1.79, p = 0.1806$ (**Honest disclosure: not significant** on raw accuracy due to class balance).
-- [x] **Confidence Intervals:** 1,000-sample bootstrap 95% CIs reported for all primary metrics.
-- [x] **Calibration Standard:** Standard Guo et al. (2017) confidence ECE and class ECE reported honestly ($35.10\%$ validation confidence ECE).
-- [x] **Ablation Evidence:** 9-point ablation proving $+2.19\%$ Macro-F1 recovery from Indic morphological suffix stripping.
-- [x] **Negative / Inconclusive Results Disclosed:** Transparent documentation of low Marathi/Telugu recall and News headline deadpan failure modes in `docs/EXPERIMENTAL_LIMITATIONS.md` and `eval_results/stage6/error_analysis.csv`.
+- [ ] **Five-Author Reconciliation & Approval (CRITICAL BLOCKER):** Original manuscript lists **5 co-authors** with supervisor/collaborator as corresponding author; Stage 9 technical docs list Payal Mehta as codebase lead. Confirm final author order, CRediT roles, corresponding author, and co-author sign-off across manuscript, `CITATION.cff`, and `README.md`.
+- [x] **Nov 7 vs Stage 9 Reconciliation:** All 4 code versions (`v1`, `v2`, `Statistical OOF`, `Calibrated Hybrid`) compared on `N=30`, `N=15`, and `test.jsonl` ($N=1,123$); `RESULTS_STATUS_AND_AUDIT.md` noted absent in workspace.
+- [x] **Deployed Engine & Trained Model Integration:** `src/engine/hybridFusion.ts` directly consumes `trainedModelData.ts` (`v2.0.0-oof-calibrated`, `405.36 KB`) + `statisticalModel.ts`; obsolete `"subword_hash"` fallback removed.
+- [x] **Non-Circular 3-Stage Calibration & 4-Metric Distinction:** Level-1 experts fitted on `train.jsonl`, Level-2 MAP Ridge on 5-fold group OOF, Level-3 $T^*=0.845$ and $\tau^*=0.35$ fitted strictly on `val.jsonl`. Explicitly separates $P_{\text{fused}}$, Margin Confidence, $\tau^*$, and Selective Acc/Coverage.
+- [x] **Held-Out Test Metrics & Independent Recomputation:** `eval/verify_independent_recomputation.ts` confirms `1123/1123` CSV parity (`max|Δp|=0`) and independently recomputes `68.03%` Acc, `67.56%` MF1, `67.09%` Prec, `60.50%` Rec, `1.36%` Conf-ECE, `0.7535` ROC-AUC (`80.31%` selective acc @ `45.68%` coverage; val-to-test reliability curve saved in `validation_vs_test_calibration_and_selective.csv`).
+- [x] **Honest Dataset Validity, Leakage & Verified Bibliography Audit:** Corrected 5 dataset licenses & complete DOIs/pages (`docs/TECHNOLOGY_AND_REFERENCES.md`); verifies `HasContext=true` only on `ACL 2020`, `MaSaC` isolated utterances (`context=""`, no A/V prosody), `13` 3-shingle near-dups (`8` cross-split, `5` train-test), and `MahaEmotions` (`Sarcasm` vs `Neutral` proxy + CoTR train provenance).
+- [x] **Honest Hardware & Baseline Qualification:** Client CPU latency measured (`1.632 ms` mean, `2.856 ms` P95); GPU PyTorch baselines marked `NOT_EXECUTED_LOCALLY`; MuRIL parity claim removed.
+- [ ] **Optional Colab GPU Run:** Execute `eval/train_transformer.py --eval_test` on Google Colab T4 GPU (`docs/COLAB.md`) if empirical neural baselines are required by the target venue.
 
 ---
 
-## 2. Dossier File Manifest
+## 2. Canonical Dossier Manifest (`eval_results/stage9/` & `docs/`)
 
-The submission bundle includes the following verified artifacts:
-
-1. **Main Manuscript:** `docs/STAGE5_FINAL_RESEARCH_REPORT.md` (Full 21-section technical manuscript)
-2. **Reproducibility Report:** `docs/STAGE5_REPRODUCIBILITY_REPORT.md`
-3. **Deployment Profile:** `docs/DEPLOYMENT_VALIDATION_REPORT.md`
-4. **Data Governance & Licenses:** `docs/DATASET_PROVENANCE_AND_LICENSES.md`
-5. **Independent Audit Log:** `docs/STAGE6_INDEPENDENT_AUDIT.md`
-6. **Data Integrity Audit:** `docs/STAGE6_DATA_INTEGRITY_AUDIT.md`
-7. **External Benchmarks:** `docs/STAGE6_BENCHMARK_REPORT.md`
-8. **Robustness & Error Taxonomy:** `docs/STAGE6_ROBUSTNESS_REPORT.md`
-9. **Software Verification:** `docs/STAGE6_DEPLOYMENT_AUDIT.md`
-10. **Citation Metadata:** `CITATION.cff`
-11. **Evaluation Data Tables (CSV):**
-    - `eval_results/stage6/statistical_reliability.csv`
-    - `eval_results/stage6/significance_analysis.csv`
-    - `eval_results/stage6/external_benchmark_comparison.csv`
-    - `eval_results/stage6/dataset_integrity_report.csv`
-    - `eval_results/stage6/error_analysis.csv`
-    - `eval_results/stage6/software_verification.csv`
+- `docs/STAGE9_FINAL_MANUSCRIPT.md` — Complete journal-formatted manuscript
+- `docs/ACCURACY_AND_FEATURE_FUSION_INVESTIGATION.md` — Version reconciliation & 3-stage stacking proof
+- `docs/DATASET_PROVENANCE_AND_LICENSES.md` — Corpus citations, licenses & near-duplicate report
+- `docs/ARCHITECTURE.md`, `docs/MODEL_CARD.md`, `docs/COLAB.md`
+- `eval_results/stage9/master_summary.json` + all 15 Stage 9 CSVs

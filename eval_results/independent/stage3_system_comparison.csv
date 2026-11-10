@@ -1,4 +1,7 @@
-System,Accuracy,Precision,Recall,MacroF1,Specificity,ECE,BrierScore,NLL,AcceptedCoverage,SelectiveAcc,SelectiveRisk
-"A_Linguistic_Engine",53.26,47.37,1.75,36.27,98.3,24.52,0.3126,0.9213,12.95,56.64,43.36
-"B_Semantic_Subword",55.34,52.06,53.98,55.23,56.54,43.94,0.4411,5.8313,99.55,55.23,44.77
-"C_Hybrid_Fusion",55.16,51.8,55.92,55.12,54.5,42.97,0.431,6.6647,51.99,52.96,47.04
+System,Accuracy,Precision,Recall,MacroF1,Specificity,ECE,BrierScore,NLL
+"Linguistic_Only",53.26,47.37,1.75,36.27,98.3,24.44,0.3126,0.9213
+"WordLex_1_2_LR",68.48,69.11,58.64,67.87,77.08,2.18,0.2027,0.5907
+"CharSub_3_5_LR",66.12,65.49,57.86,65.62,73.34,1.83,0.2085,0.6035
+"Statistical_OOF_Ensemble",69.29,70.47,58.83,68.64,78.44,3.78,0.1986,0.5819
+"Uncalibrated_Hybrid_T1",68.3,68.62,59.03,67.73,76.4,3.83,0.198,0.5798
+"Calibrated_Hybrid_Fusion",68.3,68.62,59.03,67.73,76.4,3.88,0.1971,0.5777

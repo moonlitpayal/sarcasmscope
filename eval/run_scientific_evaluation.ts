@@ -21,6 +21,7 @@ import {
   CONTRASTS,
   IRONY_EMOJIS,
 } from "../src/engine/sarcasmEngine";
+import { createSeededPRNG } from "../src/engine/textFeatures";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -30,332 +31,8 @@ if (!fs.existsSync(OUT_DIR)) {
   fs.mkdirSync(OUT_DIR, { recursive: true });
 }
 
-// -------------------------------------------------------------
-// BENCHMARK EVALUATION CORPUS
-// Ground-truth curated multilingual test items across 5 languages
-// -------------------------------------------------------------
-export interface BenchmarkItem {
-  id: string;
-  lang: "English" | "Hindi" | "Hinglish" | "Marathi" | "Telugu";
-  script: string;
-  text: string;
-  context: string;
-  groundTruth: 1 | 0; // 1 = Sarcastic, 0 = Literal
-  category: "Praise_Under_Failure" | "Direct_Criticism" | "Sincere_Praise" | "Factual" | "Irony_Emoji_Only" | "Hyperbolic_Praise";
-  notes: string;
-}
-
-export const BENCHMARK_CORPUS: BenchmarkItem[] = [
-  // --- ENGLISH ---
-  {
-    id: "EN_01",
-    lang: "English",
-    script: "Latin",
-    text: "Oh brilliant, another delay on Mumbai locals, just what my Monday needed!",
-    context: "Train canceled due to waterlogging",
-    groundTruth: 1,
-    category: "Praise_Under_Failure",
-    notes: "Classic sarcasm: positive cue 'brilliant' clashing with negative reality 'delay'",
-  },
-  {
-    id: "EN_02",
-    lang: "English",
-    script: "Latin",
-    text: "I absolutely love it when code fails directly in production on a Friday night.",
-    context: "Production server crashed",
-    groundTruth: 1,
-    category: "Praise_Under_Failure",
-    notes: "Overt praise 'absolutely love' with failure 'code fails'",
-  },
-  {
-    id: "EN_03",
-    lang: "English",
-    script: "Latin",
-    text: "What a genius move leaving the umbrella at home during a monsoon downpour.",
-    context: "Completely soaked in rain",
-    groundTruth: 1,
-    category: "Praise_Under_Failure",
-    notes: "Praise 'genius' contrasted with soaked outcome",
-  },
-  {
-    id: "EN_04",
-    lang: "English",
-    script: "Latin",
-    text: "Great customer service, waiting 45 minutes on hold listening to elevator music.",
-    context: "Call dropped after waiting",
-    groundTruth: 1,
-    category: "Praise_Under_Failure",
-    notes: "Positive 'Great' with negative wait time",
-  },
-  {
-    id: "EN_05",
-    lang: "English",
-    script: "Latin",
-    text: "The train arrived exactly on time at Dadar station today.",
-    context: "Smooth morning commute",
-    groundTruth: 0,
-    category: "Factual",
-    notes: "Sincere factual literal report",
-  },
-  {
-    id: "EN_06",
-    lang: "English",
-    script: "Latin",
-    text: "Our team solved the production issue within 10 minutes, outstanding effort.",
-    context: "Successful quick patch deployment",
-    groundTruth: 0,
-    category: "Sincere_Praise",
-    notes: "Sincere praise congruent with fast resolution",
-  },
-  {
-    id: "EN_07",
-    lang: "English",
-    script: "Latin",
-    text: "The technical documentation is clean, concise, and easy to follow.",
-    context: "Reading library docs",
-    groundTruth: 0,
-    category: "Sincere_Praise",
-    notes: "Literal positive evaluation",
-  },
-  {
-    id: "EN_08",
-    lang: "English",
-    script: "Latin",
-    text: "The flight was delayed by four hours and baggage was lost.",
-    context: "Worst airline experience",
-    groundTruth: 0,
-    category: "Direct_Criticism",
-    notes: "Critical literal statement - no irony, purely negative",
-  },
-
-  // --- HINDI (Devanagari) ---
-  {
-    id: "HI_01",
-    lang: "Hindi",
-    script: "Devanagari",
-    text: "वाह क्या बात है, 4 घंटे ट्रेन लेट करने के लिए रेलवे को 21 तोपों की सलामी! 🙄",
-    context: "ट्रेन 4 घंटे लेट थी",
-    groundTruth: 1,
-    category: "Praise_Under_Failure",
-    notes: "Sarcastic praise 'वाह क्या बात है' for delayed train with irony emoji",
-  },
-  {
-    id: "HI_02",
-    lang: "Hindi",
-    script: "Devanagari",
-    text: "अरे गजब! पूरे ₹500 लेके ठंडा और पानी जैसा सूप पिला दिया, धन्य हो!",
-    context: "खराब रेस्टोरेंट का अनुभव",
-    groundTruth: 1,
-    category: "Praise_Under_Failure",
-    notes: "Intra-sentential opposition: 'गजब'/'धन्य' vs 'ठंडा और पानी जैसा'",
-  },
-  {
-    id: "HI_03",
-    lang: "Hindi",
-    script: "Devanagari",
-    text: "बहुत बढ़िया सरकार, हर सड़क पर स्विमिंग पूल बना दिया बारिश में।",
-    context: "सड़क पर भारी जलजमाव",
-    groundTruth: 1,
-    category: "Praise_Under_Failure",
-    notes: "Hyperbolic metaphor 'स्विमिंग पूल' with praise 'बहुत बढ़िया'",
-  },
-  {
-    id: "HI_04",
-    lang: "Hindi",
-    script: "Devanagari",
-    text: "आज की बैठक बहुत ही उत्पादक रही और समय पर समाप्त हो गई।",
-    context: "ऑफिस काम",
-    groundTruth: 0,
-    category: "Factual",
-    notes: "Literal formal workplace report",
-  },
-  {
-    id: "HI_05",
-    lang: "Hindi",
-    script: "Devanagari",
-    text: "खाना सच में बहुत स्वादिष्ट और लाजवाब था, धन्यवाद।",
-    context: "पारिवारिक रात्रिभोज",
-    groundTruth: 0,
-    category: "Sincere_Praise",
-    notes: "Sincere culinary praise",
-  },
-  {
-    id: "HI_06",
-    lang: "Hindi",
-    script: "Devanagari",
-    text: "ट्रेन 4 घंटे लेट थी और स्टेशन पर बहुत भीड़ थी।",
-    context: "यात्रा में परेशानी",
-    groundTruth: 0,
-    category: "Direct_Criticism",
-    notes: "Literal complaint without sarcastic phrasing",
-  },
-
-  // --- HINGLISH (Code-Mixed) ---
-  {
-    id: "HG_01",
-    lang: "Hinglish",
-    script: "Latin",
-    text: "Bohot badiya bhai, exam se ek raat pehle phone pe reels dekh, pakka top karega! 🙃",
-    context: "Padhai bilkul nahi ki",
-    groundTruth: 1,
-    category: "Praise_Under_Failure",
-    notes: "Code-mixed Hinglish sarcasm with inverted emoji",
-  },
-  {
-    id: "HG_02",
-    lang: "Hinglish",
-    script: "Latin",
-    text: "Waah, 3 ghante traffic jam me khade rakha, weekend ka plan pura spoil kar diya.",
-    context: "Stuck on expressway",
-    groundTruth: 1,
-    category: "Praise_Under_Failure",
-    notes: "'Waah' combined with 'traffic jam' and 'spoil'",
-  },
-  {
-    id: "HG_03",
-    lang: "Hinglish",
-    script: "Latin",
-    text: "Superb speed yaar, ek page load hone me 10 minute lag rahe hain! 👏",
-    context: "Internet speed drop",
-    groundTruth: 1,
-    category: "Praise_Under_Failure",
-    notes: "'Superb speed' contrasted with 10 minute load time",
-  },
-  {
-    id: "HG_04",
-    lang: "Hinglish",
-    script: "Latin",
-    text: "Train time par platform par aa gayi, safar bohot accha raha.",
-    context: "Smooth journey to Delhi",
-    groundTruth: 0,
-    category: "Factual",
-    notes: "Literal Hinglish appreciation of on-time arrival",
-  },
-  {
-    id: "HG_05",
-    lang: "Hinglish",
-    script: "Latin",
-    text: "Bhai kal ki party me bohot maza aaya, sab dost mile.",
-    context: "College reunion",
-    groundTruth: 0,
-    category: "Sincere_Praise",
-    notes: "Genuine Hinglish positive memory",
-  },
-  {
-    id: "HG_06",
-    lang: "Hinglish",
-    script: "Latin",
-    text: "Exam bohot tough tha aur mere saare questions chhut gaye.",
-    context: "Bad exam day",
-    groundTruth: 0,
-    category: "Direct_Criticism",
-    notes: "Sincere distress, non-sarcastic",
-  },
-
-  // --- MARATHI (Devanagari & Latin) ---
-  {
-    id: "MR_01",
-    lang: "Marathi",
-    script: "Latin",
-    text: "Lai bhari bhau, 2 taas traffic madhe thevlya badal khup khup aabhar! 👏",
-    context: "Stuck in 2 hr traffic jam at Hinjewadi",
-    groundTruth: 1,
-    category: "Praise_Under_Failure",
-    notes: "Marathi Latin sarcastic cue 'Lai bhari' and 'aabhar' for traffic delay",
-  },
-  {
-    id: "MR_02",
-    lang: "Marathi",
-    script: "Devanagari",
-    text: "व्वा, खूप छान नियोजन आहे, अर्धा तास आधी येऊन पण लाईन मध्येच उभे आहोत!",
-    context: "कार्यक्रमात गोंधळ",
-    groundTruth: 1,
-    category: "Praise_Under_Failure",
-    notes: "Devanagari Marathi sarcasm: 'खूप छान नियोजन' against standing in line",
-  },
-  {
-    id: "MR_03",
-    lang: "Marathi",
-    script: "Devanagari",
-    text: "वाह रे वाह सरकार, रस्त्यात खड्डे आहेत की खड्ड्यात रस्ता कळतच नाही!",
-    context: "रस्त्यांची दुरवस्था",
-    groundTruth: 1,
-    category: "Praise_Under_Failure",
-    notes: "Praise cue 'वाह रे वाह' with complaint about potholes",
-  },
-  {
-    id: "MR_04",
-    lang: "Marathi",
-    script: "Latin",
-    text: "Aaj cha presentation khup changla zala, congrats team!",
-    context: "Project approval meeting",
-    groundTruth: 0,
-    category: "Sincere_Praise",
-    notes: "Genuine team congratulations in Marathi-Latin",
-  },
-  {
-    id: "MR_05",
-    lang: "Marathi",
-    script: "Devanagari",
-    text: "पुण्यातील जेवण आणि हवामान दोन्ही खूप मस्त आहेत.",
-    context: "पुणे भेट",
-    groundTruth: 0,
-    category: "Sincere_Praise",
-    notes: "Literal sincere praise of Pune climate and food",
-  },
-  {
-    id: "MR_06",
-    lang: "Marathi",
-    script: "Devanagari",
-    text: "बस वेळेवर आली नाही आणि मला ऑफिसला खूप उशीर झाला.",
-    context: "ऑफिसला उशीर",
-    groundTruth: 0,
-    category: "Direct_Criticism",
-    notes: "Direct literal grievance",
-  },
-
-  // --- TELUGU ---
-  {
-    id: "TE_01",
-    lang: "Telugu",
-    script: "Telugu",
-    text: "వావ్, మళ్లీ వర్షం, నా బైక్ ప్రయాణానికి భలే టైమింగ్ 🙄",
-    context: "వర్షంలో తడిసిపోయాను",
-    groundTruth: 1,
-    category: "Praise_Under_Failure",
-    notes: "Telugu sarcasm: 'వావ్' and 'భలే టైమింగ్' with irony emoji and rain context",
-  },
-  {
-    id: "TE_02",
-    lang: "Telugu",
-    script: "Telugu",
-    text: "అద్భుతమైన సర్వీస్, 2 గంటలు కరెంట్ తీసేసి గొప్ప పని చేశారు!",
-    context: "పవర్ కట్",
-    groundTruth: 1,
-    category: "Praise_Under_Failure",
-    notes: "Sarcastic praise 'అద్భుతమైన సర్వీస్' for power outage",
-  },
-  {
-    id: "TE_03",
-    lang: "Telugu",
-    script: "Telugu",
-    text: "సినిమా చాలా బాగుంది, కథ మరియు నటన అద్భుతం.",
-    context: "సినిమా చూశాము",
-    groundTruth: 0,
-    category: "Sincere_Praise",
-    notes: "Genuine movie review in Telugu",
-  },
-  {
-    id: "TE_04",
-    lang: "Telugu",
-    script: "Telugu",
-    text: "రైలు సమయానికి వచ్చింది, ప్రయాణం సుఖంగా సాగింది.",
-    context: "హైదరాబాద్ ప్రయాణం",
-    groundTruth: 0,
-    category: "Factual",
-    notes: "Literal factual statement about travel in Telugu",
-  },
-];
+export { BENCHMARK_CORPUS, type BenchmarkItem } from "./benchmarkCorpus";
+import { BENCHMARK_CORPUS, type BenchmarkItem } from "./benchmarkCorpus";
 
 // Helper: Statistical computation
 function computeConfusionMatrix(yTrue: number[], yPred: number[]) {
@@ -867,12 +544,13 @@ async function runCompleteEvaluation() {
   const B = 1000;
   const bootstrapF1s: number[] = [];
   const N = allLabels.length;
+  const bootRng = createSeededPRNG(42);
 
   for (let b = 0; b < B; b++) {
     const bootY: number[] = [];
     const bootPred: number[] = [];
     for (let i = 0; i < N; i++) {
-      const idx = Math.floor(Math.random() * N);
+      const idx = Math.floor(bootRng() * N);
       bootY.push(allLabels[idx]);
       bootPred.push(allPreds[idx]);
     }
@@ -954,6 +632,7 @@ async function runCompleteEvaluation() {
     selectivePrediction: selectiveRiskTable,
     robustness: { stabilityScore: robResult.stability_score, baselineP: robResult.baseline_p_sarcastic, perturbations: robResult.results },
     explainabilitySample: { sentence: sampleSentence, attributions: topTokens },
+    cmiAnalysis: cmiLog,
     edgeCases: edgeResults,
     performance: { minLat, medianLat, avgLat, p95Lat, maxLat, batch200ElapsedMs: batchElapsedMs },
   };
@@ -963,7 +642,15 @@ async function runCompleteEvaluation() {
   console.log("Evaluation artifacts generated in: /eval_results/");
 }
 
-runCompleteEvaluation().catch((err) => {
-  console.error("Evaluation error:", err);
-  process.exit(1);
-});
+const isMain =
+  typeof process !== "undefined" &&
+  process.argv[1] &&
+  (process.argv[1].endsWith("run_scientific_evaluation.ts") ||
+    process.argv[1].endsWith("run_scientific_evaluation.js"));
+
+if (isMain) {
+  runCompleteEvaluation().catch((err) => {
+    console.error("Evaluation error:", err);
+    process.exit(1);
+  });
+}

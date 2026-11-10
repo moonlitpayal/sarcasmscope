@@ -5,11 +5,12 @@ import { RobustnessView } from "./components/RobustnessView";
 import { BatchView } from "./components/BatchView";
 import { ProtocolView } from "./components/ProtocolView";
 import { Sparkles, ShieldCheck, Layers, Settings2, Terminal } from "lucide-react";
+import { TRAINED_TEMPERATURE, DEFAULT_ABSTAIN_THRESHOLD } from "./engine/hybridFusion";
 
 export function App() {
   const [activeTab, setActiveTab] = useState<"studio" | "robustness" | "batch" | "protocol">("studio");
-  const [temperature, setTemperature] = useState<number>(1.0);
-  const [abstainThreshold, setAbstainThreshold] = useState<number>(0.6);
+  const [temperature, setTemperature] = useState<number>(TRAINED_TEMPERATURE);
+  const [abstainThreshold, setAbstainThreshold] = useState<number>(DEFAULT_ABSTAIN_THRESHOLD);
 
   // Cross-tab state sharing
   const [robustnessSample, setRobustnessSample] = useState<{ text: string; context: string }>({

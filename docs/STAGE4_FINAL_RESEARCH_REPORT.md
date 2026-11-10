@@ -1,3 +1,5 @@
+> **HISTORICAL DEVELOPMENT ARCHIVE (SUPERSEDED BY STAGE 9 CANONICAL FREEZE):** This intermediate Stage 3–8 document reflects pre-refactor diagnostics retained only for audit traceability. For verified, single-pass frozen `test.jsonl` results ($N=1,123$), see `docs/STAGE9_FINAL_MANUSCRIPT.md`, `docs/ACCURACY_AND_FEATURE_FUSION_INVESTIGATION.md`, and `eval_results/stage9/master_summary.json`: **SARcasmScope 3-Stage Calibrated Hybrid achieves `68.03%` Acc, `67.56%` Macro-F1, `67.09%` Prec, `60.50%` Rec, `1.36%` Conf-ECE ($T^*=0.845, \tau^*=0.35$, `80.31%` selective acc @ `45.68%` coverage, `2.856 ms` P95 latency)**. Deep GPU transformers (`MuRIL`, `XLM-R`) are **`NOT_EXECUTED_LOCALLY`**, `RESULTS_STATUS_AND_AUDIT.md` is absent in the workspace, and exhaustive 3-shingle Jaccard $\ge 0.80$ scanning reports `13` near-duplicate pairs corpus-wide (`8` cross-split, `5` train-test, all inside `IIITD_MaSaC_CodeMixed`).
+
 # SARcasmScope: Stage 4 Final Scientific Research Report
 ## Independent Cross-Dataset Evaluation, Transformer Benchmarking, and Publication Readiness
 
@@ -95,7 +97,7 @@ Over four systematic development and experimental stages, the SARcasmScope proje
    - Hybrid Macro-F1 95% CI: **[53.77%, 59.39%]**
    - Hybrid Accuracy 95% CI: **[53.87%, 59.57%]**
 2. **McNemar's Paired Test:**
-   - **Hybrid vs Linguistic-Only:** $\chi^2 = 1.793$, $p < 0.001$. The hybrid model significantly rejects the null hypothesis of equal error distribution compared to the conservative linguistic-only model, driven by the massive +54.15% recovery of previously missed sarcasm.
+   - **Legacy Pre-Refactor Comparison (Historical Note):** In early Stage 4 logs, $\chi^2 = 1.793$ corresponded to a true 1-df two-tailed value of $p = 0.1806$ (non-significant for overall accuracy; an earlier draft using `exp(-chi2/2)` mistakenly labeled it significant). After migrating the runtime evaluation to the canonical 3-Stage Calibrated Hybrid (`eval_results/stage4/significance_tests.csv` and `eval_results/stage9/statistical_analysis.csv`), Hybrid vs. Linguistic achieves $\chi^2 = 55.20, p < 0.0001$ overall ($n_{01}=309, n_{10}=149$) and $\chi^2 = 290.16, p < 0.0001$ on sarcastic recall recovery.
 
 ---
 

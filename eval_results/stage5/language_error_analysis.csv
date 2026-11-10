@@ -1,5 +1,5 @@
-Language,SampleCount,SarcasticCount,LiteralCount,Accuracy,Precision,Recall,MacroF1,Specificity,ConfidenceECE,PrimaryErrorSource
-"English",742,362,380,52.7,51.27,61.33,52.45,44.47,33.33,"Balanced contextual divergence"
-"Hindi-English (Hinglish)",181,99,82,48.62,75,9.09,39.58,96.34,49.36,"Orthographic variation & romanized dialectal spelling"
-"Marathi",73,37,36,49.32,0,0,33.03,100,49.45,"Agglutinative inflection & nominal suffix OOV"
-"Telugu",108,17,91,84.26,0,0,45.73,100,14.57,"Extreme label skew (84% literal) & colloquial idiom gap"
+Language,SampleCount,SarcasticCount,LiteralCount,Accuracy,Precision,Recall,MacroF1,Specificity,ConfidenceECE
+"English",742,362,380,71.7,72.22,68.23,71.62,75,5.05
+"Hindi-English (Hinglish)",181,99,82,48.07,53.52,38.38,47.87,59.76,15.73
+"Marathi",73,37,36,58.9,61.29,51.35,58.71,66.67,8.65
+"Telugu",108,17,91,84.26,0,0,45.73,100,8.52

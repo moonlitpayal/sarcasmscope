@@ -1,28 +1,28 @@
 id,lang,script,text,context,groundTruth,p_sarcastic,confidence,predLabel,verdict,correct,incongruityIndex,cmi
 EN_01,English,Latin,"Oh brilliant, another delay on Mumbai locals, just what my Monday needed!","Train canceled due to waterlogging",1,0.98,0.848,1,Sarcastic,1,0.75,0
 EN_02,English,Latin,"I absolutely love it when code fails directly in production on a Friday night.","Production server crashed",1,0.98,0.864,1,Sarcastic,1,0.85,0
-EN_03,English,Latin,"What a genius move leaving the umbrella at home during a monsoon downpour.","Completely soaked in rain",1,0.98,0.859,1,Sarcastic,1,0.75,7.7
+EN_03,English,Latin,"What a genius move leaving the umbrella at home during a monsoon downpour.","Completely soaked in rain",1,0.98,0.859,1,Sarcastic,1,0.75,0
 EN_04,English,Latin,"Great customer service, waiting 45 minutes on hold listening to elevator music.","Call dropped after waiting",1,0.98,0.864,1,Sarcastic,1,0.75,0
-EN_05,English,Latin,"The train arrived exactly on time at Dadar station today.","Smooth morning commute",0,0.25,0.06,0,Uncertain,1,0,10
-EN_06,English,Latin,"Our team solved the production issue within 10 minutes, outstanding effort.","Successful quick patch deployment",0,0.02,0.744,0,Literal,1,0,9.1
-EN_07,English,Latin,"The technical documentation is clean, concise, and easy to follow.","Reading library docs",0,0.02,0.78,0,Literal,1,0,10
-EN_08,English,Latin,"The flight was delayed by four hours and baggage was lost.","Worst airline experience",0,0.02,0.768,0,Literal,1,0,9.1
+EN_05,English,Latin,"The train arrived exactly on time at Dadar station today.","Smooth morning commute",0,0.25,0.06,0,Uncertain,1,0,0
+EN_06,English,Latin,"Our team solved the production issue within 10 minutes, outstanding effort.","Successful quick patch deployment",0,0.02,0.744,0,Literal,1,0,0
+EN_07,English,Latin,"The technical documentation is clean, concise, and easy to follow.","Reading library docs",0,0.02,0.78,0,Literal,1,0,0
+EN_08,English,Latin,"The flight was delayed by four hours and baggage was lost.","Worst airline experience",0,0.02,0.768,0,Literal,1,0,0
 HI_01,Hindi,Devanagari,"वाह क्या बात है, 4 घंटे ट्रेन लेट करने के लिए रेलवे को 21 तोपों की सलामी! 🙄","ट्रेन 4 घंटे लेट थी",1,0.98,0.868,1,Sarcastic,1,0.75,0
 HI_02,Hindi,Devanagari,"अरे गजब! पूरे ₹500 लेके ठंडा और पानी जैसा सूप पिला दिया, धन्य हो!","खराब रेस्टोरेंट का अनुभव",1,0.98,0.864,1,Sarcastic,1,0.75,0
 HI_03,Hindi,Devanagari,"बहुत बढ़िया सरकार, हर सड़क पर स्विमिंग पूल बना दिया बारिश में।","सड़क पर भारी जलजमाव",1,0.98,0.859,1,Sarcastic,1,0.6,0
 HI_04,Hindi,Devanagari,"आज की बैठक बहुत ही उत्पादक रही और समय पर समाप्त हो गई।","ऑफिस काम",0,0.2,0.36,0,Uncertain,1,0.25,0
 HI_05,Hindi,Devanagari,"खाना सच में बहुत स्वादिष्ट और लाजवाब था, धन्यवाद।","पारिवारिक रात्रिभोज",0,0.02,0.8,0,Literal,1,0.1,0
 HI_06,Hindi,Devanagari,"ट्रेन 4 घंटे लेट थी और स्टेशन पर बहुत भीड़ थी।","यात्रा में परेशानी",0,0.86,0.684,1,Sarcastic,0,0.25,0
-HG_01,Hinglish,Latin,"Bohot badiya bhai, exam se ek raat pehle phone pe reels dekh, pakka top karega! 🙃","Padhai bilkul nahi ki",1,0.6,0.18,1,Uncertain,1,0.1,13.3
-HG_02,Hinglish,Latin,"Waah, 3 ghante traffic jam me khade rakha, weekend ka plan pura spoil kar diya.","Stuck on expressway",1,0.98,0.864,1,Sarcastic,1,0.75,6.7
-HG_03,Hinglish,Latin,"Superb speed yaar, ek page load hone me 10 minute lag rahe hain! 👏","Internet speed drop",1,0.98,0.845,1,Sarcastic,1,0.75,15.4
-HG_04,Hinglish,Latin,"Train time par platform par aa gayi, safar bohot accha raha.","Smooth journey to Delhi",0,0.2,0.348,0,Uncertain,1,0.4,27.3
-HG_05,Hinglish,Latin,"Bhai kal ki party me bohot maza aaya, sab dost mile.","College reunion",0,0.02,0.8,0,Literal,1,0.1,18.2
-HG_06,Hinglish,Latin,"Exam bohot tough tha aur mere saare questions chhut gaye.","Bad exam day",0,0.02,0.792,0,Literal,1,0.1,20
-MR_01,Marathi,Latin,"Lai bhari bhau, 2 taas traffic madhe thevlya badal khup khup aabhar! 👏","Stuck in 2 hr traffic jam at Hinjewadi",1,0.98,0.908,1,Sarcastic,1,0.95,33.3
+HG_01,Hinglish,Latin,"Bohot badiya bhai, exam se ek raat pehle phone pe reels dekh, pakka top karega! 🙃","Padhai bilkul nahi ki",1,0.6,0.18,1,Uncertain,1,0.1,33.3
+HG_02,Hinglish,Latin,"Waah, 3 ghante traffic jam me khade rakha, weekend ka plan pura spoil kar diya.","Stuck on expressway",1,0.98,0.864,1,Sarcastic,1,0.75,35.7
+HG_03,Hinglish,Latin,"Superb speed yaar, ek page load hone me 10 minute lag rahe hain! 👏","Internet speed drop",1,0.98,0.845,1,Sarcastic,1,0.75,41.7
+HG_04,Hinglish,Latin,"Train time par platform par aa gayi, safar bohot accha raha.","Smooth journey to Delhi",0,0.2,0.348,0,Uncertain,1,0.4,36.4
+HG_05,Hinglish,Latin,"Bhai kal ki party me bohot maza aaya, sab dost mile.","College reunion",0,0.02,0.8,0,Literal,1,0.1,9.1
+HG_06,Hinglish,Latin,"Exam bohot tough tha aur mere saare questions chhut gaye.","Bad exam day",0,0.02,0.792,0,Literal,1,0.1,30
+MR_01,Marathi,Latin,"Lai bhari bhau, 2 taas traffic madhe thevlya badal khup khup aabhar! 👏","Stuck in 2 hr traffic jam at Hinjewadi",1,0.98,0.908,1,Sarcastic,1,0.95,9.1
 MR_02,Marathi,Devanagari,"व्वा, खूप छान नियोजन आहे, अर्धा तास आधी येऊन पण लाईन मध्येच उभे आहोत!","कार्यक्रमात गोंधळ",1,0.98,0.883,1,Sarcastic,1,1,0
 MR_03,Marathi,Devanagari,"वाह रे वाह सरकार, रस्त्यात खड्डे आहेत की खड्ड्यात रस्ता कळतच नाही!","रस्त्यांची दुरवस्था",1,0.7,0.358,1,Uncertain,1,0.4,0
-MR_04,Marathi,Latin,"Aaj cha presentation khup changla zala, congrats team!","Project approval meeting",0,0.02,0.81,0,Literal,1,0.1,25
+MR_04,Marathi,Latin,"Aaj cha presentation khup changla zala, congrats team!","Project approval meeting",0,0.02,0.81,0,Literal,1,0.1,37.5
 MR_05,Marathi,Devanagari,"पुण्यातील जेवण आणि हवामान दोन्ही खूप मस्त आहेत.","पुणे भेट",0,0.02,0.78,0,Literal,1,0.1,0
 MR_06,Marathi,Devanagari,"बस वेळेवर आली नाही आणि मला ऑफिसला खूप उशीर झाला.","ऑफिसला उशीर",0,0.02,0.773,0,Literal,1,0.1,0
 TE_01,Telugu,Telugu,"వావ్, మళ్లీ వర్షం, నా బైక్ ప్రయాణానికి భలే టైమింగ్ 🙄","వర్షంలో తడిసిపోయాను",1,0.98,0.878,1,Sarcastic,1,0.75,0

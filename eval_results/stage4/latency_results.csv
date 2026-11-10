@@ -1,6 +1,6 @@
 Metric,Value_ms
-Mean,1.322
-Median,1.182
-P95,2.307
-P99,3.458
-HeapMemory_MB,237.32
+Mean,1.612
+Median,1.475
+P95,2.493
+P99,4.301
+HeapMemory_MB,27.28

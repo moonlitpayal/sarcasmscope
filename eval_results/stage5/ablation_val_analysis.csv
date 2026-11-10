@@ -1,6 +1,9 @@
-AblationConfiguration,Accuracy,Precision,Recall,MacroF1,ConfidenceECE,DeltaMacroF1
-"Full Hybrid Model",54.89,51.91,44.85,54.11,35.1,0.00
-"w/o Linguistic Incongruity",55.25,52.04,52.04,55.05,40.07,0.94
-"w/o Contextual Divergence",55.25,52.4,44.47,54.39,34.7,0.28
-"w/o Lexical Coverage C(x)",54.62,51.58,44.27,53.8,35.39,-0.31
-"w/o Temperature Scaling (T=1.0)",54.89,51.91,44.85,54.11,38.68,0.00
+AblationConfiguration,Accuracy,Precision,Recall,MacroF1,ConfidenceECE,NLL,DeltaMacroF1
+"Full Hybrid Model",68.21,68.47,59.03,67.65,4.08,0.5777,0.00
+"w/o WordLex Expert",66.49,65.07,60.78,66.16,5.58,0.6199,-1.49
+"w/o CharSub Expert",68.93,68.78,61.17,68.49,6,0.6045,0.84
+"w/o Linguistic Engine Logit",69.38,64.44,76.7,69.37,2.24,0.5801,1.72
+"w/o Incongruity Index Feature",68.21,68.47,59.03,67.65,4.1,0.5774,0.00
+"w/o Lexical Coverage Feature",68.21,68.47,59.03,67.65,3.89,0.5782,0.00
+"w/o Conversational Context",67.75,70.23,53.59,66.7,2.99,0.5988,-0.95
+"w/o Temperature Scaling (T=1.0)",68.21,68.47,59.03,67.65,3.96,0.5798,0.00

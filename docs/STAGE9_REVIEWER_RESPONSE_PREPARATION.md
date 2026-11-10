@@ -1,65 +1,36 @@
-# SARcasmScope — Stage 9 Preemptive Peer-Reviewer Response Preparation
+# SARcasmScope — Stage 9 Peer-Reviewer Response & Rebuttal Guide
 
 **Principal Investigator:** Payal Mehta (`payal.12620246@vit.edu`)  
-**Institution:** School of Computer Science and Engineering, Vellore Institute of Technology, India  
-**Target Repository:** `https://github.com/moonlitpayal/sarcasmscope`  
-**Target Journals:** ACM TALLIP / IEEE Transactions on Affective Computing  
-**Audit Date:** November 9, 2026  
-**Audit Phase:** 9J — Reviewer Rebuttal & Defense Formulation  
+**Audit Phase:** 9J — Methodological Defense Grounded in Verified Code & CSV Evidence
 
 ---
 
-## Preemptive Defense & Detailed Responses to Critical Peer-Review Queries
+## Preemptive Author Responses to Anticipated Reviewer Critiques
 
-### Query 1: Transformer Comparison & Efficiency Trade-off
-**Reviewer Comment:**  
-*"MuRIL achieves 57.32% Macro-F1 compared to SARcasmScope's 56.57%. Since MuRIL achieves higher performance, why should practitioners deploy SARcasmScope rather than a fine-tuned transformer?"*
+### Q1. Accuracy Comparison with Nov 7 ($N=30$) & Missing Historical Audit File
+**Concern:** *How do the Nov 7 `66.7%` ($N=30$, 5/0/15/10) figures relate to `RESULTS_STATUS_AND_AUDIT.md` (`56.63%`) and your new results?*  
+**Response:** `RESULTS_STATUS_AND_AUDIT.md` does not exist in the repository; all results were independently recomputed cleanly via `eval/verify_comparison.ts` and `eval/run_stage9_master_execution.ts`. On the exact same 30 internal diagnostic examples, `v1` (`prevPredict`) reproduces `66.67%` Acc / `33.33%` Rec (`TP=5, FP=0, TN=15, FN=10`), `v2` achieves `96.67%`, and `Calibrated Hybrid` achieves `86.67%`. However, on the independent frozen `test.jsonl` ($N=1,123$), `v1` and `v2` collapse (`0.39%` and `3.08%` recall), whereas our 3-stage `Calibrated Hybrid` rises to **`68.03%` Accuracy, `67.56%` Macro-F1, `60.50%` Recall** (McNemar $\chi^2 = 55.20$ Acc, $\chi^2 = 290.16$ Rec, $p < 0.0001$).
 
-**Author Response:**  
-We thank the reviewer for raising this fundamental deployment consideration. While MuRIL achieves a marginal $+0.75\%$ Macro-F1 advantage on this noisy corpus, it incurs massive operational costs:
-1. **Computational Latency:** MuRIL requires $85.4\text{ ms}$ on an NVIDIA T4 GPU and $> 800\text{ ms}$ on CPU hardware. SARcasmScope evaluates an utterance in **$0.205\text{ ms}$ (P95)** on CPU, providing a **$> 400\times$ speedup** on GPU and **$> 4,000\times$ speedup** on CPU.
-2. **Resource Footprint:** MuRIL contains 237 million parameters ($> 900\text{ MB}$ weights) and requires a Python PyTorch runtime with multi-gigabyte memory overhead. SARcasmScope requires **$< 10\text{ MB}$ RAM** and runs natively in standard browser JavaScript engines with zero server dependencies.
-3. **Data Privacy:** Because SARcasmScope executes client-side, sensitive user communications never leave the user's device, ensuring complete privacy compliance.
+### Q2. Is "Calibrated Feature Fusion" Genuine or Just Heuristic Tuning?
+**Response:** It is a mathematically standard **3-stage stacked generalization + validation calibration pipeline** (`eval/train_and_calibrate.ts`):
+- **Stage 1 (`train.jsonl` only):** Trains sparse `WordLex_1_2` ($V=8,000$) and `CharSub_3_5` ($V=8,000$) TF-IDF LR experts alongside deterministic `LinguisticEngine`.
+- **Stage 2 (5-fold group OOF on `train.jsonl`):** Fits MAP Ridge logistic weights (`w0=0.3483, w1_word=0.54817, w2_char=0.54648, w3_linguistic=0.26486, w4_incongruity=0.19418, w5_coverage=0.20441`).
+- **Stage 3 (`val.jsonl` only):** Fits $T^* = 0.845$ and selects $\tau^* = 0.35$. While unweighted `Statistical_OOF` has slightly higher 0.50-threshold test accuracy (`69.55%` vs `68.03%`, McNemar $p=0.0472$), 3-stage calibrated fusion **reduces Conf-ECE by 3.67× (`4.99% -> 1.36%`)**, lowers NLL (`0.5876 -> 0.5826`), and keeps specificity high (`74.50%` vs `58.77%` without symbolic signal).
 
----
+### Q3. Near-Duplicates & Dialogue Grouping
+**Response:** `eval/split_independent_datasets.ts` enforces `0` exact normalized text overlaps and `0` shared `conversation_id`s across splits. An exhaustive $\binom{5600}{2}$ word 3-shingle Jaccard $\ge 0.80$ scan reveals **`13` near-duplicate pairs corpus-wide (`8` cross-split, `5` train-test, `8` label-conflicting)**—all short recurring sitcom lines inside `IIITD_MaSaC_CodeMixed` (`974` records). Rather than silently modifying frozen `test.jsonl`, we report the exact count transparently.
 
-### Query 2: Statistical Significance Disentanglement
-**Reviewer Comment:**  
-*"The manuscript claims statistically significant improvement over baseline, yet the McNemar test on overall accuracy yields p = 0.1806. How is this justified?"*
+### Q4. Telugu Recall (`0.00%`) vs Ranking (`0.7455` ROC-AUC)
+**Response:** Telugu retains its real-world `15.60%` sarcastic prevalence (`17/109`). Under a conservative minority prior, calibrated probabilities stay below the global `0.50` cutoff (`0.00%` Hybrid recall), while ranking discrimination remains strong (**`0.7455` ROC-AUC**, `0.1148` Brier, `0.3797` NLL; `WordLex_1_2` reaches `55.21%` MF1). We document threshold tuning per low-resource prior as an immediate clinical/deployment requirement.
 
-**Author Response:**  
-We appreciate the reviewer's precision. We have explicitly disentangled the statistical claims:
-- The baseline rule system was an ultra-conservative literal predictor ($97.35\%$ specificity, $588/604$ true negatives) that suffered catastrophic collapse on sarcasm recall ($3.08\%$, detecting only $16/519$ sarcastic items).
-- On the target phenomenon—detecting genuine sarcasm—SARcasmScope rescued **281 additional sarcastic cases** ($57.23\%$ recall). A paired McNemar test on sarcastic samples confirms this recovery is **exceptionally significant ($\chi^2 = 277.03, p = 3.7 \times 10^{-62} \ll 0.0001$, Odds Ratio = 282.0)**.
-- The overall accuracy difference ($53.78\% \to 56.63\%$) is not statistically significant ($p = 0.1806$) precisely because SARcasmScope traded off artificial specificity ($56.13\%$) to achieve functional sarcasm recall. This trade-off is now transparently documented in Section 7 and Table 4 of the manuscript.
+### Q5. Why Are GPU Transformer Metrics Listed as `NOT_EXECUTED_LOCALLY`?
+**Response:** Because local workspace sandboxes lack CUDA GPU and `torch`, we refuse to report unexecuted cloud benchmarks as local measurements. Instead, we syntax-check and `--dry_run` verify `eval/train_transformer.py`, `eval/evaluate_transformers.py`, and `eval/export_onnx.py`, remove any unverified MuRIL parity claim, and restrict numerical tables strictly to audited local CPU runs (`2.856 ms` P95, `405.36 KB` artifact).
 
----
+### Q6. Was Calibration Actually Fixed Given Earlier `0.428` Bin-5 Overconfidence (`1,106` Samples in `[0.9-1.0]`)?
+**Response:** Yes—and verified on both splits separately via `eval/verify_independent_recomputation.ts`. Fitting $T^*=0.845$ on `val.jsonl` (`N=1,104`, NLL `0.5798 -> 0.5777`; `Val SelAcc=81.06% @ 49.73%` coverage at $\tau^*=0.35$) transfers cleanly to untouched `test.jsonl` (`N=1,123`), reducing NLL (`0.5856 -> 0.5826`), Brier (`0.2013 -> 0.2005`), Class-ECE (`4.40% -> 2.80%`), and Conf-ECE (`2.28% -> 1.36%`). Bin 5 `[0.9-1.0]` now contains `68/1,123` samples (`0.930` mean confidence vs `0.956` empirical accuracy, `0.026` error), while `80.31%` selective accuracy is achieved across `45.68%` coverage. We explicitly separate $P_{\text{fused}}$, Margin Confidence, $\tau^*$, and Selective Utility, and disclose Hinglish (`15.57%` Conf-ECE) as uncalibrated out-of-distribution dialogue without A/V cues.
 
-### Query 3: Multi-Turn Dialogue Integrity & Leakage Prevention
-**Reviewer Comment:**  
-*"In conversational datasets such as IIITD MaSaC, multi-turn utterances from the same dialogue could contaminate train and test splits. How did you ensure zero leakage?"*
+### Q7. How Do We Justify Dataset Labels (`MahaEmotions`, `Misra`, `MaSaC`) & Fix the `5,712` CSV Mismatch?
+**Response:** `eval/run_independent_benchmarks.ts` was refactored to read frozen `test.jsonl` (`N=1,123`: `344+401+194+75+109`), eliminating the stale `5,712` CSV. Across all 5 corpora (`eval/verify_independent_recomputation.ts`), only `ACL_2020_Twitter_Sarcasm` includes non-empty `context` (`1,716/1,716`); `IIITD_MaSaC` uses `conversation_id` solely for split isolation (`context=""` on isolated text turns, no A/V prosody); `Misra` tests editorial satire (`context=""`). For `L3Cube_MahaEmotions`, we explicitly retained native `Sarcasm` ($n=185$) vs `Neutral` ($n=184$) rather than mapping `Anger`/`Sadness` to literal, while disclosing that Kowtal & Joshi (*PACLIC 39*, 2025) annotated `train.csv` with CoTR LLM prompting vs human-gold `test.csv`—explaining why Marathi is framed strictly as an exploratory subset.
 
-**Author Response:**  
-To prevent narrative leakage, our partitioning algorithm (`eval/partition_independent_datasets.ts`) enforces an **atomic dialogue-grouping constraint**:
-- All conversational turns sharing an identical `dialogue_id` were restricted to reside exclusively within one partition (Train, Validation, or Test).
-- Automated auditing verified that cross-split dialogue ID intersection is **$0.00\%$** ($0$ shared dialogue IDs). Cross-split text intersection is also verified at **$0.00\%$**.
-
----
-
-### Query 4: Retaining Natural Class Imbalance in Telugu
-**Reviewer Comment:**  
-*"Why did you preserve the natural 15.7% sarcasm class balance in the Telugu dataset rather than synthetically balancing it like Twitter and Headlines?"*
-
-**Author Response:**  
-Preserving natural class distribution in real-world social media is essential for evaluating **false discovery risk**:
-- In deployed applications, sarcasm is a low-prevalence phenomenon. Synthetically balanced benchmarks mask false positive vulnerabilities.
-- By evaluating on Telugu's natural $15.7\%$ prevalence, we demonstrate that SARcasmScope maintains stable precision ($51.4\%$) without generating excessive false sarcasm alarms on Dravidian text.
-
----
-
-### Query 5: Practical Utility of Selective Classification
-**Reviewer Comment:**  
-*"The selective prediction mechanism achieves 61.48% accuracy but abstains on 31.34% of samples. How is this useful in practice?"*
-
-**Author Response:**  
-In high-stakes sentiment analysis (e.g., brand triage, automated moderation), making an overconfident incorrect decision is far more damaging than flagging an utterance as ambiguous. By abstaining on borderline probabilities ($|p - 0.50| < 0.29$), SARcasmScope allows production pipelines to automatically route high-confidence predictions ($68.66\%$ of traffic) while redirecting ambiguous cases to human moderators or conservative fallback rules.
+### Q8. How Is the Five-Author vs Sole-Author Discrepancy Handled?
+**Response:** All Stage 9 codebase audit logs identify Payal Mehta strictly as repository maintainer, while `STAGE9_FINAL_MANUSCRIPT.md`, `STAGE9_PUBLICATION_READINESS.md`, `CITATION.cff`, and `README.md` carry an explicit **Pre-Submission Blocker Notice**: final 5-author ordering, CRediT contributions, corresponding-author designation (originally the supervisor/collaborator), and all co-authors' sign-off must be completed before submission.

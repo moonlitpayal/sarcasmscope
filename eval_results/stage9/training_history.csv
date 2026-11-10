@@ -1,7 +1,7 @@
-ModelName,Epoch,TrainLoss,TrainAccuracy,ValLoss,ValMacroF1,ValSarcasmRecall,EarlyStoppingStatus
-"google/muril-base-cased",1,0.6724,57.42,0.6512,56.84,58.45,"Training ongoing"
-"google/muril-base-cased",2,0.6381,61.18,0.6480,57.51,61.20,"Best validation checkpoint saved"
-"google/muril-base-cased",3,0.5912,65.40,0.6595,57.18,59.80,"Early stopping triggered at Epoch 3"
-"xlm-roberta-base",1,0.6810,55.80,0.6620,55.90,56.40,"Training ongoing"
-"xlm-roberta-base",2,0.6450,60.20,0.6540,56.70,58.80,"Best validation checkpoint saved"
-"xlm-roberta-base",3,0.6020,64.10,0.6680,56.20,57.50,"Early stopping triggered at Epoch 3"
+PipelineStage,ModelComponent,FitSplit,ValAccuracy,ValMacroF1,ValECE,ValNLL,ExecutionStatus
+"Stage 1 Base","WordLex_1_2 (epochs=70, lr=0.05, l2=1e-4)","train.jsonl (3,373)",68.48,67.87,2.18,0.5907,"MEASURED (eval/train_and_calibrate.ts)"
+"Stage 1 Base","CharSub_3_5 (epochs=70, lr=0.05, l2=2e-4)","train.jsonl (3,373)",66.12,65.62,1.83,0.6035,"MEASURED (eval/train_and_calibrate.ts)"
+"Stage 2 Meta","MAP Ridge Logistic Stacking (5-Fold Group OOF)","train.jsonl OOF (3,373)",68.3,67.73,3.83,0.5798,"MEASURED (T=1.0 pre-calibration)"
+"Stage 3 Calibration","Temperature Scaling T*=0.845 + tau*=0.35","val.jsonl (1,104)",68.3,67.73,3.88,0.5777,"MEASURED (Val NLL minimized)"
+"External Transformer","google/muril-base-cased","train.jsonl / val.jsonl",NA,NA,NA,NA,"NOT_EXECUTED_LOCALLY (see docs/COLAB.md)"
+"External Transformer","xlm-roberta-base","train.jsonl / val.jsonl",NA,NA,NA,NA,"NOT_EXECUTED_LOCALLY (see docs/COLAB.md)"

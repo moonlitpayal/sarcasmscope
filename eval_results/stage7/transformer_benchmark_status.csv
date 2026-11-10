@@ -1,5 +1,7 @@
-ModelIdentifier,HuggingFaceBackbone,ParameterCount,ExecutionPlatform,RuntimeRequirement,CurrentBenchmarkStatus,VerificationProof
-"MuRIL_Transformer","google/muril-base-cased","237M","Google Colab T4 GPU","16 GB VRAM, PyTorch 2.x","REPRODUCIBLE GPU SCRIPT PROVIDED","docs/COLAB.md & eval/train_transformer.py"
-"XLM_RoBERTa","xlm-roberta-base","278M","Google Colab T4 GPU","16 GB VRAM, PyTorch 2.x","REPRODUCIBLE GPU SCRIPT PROVIDED","docs/COLAB.md & eval/train_transformer.py"
-"SARcasmScope_Local_Proxy","Subword-Linguistic Transfer","< 10M eq.","Client-Side CPU","Zero GPU (Node.js runtime)","VERIFIED LOCAL CLIENT-SIDE BENCHMARK","eval/run_stage4_full_evaluation.ts"
-"ONNX_Quantized_MuRIL","INT8 Dynamic Quantization","~60 MB","Edge / WebAssembly","ONNX Runtime Web","PIPELINE PROVIDED","eval/export_onnx.py"
+ModelIdentifier,BackboneOrRepresentation,ParameterCount,TrainingSplit,ValCalibrationSplit,HardwareEnvironment,TestAccuracy,TestMacroF1,TestECE,LatencyP95,ArtifactPath,AuditQualification
+"WordLex_1_2","Sparse Word+Morph+Phonetic+Ctx TF-IDF LR","8000","train.jsonl (3,373)","val.jsonl (1,104)","Local CPU (Node.js)",68.39,67.96,2.8,"0.200 ms","src/engine/statisticalModel.ts","MEASURED Level-1 Base Expert"
+"CharSub_3_5","Sparse Char 3-5gram TF-IDF LR","8000","train.jsonl (3,373)","val.jsonl (1,104)","Local CPU (Node.js)",65.36,65.01,2.11,"0.378 ms","src/engine/statisticalModel.ts","MEASURED Level-1 Base Expert"
+"Statistical_OOF_Ensemble","Logit-Space WordLex+CharSub Ensemble","16000","train.jsonl (3,373)","val.jsonl (1,104)","Local CPU (Node.js)",69.55,69.06,4.99,"0.881 ms","src/engine/statisticalModel.ts","MEASURED Statistical Baseline"
+"SARcasmScope_Calibrated_Hybrid","3-Stage OOF MAP Ridge Fusion (T*=0.845)","16006","train.jsonl OOF (3,373)","val.jsonl (1,104)","Local CPU (Node.js) / Browser",68.03,67.56,1.36,"2.856 ms","src/engine/hybridFusion.ts","MEASURED Full Hybrid Engine"
+"MuRIL_FineTuned_GPU","google/muril-base-cased","237M","train.jsonl (3,373)","val.jsonl (1,104)","Google Colab T4 GPU (External)",NA,NA,NA,NA,"eval/train_transformer.py","NOT_EXECUTED_LOCALLY (torch unavailable in workspace; execute on Colab GPU via docs/COLAB.md)"
+"XLM_RoBERTa_GPU","xlm-roberta-base","278M","train.jsonl (3,373)","val.jsonl (1,104)","Google Colab T4 GPU (External)",NA,NA,NA,NA,"eval/train_transformer.py","NOT_EXECUTED_LOCALLY (torch unavailable in workspace; execute on Colab GPU via docs/COLAB.md)"

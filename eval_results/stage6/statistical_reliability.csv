@@ -1,10 +1,4 @@
-Metric,HybridMean,HybridCI95_Lower,HybridCI95_Upper,LinguisticMean,LinguisticCI95,SemanticMean,SemanticCI95
-"Accuracy",56.63,53.7,59.48,53.78,"[50.85-56.54]",56.9,"[53.87-59.75]"
-"MacroF1",56.57,53.6,59.42,37.59,"[35.56-39.43]",56.86,"[53.86-59.73]"
-"Recall",57.23,53,61.05,3.08,"[1.65-4.73]",58.19,"[54.15-62.15]"
-"Precision",52.85,48.75,57.07,50,"[32.26-66.67]",53.08,"[48.92-57.26]"
-"Specificity",56.13,"N/A","N/A",97.35,"N/A",55.79,"N/A"
-"ConfidenceECE",42.83,"N/A","N/A",23.36,"N/A",42.37,"N/A"
-"ClassECE",42.88,"N/A","N/A",23.38,"N/A",42.44,"N/A"
-"BrierScore",0.4275,"N/A","N/A",0.3075,"N/A",0.4251,"N/A"
-"NLL",11.2178,"N/A","N/A",0.901,"N/A",5.8081,"N/A"
+Metric,HybridMean,HybridCI95,LinguisticV2Mean,LinguisticV2CI95,StatisticalOOFMean,StatisticalOOFCI95
+"Accuracy",68.03,"[65.36-70.79]",53.78,"[50.93-56.81]",69.55,"[66.87-72.13]"
+"MacroF1",67.56,"[64.79-70.29]",37.59,"[35.73-39.66]",69.06,"[66.26-71.65]"
+"Recall",60.5,"[56-64.77]",3.08,"[1.69-4.68]",61.66,"[57.53-65.83]"

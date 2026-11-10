@@ -138,13 +138,15 @@ def main():
                         help="Transformer backbone")
     parser.add_argument("--train_file", type=str, default="eval_results/independent/train.jsonl")
     parser.add_argument("--val_file", type=str, default="eval_results/independent/val.jsonl")
+    parser.add_argument("--test_file", type=str, default="eval_results/independent/test.jsonl")
     parser.add_argument("--output_dir", type=str, default="runs/transformer_muril")
     parser.add_argument("--max_length", type=int, default=128)
     parser.add_argument("--batch_size", type=int, default=16)
-    parser.add_argument("--lr", type=float, default=2e-5)
+    parser.add_argument("--lr", "--learning_rate", dest="lr", type=float, default=2e-5)
     parser.add_argument("--epochs", type=int, default=4)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--early_stopping_patience", type=int, default=2)
+    parser.add_argument("--eval_test", action="store_true", help="Evaluate best checkpoint once on frozen test_file after training")
     parser.add_argument("--dry_run", action="store_true", help="Perform architecture check without GPU execution")
     args = parser.parse_args()
 
@@ -188,7 +190,8 @@ def main():
     try:
         import torch
         import transformers
-        from transformers import AutoTokenizer, AutoModelForSequenceClassification, AdamW, get_linear_schedule_with_warmup
+        from torch.optim import AdamW
+        from transformers import AutoTokenizer, AutoModelForSequenceClassification, get_linear_schedule_with_warmup
         from torch.utils.data import TensorDataset, DataLoader
         has_torch = True
     except ImportError as e:
@@ -293,6 +296,38 @@ def main():
 
     with open(os.path.join(args.output_dir, "training_history.json"), "w") as f:
         json.dump(history, f, indent=2)
+
+    summary: Dict[str, Any] = {
+        "model_name": args.model_name,
+        "seed": args.seed,
+        "best_val_macro_f1": best_val_f1,
+        "history_epochs": len(history),
+    }
+
+    if args.eval_test and args.test_file and os.path.exists(args.test_file):
+        print(f"\n[FINAL TEST EVALUATION] Loading best checkpoint on sealed test set: {args.test_file}")
+        best_dir = os.path.join(args.output_dir, "best_checkpoint")
+        best_model = AutoModelForSequenceClassification.from_pretrained(best_dir).to(device)
+        best_model.eval()
+        test_records = load_jsonl(args.test_file)
+        test_texts = [format_input(r) for r in test_records]
+        test_labels = [r["binary_sarcasm_label"] for r in test_records]
+        test_ds = encode_data(test_texts, test_labels)
+        test_loader = DataLoader(test_ds, batch_size=args.batch_size * 2, shuffle=False)
+        test_probs = []
+        with torch.no_grad():
+            for batch in test_loader:
+                b_ids, b_mask, _ = [b.to(device) for b in batch]
+                outputs = best_model(b_ids, attention_mask=b_mask)
+                test_probs.extend(torch.softmax(outputs.logits, dim=1)[:, 1].cpu().tolist())
+        test_metrics = compute_metrics(test_probs, test_labels)
+        summary["test_metrics"] = test_metrics
+        with open(os.path.join(args.output_dir, "test_metrics.json"), "w") as f:
+            json.dump(test_metrics, f, indent=2)
+        print(f"Test Acc: {test_metrics['accuracy']:.2f}% | Macro-F1: {test_metrics['macro_f1']:.2f}% | ECE: {test_metrics['ece']:.2f}%")
+
+    with open(os.path.join(args.output_dir, "eval_summary.json"), "w") as f:
+        json.dump(summary, f, indent=2)
 
     print(f"\nTraining completed. Best Validation Macro-F1: {best_val_f1:.2f}%. Output saved to {args.output_dir}")
 

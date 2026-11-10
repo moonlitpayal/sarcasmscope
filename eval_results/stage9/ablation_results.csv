@@ -1,12 +1,12 @@
-AblationConfiguration,AblatedFeatureComponent,MacroF1,SarcasmRecall,Accuracy,DeltaMacroF1,ScientificFinding
-"Full SARcasmScope Hybrid (All 10 components)","None (Full Model)",56.57,57.23,56.63,"0.00%","Reference complete architecture"
-"w/o Linguistic Incongruity Engine","Intra-sentential polarity clash & rhetorical rules",54.80,52.40,55.10,"-1.77%","Loss of fine-grained polarity opposition detection"
-"w/o Contextual Incongruity Engine","Dialogue divergence S(U) - S(C)",55.20,53.80,55.40,"-1.37%","Loss of parent tweet / multi-turn conversational cues"
-"w/o Word N-Grams","Word unigram and bigram lexicons",55.90,56.10,56.00,"-0.67%","Marginal drop; subwords compensate for word tokens"
-"w/o Character N-Grams","Character n-grams of lengths 3-5",54.60,51.90,54.80,"-1.97%","Substantial drop in sub-lexical morphological sensitivity"
-"w/o Subword Token Hashing","Subword chunk hashes (lengths 3-6)",48.20,28.40,54.10,"-8.37%","Critical component; severe recall degradation on OOV words"
-"w/o Indic Morphological Normalizer","Devanagari and Telugu suffix stripping",54.38,53.10,54.60,"-2.19%","Agglutinative words in Marathi and Telugu fail token match"
-"w/o Romanized Phonetic Folding","Grapheme elongation collapse & phonetic folding",54.72,52.80,55.00,"-1.85%","Elongated words in Hinglish (soooo, kyuuun) miss matches"
-"w/o Dialogue Context Input","Setting context = '' uniformly",55.10,54.20,55.30,"-1.47%","Conversational sitcom turns (MaSaC) lose context polarity"
-"w/o Temperature Calibration","Setting T = 1.0 without logit bounds",56.10,57.00,56.20,"-0.47%","ECE increases from 35.10% to 42.88%; overconfident flips"
-"w/o Calibrated Feature Fusion (Subwords only)","Linear fusion w1..w4 disabled",56.86,58.19,56.90,"+0.29%","Slight raw F1 parity but specificity drops to 55.79% with higher risk"
+AblationConfiguration,AblatedFeatureComponent,Accuracy,Precision,Recall,MacroF1,Specificity,ConfECE,BrierScore,NLL,DeltaAccuracy,DeltaMacroF1,DeltaNLL
+"Full SARcasmScope Hybrid (All components)","Reference 3-stage calibrated framework",68.03,67.09,60.5,67.56,74.5,1.36,0.2005,0.5826,+0,+0,+0
+"w/o WordLex Expert","Disable WordLex base expert (useWord=false)",64.02,61.3,60.12,63.77,67.38,4.49,0.2161,0.6208,-4.01,-3.79,+0.0382
+"w/o CharSub Expert","Disable CharSub base expert (useChar=false)",66.96,65.1,61.46,66.62,71.69,4.73,0.2136,0.6154,-1.07,-0.94,+0.0328
+"w/o Linguistic Engine Logit","Disable Stage 2 linguistic posterior (useLinguistic=false)",67.05,61.51,76.69,67,58.77,2.22,0.2033,0.5914,-0.98,-0.56,+0.0088
+"w/o Incongruity Index Feature","Zero incongruity_index meta-feature (useIncongruity=false)",68.03,67.09,60.5,67.56,74.5,1.21,0.2004,0.5824,+0,+0,-0.0002
+"w/o Lexical Coverage Feature","Zero lexical_coverage meta-feature (useCoverage=false)",68.12,67.24,60.5,67.64,74.67,1.61,0.2006,0.5828,+0.09,+0.08,+0.0002
+"w/o Conversational Context","Mask dialogue context to empty string (useContext=false)",64.29,63.98,52.02,63.33,74.83,4.32,0.2137,0.6136,-3.74,-4.23,+0.031
+"w/o Indic Morphological Stemmer","Disable Devanagari/Telugu suffix stripping (useMorph=false)",68.03,67.09,60.5,67.56,74.5,1.34,0.2002,0.5816,+0,+0,-0.001
+"w/o Romanized Phonetic Folding","Disable elongation & phonetic folding (usePhonetic=false)",68.12,66.88,61.46,67.71,73.84,0.77,0.2001,0.5823,+0.09,+0.15,-0.0003
+"w/o Word Bigrams","Disable bg: word bigram features (useBigrams=false)",68.83,67.94,61.66,68.39,75,2.97,0.2011,0.5841,+0.8,+0.83,+0.0015
+"w/o Temperature Scaling (T=1.0)","Disable validation T*=0.845 calibration (useCalibration=false)",68.03,67.09,60.5,67.56,74.5,2.28,0.2013,0.5856,+0,+0,+0.003

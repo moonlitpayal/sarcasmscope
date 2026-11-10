@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
+import { createSeededPRNG } from "../engine/textFeatures";
 
 interface QuantumOrbProps {
   intensity?: number;
@@ -68,8 +69,9 @@ export function QuantumOrb({ intensity = 0.5, isSarcastic = null }: QuantumOrbPr
     const particleCount = 140;
     const pGeo = new THREE.BufferGeometry();
     const pPos = new Float32Array(particleCount * 3);
+    const particleRng = createSeededPRNG(42);
     for (let i = 0; i < particleCount * 3; i++) {
-      pPos[i] = (Math.random() - 0.5) * 5.5;
+      pPos[i] = (particleRng() - 0.5) * 5.5;
     }
     pGeo.setAttribute("position", new THREE.BufferAttribute(pPos, 3));
     const pMat = new THREE.PointsMaterial({

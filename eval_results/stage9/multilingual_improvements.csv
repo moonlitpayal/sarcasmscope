@@ -1,6 +1,6 @@
-Language,SampleCount,BaselineLinguisticMacroF1,BaselineLinguisticRecall,EnhancedHybridMacroF1,EnhancedHybridRecall,AbsoluteF1Gain,AbsoluteRecallGain,LinguisticEnhancementMechanism
-"English",745,38.12,3.45,57.24,58.12,+19.12%,+54.67%,"Intra-sentence sentiment contrast + context divergence + rhetorical markers"
-"Hindi-English (Hinglish)",194,36.45,2.80,55.80,56.40,+19.35%,+53.60%,"Romanized phonetic folding ([c]{3,}->c) + colloquial Hindi markers (arre, wah, kya baat)"
-"Marathi (Devanagari)",75,37.20,3.10,56.10,55.20,+18.90%,+52.10%,"Devanagari agglutinative suffix stripping (-च्या, -ने, -तील, -मध्ये) restoring root lemmas"
-"Telugu (Dravidian)",109,35.80,2.10,54.90,53.80,+19.10%,+51.70%,"Telugu inflectional declension normalizer (-లో, -తో, -కు, -వారు) + natural 15.7% class prior"
-"Unified Multilingual",1123,37.59,3.08,56.57,57.23,+18.98%,+54.15%,"Full calibrated feature-fusion architecture with selective epistemic abstention"
+Language,SampleCount,V2LinguisticAccuracy,V2LinguisticMacroF1,V2LinguisticRecall,HybridAccuracy,HybridPrecision,HybridRecall,HybridMacroF1,HybridSpecificity,HybridECE,AbsoluteMacroF1Gain,AbsoluteRecallGain
+"English",745,51.01,37.33,4.38,71.54,72.17,68.22,71.48,74.74,4.03,+34.15,+63.84
+"Hindi-English (Hinglish)",194,48.45,32.64,0,47.42,48.84,42,47.33,53.19,15.57,+14.69,+42
+"Marathi",75,50.67,33.63,0,62.67,62.16,62.16,62.66,63.16,1.29,+29.03,+62.16
+"Telugu",109,84.4,45.77,0,84.4,0,0,45.77,100,5.77,+0,+0
+"Unified Multilingual",1123,53.78,37.59,3.08,68.03,67.09,60.5,67.56,74.5,1.36,29.97,57.42

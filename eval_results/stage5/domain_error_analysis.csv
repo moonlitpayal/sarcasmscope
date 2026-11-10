@@ -1,6 +1,6 @@
-Dataset,Domain,SampleCount,Accuracy,Precision,Recall,MacroF1,Specificity,ErrorPattern
-"ACL_2020_Twitter_Sarcasm","Social Media (Twitter)",343,49.85,48.43,85.28,44.45,17.78,"Hashtags and short ironic assertions"
-"Misra_Arora_News_Headlines","Journalistic Headlines",399,55.14,56.85,41.71,54.3,68.5,"Deadpan juxtaposition without emotional markers"
-"IIITD_MaSaC_CodeMixed","Multi-Party TV Dialogue",181,48.62,75,9.09,39.58,96.34,"Discourse context divergence & punchline timing"
-"L3Cube_MahaEmotions","Social Media (Marathi)",73,49.32,0,0,33.03,100,"Inflected verbal endings & informal Marathi morphology"
-"IIIT_Hyderabad_Telugu_Sarcasm","Social Media (Telugu)",108,84.26,0,0,45.73,100,"Class imbalance & low surface sentiment contrast"
+Dataset,SampleCount,Accuracy,Precision,Recall,MacroF1,Specificity
+"ACL_2020_Twitter_Sarcasm",343,65.01,65.03,57.06,64.6,72.22
+"Misra_Arora_News_Headlines",399,77.44,77.39,77.39,77.44,77.5
+"IIITD_MaSaC_CodeMixed",181,48.07,53.52,38.38,47.87,59.76
+"L3Cube_MahaEmotions",73,58.9,61.29,51.35,58.71,66.67
+"IIIT_Hyderabad_Telugu_Sarcasm",108,84.26,0,0,45.73,100

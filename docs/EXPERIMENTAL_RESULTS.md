@@ -1,78 +1,68 @@
 # SARcasmScope — Unified Experimental Results & Empirical Analysis
 **Principal Investigator:** Payal Mehta (`payal.12620246@vit.edu`)  
-**Project:** SARcasmScope: A Calibrated Feature-Fusion Framework for Context-Aware Sarcasm Detection in Multilingual and Code-Mixed Text  
+**Source of Truth:** `eval_results/stage9/master_summary.json` & `eval_results/stage9/*.csv`
 
 ---
 
-## 1. Primary Held-Out Test Evaluation Matrix (N = 1,123)
+## 1. Frozen Held-Out Test Evaluation Matrix (`test.jsonl`, $N = 1,123$)
 
-Evaluated on the completely independent, frozen held-out test split (1,123 samples across 5 datasets). No hyperparameters or feature weights were fitted on this partition.
+Evaluated in a single pass on frozen `eval_results/independent/test.jsonl` (519 Sarcastic, 604 Literal). Zero test-set hyperparameter tuning or weight updates.
 
-| Model / System Identifier | Architecture / Backbone | Params | Accuracy (%) | Precision (%) | Recall (%) | Macro-F1 (%) | Specificity (%) | ROC-AUC | PR-AUC | Conf-ECE (%) | Brier Score | Latency (P95) |
-|:---|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **System A** | Stage 2 Linguistic Engine | 0 | 53.61 | 47.78 | 1.95 | 36.85 | 98.41 | 0.5230 | 0.4720 | 23.40 | 0.3090 | 0.18 ms |
-| **System B** | Sparse Word N-Grams (1-2) | ~5K | 58.15 | 55.08 | 51.52 | 57.73 | 63.92 | 0.5980 | 0.5410 | 36.40 | 0.3720 | 0.22 ms |
-| **System C** | Character N-Grams (3-5) | ~6K | 56.72 | 53.33 | 51.72 | 56.43 | 61.05 | 0.5840 | 0.5290 | 36.90 | 0.3750 | 0.35 ms |
-| **System D** | Subword N-Gram Chunks | ~7.5K | 57.17 | 53.80 | 54.51 | 57.06 | 59.49 | 0.5910 | 0.5360 | 37.10 | 0.3800 | 0.24 ms |
-| **System E (Ours)** | **SARcasmScope Calibrated Hybrid** | **<10M eq.** | **56.63** | **53.11** | **55.93** | **56.57** | **57.25** | **0.5880** | **0.5330** | **35.10** | **0.3786** | **0.26 ms** |
-| **System F (Server)** | MuRIL Multilingual Transformer | 237M | 57.35 | 53.86 | 60.19 | 57.32 | 54.87 | 0.6010 | 0.5490 | 28.40 | 0.3640 | 85.4 ms |
-
----
-
-## 2. Statistical Significance & Confidence Intervals
-
-### 1,000-Iteration Bootstrap 95% Confidence Intervals (Held-Out Test Set)
-- **SARcasmScope Macro-F1:** $[53.84\%, 59.29\%]$
-- **SARcasmScope Accuracy:** $[53.78\%, 59.57\%]$
-- **SARcasmScope Recall:** $[51.52\%, 60.19\%]$
-
-### McNemar's Paired Chi-Square Significance Tests
-- **System E (Hybrid) vs System A (Linguistic-Only):**
-  - Contingency Table: $n_{01} = 405$ (Hybrid correct, Linguistic wrong), $n_{10} = 371$ (Linguistic correct, Hybrid wrong)
-  - $\chi^2 = 38.64, \quad p < 0.0001$ (**Statistically Significant** at $\alpha = 0.001$)
-- **System E (Hybrid) vs System D (Subword-Only):**
-  - $\chi^2 = 1.14, \quad p = 0.285$ (Comparable accuracy, with Hybrid providing calibrated confidence and selective abstention)
+| Model Identifier | Params | Accuracy (%) | Precision (%) | Recall (%) | Macro-F1 (%) | Specificity (%) | ROC-AUC | PR-AUC | Conf-ECE (%) | Brier | NLL | Latency (P95) | Status |
+|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---|
+| `Majority_Class_Literal` | 0 | 53.78 | 0.00 | 0.00 | 34.97 | 100.00 | 0.5000 | 0.4691 | 46.22 | 0.4622 | 12.7698 | < 0.01 ms | MEASURED |
+| `v1_Prev_Symbolic` (Nov 7) | 0 | 53.52 | 28.57 | 0.39 | 35.21 | 99.17 | 0.5101 | 0.5102 | 34.98 | 0.3707 | 1.0957 | 0.112 ms | MEASURED |
+| `v2_Symbolic_Linguistic` | 0 | 53.78 | 50.00 | 3.08 | 37.59 | 97.35 | 0.5087 | 0.5121 | 23.36 | 0.3075 | 0.9010 | 1.509 ms | MEASURED |
+| `WordLex_1_2` | 8,000 | 68.39 | 67.30 | 61.46 | 67.96 | 74.34 | 0.7324 | 0.6901 | 2.80 | 0.2081 | 0.6021 | 0.200 ms | MEASURED |
+| `CharSub_3_5` | 8,000 | 65.36 | 63.21 | 59.92 | 65.01 | 70.03 | 0.7294 | 0.6652 | 2.11 | 0.2090 | 0.6029 | 0.378 ms | MEASURED |
+| `Statistical_OOF_Ensemble` | 16,000 | 69.55 | 69.11 | 61.66 | 69.06 | 76.32 | 0.7582 | 0.7024 | 4.99 | 0.2016 | 0.5876 | 0.881 ms | MEASURED |
+| `Uncalibrated_Hybrid_T1` | 16,006 | 68.03 | 67.09 | 60.50 | 67.56 | 74.50 | 0.7536 | 0.7015 | 2.28 | 0.2013 | 0.5856 | 2.856 ms | MEASURED |
+| **`SARcasmScope_Calibrated_Hybrid`** | **16,006** | **68.03** | **67.09** | **60.50** | **67.56** | **74.50** | **0.7535** | **0.7014** | **1.36** | **0.2005** | **0.5826** | **2.856 ms** | **MEASURED** |
+| `MuRIL_FineTuned_GPU` | 237M | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | `NOT_EXECUTED_LOCALLY` |
+| `XLM_RoBERTa_GPU` | 278M | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | `NOT_EXECUTED_LOCALLY` |
 
 ---
 
-## 3. Systematic 9-Point Ablation Study
+## 2. Bootstrap Confidence Intervals & Paired McNemar Significance
 
-Evaluates the marginal contribution of each linguistic, contextual, and statistical component:
+### 1,000-Iteration Bootstrap 95% CIs (`Seed = 42`)
+- **SARcasmScope Calibrated Hybrid:** Accuracy `[65.36%, 70.79%]`, Macro-F1 `[64.79%, 70.29%]`, Precision `[62.89%, 71.24%]`, Recall `[56.00%, 64.77%]`, Conf-ECE `[1.05%, 4.54%]`.
+- **`v2` Symbolic Linguistic:** Accuracy `[50.93%, 56.81%]`, Macro-F1 `[35.73%, 39.66%]`, Recall `[1.69%, 4.68%]`.
 
-| Configuration ID | Ablation Variant | Accuracy (%) | Sarcasm Recall (%) | Macro-F1 (%) | Conf-ECE (%) | $\Delta$ Macro-F1 |
-|:---:|:---|:---:|:---:|:---:|:---:|:---:|
-| 0 | **Full Hybrid Model (SARcasmScope)** | **56.63** | **55.93** | **56.57** | **35.10** | **0.00** |
-| 1 | w/o Linguistic Incongruity Features | 56.99 | 56.13 | 56.95 | 39.80 | +0.38 |
-| 2 | w/o Contextual Incongruity Features | 56.81 | 55.73 | 56.76 | 35.40 | +0.19 |
-| 3 | w/o Word N-Gram Features | 58.15 | 51.52 | 58.13 | 36.40 | +1.56 |
-| 4 | w/o Character N-Gram Features | 56.72 | 51.72 | 56.43 | 36.90 | -0.14 |
-| 5 | w/o Indic Morphological Normalization | 54.41 | 48.97 | 54.38 | 37.50 | -2.19 |
-| 6 | w/o Romanized Phonetic Normalization | 55.48 | 51.13 | 55.39 | 36.20 | -1.18 |
-| 7 | w/o Lexical Coverage Density $C(x)$ | 56.10 | 54.12 | 55.98 | 35.80 | -0.59 |
-| 8 | w/o Temperature Calibration ($T=1.0$) | 56.63 | 55.93 | 56.57 | 38.90 | 0.00 |
-| 9 | w/o Dialogue Context Turns | 55.83 | 53.51 | 55.77 | 35.60 | -0.80 |
-
-### Key Findings from Ablation Analysis:
-1. **Indic Normalization Impact:** Disabling Indic morphological suffix stripping causes a sharp **$2.19\%$ drop in Macro-F1** and reduces sarcasm recall from $55.93\%$ to $48.97\%$, demonstrating the necessity of morphological stemming in morphologically rich Indic languages.
-2. **Word N-Gram Pruning:** Removing word n-grams yields a $+1.56\%$ gain due to eliminating lexical collinearity and training-set vocabulary overfitting.
-3. **Calibration Advantage:** Temperature scaling ($T^* = 1.15 \to 1.50$) lowers Expected Calibration Error by **$3.80\%$** without altering thresholded rank order.
+### McNemar Tests (`Calibrated Hybrid` vs Baselines)
+- **Overall Accuracy vs `v2` ($N=1,123$):** $\chi^2 = 55.20, p < 0.0001, OR = 2.07, g = 0.175$ ($n_{01}=309, n_{10}=149$).
+- **Sarcasm Recall vs `v2` ($N=519$):** $\chi^2 = 290.16, p < 0.0001, OR = 100.33, g = 0.490$ ($n_{01}=301, n_{10}=3$).
+- **Overall Accuracy vs `v1` ($N=1,123$):** $\chi^2 = 56.44, p < 0.0001, OR = 2.08$ ($n_{01}=314, n_{10}=151$).
+- **Overall Accuracy vs `Majority` ($N=1,123$):** $\chi^2 = 54.02, p < 0.0001, OR = 2.04$ ($n_{01}=314, n_{10}=154$).
+- **Overall Accuracy vs `Statistical_OOF_Ensemble` ($N=1,123$):** $\chi^2 = 3.94, p = 0.0472, OR = 0.59, g = 0.131$ ($n_{01}=24, n_{10}=41$). Stat OOF leads on unweighted 0.50-threshold accuracy (`+1.52%`), whereas Calibrated Hybrid reduces **Conf-ECE by 3.67×** (`4.99% -> 1.36%`) and improves proper scoring (`NLL 0.5876 -> 0.5826`, `Brier 0.2016 -> 0.2005`).
 
 ---
 
-## 4. Selective Prediction & Risk-Coverage Profile
+## 3. Systematic 11-Configuration Runtime Ablation Study (`ablation_results.csv`)
 
-Under the selective classification framework (Geifman & El-Yaniv, 2017), the system abstains on low-confidence or high-epistemic-uncertainty samples:
+| Configuration | Accuracy (%) | Recall (%) | Macro-F1 (%) | Specificity (%) | Conf-ECE (%) | NLL | $\Delta$ MF1 |
+|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Full SARcasmScope Hybrid** | **68.03** | **60.50** | **67.56** | **74.50** | **1.36** | **0.5826** | **0.00** |
+| w/o WordLex Expert | 64.02 | 60.12 | 63.77 | 67.38 | 4.49 | 0.6208 | **-3.79** |
+| w/o CharSub Expert | 66.96 | 61.46 | 66.62 | 71.69 | 4.73 | 0.6154 | **-0.94** |
+| w/o Linguistic Engine Logit | 67.05 | 76.69 | 67.00 | 58.77 | 2.22 | 0.5914 | **-0.56** |
+| w/o Incongruity Index Feature | 68.03 | 60.50 | 67.56 | 74.50 | 1.21 | 0.5824 | 0.00 |
+| w/o Lexical Coverage Feature | 68.12 | 60.50 | 67.64 | 74.67 | 1.61 | 0.5828 | +0.08 |
+| w/o Conversational Context | 64.29 | 52.02 | 63.33 | 74.83 | 4.32 | 0.6136 | **-4.23** |
+| w/o Indic Morphological Stemmer | 68.03 | 60.50 | 67.56 | 74.50 | 1.34 | 0.5816 | 0.00 |
+| w/o Romanized Phonetic Folding | 68.12 | 61.46 | 67.71 | 73.84 | 0.77 | 0.5823 | +0.15 |
+| w/o Word Bigrams | 68.83 | 61.66 | 68.39 | 75.00 | 2.97 | 0.5841 | +0.83 |
+| w/o Temperature Scaling ($T=1.0$) | 68.03 | 60.50 | 67.56 | 74.50 | 2.28 | 0.5856 | 0.00 |
 
-| Rejection Threshold ($\tau$) | Empirical Coverage (%) | Accepted Samples | Abstained Samples | Selective Accuracy (%) | Selective Macro-F1 (%) | Selective Risk (%) |
+---
+
+## 4. Selective Prediction & Risk-Coverage Profile (`risk_coverage.csv`)
+
+| Threshold ($\tau$) | Coverage (%) | Accepted | Abstained | Selective Acc (%) | Selective MF1 (%) | Risk (%) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| 0.45 | 96.88 | 1,088 | 35 | 57.08 | 57.01 | 42.92 |
-| 0.50 | 89.40 | 1,004 | 119 | 58.17 | 58.09 | 41.83 |
-| 0.55 | 77.20 | 867 | 256 | 59.86 | 59.74 | 40.14 |
-| **0.58 (Default)** | **68.66** | **771** | **352** | **61.48** | **61.34** | **38.52** |
-| 0.60 | 62.42 | 701 | 422 | 62.62 | 62.49 | 37.38 |
-| 0.65 | 45.95 | 516 | 607 | 65.50 | 65.29 | 34.50 |
-| 0.70 | 28.76 | 323 | 800 | 70.28 | 70.04 | 29.72 |
-| 0.75 | 14.87 | 167 | 956 | 76.65 | 76.22 | 23.35 |
-| 0.80 | 5.34 | 60 | 1,063 | 83.33 | 82.91 | 16.67 |
-
-*Finding:* At default threshold $\tau = 0.58$, SARcasmScope achieves **61.48% selective accuracy** across 68.66% coverage, reliably identifying the most ambiguous samples for human review or secondary transformer verification.
+| 0.00 | 100.00 | 1,123 | 0 | 68.03 | 67.56 | 31.97 |
+| 0.10 | 83.53 | 938 | 185 | 71.86 | 71.32 | 28.14 |
+| 0.20 | 67.68 | 760 | 363 | 73.95 | 73.21 | 26.05 |
+| **0.35 (Default)** | **45.68** | **513** | **610** | **80.31** | **78.92** | **19.69** |
+| 0.50 | 28.32 | 318 | 805 | 87.42 | 85.17 | 12.58 |
+| 0.60 | 19.32 | 217 | 906 | 88.48 | 84.69 | 11.52 |

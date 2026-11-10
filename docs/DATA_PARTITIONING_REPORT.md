@@ -15,7 +15,7 @@ To guarantee rigorous scientific reproducibility and eliminate data leakage, a s
 
 ```
 Total Ingested Records across 5 Datasets:  5,712
-Exact / Near-Duplicates Filtered:            112
+Exact Duplicates Filtered Pre-Split:         112
 Total Valid Unique Records Partitioned:    5,600
   ├── Training Set (60.23%):               3,373 records (eval_results/independent/train.jsonl)
   ├── Validation Set (19.71%):             1,104 records (eval_results/independent/val.jsonl)
@@ -28,7 +28,10 @@ CROSS-SPLIT LEAKAGE VERIFICATION:
   - Conversation Group Overlap (Train ∩ Val):  0 (0.00%) [PASS]
   - Conversation Group Overlap (Train ∩ Test): 0 (0.00%) [PASS]
   - Conversation Group Overlap (Val ∩ Test):   0 (0.00%) [PASS]
-  - VERIFIED STATUS: ZERO DATA LEAKAGE GUARANTEED
+  - Near-Duplicate Audit (3-shingle Jaccard >= 0.80, eval/stage9_audit.ts):
+      13 near-duplicate pairs corpus-wide (8 cross-split pairs:
+      5 Train-Test, 1 Train-Val, 2 Val-Test; 8 conflicting-label pairs),
+      all inside IIITD_MaSaC_CodeMixed recurrent short sitcom dialogue turns.
 ```
 
 ---
@@ -40,7 +43,7 @@ CROSS-SPLIT LEAKAGE VERIFICATION:
 | **ACL 2020 Twitter Sarcasm** | Social Media Dialogue | English | Ghosh et al., ACL 2020 (`EducationalTestingService/sarcasm`) | Binary: `SARCASM` vs `NOT_SARCASM` with multi-turn conversational context | **FULLY COMPATIBLE:** Gold-standard binary sarcasm with context. |
 | **Misra News Headlines** | News Headlines | English | Misra & Arora, 2019 (`rishabhmisra/News-Headlines-Dataset`) | Binary: `1` (*The Onion*) vs `0` (*Huffington Post*) | **FULLY COMPATIBLE:** Editorial ground-truth satire. |
 | **IIIT Delhi MaSaC** | TV Sitcom Dialogue (*Sarabhai vs Sarabhai*) | Hindi-English Code-Mixed | Bedi et al., IEEE TAFFC 2021 (`LCS2-IIITD/MSH-COMICS`) | Utterance-level binary `1` vs `0` with Cohen's Kappa $\kappa = 0.81$ | **FULLY COMPATIBLE:** Spoken dialogue with episode grouping. |
-| **IIIT-H Telugu Sarcasm** | Telugu Social Media | Telugu | Marreddy et al., LREC 2022 (`mounikaiiith/Telugu-Sarcasm`) | Native binary annotation: `yes` vs `no` | **FULLY COMPATIBLE:** Native Telugu text with extreme class imbalance (1.1% prevalence in wild). |
+| **IIIT-H Telugu Sarcasm** | Telugu Social Media | Telugu | Marreddy et al., LREC 2022 (`mounikaiiith/Telugu-Sarcasm`) | Native binary annotation: `yes` vs `no` | **FULLY COMPATIBLE:** Native Telugu text with natural class imbalance (15.7% sarcastic in extracted 542-record benchmark subset). |
 | **L3Cube-MahaEmotions** | Twitter Social Media | Marathi | Kulkarni et al., 2023 (`l3cube-pune/MarathiNLP`) | Multi-class Emotion (11 categories: `Sarcasm`, `Neutral`, `Anger`, `Sadness`, etc.) | **RESTRICTED COMPATIBILITY:** Multi-class emotion dataset. Only confirmed `Sarcasm` and `Neutral` controls retained. |
 
 ### Critical Annotation Incompatibility in Multi-Class Emotion Data
@@ -53,8 +56,10 @@ In `L3Cube-MahaEmotions`, annotators selected a single dominant emotion. Tweets 
 
 ## 3. Deduplication & Dialogue Grouping Methodology
 
-### 3.1 Exact and Normalized Deduplication
-Before splitting, normalized text keys (lowercase, punctuation/whitespace collapsed) were constructed across the entire corpus. A total of **112 duplicate entries** (re-tweets, syndicated headlines, identical conversational turns) were removed. Leaving duplicate records across splits would create severe test-set contamination.
+### 3.1 Exact Deduplication & Stage 9 Near-Duplicate Disclosure
+Before splitting, normalized text keys (lowercase, punctuation/whitespace collapsed) were constructed across the entire corpus, removing **112 exact duplicate entries** (re-tweets, syndicated headlines, identical conversational turns) so zero identical normalized texts or `conversation_id` groups cross any split boundary.
+
+Additionally, an exhaustive Stage 9 character 3-shingle similarity audit (`eval/stage9_audit.ts`, Jaccard $\ge 0.80$) identified **13 near-duplicate pairs corpus-wide** (`8` cross-split: `5` train–test, `1` train–val, `2` val–test; `8` conflicting-label pairs), all concentrated within `IIITD_MaSaC_CodeMixed` short sitcom utterances due to strict episode-level `conversation_id` grouping across recurring catchphrases in separate episodes. These counts are documented candidly in `eval_results/stage9/dataset_audit.csv` and `eval_results/stage9/master_summary.json` without post-hoc re-splitting to preserve frozen test-set integrity.
 
 ### 3.2 Dialogue Grouping to Prevent Conversational Leakage
 In conversational datasets (such as MaSaC and Twitter), utterances often belong to the same dialogue thread (e.g. `E58-D5` in MaSaC, where Sahil, Indu, and Maya speak sequentially).
@@ -101,4 +106,5 @@ The following reproducible files have been generated:
 3. `eval_results/independent/val.jsonl` — 1,104 validated validation records.
 4. `eval_results/independent/test.jsonl` — 1,123 held-out test records.
 5. `eval_results/independent/split_summary.csv` — Exact per-dataset and per-split distribution table.
-6. `eval_results/independent/leakage_audit.csv` — Full leakage verification matrix with seed documentation.
+6. `eval_results/independent/leakage_audit.csv` — Exact and conversation-group leakage verification matrix.
+7. `eval_results/stage9/dataset_audit.csv` & `eval_results/stage9/master_summary.json` — Exhaustive 3-shingle Jaccard $\ge 0.80$ near-duplicate audit (`13` corpus pairs / `8` cross-split / `5` train-test).

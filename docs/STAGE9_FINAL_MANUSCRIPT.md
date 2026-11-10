@@ -1,162 +1,98 @@
 # SARcasmScope: A Calibrated Feature-Fusion Framework for Context-Aware Sarcasm Detection in Multilingual and Code-Mixed Text
 
-**Payal Mehta**  
-School of Computer Science and Engineering, Vellore Institute of Technology, Vellore, Tamil Nadu, India  
-Email: `payal.12620246@vit.edu`  
-Repository: `https://github.com/moonlitpayal/sarcasmscope`  
+**Manuscript Status:** *Technical Verification Draft — Pending Five-Author Reconciliation & Co-Author Approval Before Submission*  
+**Codebase & Stage 9 Audit Maintainer:** Payal Mehta (`payal.12620246@vit.edu`), School of Computer Science and Engineering, Vellore Institute of Technology, Vellore, Tamil Nadu, India  
+**Authorship Governance Notice (Pre-Submission Blocker):** The original working manuscript lists **five co-authors with the project advisor/collaborator designated as corresponding author**. Final author list, author order, CRediT statements, corresponding-author designation, and approval by all five co-authors **must be finalized** before journal submission.  
+Repository: `https://github.com/moonlitpayal/sarcasmscope`
 
 ---
 
 ## Abstract
 
-Detecting sarcasm in colloquial, multilingual, and code-mixed social media text is a notoriously challenging problem in natural language processing and affective computing. While massively parameterized multilingual transformer models (e.g., Google's MuRIL, XLM-RoBERTa) demonstrate high capacity on formal corpora, they suffer from prohibitive computational overhead ($> 80\text{ ms}$ latency), excessive memory requirements, and severe probability miscalibration on out-of-distribution code-mixed dialects. Conversely, hand-crafted symbolic incongruity rules offer full interpretability and sub-millisecond execution, but suffer catastrophic recall collapse on open-vocabulary corpora ($1.37\% - 3.08\%$ recall). 
-
-In this work, we propose **SARcasmScope**, an anti-fragile, calibrated feature-fusion framework that bridges this divide. SARcasmScope synergizes: (1) client-side linguistic incongruity analysis, (2) Indic morphological suffix normalization for Devanagari and Telugu, (3) Romanized phonetic folding for unstandardized Hinglish orthography, (4) regularized statistical subword token representations, and (5) post-hoc temperature-scaled probability calibration with epistemic uncertainty abstention ($\tau = 0.58$).
-
-We evaluate SARcasmScope across **5,600 independently partitioned, deduplicated records** from five established benchmark corpora (ACL 2020 Twitter Sarcasm, Misra-Arora Headlines, IIITD MaSaC Hinglish Sitcoms, L3Cube MahaEmotions Marathi, and IIIT Hyderabad Telugu Sarcasm). On a strictly frozen held-out test split ($N = 1,123$), SARcasmScope rescues sarcasm recall from **$3.08\%$ to $57.23\%$** ($56.57\%$ Macro-F1), matching the generalization performance of a 237M-parameter MuRIL transformer ($57.32\%$ Macro-F1) within $0.75\%$, while operating in **$0.124\text{ ms}$ mean inference latency (P95: $0.205\text{ ms}$)** directly inside client web runtimes with zero server dependencies. Paired McNemar contingency tests confirm that SARcasmScope's sarcasm recall recovery on sarcastic samples is highly statistically significant ($\chi^2 = 277.03, p < 0.0001$, Odds Ratio = 282.0), while selective abstention elevates classification accuracy to **$61.48\%$** across $68.66\%$ coverage.
-
-**Keywords:** Sarcasm Detection, Computational Linguistics, Multilingual NLP, Code-Mixed Text, Hinglish, Marathi, Telugu, Feature Fusion, Calibration, Selective Classification.
+Detecting sarcasm in noisy, multilingual, and code-mixed social communication poses a severe trade-off between symbolic interpretability and open-vocabulary generalization. Handcrafted rule engines preserve high specificity (`97.35%–99.17%`) on literal inputs but suffer catastrophic recall collapse on independent benchmarks (`0.39%` recall in `v1`, `3.08%` in `v2` on $N=1,123$). Meanwhile, massive transformer models depend on GPU servers unavailable in privacy-preserving offline client browsers. In this work, we formulate and validate **SARcasmScope**, a non-circular **3-Stage Calibrated Stacked Feature-Fusion Framework** running 100% client-side in TypeScript (`16,006` effective parameters; `405.36 KB` artifact). Stage 1 fits regularized sublinear TF-IDF sparse logistic experts (`WordLex_1_2` with Indic morphological stems, Romanized phonetic keys, emoji markers, and dialogue context tokens; and `CharSub_3_5` char n-grams) exclusively on `train.jsonl` ($N=3,373$) alongside a deterministic linguistic incongruity engine. Stage 2 learns a MAP Ridge logistic meta-learner on 5-fold group-stratified train out-of-fold predictions (`dataset__conversation_id`). Stage 3 fits scalar temperature scaling ($T^*=0.845$) and a selective confidence gate ($\tau^*=0.35$) strictly on held-out `val.jsonl` ($N=1,104$). Evaluated once on frozen `test.jsonl` ($N=1,123$ spanning five public corpora in English, Hinglish, Marathi, and Telugu), SARcasmScope lifts performance from `53.78%` Accuracy / `37.59%` Macro-F1 / `3.08%` Recall (`v2`) to **`68.03%` Accuracy**, **`67.56%` Macro-F1**, **`60.50%` Recall**, and **`0.7535` ROC-AUC** (McNemar $\chi^2 = 55.20$ Acc, $\chi^2 = 290.16$ Rec, $p < 0.0001$), reduces **Conf-ECE by 3.67× (`4.99% -> 1.36%`)** versus uncalibrated statistical stacking, elevates accepted-subset accuracy to **`80.31%`** (`45.68%` coverage at $\tau^*=0.35$), and executes on commodity CPUs at **`2.856 ms` P95** (`1.632 ms` mean) latency.
 
 ---
 
-## 1. Introduction & Research Motivation
+## 1. Introduction & Reconciliation Motivation
 
-Sarcasm is an affective, pragmatic linguistic phenomenon wherein the speaker intentionally conveys an illocutionary meaning that starkly contradicts the literal semantic interpretation of the utterance (Joshi et al., 2015). Sarcasm serves diverse communicative functions—including ridicule, humor, coping, and social critique—frequently marked in spoken language by acoustic modulations such as exaggerated pitch contours and vowel lengthening. In text-based digital discourse, however, these acoustic cues are absent, compelling human readers to rely on rhetorical markers, incongruity, and conversational context (Maynard & Greenwood, 2014; Ghosh et al., 2020).
+Sarcasm conveys an intended meaning opposite to literal valence using intra-utterance contradiction, dialogue turn opposition, rhetorical exaggeration, and cultural world knowledge (Joshi et al., 2015; Ghosh et al., 2020). In South Asian online spaces (Hinglish, Marathi, Telugu), surface lexical rules struggle against non-standardized transliteration, agglutinative inflections, and deadpan banter.
 
-Automated sarcasm detection is critical for downstream NLP tasks, including opinion mining, brand reputation monitoring, customer support triage, and political discourse analysis. In South Asian linguistic spaces, online discourse is predominantly **multilingual** and **code-mixed**, frequently combining Hindi and English into colloquial *Hinglish*, or employing regional Indo-Aryan (Marathi) and Dravidian (Telugu) languages. Detecting sarcasm in these environments presents severe scientific bottlenecks:
-1. **Unstandardized Transliteration:** Hinglish text is written in the Latin alphabet without standardized orthography, producing extreme lexical variance (e.g., *bohot*, *bahut*, *bohoooot*).
-2. **Agglutination and Complex Inflection:** Languages like Marathi and Telugu exhibit rich suffixation and case-marking systems that split static vocabulary dictionaries.
-3. **Severe Overconfidence of Transformers:** Deep multilingual transformers (e.g., MuRIL, XLM-RoBERTa) require substantial compute, exhibit high latency ($> 80\text{ ms}$), and suffer from severe miscalibration on dialectal shifts.
-4. **Recall Failure of Pure Symbolic Systems:** Handcrafted rule-based engines achieve near-zero recall ($1.37\% - 3.08\%$) on real-world text due to dictionary out-of-vocabulary mismatches.
-
-To resolve these limitations, this paper introduces **SARcasmScope**, a lightweight, calibrated feature-fusion framework that operates entirely client-side.
+Equally critical for scientific rigor is separating closed-loop diagnostic checks from true out-of-sample evaluation:
+1. On our initial 30-item internal benchmark (`BENCHMARK_CORPUS`), the November 7 symbolic predictor (`v1` `prevPredict`) scored `66.67%` Acc / `100.00%` Prec / `33.33%` Rec / `62.50%` Macro-F1 (`TP=5, FP=0, TN=15, FN=10`), and rule expansions (`v2`) reached `96.67%` Acc / `100.00%` Rec.
+2. When evaluated on independent public test data (`test.jsonl`, $N=1,123$), `v1` collapsed to `0.39%` recall (`35.21%` MF1) and `v2` to `3.08%` recall (`37.59%` MF1). Moreover, because an earlier legacy file (`RESULTS_STATUS_AND_AUDIT.md`) is absent from the workspace, all historical numbers were independently recomputed end-to-end.
 
 ---
 
-## 2. Research Questions
+## 2. Corpus Provenance, Splits & Leakage Audit (`5,600` Records)
 
-This study investigates four primary scientific questions:
-- **RQ1 (Generalization vs Efficiency):** Can a hybrid architecture combining symbolic incongruity, Indic morphology, phonetic folding, and statistical subwords match the empirical generalization of 237M-parameter transformers on low-resource code-mixed sarcasm detection while executing within sub-millisecond CPU latency?
-- **RQ2 (Recall Recovery):** To what extent does sub-lexical morphological normalization rescue sarcasm recall over handcrafted rule systems on open-vocabulary corpora?
-- **RQ3 (Calibration & Abstention):** Does post-hoc temperature scaling enable effective selective epistemic abstention to mitigate risk on ambiguous social media text?
-- **RQ4 (Adversarial Anti-Fragility):** How robust is the feature-fusion representation against typographical transpositions, vowel lengthenings, and emoji stripping?
+All records derive from five published corpora (`eval/split_independent_datasets.ts`, seed `42`; `112` exact normalized duplicates removed pre-split from `5,712` raw candidates):
+1. **`ACL_2020_Twitter_Sarcasm`** (Ghosh et al., 2020, *FigLang/ACL*; Research-Only Twitter Terms): $1,716$ (`1,029 / 343 / 344`) — English conversational replies with preceding parent tweet `context` (`100%` populated).
+2. **`Misra_Arora_News_Headlines`** (Misra & Arora, 2023, *AI Open*; Public Domain / CC0): $1,999$ (`1,199 / 399 / 401`) — *Editorial news satire* (*The Onion* vs *HuffPost*, `context=""`). Framed explicitly as journalistic satire rather than conversational social-media sarcasm.
+3. **`IIITD_MaSaC_CodeMixed`** (Bedi et al., 2023/2021, *IEEE TAFFC*, $\kappa = 0.81$; Research Purpose Only): $974$ (`599 / 181 / 194`) — *Isolated text sitcom utterances* (`text` with `context=""`; episode `conversation_id` used strictly for atomic train/val/test split grouping, with surrounding turn text and audio/video prosody omitted).
+4. **`L3Cube_MahaEmotions`** (Kowtal & Joshi, 2025, *PACLIC 39*; built on MahaSent, Kulkarni et al., 2021; CC-BY-4.0): $369$ (`221 / 73 / 75`) — *Restricted emotion-taxonomy subset*: only explicit `Sarcasm` ($n=185$) vs `Neutral` ($n=184$) labels retained (excluding `Anger/Disgust`/`Sadness`). Because L3Cube's `train.csv` used CoTR LLM synthetic labeling while `test.csv` is manual gold, all Neutral controls and ~93% of `Sarcasm` rows come from CoTR-annotated splits; treated strictly as an exploratory proxy.
+5. **`IIIT_Hyderabad_Telugu_Sarcasm`** (Marreddy et al., 2023, *ACM TALLIP*; Research Only): $542$ (`325 / 108 / 109`) — Telugu posts retaining `15.7%` natural positive skew (`15.60%` in `test.jsonl`).
 
----
-
-## 3. Related Work & Research Gap
-
-### 3.1 Sarcasm Detection in Monolingual Text
-Early approaches relied on surface lexical features, punctuation markers, and sentiment polarity contrasts (Davidov et al., 2010; González-Ibáñez et al., 2011). Joshi et al. (2015) formalized explicit and implicit incongruity, demonstrating that intra-utterance sentiment reversal is a primary indicator of sarcasm. Ghosh et al. (2020) demonstrated that modeling conversational context (preceding discussion turns) significantly improves sarcasm disambiguation over isolated sentence classification.
-
-### 3.2 Multilingual and Code-Mixed Processing
-Processing Indian languages and code-mixed discourse requires handling non-standardized orthography, phonetic variation, and morphological complexity (Bali et al., 2014). Bedi et al. (2021) introduced the MaSaC dataset, establishing that multi-party conversational sarcasm in Hindi-English code-mixed dialogue relies on acoustic, visual, and textual cues. Kulkarni et al. (2021) and Sreeja & Reddy (2020) explored affective modeling in Marathi and Telugu, identifying severe performance degradation when models trained on formal text encounter colloquial social media interactions.
-
-### 3.3 Model Calibration & Selective Prediction
-Guo et al. (2017) demonstrated that modern deep neural networks are prone to severe miscalibration, outputting overconfident probabilities that do not reflect true posterior likelihoods. Geifman & El-Yaniv (2017) introduced selective classification (risk-coverage trade-off), wherein models are permitted to abstain from prediction when epistemic uncertainty is high.
+**Leakage Audit (`dataset_integrity.csv`):** Cross-split exact normalized text overlap $= 0$; cross-split `conversation_id` overlap $= 0$. Exhaustive pairwise word 3-shingle Jaccard $\ge 0.80$ detects **`13` near-duplicate pairs corpus-wide (`8` cross-split, `5` train-test, `8` label-conflicting)** exclusively inside `IIITD_MaSaC_CodeMixed` short dialogue turns. Both `eval_results/stage9/` and synchronized `eval_results/independent/` CSVs report exact held-out $N=1,123$ per-dataset counts (`344 + 401 + 194 + 75 + 109`).
 
 ---
 
-## 4. Dataset Inventory & Partitioning Protocol
+## 3. 3-Stage Calibrated Feature-Fusion Architecture (`src/engine/`)
 
-We evaluate SARcasmScope across **5,600 unique, deduplicated records** from five established corpora:
-1. **ACL 2020 Twitter Sarcasm (Ghosh et al., 2020):** 1,716 English microblogs with preceding conversational context.
-2. **Misra & Arora News Headlines (Misra & Arora, 2019/2023):** 1,999 headline pairs from *The Onion* (satirical) and *HuffPost* (literal).
-3. **IIITD MaSaC (Bedi et al., 2021):** 974 Hindi-English code-mixed utterances from sitcom dialogues.
-4. **L3Cube MahaEmotions (Kulkarni et al., 2021):** 369 Marathi posts written in Devanagari script.
-5. **IIIT Hyderabad Telugu Sarcasm (Sreeja & Reddy, 2020):** 542 Telugu posts retaining the natural class balance ($15.7\%$ sarcastic, $84.3\%$ literal).
+### 3.1 Stage 1: Base Experts (Fitted Strictly on `train.jsonl`, $N = 3,373$)
+- **`WordLex_1_2` ($V=8,000$):** Sublinear L2-normalized TF-IDF logistic regression ($\text{epochs}=70, \text{lr}=0.05, L_2=10^{-4}$) over unigrams, conservative Indic suffixes (`st:` via `stemIndicToken`), Romanized phonetic keys (`ph:` via `normalizeRomanized`), emojis (`em:`), bigrams (`bg:`), and dialogue context tokens (`cw:`, `cw_st:`).
+- **`CharSub_3_5` ($V=8,000$):** Sublinear L2-normalized TF-IDF logistic regression ($\text{epochs}=70, \text{lr}=0.05, L_2=2\times 10^{-4}$) over boundary-marked character 3–5 grams.
+- **`LinguisticEngine` (`sarcasmEngine.ts`):** Deterministic score (`idx = 0.40*clash + 0.35*ctxClash + 0.15*min(contrastCount,2) + 0.10*min(intensifierCount,2)`), lexical coverage $C(x)$, script detection, and Code-Mixing Index (CMI).
 
-### 4.1 Leakage-Free Stratified Splitting (Seed 42)
-Partitions were generated using deterministic Mersenne Twister seed `42`:
-- **Train (`train.jsonl`):** 3,373 samples (60.23%)
-- **Validation (`val.jsonl`):** 1,104 samples (19.71%)
-- **Held-Out Test (`test.jsonl`):** 1,123 samples (20.06%, strictly frozen)
+### 3.2 Stage 2: 5-Fold Group-Stratified OOF MAP Ridge Meta-Learner
+Using folds grouped by `dataset__conversation_id` inside `train.jsonl` and Gaussian prior $\boldsymbol{\mu}_{\text{prior}}=[0.5,0.5,0.4,0.2,0.2], \lambda=0.25$:
+$$z_{\text{raw}}(x, c) = w_0 + w_1 \cdot \text{logit}(P_{\text{word}}, 4) + w_2 \cdot \text{logit}(P_{\text{char}}, 4) + w_3 \cdot \text{logit}(P_{\text{ling}}, 3) + w_4 \cdot \text{Idx}_{\text{incongruity}} + w_5 \cdot C(x)$$
+with fitted coefficients ($16,006$ total params; `405.36 KB` `trainedModelData.ts`): `w0=0.3483, w1=0.54817, w2=0.54648, w3=0.26486, w4=0.19418, w5=0.20441`.
 
-In the multi-turn dialogue corpus (MaSaC), conversational turns sharing an identical `dialogue_id` were preserved atomically within single splits, ensuring $0.00\%$ conversational narrative leakage. Automated audits verified $0.00\%$ cross-split text intersection and $0.00\%$ near-duplicate contamination ($Jaccard > 0.85$).
-
----
-
-## 5. The SARcasmScope Architecture
-
-SARcasmScope integrates five computational modules executed client-side in TypeScript:
-
-### 5.1 Linguistic Incongruity Engine
-Quantifies intra-sentential sentiment polarity contrast $\Delta_{\text{sent}}$, conversational divergence $\Delta_{\text{context}}$, punctuation hyperbole (multiple exclamations/question marks), and irony emojis ($\phi_{\text{emoji}}$).
-
-### 5.2 Indic Morphological Normalizer
-Strips common inflectional noun case markers and verbal aspect suffixes in Devanagari and Telugu scripts, mapping agglutinated surface forms back to root lemmas.
-
-### 5.3 Romanized Phonetic Folder
-Normalizes colloquial code-mixed Hinglish by collapsing vowel elongations ($[c_i]^{\ge 3} \to c_i$), standardizing informal phonetic transliterations, and normalizing common contraction patterns.
-
-### 5.4 Regularized Statistical Subwords
-Extracts subword character $n$-grams (lengths 3 to 6) hashed into a fixed-dimensional space, capturing root morphemes and robust sub-lexical representations even under unseen lexical variations.
-
-### 5.5 Calibrated Probability Fusion & Selective Classification
-Feature representations are fused into a bounded logit space ($[-3.0, +3.0]$) and calibrated via post-hoc temperature scaling ($T^* = 1.35$):
-
-$$\hat{p} = \frac{1}{1 + \exp\left(-\frac{z}{T^*}\right)}$$
-
-When the epistemic confidence $\kappa(\hat{p}) = 2|\hat{p} - 0.50| < \tau$ (with threshold $\tau = 0.58$), the model safely abstains, marking the prediction as **Uncertain**.
+### 3.3 Stage 3: Validation Temperature Scaling & Four Uncertainty Quantities (`val.jsonl`, $N = 1,104$)
+Minimizing validation NLL yields $T^* = 0.845$. Crucially, four non-interchangeable uncertainty constructs are separated in both implementation and reporting:
+1. **Calibrated Class Probability:** $P_{\text{fused}} = \sigma(z_{\text{raw}}/T^*) \in (0, 1)$, evaluated via Guo et al. (2017) 5-bin `Conf-ECE` over $\max(P, 1-P)$ (`1.36%`), `Class-ECE` (`2.80%`), `Brier` (`0.2005`), and `NLL` (`0.5826`). (Legacy heuristic overconfidence—where 1,106/1,123 items clustered in `[0.9-1.0]` with `0.428` error—is resolved in Stage 9: Bin 5 `[0.9-1.0]` now contains `68` samples with `0.930` mean confidence vs `0.956` empirical accuracy, error `0.026`.)
+2. **Decision Margin Confidence:** $\text{Confidence} = 2|P_{\text{fused}} - 0.5| \in [0, 1]$ (used exclusively for abstention gating, distinct from Stage-2 symbolic heuristic score).
+3. **Abstention Threshold ($\tau^*$):** $\tau^* = 0.35$ fitted on `val.jsonl` (`Uncertain` iff $\text{Confidence} < 0.35$, i.e., $P_{\text{fused}} \in (0.325, 0.675)$).
+4. **Selective Utility (`test.jsonl`):** `80.31%` Selective Accuracy (`78.92%` Selective Macro-F1; risk `31.97% -> 19.69%`) over **`45.68%` coverage** (`513/1,123` accepted predictions). (Geifman & El-Yaniv, 2017.)
 
 ---
 
-## 6. Experimental Results & Baselines (Held-Out Test, $N = 1,123$)
+## 4. Frozen Held-Out Test Results (`test.jsonl`, $N = 1,123$)
 
-| Model Architecture | Parameters | Execution Hardware | Latency (P95) | Accuracy | Precision | Recall | Macro-F1 | Specificity |
-|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| Majority Class (Literal) | 0 | CPU / Instant | $< 0.01\text{ ms}$ | 53.78% | 0.00% | 0.00% | 34.98% | 100.00% |
-| Linguistic-Only Engine | 0 | CPU / Single-Thread | $0.18\text{ ms}$ | 53.78% | 50.00% | 3.08% | 37.59% | 97.35% |
-| TF-IDF + Logistic Reg. | 3,500 | CPU / Single-Thread | $0.15\text{ ms}$ | 56.90% | 53.08% | 58.19% | 56.86% | 55.79% |
-| Word N-Grams (1-2) | 5,000 | CPU / Single-Thread | $0.22\text{ ms}$ | 56.81% | 52.98% | 58.19% | 56.77% | 55.63% |
-| Character N-Grams (3-5)| 6,000 | CPU / Single-Thread | $0.35\text{ ms}$ | 56.90% | 53.08% | 58.19% | 56.86% | 55.79% |
-| Subword Chunks | 7,500 | CPU / Single-Thread | $0.24\text{ ms}$ | 56.90% | 53.08% | 58.19% | 56.86% | 55.79% |
-| **SARcasmScope Hybrid** | **< 10M eq.** | **CPU / Client-Side** | **0.205 ms** | **56.63%** | **52.85%** | **57.23%** | **56.57%** | **56.13%** |
-| MuRIL Multilingual (GPU)| 237M | Google Colab T4 GPU | $85.4\text{ ms}$ | 57.35% | 53.86% | 60.19% | 57.32% | 54.87% |
-| XLM-RoBERTa (GPU) | 278M | Google Colab T4 GPU | $92.1\text{ ms}$ | 56.40% | 56.80% | 58.20% | 56.40% | 55.40% |
-
----
-
-## 7. Statistical Significance & Disentanglement
-
-- **Bootstrap 95% Confidence Interval for Macro-F1:** $[53.60\%, 59.42\%]$ based on 1,000 Monte Carlo resamples.
-- **McNemar Significance on Sarcastic Samples ($N = 519$):** The recovery of 281 additional sarcastic cases over the rule-based baseline is highly significant ($\chi^2 = 277.03, p < 0.0001$, Odds Ratio $= 282.0$, Cohen's $g = 0.496$).
-- **Overall Accuracy Shift ($N = 1,123$):** $\chi^2 = 1.79, p = 0.1806$. The overall accuracy difference is not statistically significant because the baseline's accuracy was inflated by trivial literal bias ($97.35\%$ specificity).
-- **Selective Classification Performance:** Epistemic uncertainty gating at $\tau = 0.58$ yields **$61.48\%$ selective accuracy** across **$68.66\%$ coverage**.
+| Model Identifier | Params | P95 Latency | Accuracy | Precision | Recall | Macro-F1 | ROC-AUC | Conf-ECE | NLL | Status |
+|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---|
+| Majority Class (Literal) | 0 | < 0.01 ms | 53.78% | 0.00% | 0.00% | 34.97% | 0.5000 | 46.22% | 12.7698 | Measured |
+| `v1_Prev_Symbolic` (Nov 7) | 0 | 0.112 ms | 53.52% | 28.57% | 0.39% | 35.21% | 0.5101 | 34.98% | 1.0957 | Measured |
+| `v2_Symbolic_Linguistic` | 0 | 1.509 ms | 53.78% | 50.00% | 3.08% | 37.59% | 0.5087 | 23.36% | 0.9010 | Measured |
+| `WordLex_1_2` | 8,000 | 0.200 ms | 68.39% | 67.30% | 61.46% | 67.96% | 0.7324 | 2.80% | 0.6021 | Measured |
+| `CharSub_3_5` | 8,000 | 0.378 ms | 65.36% | 63.21% | 59.92% | 65.01% | 0.7294 | 2.11% | 0.6029 | Measured |
+| `Statistical_OOF_Ensemble` | 16,000 | 0.881 ms | 69.55% | 69.11% | 61.66% | 69.06% | 0.7582 | 4.99% | 0.5876 | Measured |
+| `Uncalibrated_Hybrid_T1` | 16,006 | 2.856 ms | 68.03% | 67.09% | 60.50% | 67.56% | 0.7536 | 2.28% | 0.5856 | Measured |
+| **`SARcasmScope_Calibrated_Hybrid`** | **16,006** | **2.856 ms** | **68.03%** | **67.09%** | **60.50%** | **67.56%** | **0.7535** | **1.36%** | **0.5826** | **Measured** |
+| `MuRIL_FineTuned_GPU` | 237M | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | `NOT_EXECUTED_LOCALLY` |
+| `XLM_RoBERTa_GPU` | 278M | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | `NOT_EXECUTED_LOCALLY` |
 
 ---
 
-## 8. Feature Ablation & Robustness Perturbation
+## 5. Statistical Validation, Per-Language Breakdown, Ablations & Stress Tests
 
-Controlled perturbations on 100 randomly sampled test instances demonstrated outstanding anti-fragility:
-- **Typographical Noise (character transposition):** $100\%$ prediction stability ($0$ flips).
-- **Vowel & Grapheme Elongation (*sooo, waaaah*):** $98\%$ stability ($2$ flips) due to phonetic normalizer folding.
-- **Emoji Stripping:** $100\%$ stability ($0$ flips).
-- **Punctuation Stripping:** $100\%$ stability ($0$ flips).
-- **Dialogue Context Removal:** $99\%$ stability ($1$ flip).
-- **Token Permutation:** $98\%$ stability ($2$ flips).
-
-Ablation confirmed that Subword Token Hashing contributes the largest single margin ($-8.37\%$ Macro-F1 drop when removed), followed by Indic Morphological Normalization ($-2.19\%$), Character N-Grams ($-1.97\%$), and Romanized Phonetic Folding ($-1.85\%$).
-
----
-
-## 9. Conclusion
-
-SARcasmScope resolves the fundamental conflict between computational efficiency and generalization in multilingual sarcasm detection. By unifying symbolic incongruity analysis, Indic morphological normalization, phonetic folding, and statistical subwords within a temperature-calibrated fusion framework, SARcasmScope matches the empirical accuracy of 237M-parameter transformers while executing client-side in under $0.21\text{ ms}$. The complete repository, deterministic evaluation scripts, and dataset partitions are publicly available at `https://github.com/moonlitpayal/sarcasmscope`.
+- **Bootstrap CIs & McNemar:** 95% CIs (`[65.36%, 70.79%]` Acc; `[64.79%, 70.29%]` MF1; `[1.05%, 4.54%]` Conf-ECE). McNemar vs `v2`: $\chi^2 = 55.20, p < 0.0001$ Acc; $\chi^2 = 290.16, p < 0.0001$ Rec. Vs `Statistical_OOF`: $\chi^2 = 3.94, p = 0.0472$ (where `Calibrated Hybrid` cuts Conf-ECE `4.99% -> 1.36%` and lowers NLL `0.5876 -> 0.5826`).
+- **Selective Abstention ($\tau^* = 0.35$):** **`80.31%` Selective Accuracy** (`78.92%` Macro-F1; risk `31.97% -> 19.69%`) over `45.68%` accepted coverage (`513/1,123`), rising to `87.42%` at $\tau=0.50$ (`28.32%` coverage).
+- **Per-Language & Calibration Scope Boundaries:** Aggregate `1.36%` Conf-ECE does **not** guarantee uniform sub-corpus calibration: English (`71.48%` MF1, `4.03%` Conf-ECE) and Marathi (`62.66%` MF1, `1.29%` Conf-ECE, on restricted `Sarcasm`-vs-`Neutral` subset) calibrate well, whereas text-only Hinglish (`47.33%` MF1, `15.57%` Conf-ECE) exhibits substantial miscalibration without audio/visual cues, and Telugu (`45.77%` MF1, `5.77%` Conf-ECE) suffers `0.00%` recall at the global `0.50` threshold under `15.60%` prevalence despite `0.7455` ROC-AUC and `0.1148` Brier.
+- **Ablations & Stress Suite:** Removing conversational context (`-4.23%` MF1) and `WordLex` (`-3.79%` MF1) cause the largest drops; removing `Linguistic` logit collapses specificity `74.50% -> 58.77%`. On $N=100$ perturbations (`seed=42`), spelling variation (`100%`), dialectal shift (`100%`), emoji removal (`99%`), punctuation removal (`98%`), code-mixing (`98%`), OOV (`97%`), and character transposition (`95%`) hold steady while vowel elongation (`75%`) and context removal (`70%`) expose genuine sensitivity.
+- **CPU Runtime & GPU Scope:** `1.632 ms` mean, `1.423 ms` median, `2.856 ms` P95, `70.53 MB` heap (`software_audit.csv`). Transformer scripts (`MuRIL`, `XLM-R`) remain `NOT_EXECUTED_LOCALLY` pending Colab GPU execution (`docs/COLAB.md`), and no parity claim with neural transformers is asserted here.
 
 ---
 
 ## References
 
-- Bali, K., et al. (2014). "I am borrowing ya mixing? An analysis of English-Hindi code-mixed social media content." *EMNLP 2014*.
-- Bedi, M., Kumar, S., & Akhtar, M. S. (2021). "Multi-modal Sarcasm Detection in Code-mixed Hindi-English Conversation." *EMNLP 2021*.
-- Davidov, D., Tsur, O., & Rappoport, A. (2010). "Semi-supervised recognition of sarcasm in Twitter and Amazon." *CoNLL 2010*.
-- Geifman, Y., & El-Yaniv, R. (2017). "Selective classification for deep neural networks." *NeurIPS 2017*.
-- Ghosh, D., Vajpayee, A., & Muresan, S. (2020). "A Report on the 2020 Sarcasm Detection Shared Task." *ACL FLP 2020*.
-- González-Ibáñez, R., Muresan, S., & Wacholder, N. (2011). "Identifying sarcasm in Twitter: a closer look." *ACL 2011*.
-- Guo, C., Pleiss, G., Sun, Y., & Weinberger, K. Q. (2017). "On calibration of modern neural networks." *ICML 2017*.
-- Joshi, A., Sharma, V., & Bhattacharyya, P. (2015). "Harnessing context incongruity for sarcasm detection." *ACL 2015*.
-- Khanuja, S., et al. (2021). "MuRIL: Multilingual Representations for Indian Languages." *arXiv:2103.15637*.
-- Kulkarni, A., Mandhane, M., & Joshi, R. (2021). "L3Cube-MahaCorpus and MahaEmotions: Marathi Emotion and Sentiment Datasets." *LREC 2022*.
-- Maynard, D., & Greenwood, M. A. (2014). "Who cares about sarcastic tweets? Investigating the impact of sarcasm on sentiment analysis." *LREC 2014*.
-- Misra, R., & Arora, P. (2019/2023). "Sarcasm Detection using News Headlines Dataset." *AI Open*.
-- Sreeja, K., & Reddy, P. (2020). "Sarcasm Detection in Telugu Twitter Data." *LREC Workshop 2020*.
+- Bedi, M., Kumar, S., Akhtar, M. S., & Chakraborty, T. (2023). Multi-modal Sarcasm Detection and Humor Classification in Code-mixed Conversations. *IEEE Transactions on Affective Computing*, 14(2), 1363–1375. DOI: `10.1109/TAFFC.2021.3083522`.
+- Geifman, Y., & El-Yaniv, R. (2017). Selective Classification for Deep Neural Networks. *Advances in Neural Information Processing Systems 30 (NIPS / NeurIPS 2017)*, pp. 4878–4887.
+- Ghosh, D., Vajpayee, A., & Muresan, S. (2020). A Report on the 2020 Sarcasm Detection Shared Task. *Proceedings of the Second Workshop on Figurative Language Processing (FigLang 2020)*, pp. 1–11. DOI: `10.18653/v1/2020.figlang-1.1`.
+- Guo, C., Pleiss, G., Sun, Y., & Weinberger, K. Q. (2017). On Calibration of Modern Neural Networks. *Proceedings of ICML 2017*, PMLR Vol. 70, pp. 1321–1330.
+- Joshi, A., Sharma, V., & Bhattacharyya, P. (2015). Harnessing Context Incongruity for Sarcasm Detection. *Proceedings of ACL 2015 (Short Papers)*, pp. 757–762 (`P15-2124`).
+- Kowtal, N., & Joshi, R. (2025). L3Cube-MahaEmotions: A Marathi Emotion Recognition Dataset with Synthetic Annotations using CoTR prompting and Large Language Models. *Proceedings of PACLIC 39*, pp. 419–427 (`2025.paclic-1.38`; DOI: `10.48550/arXiv.2506.00863`). *(MahaSent base: Kulkarni, A., et al., WASSA 2021, pp. 213–220.)*
+- Marreddy, M., Oota, S. R., Vakada, L. S., Chinni, V. C., & Mamidi, R. (2023). Am I a Resource-Poor Language? Data Sets, Embeddings, Models and Analysis for four different NLP Tasks in Telugu Language. *ACM Transactions on Asian and Low-Resource Language Information Processing (TALLIP)*, 22(1), Article 18, 1–34. DOI: `10.1145/3531535`.
+- Misra, R., & Arora, P. (2023). Sarcasm detection using news headlines dataset. *AI Open*, 4, 13–18. DOI: `10.1016/j.aiopen.2023.01.001`.
+- Ribeiro, M. T., Singh, S., & Guestrin, C. (2016). "Why Should I Trust You?": Explaining the Predictions of Any Classifier. *Proceedings of ACM SIGKDD 2016*, pp. 1135–1144. DOI: `10.1145/2939672.2939778`.
+- Wolpert, D. H. (1992). Stacked Generalization. *Neural Networks*, 5(2), 241–259. DOI: `10.1016/S0893-6080(05)80023-1`.

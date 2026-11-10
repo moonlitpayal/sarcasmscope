@@ -1,147 +1,73 @@
 # SARcasmScope: Comprehensive Scientific Evaluation & Experimental Analysis
-
 **Paper Title:** SARcasmScope: A Calibrated Feature-Fusion Framework for Context-Aware Sarcasm Detection in Multilingual and Code-Mixed Text  
-**Lead Investigator & Author:** Payal Mehta (`payal.12620246@vit.edu`)  
-**Evaluation Date:** November 7, 2026  
-**Status:** Reproducible Empirical Benchmark Report  
+**Codebase Maintainer / Audit Lead:** Payal Mehta (`payal.12620246@vit.edu`)  
+**Status:** Reproducible Empirical Benchmark Report (**Submission Blocked Until 5-Author Order, Corresponding Authorship & Dataset/GPU Scope Are Approved by All Co-Authors**)
 
 ---
 
 ## Executive Summary
-This document provides an independent, end-to-end experimental evaluation of the SARcasmScope system across 15 rigorous testing dimensions. All reported numbers are derived from executing the actual source code (`src/engine/sarcasmEngine.ts`) against a multi-script, multi-language ground-truth benchmark corpus ($N=30$ items across English, Hindi, Hinglish, Marathi, and Telugu).
 
-### Core Findings:
-1. **Classification Performance:** On the multi-language benchmark, SARcasmScope achieves **66.7% overall accuracy**, **100.0% precision** (zero false positives), **33.3% recall**, and **62.5% Macro-F1** (95% bootstrap confidence interval: $[44.4\%, 79.9\%]$).
-2. **Context Clashing Significance:** Ablation experiments demonstrate that discourse context clashing contributes a **+4.9% gain in Macro-F1** (Macro-F1 drops from $62.5\%$ to $57.6\%$ when context is disabled).
-3. **Calibration Validation:** Temperature scaling ($T=1.5$) successfully reduces Expected Calibration Error (ECE) from $0.2853$ ($T=0.5$) down to $0.2228$, with Negative Log-Likelihood (NLL) dropping from $1.6991$ to $0.7858$.
-4. **Inference Latency:** Median inference latency is **0.058 ms (58 microseconds)** per sentence. A full batch of 200 items executes in **12.43 ms**, proving the viability of client-side browser deployment.
-5. **Major Scientific Weakness:** The system displays high precision but low recall in regional languages where figurative sarcasm lacks explicit dictionary cues (Hindi Devanagari recall: $0\%$, Telugu recall: $0\%$).
-
----
-
-## 1. Feature-Wise Evaluation Table
-
-| Module / Feature | Functionality Tested | Execution Status | Empirical Result | Weakness / Limitation Identified |
-| :--- | :--- | :--- | :--- | :--- |
-| **Input Validation** | Empty, whitespace, 5000+ char strings | Executed | Handled safely | Empty string returns fallback probability (0.10) without throwing errors. |
-| **Incongruity Extractor** | Polarity clash between positive & negative cues | Executed | Clash detected ($1.0$) for opposing cues | Fails on sarcasm using pure figurative metaphor without surface positive words. |
-| **Context Clashing** | Target statement opposition to preceding context | Executed | $\Delta P = +0.28$ shift when context clashes | Context requires negative cue words to trigger discourse opposition. |
-| **Script Identifier** | Devanagari, Latin, Telugu Unicode blocks | Executed | 100% correct script mapping | Romanized Indic text mapped via token heuristic, not subword phonetic parser. |
-| **Code-Mix Index (CMI)** | Script and language alternation ratio | Executed | Correctly scales from 0.0% to 50.0% | Script-based CMI is 0% for Romanized Hindi written entirely in Latin characters. |
-| **Emoji Classifier** | Irony vs. positive/negative sentiment | Executed | 100% categorization of irony emojis | Mixed emojis (`😂🙄`) produce competing signals. |
-| **Temperature Scaler** | Post-hoc logit scaling ($T \in [0.2, 2.5]$) | Executed | ECE drops by $0.0625$ at $T=1.5$ | Temperature is static rather than class-conditionally learned via vector scaling. |
-| **Selective Abstention** | Rejection threshold $\tau$ triggering `"Uncertain"` | Executed | Accuracy increases from $66.7\%$ to $70.4\%$ | Coverage drops to $70\%$ when $\tau=0.60$. |
-| **Token Occlusion** | Leave-one-out sensitivity ($\Delta = P - P_{\setminus i}$) | Executed | Correctly ranks trigger tokens | Occlusion reflects model sensitivity, not necessarily causal discourse rationale. |
-| **Perturbation Suite** | 8 controlled social-media noise transforms | Executed | 100% classification stability on sample | Truncation and emoji removal cause probability drops of $\Delta = -0.24$. |
-| **Batch Processor** | 200 item multi-line processing + CSV export | Executed | 12.43 ms total execution time | Input limited to 200 items in browser memory. |
+This report documents two distinct evaluation tiers side-by-side so closed-loop development diagnostics are never conflated with independent held-out generalization:
+1. **Closed-Loop Diagnostic Suite (`BENCHMARK_CORPUS`, $N = 30$, 5 languages):**
+   - **Nov 7 `v1` Prev Symbolic (`prevPredict`):** **`66.67%` Accuracy, `100.00%` Precision, `33.33%` Recall, `62.50%` Macro-F1** (`TP=5, FP=0, TN=15, FN=10`, Conf-ECE `25.55%`, NLL `0.9770`). Missed 10/15 sarcastic examples due to strict surface rules.
+   - **Stage 2 `v2` Symbolic (`predict`):** `96.67%` Accuracy, `93.75%` Precision, `100.00%` Recall, `96.66%` Macro-F1 (`15/1/14/0`).
+   - **Stage 9 `Calibrated Hybrid` (`predictHybrid`):** `86.67%` Accuracy, `78.95%` Precision, `100.00%` Recall, `86.43%` Macro-F1 (`15/4/11/0`).
+2. **Independent Frozen Held-Out Test Split (`eval_results/independent/test.jsonl`, $N = 1,123$, 5 public corpora):**
+   - **`v1` Prev Symbolic:** `53.52%` Acc, `28.57%` Prec, `0.39%` Rec, `35.21%` Macro-F1 (`2/5/599/517`, `34.98%` Conf-ECE).
+   - **`v2` Symbolic Linguistic:** `53.78%` Acc, `50.00%` Prec, `3.08%` Rec, `37.59%` Macro-F1 (`16/16/588/503`, `23.36%` Conf-ECE).
+   - **`Statistical_OOF_Ensemble` (Level-1 WordLex+CharSub):** `69.55%` Acc, `69.11%` Prec, `61.66%` Rec, `69.06%` Macro-F1 (`320/143/461/199`, `4.99%` Conf-ECE, `0.5876` NLL).
+   - **`SARcasmScope_Calibrated_Hybrid` (3-Stage OOF + $T^*=0.845, \tau^*=0.35$):** **`68.03%` Accuracy** (`[65.36%, 70.79%]`), **`67.09%` Precision**, **`60.50%` Recall** (`[56.00%, 64.77%]`), **`67.56%` Macro-F1** (`[64.79%, 70.29%]`), **`74.50%` Specificity**, **`0.7535` ROC-AUC**, **`0.7014` PR-AUC**, **`1.36%` Conf-ECE** (`0.5826` NLL, `0.2005` Brier; `TP=314, FP=154, TN=450, FN=205`), and **`80.31%` selective accuracy** (`45.68%` coverage at $\tau^*=0.35$).
 
 ---
 
-## 2. Benchmark Classification Results & Confusion Matrix
+## 1. Feature-Wise Runtime Capabilities (`src/engine/`)
 
-### 2.1 Multilingual Benchmark Corpus ($N=30$)
-* **Ground-Truth Composition:** 15 Sarcastic ($y=1$), 15 Literal ($y=0$).
-* **Languages Covered:** English ($n=8$), Hindi ($n=6$), Hinglish ($n=6$), Marathi ($n=6$), Telugu ($n=4$).
+| Module / Feature | Source File | Verified Behavior & Measurement |
+|:---|:---|:---|
+| **NFKC & Punctuation Normalizer** | `src/engine/sarcasmEngine.ts` | Empty strings safely yield prior output without throwing exceptions; preserves exclamation/question emphasis. |
+| **Indic Morphological Stemmer** | `src/engine/sarcasmEngine.ts` | Strips conservative Devanagari/Telugu suffixes (`stemIndicToken`), generating `st:` keys in `WordLex_1_2` + symbolic rules. |
+| **Romanized Phonetic Folder** | `src/engine/sarcasmEngine.ts` | Collapses elongation & transliteration variants (`normalizeRomanized`), emitting `ph:` keys (`100%` spelling invariance test stability). |
+| **Unicode Script & CMI Analyzer** | `src/engine/sarcasmEngine.ts` | Identifies Devanagari, Telugu, Latin, Tamil, Bengali, Gujarati, etc. and computes Code-Mixing Index (`cmi`). |
+| **Level-1 Base Experts (`WordLex`, `CharSub`)** | `src/engine/statisticalModel.ts` | Sparse $V=8,000$ TF-IDF LR experts fitted exclusively on `train.jsonl` ($N=3,373$) via bit-identical `src/engine/textFeatures.ts`. |
+| **3-Stage Calibrated Stacking** | `src/engine/hybridFusion.ts` | 5-fold group OOF MAP Ridge meta-learner + validation temperature $T^*=0.845$ lowering Test Conf-ECE from `4.99%` to **`1.36%`**. |
+| **Selective Epistemic Gate** | `src/engine/hybridFusion.ts` | Confidence $= 2|P_{\text{fused}}-0.5| < \tau^* (0.35)$ yields `"Uncertain"`, boosting Test accuracy `68.03% -> 80.31%` at `45.68%` coverage. |
+| **LOTO Occlusion Attribution** | `src/engine/hybridFusion.ts` | Index-safe leave-one-token-out probability deltas ($\Delta_i = P - P_{\setminus i}$) exported in `explainability_results.csv`. |
+| **9-Perturbation Stress Suite** | `eval/run_stage9_master_execution.ts` | Deterministic seed-42 stress test on `testRecords` ($N=100$): 95–100% on 7 transforms, 75% on triple vowel elongation, 70% on context removal. |
+| **Latency & Memory Profile** | `eval_results/stage9/software_audit.csv` | Mean **`1.6319 ms`**, Median **`1.4230 ms`**, P95 **`2.8557 ms`**, P99 **`4.7743 ms`**; bundle **`405.36 KB`**, heap `70.53 MB`. |
 
-### 2.2 Confusion Matrix
+---
+
+## 2. Reconciled Closed-Loop ($N=30$) vs Frozen Independent Test ($N=1,123$)
+
+### 2.1 Historical Closed-Loop Confusion Matrix (`v1` Nov 7 on `BENCHMARK_CORPUS`, $N=30$)
 ```
                     Predicted Literal (0)   Predicted Sarcastic (1)
 Actual Literal (0)           15 (TN)                  0 (FP)
 Actual Sarcastic (1)         10 (FN)                  5 (TP)
 ```
-* **True Positives (TP):** 5
-* **False Positives (FP):** 0
-* **True Negatives (TN):** 15
-* **False Negatives (FN):** 10
+Accuracy $= 20/30 = 66.67\%$, Precision $= 5/5 = 100.00\%$, Recall $= 5/15 = 33.33\%$, Macro-F1 $= 62.50\%$.
 
-### 2.3 Aggregate Metrics
-* **Accuracy:** $66.7\%$
-* **Precision:** $100.0\%$
-* **Recall:** $33.3\%$
-* **F1 Score:** $50.0\%$
-* **Macro-F1:** $62.5\%$
-* **95% Bootstrap Confidence Interval:** $[44.4\%, 79.9\%]$
+### 2.2 Canonical Held-Out Confusion Matrix (`SARcasmScope_Calibrated_Hybrid` on `test.jsonl`, $N=1,123$)
+```
+                    Predicted Literal (0)   Predicted Sarcastic (1)
+Actual Literal (0)          450 (TN)                154 (FP)
+Actual Sarcastic (1)        205 (FN)                314 (TP)
+```
+Accuracy $= 764/1,123 = 68.03\%$, Precision $= 314/468 = 67.09\%$, Recall $= 314/519 = 60.50\%$, Specificity $= 450/604 = 74.50\%$, Macro-F1 $= 67.56\%$, Conf-ECE $= 1.36\%$, ROC-AUC $= 0.7535$.
 
----
-
-## 3. Language-Wise Disaggregated Performance
-
-| Language | Sample Size ($N$) | Accuracy (%) | Precision (%) | Recall (%) | F1 Score (%) | Macro-F1 (%) | Brier Score |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Marathi** | 6 | **83.3%** | 100.0% | **66.7%** | **80.0%** | **82.9%** | **0.1561** |
-| **English** | 8 | **75.0%** | 100.0% | **50.0%** | **66.7%** | **73.3%** | 0.2559 |
-| **Hinglish** | 6 | **66.7%** | 100.0% | 33.3% | 50.0% | 62.5% | 0.2975 |
-| **Hindi (Devanagari)** | 6 | 50.0% | 0.0% | 0.0% | 0.0% | 33.3% | 0.4020 |
-| **Telugu** | 4 | 50.0% | 0.0% | 0.0% | 0.0% | 33.3% | 0.2751 |
-
-**Analysis:**
-* Marathi and English achieve high Macro-F1 ($82.9\%$ and $73.3\%$) because their sarcasm lexicons contain dense coverage of idiomatic failure expressions (*"lai bhari"*, *"khup changla"*, *"brilliant"*, *"genius"*).
-* Hindi Devanagari and Telugu suffer from zero recall when figurative sarcasm does not match predefined root dictionary keys.
+### 2.3 Validation Calibration & Risk-Coverage Curve (`test.jsonl`)
+- **Validation Calibration (`val.jsonl`, $N=1,104$):** $T^* = 0.845$ minimizes validation NLL ($0.5798 \to 0.5777$); grid selects $\tau^* = 0.35$ (`81.02%`–`81.06%` selective accuracy across `~49.7%` coverage).
+- **Held-Out Test Risk-Coverage:**
+  - $\tau = 0.00$: `100.00%` cov, `68.03%` acc, `31.97%` risk
+  - $\tau = 0.20$: `67.68%` cov, `73.95%` acc, `26.05%` risk
+  - **$\tau^* = 0.35$ (Default):** **`45.68%` cov** ($513/1,123$), **`80.31%` acc** (`78.92%` MF1), **`19.69%` risk**
+  - $\tau = 0.50$: `28.32%` cov, `87.42%` acc, `12.58%` risk
+  - $\tau = 0.60$: `19.32%` cov, `88.48%` acc, `11.52%` risk
 
 ---
 
-## 4. Ablation Study Results
+## 3. Uncertainty Separation, Dataset Caveats, GPU Scope & Authorship Disclosures
 
-To evaluate the contribution of each algorithmic module, we systematically masked individual feature extractors across the 30-item benchmark:
-
-| Configuration | Accuracy (%) | Precision (%) | Recall (%) | F1 (%) | Macro-F1 (%) | $\Delta$ Macro-F1 |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Full SARcasmScope (All Features)** | **66.7%** | **100.0%** | **33.3%** | **50.0%** | **62.5%** | **Baseline** |
-| **Ablation 1: No Context Clashing** | 63.3% | 100.0% | 26.7% | 42.1% | 57.6% | **-4.9%** |
-| **Ablation 2: No Polarity Clash** | 63.3% | 100.0% | 26.7% | 42.1% | 57.6% | **-4.9%** |
-| **Ablation 3: No Intensifiers** | 66.7% | 100.0% | 33.3% | 50.0% | 62.5% | 0.0% |
-| **Ablation 4: No Irony Emoji Features**| 66.7% | 100.0% | 33.3% | 50.0% | 62.5% | 0.0% |
-
-**Scientific Interpretation:**
-Discourse context clashing and intra-sentential polarity clashing are the two most critical drivers of performance, each contributing a **4.9% improvement in Macro-F1**.
-
----
-
-## 5. Baseline Comparison
-
-| Baseline Architecture | Accuracy (%) | Macro-F1 (%) | Scientific Note |
-| :--- | :---: | :---: | :--- |
-| **Majority Class (Always Sarcastic)** | 50.0% | 33.3% | Predicts $y=1$ unconditionally. |
-| **Keyword Negativity Lookup Only** | 60.0% | 55.0% | Predicts $y=1$ if any negative word is present. High false alarm rate. |
-| **Irony Emoji Shortcut Only** | 60.0% | 52.4% | Predicts $y=1$ if irony emoji is present. Fails on text-only sarcasm. |
-| **SARcasmScope (Calibrated Feature-Fusion)** | **66.7%** | **62.5%** | **Outperforms heuristic baselines by +7.5% to +29.2% Macro-F1.** |
-
----
-
-## 6. Calibration & Selective Prediction
-
-### 6.1 Temperature Scaling Optimization
-* At $T=0.5$ (overconfident): $\text{ECE} = 0.2853$, $\text{Brier} = 0.2978$, $\text{NLL} = 1.6991$.
-* At $T=1.0$ (standard): $\text{ECE} = 0.2346$, $\text{Brier} = 0.2760$, $\text{NLL} = 0.9770$.
-* At $T=1.5$ (calibrated): $\text{ECE} = 0.2228$, $\text{Brier} = 0.2581$, $\text{NLL} = 0.7858$.
-
-### 6.2 Selective Risk-Coverage Trade-Off
-When the model is permitted to abstain ($\tau > 0$), selective accuracy improves:
-* **$\tau = 0.0$ (Full Coverage):** Coverage = $100\%$, Accuracy = $66.7\%$, Risk = $33.3\%$.
-* **$\tau = 0.2$:** Coverage = $93.3\%$, Accuracy = $67.9\%$, Risk = $32.1\%$.
-* **$\tau = 0.4$:** Coverage = $90.0\%$, Accuracy = **$70.4\%$**, Risk = **$29.6\%$**.
-* **$\tau = 0.6$:** Coverage = $70.0\%$, Accuracy = $66.7\%$, Risk = $33.3\%$.
-
----
-
-## 7. Latency and Computational Efficiency
-Benchmarked across 1,000 independent client-side executions:
-* **Minimum Latency:** 0.037 ms
-* **Median Latency:** 0.058 ms
-* **Mean Latency:** 0.069 ms
-* **95th Percentile ($P_{95}$):** 0.110 ms
-* **Maximum Latency:** 1.244 ms
-* **Batch Throughput:** 200 sentences in 12.43 ms (approx. 16,000 sentences/second).
-
----
-
-## 8. Academic Assessment for Scopus-Indexed NLP Journals
-
-### Candid Evaluation:
-* **Is the system functional?** Yes. It executes flawlessly with zero crashes, microsecond latency, zero false positives, and robust client-side explainability.
-* **Is the current experimental evidence ready for submission to a Q1/Q2 Scopus NLP journal?**
-  **Not yet.** While the software architecture and evaluation protocol are sound, a reputable journal (such as *IEEE Access*, *ACM TALIP*, or *Language Resources and Evaluation*) will reject the paper if it only evaluates a 30-sentence benchmark. 
-* **What is required before final submission:**
-  1. Fine-tune the provided MuRIL and XLM-RoBERTa transformer models on Google Colab using the full MaSaC dataset (approx. 1,500+ dialogues).
-  2. Compute McNemar's statistical significance test between SARcasmScope's calibrated predictions and standard BERT baselines.
-  3. Expand the regional lexicon (Hindi and Telugu) to resolve the recall bottleneck.
+- **Four Uncertainty Constructs:** (1) Calibrated class probability $P_{\text{fused}} = \sigma(z_{\text{raw}}/T^*) \in (0,1)$ with $T^*=0.845$ fitted by validation NLL (aggregate test `Conf-ECE = 1.36%`, Bin 5 `[0.9-1.0]` now `68` samples with `0.026` error vs legacy `1,106`-sample `0.428` defect; sub-corpus Hinglish remains `15.57%` Conf-ECE); (2) Margin confidence $\text{Confidence} = 2|P_{\text{fused}}-0.5| \in [0,1]$; (3) Abstention threshold $\tau^* = 0.35$ (`val.jsonl`); (4) Selective utility (`80.31%` selective acc @ `45.68%` coverage on `test.jsonl`).
+- **Dataset Construct Boundaries:** `L3Cube_MahaEmotions` (`Sarcasm` $n=185$ vs `Neutral` $n=184$, excluding anger/sadness) is an exploratory emotion-proxy subset largely from Kowtal & Joshi's (2025) CoTR-annotated training pool; `Misra_Arora` (`context=""`) tests editorial news satire; `IIITD_MaSaC` evaluates isolated utterances (`context=""`, no audio/video prosody). Both `eval_results/stage9/` and `eval_results/independent/` pass independent row-level recomputation (`eval/verify_independent_recomputation.ts`: `1,123/1,123`, `max|Δp|=0`).
+- **GPU & Legacy Files:** Deep neural baselines (`google/muril-base-cased`, `xlm-roberta-base`) pass `py_compile` + `--dry_run` and are marked **`NOT_EXECUTED_LOCALLY`** (no MuRIL parity claimed). `RESULTS_STATUS_AND_AUDIT.md` does not exist in the workspace. Final 5-author list & corresponding authorship await co-author approval before submission.

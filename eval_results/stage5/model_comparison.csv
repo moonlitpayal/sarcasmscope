@@ -1,6 +1,6 @@
 ModelArchitecture,Representation,Accuracy,Precision,Recall,MacroF1,Specificity,ConfidenceECE,ClassECE,BrierScore,NLL
-"Linguistic_Only","Handcrafted Lexicon + Morphology",53.26,47.37,1.75,36.27,98.3,24.44,24.52,0.3126,0.9213
-"Word_NGrams","Sparse Word N-Grams (1-2)",55.8,52.73,50.68,55.47,60.27,35.76,35.88,0.376,1.1643
-"Char_NGrams","Character N-Grams (3-5)",56.16,52.93,54.37,56.03,57.72,36.33,36.33,0.3772,1.1728
-"Subword_Chunks","Subword Chunks (3-6 chars)",55.25,52.04,52.04,55.05,58.06,36.99,37.07,0.3832,1.1888
-"Calibrated_Hybrid_Fusion","SARcasmScope Multi-Signal Fusion",54.89,51.91,44.85,54.11,63.67,35.1,35.1,0.3786,1.4609
+"Linguistic_Only_v2","Symbolic Lexicon + Indic Morph + Phonetic",53.26,47.37,1.75,36.27,98.3,24.44,24.52,0.3126,0.9213
+"WordLex_1_2","Word + Morph + Phonetic + Ctx TF-IDF LR",68.48,69.11,58.64,67.87,77.08,2.18,3.44,0.2027,0.5907
+"CharSub_3_5","Character 3-5 Shingles TF-IDF LR",66.12,65.49,57.86,65.62,73.34,1.83,2.6,0.2085,0.6035
+"Statistical_OOF_Ensemble","Logit Mean (WordLex + CharSub)",69.29,70.47,58.83,68.64,78.44,3.79,4.66,0.1986,0.5819
+"Calibrated_Hybrid_Fusion","3-Stage OOF MAP Ridge Fusion (T*=0.845)",68.21,68.47,59.03,67.65,76.23,4.08,4.93,0.1971,0.5777

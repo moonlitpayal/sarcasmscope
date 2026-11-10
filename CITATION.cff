@@ -1,13 +1,16 @@
 cff-version: 1.2.0
-message: "If you use SARcasmScope in your research, please cite it as below."
+message: "Repository citation metadata (see authorship note: final manuscript author list of 5 contributors and corresponding-author designation await co-author approval prior to submission)."
 title: "SARcasmScope: A Calibrated Feature-Fusion Framework for Context-Aware Sarcasm Detection in Multilingual and Code-Mixed Text"
-version: 1.0.0
-date-released: 2026-11-07
+version: 2.0.0
+date-released: 2026-11-10
 authors:
   - family-names: "Mehta"
     given-names: "Payal"
     email: "payal.12620246@vit.edu"
     affiliation: "Vellore Institute of Technology"
+# NOTE (Authorship Governance): Original manuscript draft lists five co-authors with
+# the project supervisor/collaborator as corresponding author. Add remaining four co-authors
+# and confirm final author order / corresponding-author contact before journal submission.
 keywords:
   - "sarcasm-detection"
   - "computational-linguistics"
@@ -23,10 +26,14 @@ keywords:
 license: "MIT"
 repository-code: "https://github.com/moonlitpayal/sarcasmscope"
 abstract: >-
-  SARcasmScope is an anti-fragile, calibrated feature-fusion framework that synergizes
-  client-side linguistic incongruity analysis, Indic morphological normalization,
-  Romanized phonetic folding, and regularized subword semantic representations.
-  Evaluated across 5,600 independently partitioned records from 5 established public
-  corpora, SARcasmScope improves independent sarcasm recall from 1.37% to 55.93%
-  (56.57% Macro-F1) on a frozen held-out test split (N = 1,123), with an inference latency
-  under 0.26 ms on standard CPU hardware.
+  SARcasmScope is a 3-stage calibrated stacked feature-fusion framework that
+  integrates Level-1 sparse WordLex (word 1-2 n-grams with Devanagari/Telugu
+  morphological stems, Romanized phonetic keys, and conversational context)
+  and CharSub (char 3-5) TF-IDF logistic regression base experts with a
+  deterministic linguistic incongruity engine via a 5-fold group-stratified
+  out-of-fold MAP Ridge meta-learner, followed by validation temperature scaling
+  (T*=0.845) and selective abstention (tau*=0.35). Evaluated once on the frozen
+  held-out test split (N=1,123 across 5 public corpora), SARcasmScope improves
+  performance from 3.08% to 60.50% recall (67.56% Macro-F1, 68.03% accuracy,
+  1.36% Conf-ECE; 80.31% selective accuracy across 45.68% coverage) at 2.856 ms
+  P95 (1.632 ms mean) client-side CPU latency.

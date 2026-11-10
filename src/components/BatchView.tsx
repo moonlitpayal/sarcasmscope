@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { predict, PredictionResult } from "../engine/sarcasmEngine";
+import {
+  predictHybrid,
+  HybridPredictionResult,
+  DEFAULT_FUSION_WEIGHTS,
+} from "../engine/hybridFusion";
 import { Layers, Download, CheckCircle2, AlertTriangle, HelpCircle, Filter } from "lucide-react";
 
 interface BatchViewProps {
@@ -20,11 +24,20 @@ great, another rainy Monday with traffic jams everywhere...
 
 export function BatchView({ temperature, abstainThreshold }: BatchViewProps) {
   const [textInput, setTextInput] = useState(DEFAULT_BATCH_INPUT);
-  const [results, setResults] = useState<PredictionResult[]>(() => {
+  const runPredict = (line: string) =>
+    predictHybrid(
+      line,
+      "",
+      undefined,
+      { ...DEFAULT_FUSION_WEIGHTS, temperature },
+      abstainThreshold
+    );
+
+  const [results, setResults] = useState<HybridPredictionResult[]>(() => {
     return DEFAULT_BATCH_INPUT.split("\n")
       .map((s) => s.trim())
       .filter(Boolean)
-      .map((t) => predict(t, "", temperature, abstainThreshold));
+      .map((t) => runPredict(t));
   });
   const [filterType, setFilterType] = useState<"all" | "sarcastic" | "literal" | "uncertain">("all");
   const [searchQuery, setSearchQuery] = useState("");
@@ -36,7 +49,7 @@ export function BatchView({ temperature, abstainThreshold }: BatchViewProps) {
       .filter(Boolean);
     if (!lines.length) return;
 
-    const evaluated = lines.map((line) => predict(line, "", temperature, abstainThreshold));
+    const evaluated = lines.map((line) => runPredict(line));
     setResults(evaluated);
   };
 
@@ -45,7 +58,10 @@ export function BatchView({ temperature, abstainThreshold }: BatchViewProps) {
     const headers = [
       "Text",
       "Verdict",
-      "P_Sarcastic",
+      "P_Fused",
+      "P_WordLex",
+      "P_CharSub",
+      "P_Linguistic",
       "Confidence",
       "Abstain",
       "Script",
@@ -56,7 +72,10 @@ export function BatchView({ temperature, abstainThreshold }: BatchViewProps) {
     const rows = results.map((r) => [
       `"${r.text.replace(/"/g, '""')}"`,
       r.verdict,
-      r.p_sarcastic.toFixed(3),
+      r.p_fused.toFixed(3),
+      r.p_word.toFixed(3),
+      r.p_char.toFixed(3),
+      r.p_linguistic.toFixed(3),
       r.confidence.toFixed(3),
       r.abstain ? "YES" : "NO",
       `"${r.language.primary_script}"`,
@@ -252,10 +271,10 @@ export function BatchView({ temperature, abstainThreshold }: BatchViewProps) {
                   <td className="py-3.5 px-4 text-center font-mono text-xs">
                     <span
                       className={
-                        row.p_sarcastic >= 0.5 ? "text-rose-400 font-semibold" : "text-emerald-400"
+                        row.p_fused >= 0.5 ? "text-rose-400 font-semibold" : "text-emerald-400"
                       }
                     >
-                      {row.p_sarcastic.toFixed(3)}
+                      {row.p_fused.toFixed(3)}
                     </span>
                   </td>
 

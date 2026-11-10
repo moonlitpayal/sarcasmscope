@@ -1,12 +1,15 @@
 import { useState } from "react";
 import {
-  predict,
-  computeOcclusion,
   PRESET_SAMPLES,
-  PredictionResult,
   OcclusionResult,
   PresetSample,
 } from "../engine/sarcasmEngine";
+import {
+  predictHybrid,
+  computeHybridOcclusion,
+  HybridPredictionResult,
+  DEFAULT_FUSION_WEIGHTS,
+} from "../engine/hybridFusion";
 import {
   Sparkles,
   AlertTriangle,
@@ -14,7 +17,6 @@ import {
   HelpCircle,
   ArrowRight,
   Info,
-  Maximize2,
   RefreshCw,
 } from "lucide-react";
 
@@ -34,19 +36,22 @@ export function StudioView({
   );
   const [context, setContext] = useState("ट्रेन 4 घंटे लेट थी");
   const [selectedPreset, setSelectedPreset] = useState<string>("🇮🇳 Hindi Sarcasm");
-  const [result, setResult] = useState<PredictionResult | null>(() =>
-    predict(
+  const activeWeights = { ...DEFAULT_FUSION_WEIGHTS, temperature };
+  const [result, setResult] = useState<HybridPredictionResult | null>(() =>
+    predictHybrid(
       "वाह क्या बात है, 4 घंटे ट्रेन लेट करने के लिए रेलवे को 21 तोपों की सलामी! 🙄",
       "ट्रेन 4 घंटे लेट थी",
-      temperature,
+      undefined,
+      activeWeights,
       abstainThreshold
     )
   );
   const [occlusion, setOcclusion] = useState<OcclusionResult | null>(() =>
-    computeOcclusion(
+    computeHybridOcclusion(
       "वाह क्या बात है, 4 घंटे ट्रेन लेट करने के लिए रेलवे को 21 तोपों की सलामी! 🙄",
       "ट्रेन 4 घंटे लेट थी",
-      temperature
+      temperature,
+      abstainThreshold
     )
   );
   const [hoveredToken, setHoveredToken] = useState<{
@@ -57,8 +62,9 @@ export function StudioView({
 
   const handleAnalyze = (newText = statement, newContext = context) => {
     if (!newText.trim()) return;
-    const res = predict(newText, newContext, temperature, abstainThreshold);
-    const occ = computeOcclusion(newText, newContext, temperature);
+    const w = { ...DEFAULT_FUSION_WEIGHTS, temperature };
+    const res = predictHybrid(newText, newContext, undefined, w, abstainThreshold);
+    const occ = computeHybridOcclusion(newText, newContext, temperature, abstainThreshold);
     setResult(res);
     setOcclusion(occ);
   };
@@ -223,11 +229,11 @@ export function StudioView({
                       Sarcastic Intent Detected
                     </div>
                     <span className="text-xs font-mono font-semibold px-2.5 py-1 rounded-md bg-rose-500/20 text-rose-300 border border-rose-500/30">
-                      {(result.p_sarcastic * 100).toFixed(1)}%
+                      {(result.p_fused * 100).toFixed(1)}%
                     </span>
                   </div>
                   <p className="text-xs text-rose-200/75">
-                    High cognitive incongruity detected. Surface positive vocabulary directly contradicts discourse sentiment.
+                    High cognitive incongruity detected across linguistic & subword experts.
                   </p>
                 </div>
               ) : (
@@ -238,11 +244,11 @@ export function StudioView({
                       Literal Statement
                     </div>
                     <span className="text-xs font-mono font-semibold px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                      {((1 - result.p_sarcastic) * 100).toFixed(1)}%
+                      {((1 - result.p_fused) * 100).toFixed(1)}%
                     </span>
                   </div>
                   <p className="text-xs text-emerald-200/75">
-                    Semantically congruent statement. Surface expressions align naturally with contextual discourse.
+                    Semantically congruent statement across surface cues and discourse context.
                   </p>
                 </div>
               )}
@@ -252,7 +258,7 @@ export function StudioView({
                 <div className="flex justify-between text-xs text-slate-400 font-mono">
                   <span>Literal (0.0)</span>
                   <span className="font-semibold text-slate-200">
-                    P(sarcastic) = {result.p_sarcastic.toFixed(3)}
+                    P_fused(sarcastic) = {result.p_fused.toFixed(3)}
                   </span>
                   <span>Sarcastic (1.0)</span>
                 </div>
@@ -260,7 +266,7 @@ export function StudioView({
                   <div
                     className="h-full rounded-full transition-all duration-500"
                     style={{
-                      width: `${Math.max(2, result.p_sarcastic * 100)}%`,
+                      width: `${Math.max(2, result.p_fused * 100)}%`,
                       background:
                         "linear-gradient(90deg, #10b981 0%, #3b82f6 40%, #eab308 70%, #f43f5e 100%)",
                     }}
@@ -272,10 +278,10 @@ export function StudioView({
               <div className="grid grid-cols-3 gap-3 pt-1">
                 <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80">
                   <span className="text-[11px] text-slate-400 uppercase font-medium">
-                    Sarcasm P
+                    Fused P(sarc)
                   </span>
                   <div className="text-lg font-bold text-slate-100 font-mono mt-0.5">
-                    {result.p_sarcastic.toFixed(3)}
+                    {result.p_fused.toFixed(3)}
                   </div>
                 </div>
 
@@ -295,6 +301,26 @@ export function StudioView({
                   <div className="text-lg font-bold text-indigo-300 font-mono mt-0.5">
                     {result.incongruity.incongruity_index.toFixed(2)}
                   </div>
+                </div>
+              </div>
+
+              {/* Level-1 Feature-Fusion Signal Breakdown */}
+              <div className="grid grid-cols-4 gap-2 pt-1 text-[11px] font-mono">
+                <div className="px-2.5 py-1.5 rounded-lg bg-slate-950/50 border border-slate-800/70">
+                  <span className="text-slate-500 block">WordLex (1-2)</span>
+                  <span className="text-slate-200 font-semibold">{result.p_word.toFixed(3)}</span>
+                </div>
+                <div className="px-2.5 py-1.5 rounded-lg bg-slate-950/50 border border-slate-800/70">
+                  <span className="text-slate-500 block">CharSub (3-5)</span>
+                  <span className="text-slate-200 font-semibold">{result.p_char.toFixed(3)}</span>
+                </div>
+                <div className="px-2.5 py-1.5 rounded-lg bg-slate-950/50 border border-slate-800/70">
+                  <span className="text-slate-500 block">Linguistic</span>
+                  <span className="text-slate-200 font-semibold">{result.p_linguistic.toFixed(3)}</span>
+                </div>
+                <div className="px-2.5 py-1.5 rounded-lg bg-slate-950/50 border border-slate-800/70">
+                  <span className="text-slate-500 block">Raw Logit z</span>
+                  <span className="text-indigo-300 font-semibold">{result.fusion_logits.raw_logit.toFixed(2)}</span>
                 </div>
               </div>
 

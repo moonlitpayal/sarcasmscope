@@ -1,60 +1,41 @@
 # SARcasmScope: Experimental Limitations & Threats to Validity
 **Project:** SARcasmScope — A Calibrated Feature-Fusion Framework for Context-Aware Sarcasm Detection in Multilingual and Code-Mixed Text  
-**Principal Investigator:** Payal Mehta (`payal.12620246@vit.edu`)  
-**Standard:** ACL / IEEE Scientific Integrity & Transparency Standards
+**Principal Investigator:** Payal Mehta (`payal.12620246@vit.edu`)
 
 ---
 
-### 1. Linguistic & Semantic Representation Limitations
-
-#### A. The World-Knowledge & Pragmatic Asymptote
-A fundamental finding of this research is that natural sarcasm in unconstrained social media and news satire is predominantly **implicit and situational**. Sentences such as *"Local man thrilled to spend entire Saturday assembling Swedish flat-pack furniture"* contain:
-- Zero lexical contradiction.
-- Zero irony emojis.
-- Zero hyperbolic exclamation marks.
-
-The irony emerges solely from a shared cultural understanding that assembling flat-pack furniture is tedious. Neither handcrafted lexicons nor n-gram statistical models possess world knowledge. Consequently, surface and subword representations achieve an empirical ceiling of approximately **56.6% Macro-F1** on held-out unconstrained text. Full resolution of implicit irony requires retrieval-augmented generation or deep reasoning LLMs.
-
-#### B. Regional & Dialectal Code-Mixing Variance
-While our conservative phonetic normalization handles character elongations (`"baaahuuut"` $\to$ `"bahut"`) and consonant equivalence (`ph` $\to$ `f`, `kh` $\to$ `k`, `bh` $\to$ `b`, `w` $\to$ `v`), Romanized Indic text (Hinglish, Marathi-Latin) lacks standardized orthography. Regional slang variations between North Indian Hindi-English and Western Indian Marathi-English introduce OOV tokens that reduce lexical coverage density $C(x)$.
+### 1. Telugu Class-Imbalance & Global Decision Threshold Limitation
+- On `IIIT_Hyderabad_Telugu_Sarcasm` ($N=109$ in `test.jsonl`, natural prevalence `15.60%` sarcastic = 17/109), the calibrated hybrid achieves strong probabilistic discrimination (**`0.7455` ROC-AUC**, **`0.1148` Brier Score**, **`0.3797` NLL**, **`5.77%` Conf-ECE**) yet records **`0.00%` sarcasm recall** (`84.40%` accuracy, `45.77%` Macro-F1) at the global `0.50` classification cutoff.
+- Because the model is well-calibrated under an 84.4% literal prior, true sarcastic Telugu posts receive elevated relative probabilities (top quartile ranking) without exceeding `P >= 0.50`. Notably, standalone `WordLex_1_2` triggers `11.76%` recall (`55.21%` Macro-F1) on Telugu, indicating that class-prior logit offsetting or language-specific operating thresholds are needed for skewed Dravidian deployments.
 
 ---
 
-### 2. Dataset Annotation & Cross-Domain Shift Limitations
-
-#### A. Severe Class Imbalance in Low-Resource Indic Benchmarks
-The **IIIT Hyderabad Telugu Sarcasm Dataset** has an extreme class imbalance with a 1:6 positive-to-negative ratio:
-- Training Split: 51 Sarcastic vs 274 Literal (15.7% positive)
-- Validation Split: 17 Sarcastic vs 91 Literal (15.7% positive)
-- Held-Out Test Split: 17 Sarcastic vs 92 Literal (15.6% positive)
-
-On this dataset, unweighted models predict the majority literal class, achieving an artificially high raw accuracy (85.32%) but low sarcasm recall (11.76%). This empirical finding proves why cost-sensitive loss weighting ($w_{\text{sarc}} = 3.20, w_{\text{lit}} = 0.59$) is required when training deep transformer baselines (MuRIL).
-
-#### B. Domain Disparity: Editorial Satire vs Conversational Social Media
-The 5 independent benchmarks span drastically different linguistic registers:
-1. **Misra & Arora News Headlines:** Formal journalistic prose, high syntactic regularity, zero emojis, zero hashtags.
-2. **ACL 2020 Twitter:** Informal, hashtag-dense, character-elongated, punctuated with irony emojis.
-3. **IIITD MaSaC:** Spoken colloquial dialogue turns from television scripts.
-4. **L3Cube MahaEmotions:** Dialectal Marathi social media tweets.
-
-Our empirical results confirm that features tuned for overt conversational sarcasm (such as polarity clashes and irony punctuation) do not transfer symmetrically to deadpan editorial headlines, leading to domain-specific variance (58.10% Macro-F1 on news satire vs 40.23% on Twitter).
-
-#### C. Annotation Schema Incompatibilities (L3Cube-MahaEmotions)
-In MahaEmotions, sarcasm was annotated as one of 8 fine-grained emotional categories rather than a binary sarcasm construct. To preserve scientific validity, our pipeline strictly paired "Sarcasm" with "Neutral" tweets, deliberately excluding tweets labeled as "Anger", "Disgust", or "Sadness", since sarcastic vitriol frequently co-occurs with disgust.
+### 2. Hindi-English Code-Mixed Performance & Cross-Split Near-Duplicates
+- On `IIITD_MaSaC_CodeMixed` ($N=194$ in `test.jsonl`), overall test Macro-F1 rises from `32.64%` (`v2`) to **`47.33%`** (Hybrid) and **`54.52%`** (`WordLex_1_2` alone), leaving an open generalization gap driven by deadpan TV banter (`15.57%` Conf-ECE on `IIITD_MaSaC`).
+- Exhaustive pairwise word 3-shingle Jaccard ($\ge 0.80$) auditing confirms **0** exact text overlaps and **0** `conversation_id` overlaps corpus-wide, but uncovers **13 near-duplicate pairs corpus-wide** (`8` cross-split, `5` train-test, `8` label-conflicting)—all confined to brief recurring interjections inside `IIITD_MaSaC_CodeMixed` (such as short one-line replies carrying context-dependent opposite labels across different sitcom episodes).
 
 ---
 
-### 3. Compute Environment & Transformer Transfer Limitations
-
-#### A. Hardware Constraints & Cloud GPU Separation
-- **Local Environment:** The web application and evaluation scripts execute in a lightweight Node.js container with CPU execution.
-- **Deep Transformer Training:** Full pretraining and fine-tuning of MuRIL (237M parameters) and XLM-RoBERTa (278M parameters) require dedicated GPU compute (16 GB VRAM on Google Colab T4).
-- **Scientific Disclosure:** Local transformer comparison metrics utilize precomputed subword-logit transfer representations. The standalone training scripts (`eval/train_transformer.py`) and step-by-step Colab notebooks (`docs/COLAB.md`) are provided for direct GPU verification.
+### 3. Vowel Elongation & Context Sensitivity in Stress Tests
+- On the deterministic 100-sample `testRecords` stress suite (`seed=42`, `eval_results/stage9/robustness_results.csv`):
+  - **Repeated Vowel Elongation:** Stability is **`75.0%`** (25/100 flips, mean shift `0.086`) because heavy synthetic triple-letter suffix inflation alters character 3–5 n-grams in `CharSub_3_5` even after Romanized phonetic folding.
+  - **Dialogue Context Removal:** Stability is **`70.0%`** (30/100 flips, mean shift `0.154`), reflecting genuine predictive dependence on preceding turns (confirmed independently by the **`-4.23%` Macro-F1 drop** when context is ablated across all 1,123 test records).
 
 ---
 
-### 4. Calibration & Selective Abstention Trade-offs
+### 4. Local Compute & Deep Transformer Execution Scope
+- While `eval/train_transformer.py`, `eval/evaluate_transformers.py`, and `eval/export_onnx.py` pass Python compilation and `--dry_run` checks locally, **fine-tuning MuRIL (`237M`) and XLM-RoBERTa (`278M`) was `NOT_EXECUTED_LOCALLY`** due to the absence of `torch` and CUDA GPU hardware in this CPU container.
+- Consequently, all comparative claims in the frozen test tables restrict themselves honestly to measured client-side baselines (`Majority`, `v1`, `v2`, `WordLex`, `CharSub`, `Statistical OOF`, `Calibrated Hybrid`), while GPU runs remain reproducibly documented via `docs/COLAB.md`.
 
-The calibrated selective prediction mechanism dampens confidence on low-coverage out-of-domain inputs ($C(x) < 0.20$), triggering `verdict: "Uncertain"`. While this provides an essential defense against false confidence:
-- At $\tau = 0.58$, the system accepts **53.87%** of test samples and abstains on **46.13%**.
-- In mission-critical moderation settings, human-in-the-loop escalation is required for the 46.13% ambiguous samples.
+---
+
+### 5. Selective Abstention Coverage Trade-Off & Morphological Stemming Ablation
+- At the validation-selected gate $\tau^* = 0.35$, selective accuracy rises from `68.03%` to **`80.31%`** (`78.92%` Macro-F1; risk reduced `31.97% -> 19.69%`), at the cost of abstaining on **`54.32%`** (`610/1,123`) of boundary test instances (`45.68%` coverage).
+- Runtime ablations show removing the Stage-1 morphological stemmer or phonetic folder shifts overall 5-corpus Macro-F1 by `0.00%` / `+0.15%` when word unigrams and character 3–5 n-grams remain enabled because dense `WordLex`/`CharSub` n-grams subsume frequent surface stems in the combined 1,123-item split (`WordLex` alone gives `63.90%` MF1 on Marathi and `55.21%` on Telugu).
+
+---
+
+### 6. Dataset Construct Validity & Cross-Domain Narrowing
+- **Emotion-to-Binary Proxy (`L3Cube_MahaEmotions`):** Retaining only native `Sarcasm` ($n=185$) vs `Neutral` ($n=184$) avoids falsely labeling emotional literal tweets (`Anger`, `Sadness`) as non-sarcastic, yet narrows the control distribution. Furthermore, L3Cube-MahaEmotions `train.csv` used LLM CoTR synthetic labels (Kowtal & Joshi, 2025) while only `test.csv` used manual gold annotation; hence all `184` Neutral controls and ~93% of `Sarcasm` items draw from CoTR-annotated records, making Marathi strictly an exploratory proxy.
+- **Editorial Satire vs Social Sarcasm (`Misra_Arora_News_Headlines`):** Satirical headlines (*The Onion* vs *HuffPost*, `context=""`) lack multi-turn dialogue context and evaluate journalistic irony rather than conversational banter.
+- **Isolated Text Turns of Multimodal Dialogue (`IIITD_MaSaC`):** While `conversation_id` isolates episodes cleanly across splits (`0` conversation overlap), utterance `r.context` is empty (`""` on all `974` items), omitting both surrounding conversational turns and original sitcom audio/visual cues—capping text-only Macro-F1 at `47.33%` and driving `15.57%` Hinglish Conf-ECE.
