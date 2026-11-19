@@ -1,0 +1,207 @@
+item_id,comment_id,video_id,language,script,topic,sampling,is_reply,annotator_1,annotator_2,annotator_3,label,agreement
+SQ-0001,UgzOKy4lH2MbKtYNF5p4AaABAg,yRM0ao5Ffp8,Marathi,Latin (Roman),metro,cue-seeded,0,Yes,Yes,Yes,1,unanimous
+SQ-0002,Ugz6gzFizNm_J6Wv4Gh4AaABAg,KVhmpeC3I3c,Hindi/Hinglish,Latin (Roman),metro,random,0,Yes,No,No,0,majority
+SQ-0003,UgwY4d94_QJRgcK71fJ4AaABAg,KVhmpeC3I3c,Hindi/Hinglish,Latin (Roman),metro,random,0,No,Yes,Yes,1,majority
+SQ-0004,Ugyo_B5-hu9CiIkQhu14AaABAg.APW8H-ODVaXAPcUZJdtH8r,xWZKyJ0-a9Q,Hindi/Hinglish,Devanagari,metro,cue-seeded,1,Yes,Yes,Yes,1,unanimous
+SQ-0005,UgzuJsXFbUGYipt-j1N4AaABAg,xWZKyJ0-a9Q,English (Indian),Latin (Roman),metro,random,0,No,Yes,No,0,majority
+SQ-0006,UgyX5IMoOG9ZVYK0Had4AaABAg,DKuxZvC5MKw,Marathi,Latin (Roman),traffic,random,0,No,No,No,0,unanimous
+SQ-0007,Ugy7AR_PNWCyjdoKxwt4AaABAg.A4ICnkEZM0eA4OgJ00n4J7,2y3ZGTzLgAk,Hindi/Hinglish,Latin (Roman),traffic,random,1,No,No,Yes,0,majority
+SQ-0008,UgwYpumuoDWOO0hR_vR4AaABAg,s3SfOG6ka_g,Telugu,Latin (Roman),traffic,random,0,Yes,Yes,No,1,majority
+SQ-0009,UgwdJpZtTfGi10UZdfp4AaABAg,YG_SCYETUv4,English (Indian),Latin (Roman),potholes,cue-seeded,0,Yes,Yes,Yes,1,unanimous
+SQ-0010,UgyVffMoqjcZzKJlr4V4AaABAg,KVhmpeC3I3c,Marathi,Mixed,metro,random,0,Yes,No,Yes,1,majority
+SQ-0011,UgwtR_Pne09rCLvgQ154AaABAg,yRM0ao5Ffp8,Marathi,Devanagari,metro,random,0,No,Yes,Yes,1,majority
+SQ-0012,UgxCsaObZMHa2SpORHt4AaABAg.AaLRvrIVFCiAaS8u0uX9mt,s3SfOG6ka_g,Telugu,Telugu,traffic,random,1,No,No,Yes,0,majority
+SQ-0013,Ugxo4vqr3lhmYvfe43x4AaABAg,jep-s66YZcs,Telugu,Latin (Roman),traffic,cue-seeded,0,Yes,Yes,Yes,1,unanimous
+SQ-0014,Ugx0IqabpABvd0vaM6F4AaABAg,FDNdyFdIZNE,Marathi,Devanagari,potholes,random,0,Yes,Yes,Yes,1,unanimous
+SQ-0015,UgwXGBR_yWkmXvQD3vd4AaABAg,KVhmpeC3I3c,Hindi/Hinglish,Devanagari,metro,random,0,Yes,Yes,Yes,1,unanimous
+SQ-0016,UgzFlxDkfaaBLKPVmj94AaABAg,KVhmpeC3I3c,English (Indian),Latin (Roman),metro,random,0,Yes,Yes,Yes,1,unanimous
+SQ-0017,UgzjF1zMbhyqQXuVpJJ4AaABAg,yRM0ao5Ffp8,Marathi,Latin (Roman),metro,random,0,No,No,Yes,0,majority
+SQ-0018,Ugy_-OQtOAxD_-qByRB4AaABAg,yLe6jY4uGyw,Marathi,Devanagari,traffic,cue-seeded,0,Yes,Yes,Yes,1,unanimous
+SQ-0019,Ugy9TQrgl350BOM5XFd4AaABAg.AVqXnRgn17YAVwg0ebnxhV,jQiJCWtSFxI,Hindi/Hinglish,Latin (Roman),traffic,random,1,Yes,Yes,Yes,1,unanimous
+SQ-0020,UgzSvGv_oaptDEKyinF4AaABAg,yRM0ao5Ffp8,Marathi,Latin (Roman),metro,cue-seeded,0,No,Yes,Yes,1,majority
+SQ-0021,Ugx7QR2k7-9MnXziSUB4AaABAg,f2YbWKEa99E,English (Indian),Latin (Roman),flooding,cue-seeded,0,No,No,No,0,unanimous
+SQ-0022,UgzajoW8u7Im1cqExBp4AaABAg,YG_SCYETUv4,Hindi/Hinglish,Latin (Roman),potholes,cue-seeded,0,No,No,Yes,0,majority
+SQ-0023,Ugx5kwi9AEgArZWA_m54AaABAg,qM4C0HyMkdM,Hindi/Hinglish,Latin (Roman),water,random,0,Yes,Yes,No,1,majority
+SQ-0024,UgzIDvOEi9szH5T7_Bt4AaABAg.A_z4PUIeaxjAa0_Oxwr7N-,DKuxZvC5MKw,Marathi,Devanagari,traffic,random,1,No,No,No,0,unanimous
+SQ-0025,UgzWq33-QxUhO2Wvon14AaABAg,OtBb5Vq3zi8,Marathi,Devanagari,traffic,random,0,No,No,No,0,unanimous
+SQ-0026,Ugy7AR_PNWCyjdoKxwt4AaABAg,2y3ZGTzLgAk,Hindi/Hinglish,Latin (Roman),traffic,cue-seeded,0,Yes,Yes,No,1,majority
+SQ-0027,Ugxgo7bi4OU5KnWr6Ld4AaABAg,2y3ZGTzLgAk,English (Indian),Latin (Roman),traffic,cue-seeded,0,Yes,Yes,No,1,majority
+SQ-0028,Ugwepnmn7p9MNFxHe3F4AaABAg.AL260u5PhIXAL2HFEIwMf3,OtBb5Vq3zi8,English (Indian),Latin (Roman),traffic,random,1,Yes,Yes,Yes,1,unanimous
+SQ-0029,Ugz7oB4ITWYPgYzWDG14AaABAg,DKuxZvC5MKw,Marathi,Mixed,traffic,random,0,Yes,Yes,Yes,1,unanimous
+SQ-0030,UgwYbaq__5oo8lQ0cNZ4AaABAg.Aa-Q9nd_7aOAa-ZoQKZAbH,DKuxZvC5MKw,Marathi,Devanagari,traffic,random,1,No,No,Yes,0,majority
+SQ-0031,Ugx6YW6WuUuaD6YUQBl4AaABAg,DKuxZvC5MKw,Hindi/Hinglish,Devanagari,traffic,random,0,Yes,Yes,Yes,1,unanimous
+SQ-0032,UgwG77QK8rhLPJxxuAx4AaABAg,yRM0ao5Ffp8,Marathi,Latin (Roman),metro,cue-seeded,0,Yes,Yes,Yes,1,unanimous
+SQ-0033,UgzT7-qGoiwW72xKc-t4AaABAg.AL22BFqpP4IAL23l6rP4-f,OtBb5Vq3zi8,Marathi,Latin (Roman),traffic,random,1,Yes,Yes,Yes,1,unanimous
+SQ-0034,UgwBKHSy-p8xbyg7BLd4AaABAg,OtBb5Vq3zi8,English (Indian),Latin (Roman),traffic,cue-seeded,0,Yes,No,Yes,1,majority
+SQ-0035,UgxHSgEgu2y8CaHUY4x4AaABAg,s3SfOG6ka_g,Telugu,Telugu,traffic,random,0,Yes,No,No,0,majority
+SQ-0036,Ugx7p0UoMmC8mVqrGD14AaABAg,Q9AnDizUB3o,Hindi/Hinglish,Mixed,metro,random,0,Yes,Yes,Yes,1,unanimous
+SQ-0037,UgxxPbQZD4DwWb_dRQp4AaABAg,OtBb5Vq3zi8,Marathi,Mixed,traffic,random,0,Yes,Yes,No,1,majority
+SQ-0038,UgxFEESF_vARWyGnrKV4AaABAg,OtBb5Vq3zi8,English (Indian),Latin (Roman),traffic,cue-seeded,0,Yes,Yes,Yes,1,unanimous
+SQ-0039,UgxZUjxVeTVVzr2rYel4AaABAg,xWZKyJ0-a9Q,English (Indian),Latin (Roman),metro,random,0,No,No,No,0,unanimous
+SQ-0040,UgxhThlQQlQ-RJk1Ev54AaABAg.AV8dCXaM3lMAV9vl7cDxPO,f2YbWKEa99E,English (Indian),Latin (Roman),flooding,random,1,No,No,No,0,unanimous
+SQ-0041,UgyFeOuxxK50mTLKDlt4AaABAg,DKuxZvC5MKw,Marathi,Devanagari,traffic,random,0,Yes,No,Yes,1,majority
+SQ-0042,UgzmUlhsQ-_muFhoAvN4AaABAg,s3SfOG6ka_g,Telugu,Latin (Roman),traffic,cue-seeded,0,Yes,No,No,0,majority
+SQ-0043,UgxDeqORZTGFHUD4byF4AaABAg,dAA2HrxdumU,English (Indian),Latin (Roman),potholes,cue-seeded,0,Yes,Yes,Yes,1,unanimous
+SQ-0044,UgwzqCbfrLvw9ke7YTN4AaABAg,y0YVyaCvJNY,English (Indian),Latin (Roman),metro,random,0,No,No,No,0,unanimous
+SQ-0045,UgxN9v5BmvUwfDMyZU54AaABAg,f2YbWKEa99E,English (Indian),Latin (Roman),flooding,cue-seeded,0,No,No,No,0,unanimous
+SQ-0046,UgzGs5DuAA_mptH9icx4AaABAg,yLe6jY4uGyw,Marathi,Devanagari,traffic,random,0,No,No,No,0,unanimous
+SQ-0047,UgwoEpbWK_P5VCkhWhx4AaABAg,jep-s66YZcs,English (Indian),Latin (Roman),traffic,cue-seeded,0,No,No,No,0,unanimous
+SQ-0048,Ugz0lqLhR73Dq8iOPax4AaABAg,KVhmpeC3I3c,Hindi/Hinglish,Mixed,metro,random,0,No,Yes,No,0,majority
+SQ-0049,UgwY3WbA1DFb1JfIF2d4AaABAg,KVhmpeC3I3c,English (Indian),Latin (Roman),metro,random,0,No,No,No,0,unanimous
+SQ-0050,UgyhpttJMtAGgGWj0MZ4AaABAg,KVhmpeC3I3c,English (Indian),Latin (Roman),metro,random,0,Yes,No,No,0,majority
+SQ-0051,UgznRhVwgclKnlCL5WB4AaABAg,yLe6jY4uGyw,Hindi/Hinglish,Devanagari,traffic,random,0,Yes,Yes,No,1,majority
+SQ-0052,Ugzc6T0d4E9EfYRARMZ4AaABAg.9wM3FroXcp69yLBfCQBJIa,yRM0ao5Ffp8,English (Indian),Latin (Roman),metro,cue-seeded,1,No,No,No,0,unanimous
+SQ-0053,Ugwl_hQZgOIh6XLCD7R4AaABAg.APNcb9pR3MIAPNzkiAzVv8,xWZKyJ0-a9Q,English (Indian),Latin (Roman),metro,random,1,Yes,Yes,Yes,1,unanimous
+SQ-0054,Ugw3Hchrr4KInvJnhNV4AaABAg,s3SfOG6ka_g,Telugu,Latin (Roman),traffic,random,0,No,Yes,No,0,majority
+SQ-0055,Ugziy8_fHa_9FTVYZbp4AaABAg,Q9AnDizUB3o,English (Indian),Latin (Roman),metro,cue-seeded,0,Yes,Yes,Yes,1,unanimous
+SQ-0056,UgxaVy3Oy9B4EZC798h4AaABAg.APN_tfeEHtDAPUxlGLOGlt,xWZKyJ0-a9Q,Marathi,Latin (Roman),metro,random,1,No,No,No,0,unanimous
+SQ-0057,UgzGHSTlrSWioADz_cx4AaABAg,KVhmpeC3I3c,English (Indian),Latin (Roman),metro,random,0,Yes,No,Yes,1,majority
+SQ-0058,UgxbvZVgyo-ugUKsbdB4AaABAg,DKuxZvC5MKw,Marathi,Devanagari,traffic,random,0,Yes,Yes,Yes,1,unanimous
+SQ-0059,UgyTs3cWGM_IofmLRyB4AaABAg,yRM0ao5Ffp8,Hindi/Hinglish,Mixed,metro,random,0,No,Yes,Yes,1,majority
+SQ-0060,UgwBnzu_NqW2Sg9VFld4AaABAg,s3SfOG6ka_g,Telugu,Latin (Roman),traffic,random,0,No,Yes,Yes,1,majority
+SQ-0061,UgzibItzhGKHAfesViZ4AaABAg,6632khdUZGo,Telugu,Latin (Roman),traffic,random,0,Yes,Yes,Yes,1,unanimous
+SQ-0062,UgyNtUeOfWQB-UmP3314AaABAg,DKuxZvC5MKw,Marathi,Devanagari,traffic,random,0,Yes,No,Yes,1,majority
+SQ-0063,UgxY8BiI7UCSF2YtgPR4AaABAg,KVhmpeC3I3c,Hindi/Hinglish,Devanagari,metro,random,0,Yes,Yes,Yes,1,unanimous
+SQ-0064,UgwIRH6MZuCplWc8sD54AaABAg,NMBXYeLg6Pc,Marathi,Devanagari,water,random,0,No,No,No,0,unanimous
+SQ-0065,UgzwrE6WwCJQxpxG0F94AaABAg,jQiJCWtSFxI,Hindi/Hinglish,Devanagari,traffic,random,0,No,No,No,0,unanimous
+SQ-0066,UgwFUb3y4Kv6zA01XHp4AaABAg.AL5HRC3PfrgALBOJr6qSD0,OtBb5Vq3zi8,English (Indian),Latin (Roman),traffic,random,1,Yes,Yes,No,1,majority
+SQ-0067,UgxS4IcL5gUcOFfMKqV4AaABAg,KVhmpeC3I3c,Marathi,Devanagari,metro,random,0,No,No,No,0,unanimous
+SQ-0068,UgwG14dZi9-xQZ2-EP94AaABAg,jep-s66YZcs,English (Indian),Latin (Roman),traffic,cue-seeded,0,Yes,No,Yes,1,majority
+SQ-0069,UgwtJVDjJ53Rkstu23x4AaABAg,NMBXYeLg6Pc,Marathi,Latin (Roman),water,cue-seeded,0,Yes,Yes,Yes,1,unanimous
+SQ-0070,Ugzl00rcaWPfXn8qLNp4AaABAg,PtXX7zYI4rQ,Marathi,Latin (Roman),metro,random,0,No,No,No,0,unanimous
+SQ-0071,UgxxHjEAR7L56CgruGN4AaABAg,FDNdyFdIZNE,Marathi,Devanagari,potholes,cue-seeded,0,Yes,Yes,No,1,majority
+SQ-0072,UgwtS-KB2Peaf4OCp9d4AaABAg,YG_SCYETUv4,Hindi/Hinglish,Latin (Roman),potholes,random,0,Yes,Yes,Yes,1,unanimous
+SQ-0073,UgxXQxtKUWTsOCtH_HB4AaABAg,FDNdyFdIZNE,Marathi,Latin (Roman),potholes,random,0,Yes,Yes,Yes,1,unanimous
+SQ-0074,Ugw4fzAa84ThHBA5qH54AaABAg,xWZKyJ0-a9Q,English (Indian),Latin (Roman),metro,random,0,No,No,No,0,unanimous
+SQ-0075,Ugw9VCUQjdwnWRuLtld4AaABAg,YG_SCYETUv4,Hindi/Hinglish,Latin (Roman),potholes,random,0,Yes,Yes,No,1,majority
+SQ-0076,UgyPrJGWeDwxAweRlPl4AaABAg,DgdFkTXXe9I,English (Indian),Latin (Roman),metro,random,0,Yes,Yes,No,1,majority
+SQ-0077,UgwSFSR_molUcIlnZBp4AaABAg,yLe6jY4uGyw,Marathi,Latin (Roman),traffic,random,0,Yes,No,No,0,majority
+SQ-0078,UgwtS-KB2Peaf4OCp9d4AaABAg.AUSgSY-jYouAUSoGuuzTsy,YG_SCYETUv4,Hindi/Hinglish,Latin (Roman),potholes,random,1,Yes,Yes,Yes,1,unanimous
+SQ-0079,UgwyPcB4ZwltD2i4j_t4AaABAg,5RS-H3P3bU0,Hindi/Hinglish,Devanagari,flooding,random,0,No,No,No,0,unanimous
+SQ-0080,UgwtS-KB2Peaf4OCp9d4AaABAg.AUSgSY-jYouAUSkF4eRtMV,YG_SCYETUv4,English (Indian),Latin (Roman),potholes,cue-seeded,1,Yes,Yes,No,1,majority
+SQ-0081,Ugy1jelCbvB9deW3t914AaABAg,yRM0ao5Ffp8,English (Indian),Latin (Roman),metro,cue-seeded,0,Yes,Yes,Yes,1,unanimous
+SQ-0082,Ugw7OKBMtwIG1jDr94p4AaABAg.A4GtcEqx7t7A4OgZ2MPoQV,2y3ZGTzLgAk,Hindi/Hinglish,Latin (Roman),traffic,random,1,No,No,No,0,unanimous
+SQ-0083,UgybFJ6hE4SjpKocPiV4AaABAg,2y3ZGTzLgAk,Hindi/Hinglish,Latin (Roman),traffic,random,0,No,No,No,0,unanimous
+SQ-0084,UgzSXuxz1i2qullcd094AaABAg,KVhmpeC3I3c,Marathi,Latin (Roman),metro,random,0,No,No,No,0,unanimous
+SQ-0085,Ugww8ab7PIBNwBsN7P94AaABAg.AUSgVOQPQicAUX4VjMaEwn,YG_SCYETUv4,Hindi/Hinglish,Latin (Roman),potholes,random,1,Yes,Yes,Yes,1,unanimous
+SQ-0086,Ugy5Dk5bMhhp67eDrMt4AaABAg,2y3ZGTzLgAk,Hindi/Hinglish,Latin (Roman),traffic,random,0,Yes,No,No,0,majority
+SQ-0087,UgzwSVntMiAjzgNcR_54AaABAg,y0YVyaCvJNY,English (Indian),Latin (Roman),metro,random,0,No,No,No,0,unanimous
+SQ-0088,Ugw2ZuW-iMMHr242AiF4AaABAg,6632khdUZGo,Telugu,Mixed,traffic,random,0,No,No,No,0,unanimous
+SQ-0089,Ugy6Cw9nLCw81ODNdrp4AaABAg.AaNDTjNPfYiAaNe-K-gXv7,s3SfOG6ka_g,Telugu,Latin (Roman),traffic,random,1,Yes,No,No,0,majority
+SQ-0090,UgzLpFJRlcji06EhnMN4AaABAg,2y3ZGTzLgAk,Hindi/Hinglish,Devanagari,traffic,random,0,Yes,Yes,Yes,1,unanimous
+SQ-0091,UgyVEvv8AM4sQ8VKwJV4AaABAg,yLe6jY4uGyw,Marathi,Devanagari,traffic,random,0,No,Yes,Yes,1,majority
+SQ-0092,UgwqR6_-aRYtKG_n8Gx4AaABAg.AaMN0JwXPhjAaT4f3cbOor,s3SfOG6ka_g,English (Indian),Latin (Roman),traffic,random,1,No,No,No,0,unanimous
+SQ-0093,UgwGwxieBa2fZjPJRih4AaABAg,KVhmpeC3I3c,Hindi/Hinglish,Latin (Roman),metro,random,0,No,No,No,0,unanimous
+SQ-0094,Ugz2JKsV9TybJbqaxbt4AaABAg,KVhmpeC3I3c,Hindi/Hinglish,Latin (Roman),metro,random,0,Yes,Yes,Yes,1,unanimous
+SQ-0095,UgwKYr8cXx6d1sPpHqh4AaABAg,5RS-H3P3bU0,Hindi/Hinglish,Latin (Roman),flooding,random,0,Yes,Yes,Yes,1,unanimous
+SQ-0096,UgwqyAHgF3JWxJqlDeZ4AaABAg,YG_SCYETUv4,Hindi/Hinglish,Latin (Roman),potholes,random,0,Yes,Yes,Yes,1,unanimous
+SQ-0097,Ugx2zQHwV_h_SjcaWTF4AaABAg,2y3ZGTzLgAk,Hindi/Hinglish,Latin (Roman),traffic,random,0,Yes,No,No,0,majority
+SQ-0098,UgwC_zn9QPkh0hl3lnp4AaABAg,OtBb5Vq3zi8,Marathi,Devanagari,traffic,random,0,No,No,Yes,0,majority
+SQ-0099,UgyKTYp9pYqHBYZKr_F4AaABAg,OtBb5Vq3zi8,Marathi,Devanagari,traffic,random,0,No,No,Yes,0,majority
+SQ-0100,UgwCJ6auqz8pyY1dxyZ4AaABAg,YG_SCYETUv4,Hindi/Hinglish,Latin (Roman),potholes,random,0,Yes,Yes,No,1,majority
+SQ-0101,UgwDxiD4T4zJNDAdBpF4AaABAg,DKuxZvC5MKw,English (Indian),Latin (Roman),traffic,cue-seeded,0,No,No,No,0,unanimous
+SQ-0102,Ugycf3H0DV9X9G_B35x4AaABAg,YG_SCYETUv4,Hindi/Hinglish,Latin (Roman),potholes,cue-seeded,0,Yes,Yes,Yes,1,unanimous
+SQ-0103,UgzI8fZHCuc4VC8QARJ4AaABAg,YG_SCYETUv4,Hindi/Hinglish,Latin (Roman),potholes,random,0,No,No,No,0,unanimous
+SQ-0104,UgzbfEyzu_okxtK02kh4AaABAg,KVhmpeC3I3c,English (Indian),Latin (Roman),metro,random,0,Yes,No,No,0,majority
+SQ-0105,Ugz_Zr75HwR2ltbMbc94AaABAg,xWZKyJ0-a9Q,Hindi/Hinglish,Latin (Roman),metro,random,0,No,No,No,0,unanimous
+SQ-0106,Ugyo_B5-hu9CiIkQhu14AaABAg.APW8H-ODVaXAPcUcjX_C5V,xWZKyJ0-a9Q,Hindi/Hinglish,Devanagari,metro,cue-seeded,1,Yes,Yes,Yes,1,unanimous
+SQ-0107,UgxC_J1LuvjocqOQHHl4AaABAg,jep-s66YZcs,Telugu,Latin (Roman),traffic,cue-seeded,0,Yes,Yes,Yes,1,unanimous
+SQ-0108,Ugwxt1kZyLPQttdtF814AaABAg,3xRm_UdY5OA,Hindi/Hinglish,Latin (Roman),potholes,cue-seeded,0,Yes,Yes,Yes,1,unanimous
+SQ-0109,Ugxp_G7SMUqPVucOInh4AaABAg,jQiJCWtSFxI,Hindi/Hinglish,Latin (Roman),traffic,random,0,No,No,No,0,unanimous
+SQ-0110,UgxF1k_ceqgi0tR_ejV4AaABAg,KVhmpeC3I3c,Hindi/Hinglish,Latin (Roman),metro,random,0,No,No,No,0,unanimous
+SQ-0111,Ugz4Q_ecX5kl7CVOTXZ4AaABAg,to4_uV5NYuc,English (Indian),Latin (Roman),garbage,cue-seeded,0,No,No,No,0,unanimous
+SQ-0112,Ugx2IRzLPpsXFYJE0dB4AaABAg,jep-s66YZcs,English (Indian),Latin (Roman),traffic,cue-seeded,0,Yes,Yes,Yes,1,unanimous
+SQ-0113,UgxcpWn1adO0OJxT-694AaABAg,OtBb5Vq3zi8,Marathi,Latin (Roman),traffic,random,0,No,No,No,0,unanimous
+SQ-0114,UgyR4T2hISv3b4EaufZ4AaABAg,jep-s66YZcs,Telugu,Latin (Roman),traffic,random,0,Yes,No,Yes,1,majority
+SQ-0115,UgweYTbnrsstx80J6GB4AaABAg.9wPk6n32V3k9wQAOgw5-7T,yRM0ao5Ffp8,English (Indian),Latin (Roman),metro,random,1,No,No,No,0,unanimous
+SQ-0116,UgzT3kdMT--sHZ0IIqJ4AaABAg,jQiJCWtSFxI,Hindi/Hinglish,Latin (Roman),traffic,random,0,Yes,No,No,0,majority
+SQ-0117,UgxrXS7PpsHg_N7Texp4AaABAg,f2YbWKEa99E,Hindi/Hinglish,Mixed,flooding,cue-seeded,0,Yes,Yes,Yes,1,unanimous
+SQ-0118,UgyNCCc7CaawOHf31CF4AaABAg,yRM0ao5Ffp8,Marathi,Mixed,metro,random,0,Yes,No,Yes,1,majority
+SQ-0119,Ugwv3GNlmH7oD5M1AAR4AaABAg,jep-s66YZcs,Telugu,Latin (Roman),traffic,cue-seeded,0,Yes,No,Yes,1,majority
+SQ-0120,UgwYbaq__5oo8lQ0cNZ4AaABAg.Aa-Q9nd_7aOAa4mCEG4h7Q,DKuxZvC5MKw,Marathi,Devanagari,traffic,random,1,Yes,Yes,No,1,majority
+SQ-0121,UgwqVZsyEcEzQ00KoHN4AaABAg,PtXX7zYI4rQ,Marathi,Latin (Roman),metro,cue-seeded,0,Yes,Yes,Yes,1,unanimous
+SQ-0122,UgzIbaemEKbleSeJ2fB4AaABAg,jep-s66YZcs,Telugu,Latin (Roman),traffic,random,0,No,No,Yes,0,majority
+SQ-0123,UgzwtCKFn5aR9bkuIcN4AaABAg,yLe6jY4uGyw,Marathi,Latin (Roman),traffic,random,0,Yes,Yes,Yes,1,unanimous
+SQ-0124,UgyVEvv8AM4sQ8VKwJV4AaABAg.ANDMaJGwK_dANIMjBb2cua,yLe6jY4uGyw,Marathi,Devanagari,traffic,random,1,Yes,No,Yes,1,majority
+SQ-0125,UgySO-gAvABph7n9-D14AaABAg,s3SfOG6ka_g,Telugu,Telugu,traffic,random,0,No,No,Yes,0,majority
+SQ-0126,UgxS9TtDOrudHAdVXUN4AaABAg,OtBb5Vq3zi8,Marathi,Mixed,traffic,random,0,No,No,No,0,unanimous
+SQ-0127,UgzFb20YhDuNjAsHu4V4AaABAg,KVhmpeC3I3c,English (Indian),Latin (Roman),metro,cue-seeded,0,No,No,No,0,unanimous
+SQ-0128,UgyzJQX3gxQmZNoGzgh4AaABAg,s3SfOG6ka_g,Telugu,Latin (Roman),traffic,random,0,No,No,Yes,0,majority
+SQ-0129,Ugz5xzCmwaXR2aHn-uV4AaABAg,OtBb5Vq3zi8,Marathi,Latin (Roman),traffic,random,0,No,Yes,Yes,1,majority
+SQ-0130,UgwC79MnVpg3L3Anjpp4AaABAg,jQiJCWtSFxI,English (Indian),Latin (Roman),traffic,cue-seeded,0,No,Yes,No,0,majority
+SQ-0131,Ugww8ab7PIBNwBsN7P94AaABAg.AUSgVOQPQicAUT-9elnAHU,YG_SCYETUv4,English (Indian),Latin (Roman),potholes,cue-seeded,1,Yes,Yes,Yes,1,unanimous
+SQ-0132,Ugz7eeW-9n2tnFeCNRt4AaABAg.9y2_HIbRqIx9ypzeYVGeWn,KVhmpeC3I3c,English (Indian),Latin (Roman),metro,random,1,No,No,No,0,unanimous
+SQ-0133,UgwM_GA_THz8ZDKQhIN4AaABAg,KVhmpeC3I3c,Hindi/Hinglish,Mixed,metro,cue-seeded,0,Yes,Yes,Yes,1,unanimous
+SQ-0134,Ugx_Hh3a-qf1n43WW2Z4AaABAg,OtBb5Vq3zi8,Marathi,Mixed,traffic,random,0,Yes,Yes,Yes,1,unanimous
+SQ-0135,UgzSVCl8J3c02GVyTgJ4AaABAg,3xRm_UdY5OA,English (Indian),Latin (Roman),potholes,random,0,Yes,Yes,Yes,1,unanimous
+SQ-0136,UgwveMX0LM6xCA9oAiB4AaABAg,OtBb5Vq3zi8,Marathi,Devanagari,traffic,random,0,Yes,Yes,No,1,majority
+SQ-0137,UgwBOPHezUTa9FjuSWx4AaABAg,jep-s66YZcs,Telugu,Latin (Roman),traffic,random,0,Yes,Yes,No,1,majority
+SQ-0138,UgyUH0FFPuL405NM1fJ4AaABAg,jep-s66YZcs,English (Indian),Latin (Roman),traffic,cue-seeded,0,No,No,Yes,0,majority
+SQ-0139,UgzePDs9vbDpWZh_DhJ4AaABAg,KVhmpeC3I3c,English (Indian),Latin (Roman),metro,random,0,No,No,No,0,unanimous
+SQ-0140,UgyvYShXSJqR_yFpusJ4AaABAg,DKuxZvC5MKw,English (Indian),Latin (Roman),traffic,random,0,Yes,Yes,No,1,majority
+SQ-0141,Ugwbsc6mUNeZ-FRIUv54AaABAg,YG_SCYETUv4,Hindi/Hinglish,Latin (Roman),potholes,cue-seeded,0,Yes,Yes,Yes,1,unanimous
+SQ-0142,UgwqEi_6_q-4rij4Rb14AaABAg,DKuxZvC5MKw,Marathi,Devanagari,traffic,random,0,No,No,No,0,unanimous
+SQ-0143,UgzeHolODwNKWsLPzG54AaABAg,2y3ZGTzLgAk,Hindi/Hinglish,Latin (Roman),traffic,random,0,Yes,Yes,Yes,1,unanimous
+SQ-0144,UgxXON009wDn1K0k8RV4AaABAg,OtBb5Vq3zi8,Marathi,Devanagari,traffic,random,0,No,No,No,0,unanimous
+SQ-0145,UgwyWuKolG9lwhDM-LR4AaABAg,yRM0ao5Ffp8,Marathi,Devanagari,metro,random,0,Yes,Yes,No,1,majority
+SQ-0146,Ugwl9k5Jy3OOkPNgLXN4AaABAg.9wKv_BpbjgB9wL5HRWvDVe,yRM0ao5Ffp8,Marathi,Latin (Roman),metro,random,1,Yes,Yes,Yes,1,unanimous
+SQ-0147,Ugxb4BkNkAuwgg_6Y_V4AaABAg,jep-s66YZcs,English (Indian),Latin (Roman),traffic,cue-seeded,0,No,No,Yes,0,majority
+SQ-0148,Ugw6IaBHpGFmdMx7PhZ4AaABAg,to4_uV5NYuc,Hindi/Hinglish,Latin (Roman),garbage,random,0,No,No,No,0,unanimous
+SQ-0149,UgyMv4299zbQPykrdcV4AaABAg,yLe6jY4uGyw,Marathi,Devanagari,traffic,random,0,Yes,No,Yes,1,majority
+SQ-0150,UgxaVy3Oy9B4EZC798h4AaABAg.APN_tfeEHtDAPUtxhcKKsA,xWZKyJ0-a9Q,English (Indian),Latin (Roman),metro,cue-seeded,1,No,No,No,0,unanimous
+SQ-0151,UgykwN2tHgelUbnWzZh4AaABAg,077fQu6BLkQ,Marathi,Devanagari,traffic,random,0,No,No,No,0,unanimous
+SQ-0152,Ugy8873w484Bud9fjXJ4AaABAg,yRM0ao5Ffp8,Hindi/Hinglish,Devanagari,metro,random,0,Yes,No,Yes,1,majority
+SQ-0153,UgzuHu0UYgQ2Tip-UV14AaABAg,DKuxZvC5MKw,English (Indian),Latin (Roman),traffic,cue-seeded,0,No,No,No,0,unanimous
+SQ-0154,UgzLVONfuy9svL6OhKR4AaABAg,KVhmpeC3I3c,Marathi,Latin (Roman),metro,random,0,Yes,Yes,No,1,majority
+SQ-0155,Ugw-kZHUJtCEMvejxbt4AaABAg.AcVIm1JeyK1AcZIi4fwaDU,rP6gM1Aj718,Hindi/Hinglish,Latin (Roman),metro,random,1,Yes,Yes,Yes,1,unanimous
+SQ-0156,Ugw6lJRchati2dnM0Jd4AaABAg,KVhmpeC3I3c,Hindi/Hinglish,Latin (Roman),metro,random,0,Yes,Yes,Yes,1,unanimous
+SQ-0157,UgwhshixF9E-vQLFoG54AaABAg,s3SfOG6ka_g,Telugu,Latin (Roman),traffic,cue-seeded,0,Yes,Yes,Yes,1,unanimous
+SQ-0158,UgzR6BeNMNNc93Ple8V4AaABAg,YG_SCYETUv4,Hindi/Hinglish,Latin (Roman),potholes,cue-seeded,0,No,No,No,0,unanimous
+SQ-0159,Ugz6BzccjK2y1gzQvqJ4AaABAg,jep-s66YZcs,Telugu,Latin (Roman),traffic,random,0,Yes,Yes,No,1,majority
+SQ-0160,Ugyo_B5-hu9CiIkQhu14AaABAg.APW8H-ODVaXAPkLfuulimy,xWZKyJ0-a9Q,Hindi/Hinglish,Latin (Roman),metro,random,1,No,No,No,0,unanimous
+SQ-0161,UgwSLoj6XB4kRDd2oBR4AaABAg.9wKwBD5bHV69wL5KI-9UgH,yRM0ao5Ffp8,English (Indian),Latin (Roman),metro,cue-seeded,1,Yes,Yes,No,1,majority
+SQ-0162,UgzQNbDJ8gaAo4Vo6UJ4AaABAg,DKuxZvC5MKw,Marathi,Latin (Roman),traffic,random,0,No,No,No,0,unanimous
+SQ-0163,UgxNWka0LsqERhSsS3N4AaABAg.AG_Eb1543ItAGeWDlmnz_u,qM4C0HyMkdM,English (Indian),Latin (Roman),water,cue-seeded,1,Yes,Yes,Yes,1,unanimous
+SQ-0164,UgwKIop4Owvf9A1XEaJ4AaABAg,YG_SCYETUv4,English (Indian),Latin (Roman),potholes,cue-seeded,0,Yes,Yes,Yes,1,unanimous
+SQ-0165,Ugy6Cw9nLCw81ODNdrp4AaABAg,s3SfOG6ka_g,Telugu,Mixed,traffic,random,0,No,No,Yes,0,majority
+SQ-0166,Ugw85d4UHEZVM_d5mzF4AaABAg.9wKvLJmztEI9wL8VNLA6xj,yRM0ao5Ffp8,Marathi,Mixed,metro,random,1,Yes,Yes,Yes,1,unanimous
+SQ-0167,UgxBeD2y893ZlGa4pjV4AaABAg,KVhmpeC3I3c,Hindi/Hinglish,Latin (Roman),metro,random,0,Yes,Yes,No,1,majority
+SQ-0168,UgyVcHFE3Gt3TvG0odJ4AaABAg,B4MaHOrEcn4,English (Indian),Latin (Roman),water,random,0,No,No,No,0,unanimous
+SQ-0169,UgybFJ6hE4SjpKocPiV4AaABAg.A4GtYgKYuNUA4VHGM2PiAI,2y3ZGTzLgAk,Hindi/Hinglish,Latin (Roman),traffic,random,1,Yes,Yes,Yes,1,unanimous
+SQ-0170,Ugw_Nr93osI-2zF3pb14AaABAg.9wy3RYMJIrwA6bsqetwVs3,yRM0ao5Ffp8,Hindi/Hinglish,Latin (Roman),metro,random,1,Yes,Yes,Yes,1,unanimous
+SQ-0171,Ugz2ORTLEIu3Yv93pMN4AaABAg,KVhmpeC3I3c,English (Indian),Latin (Roman),metro,cue-seeded,0,No,No,No,0,unanimous
+SQ-0172,UgzNcxNUqt9d2Py8J6h4AaABAg,OtBb5Vq3zi8,Marathi,Latin (Roman),traffic,random,0,No,No,Yes,0,majority
+SQ-0173,UgxfxPAQ1D5bIUnM-hJ4AaABAg,jep-s66YZcs,Telugu,Latin (Roman),traffic,random,0,No,Yes,No,0,majority
+SQ-0174,UgzUEkjaW35aaQGD09R4AaABAg,xWZKyJ0-a9Q,Marathi,Latin (Roman),metro,random,0,No,No,No,0,unanimous
+SQ-0175,UgwpUe7nnCUTsCJ-ioh4AaABAg,KVhmpeC3I3c,English (Indian),Latin (Roman),metro,random,0,No,No,No,0,unanimous
+SQ-0176,UgzK5i1JGptY3832Gp14AaABAg,jep-s66YZcs,Telugu,Latin (Roman),traffic,random,0,Yes,No,Yes,1,majority
+SQ-0177,UgyRt3qJLyu4rwSabGN4AaABAg,OtBb5Vq3zi8,Hindi/Hinglish,Latin (Roman),traffic,random,0,No,Yes,No,0,majority
+SQ-0178,UgxDvH4rijbtc2mCluR4AaABAg,yRM0ao5Ffp8,Marathi,Latin (Roman),metro,random,0,Yes,Yes,Yes,1,unanimous
+SQ-0179,Ugysx5nZn7XIyTHEHoJ4AaABAg,qM4C0HyMkdM,English (Indian),Latin (Roman),water,cue-seeded,0,Yes,Yes,No,1,majority
+SQ-0180,UgzBDXwwtropOuZp64l4AaABAg,PtXX7zYI4rQ,Marathi,Latin (Roman),metro,cue-seeded,0,Yes,Yes,Yes,1,unanimous
+SQ-0181,Ugyn-_UvLp_M51Y5Yt94AaABAg,s3SfOG6ka_g,Telugu,Latin (Roman),traffic,cue-seeded,0,Yes,No,Yes,1,majority
+SQ-0182,UgxhrDvkqgN0JYTVOHp4AaABAg,DKuxZvC5MKw,Marathi,Devanagari,traffic,random,0,No,Yes,No,0,majority
+SQ-0183,UgxlRKOtx798kWLYGxh4AaABAg,2y3ZGTzLgAk,English (Indian),Latin (Roman),traffic,cue-seeded,0,No,No,No,0,unanimous
+SQ-0184,Ugy9TQrgl350BOM5XFd4AaABAg.AVqXnRgn17YAVqmEaUxldp,jQiJCWtSFxI,English (Indian),Latin (Roman),traffic,random,1,No,No,Yes,0,majority
+SQ-0185,Ugzo8-Pp3COAXvBoGJp4AaABAg,to4_uV5NYuc,Hindi/Hinglish,Latin (Roman),garbage,random,0,No,No,No,0,unanimous
+SQ-0186,Ugwo1E27loInAh0qBy54AaABAg,jep-s66YZcs,Telugu,Latin (Roman),traffic,cue-seeded,0,Yes,Yes,Yes,1,unanimous
+SQ-0187,UgzCyvbfY8lcsb-UjRd4AaABAg.APRC2k-hksXAPTmOHZViXV,xWZKyJ0-a9Q,English (Indian),Latin (Roman),metro,random,1,No,Yes,No,0,majority
+SQ-0188,Ugwthoc9N5x6wGjJfZp4AaABAg,YG_SCYETUv4,Hindi/Hinglish,Latin (Roman),potholes,random,0,No,No,No,0,unanimous
+SQ-0189,Ugzca9dMt7PoYRDTc_B4AaABAg,xWZKyJ0-a9Q,English (Indian),Latin (Roman),metro,random,0,No,No,No,0,unanimous
+SQ-0190,Ugx9_kgmRUEmimEo2CZ4AaABAg,to4_uV5NYuc,Hindi/Hinglish,Latin (Roman),garbage,random,0,Yes,No,Yes,1,majority
+SQ-0191,UgzXBK_I1xVnhAu59kZ4AaABAg,yRM0ao5Ffp8,English (Indian),Latin (Roman),metro,cue-seeded,0,No,No,No,0,unanimous
+SQ-0192,Ugxwq_OaOdxZDKcwSeV4AaABAg,yRM0ao5Ffp8,Marathi,Latin (Roman),metro,random,0,Yes,No,Yes,1,majority
+SQ-0193,UgyyGwx-BZ8rk7hwvJF4AaABAg,KVhmpeC3I3c,English (Indian),Latin (Roman),metro,random,0,No,No,No,0,unanimous
+SQ-0194,UgxeSMaEzdlHHoc15mR4AaABAg,FDNdyFdIZNE,Marathi,Devanagari,potholes,cue-seeded,0,Yes,Yes,Yes,1,unanimous
+SQ-0195,Ugzp6tSS215N8MIU15l4AaABAg.AW-6np9idpYAW39bvvz5_s,jQiJCWtSFxI,English (Indian),Latin (Roman),traffic,random,1,No,No,No,0,unanimous
+SQ-0196,UgzrrZf9A6h7P2WXdSp4AaABAg,DKuxZvC5MKw,Marathi,Latin (Roman),traffic,random,0,Yes,No,No,0,majority
+SQ-0197,Ugxy2gRatcY63riDCrd4AaABAg,jep-s66YZcs,Telugu,Latin (Roman),traffic,random,0,No,No,No,0,unanimous
+SQ-0198,Ugxcsst7SyUcNA-YNW94AaABAg,y0YVyaCvJNY,English (Indian),Latin (Roman),metro,random,0,No,No,No,0,unanimous
+SQ-0199,Ugx1O4AtOxunit1v9-h4AaABAg,yRM0ao5Ffp8,Marathi,Latin (Roman),metro,random,0,Yes,No,Yes,1,majority
+SQ-0200,Ugw7y8xv0vGb0EvzuV94AaABAg,f2YbWKEa99E,English (Indian),Latin (Roman),flooding,random,0,No,No,Yes,0,majority
+SQ-0201,UgwKYqetbfQWET3M-7N4AaABAg,DKuxZvC5MKw,Hindi/Hinglish,Latin (Roman),traffic,random,0,Yes,Yes,Yes,1,unanimous
+SQ-0202,Ugw34JnedXj0RiJk16N4AaABAg,KVhmpeC3I3c,Hindi/Hinglish,Devanagari,metro,random,0,Yes,Yes,No,1,majority
+SQ-0203,UgxP1tnyNLA0cvN3WnR4AaABAg,DKuxZvC5MKw,Hindi/Hinglish,Devanagari,traffic,cue-seeded,0,Yes,Yes,No,1,majority
+SQ-0204,Ugw8VLmcGhW9IZ3GbMV4AaABAg,KVhmpeC3I3c,Marathi,Mixed,metro,random,0,No,Yes,Yes,1,majority
+SQ-0205,UgxL27hedS4eUK_HBQR4AaABAg,jep-s66YZcs,Telugu,Latin (Roman),traffic,cue-seeded,0,Yes,Yes,Yes,1,unanimous
+SQ-0206,Ugz6k1GRmGDOft0QwsB4AaABAg,OtBb5Vq3zi8,Hindi/Hinglish,Devanagari,traffic,random,0,Yes,Yes,No,1,majority
